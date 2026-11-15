@@ -126,3 +126,15 @@ summary { font-weight: 600; cursor: pointer; }
 #summary { font-weight: 600; color: var(--brand-dark); margin: 0 0 6px; }
 .preview.mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
 @media (max-width: 600px) { .shift-controls { grid-template-columns: 1fr; } }
+
+/* 教學文章 */
+.guide .crumbs { color: var(--muted); font-size: 14px; margin: 24px 0 0; }
+.guide .crumbs a { color: var(--muted); }
+.guide .hero { padding-top: 8px; }
+.guide .meta { font-size: 14px; }
+.guide .lead { font-size: 17px; }
+.guide ol, .guide ul { padding-left: 1.4em; }
+.guide li { margin-bottom: 6px; }
+.cta { display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: #f0faf8; border: 1px solid #cde9e4; border-radius: var(--radius); padding: 14px 18px; margin: 24px 0; }
+.cta .btn { text-decoration: none; white-space: nowrap; }
+pre.code { background: #1f2933; color: #e6edf3; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 14px; line-height: 1.6; font-family: ui-monospace, Menlo, Consolas, monospace; }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>電視、USB 播放字幕亂碼或不顯示？5 個原因及解決方法｜ZimuFix</title>
+<meta name="description" content="用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5 個常見原因：編碼、檔名、格式、位置及字型，逐一教你解決。">
+<link rel="canonical" href="https://zimufix.com/guides/tv-subtitles-garbled/">
+<meta property="og:title" content="電視、USB 播放字幕亂碼或不顯示的解決方法">
+<meta property="og:description" content="用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5 個常見原因：編碼、檔名、格式、位置及字型，逐一教你解決。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/tv-subtitles-garbled/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "電視、USB 播放字幕亂碼或不顯示的解決方法", "description": "用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5 個常見原因：編碼、檔名、格式、位置及字型，逐一教你解決。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/tv-subtitles-garbled/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>電視、USB 播放字幕亂碼或不顯示的解決方法</h1><p class="meta">更新日期：2026-11-14</p></section>
+    <p class="lead">把影片和字幕放進 USB 手指，插到電視播放，卻發現字幕變成一堆怪字、方格，甚至完全不出現？這是非常常見的問題。電視和機頂盒的播放功能比電腦簡單，對字幕的要求更嚴格。以下按最常見的原因逐一排查。</p>
+
+    <div class="cta"><div><strong>想直接解決？</strong> 把字幕轉為電視讀得懂的 UTF-8 格式，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
+
+    <!-- 廣告位 1（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-1"></div>
+
+<h2>原因一：字幕編碼不是 UTF-8</h2>
+<p>這是字幕變成亂碼最常見的原因。很多舊字幕使用 GBK（簡體）或 Big5（繁體）編碼，電腦播放器通常能自動辨認，但大部分電視只認得 UTF-8，讀到其他編碼就會出現亂碼。部分較舊的電視更需要檔案開頭帶有 BOM 標記，才會當作 UTF-8 處理。</p>
+<p><strong>解決方法</strong>：用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 把字幕轉為 UTF-8，並保留「加入 BOM」選項。工具保留原本檔名，轉換後直接覆蓋 USB 內的舊檔即可。</p>
+
+<h2>原因二：字幕檔名與影片不一致</h2>
+<p>電視通常靠檔名配對字幕，字幕的檔名必須與影片完全相同，只有副檔名不同。例如影片是 <code>Movie.2024.mp4</code>，字幕就要命名為 <code>Movie.2024.srt</code>。多一個空格、少一個點，電視都可能找不到字幕。</p>
+<p>部分電視可以辨認加上語言標記的檔名，例如 <code>Movie.2024.zh.srt</code>，但並非所有型號都支援。如果字幕不出現，先改回與影片完全相同的檔名試試。</p>
+
+<h2>原因三：電視不支援該字幕格式</h2>
+<p>SRT 是兼容性最高的字幕格式，幾乎所有電視都支援。ASS、SSA 等特效字幕格式則有不少電視不支援，或者只能顯示文字、忽略特效。VTT 格式的支援程度也因型號而異。</p>
+<p><strong>解決方法</strong>：如果字幕是 ASS 或 VTT 格式而電視讀不到，可以先轉換為 SRT 再試。不同格式的分別可以參考 <a href="/guides/srt-ass-vtt-difference/">SRT、ASS、VTT 有什麼分別</a>。</p>
+
+<h2>原因四：字幕與影片不在同一資料夾</h2>
+<p>大部分電視只會在影片所在的資料夾尋找字幕。如果字幕放在另一個資料夾，例如 <code>Subs</code> 子資料夾，電視通常不會自動載入。請把字幕檔移到與影片相同的資料夾。</p>
+
+<h2>原因五：字幕顯示為方格</h2>
+<p>如果字幕顯示為「□□□」方格，而不是怪字，通常代表編碼已經讀對，但電視內建字型缺少某些中文字。這種情況在部分海外購買的電視上較常見。可以嘗試在電視的字幕設定中切換字型或語言；如果沒有相關選項，改用手機投放或電腦播放器會是較實際的做法。</p>
+
+<h2>快速檢查清單</h2>
+<table>
+<tr><th>症狀</th><th>最可能原因</th><th>處理方法</th></tr>
+<tr><td>字幕出現但全是怪字</td><td>編碼不是 UTF-8</td><td>用亂碼修復工具轉為 UTF-8（含 BOM）</td></tr>
+<tr><td>完全沒有字幕選項</td><td>檔名不一致或不在同一資料夾</td><td>檔名改成與影片相同，放在同一資料夾</td></tr>
+<tr><td>電腦正常、電視不顯示</td><td>格式不支援</td><td>改用 SRT 格式</td></tr>
+<tr><td>顯示為方格</td><td>電視字型缺字</td><td>切換字型，或改用其他播放方式</td></tr>
+</table>
+
+    <!-- 廣告位 2（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <div class="cta"><div><strong>字幕亂碼修復</strong>：把字幕轉為電視讀得懂的 UTF-8 格式，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
+
+    <h2>延伸閱讀</h2>
+    <div class="tool-grid"><a class="tool-card" href="/guides/vlc-subtitle-encoding/"><h3>VLC 字幕亂碼設定教學</h3><p>VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB180…</p></a><a class="tool-card" href="/guides/srt-ass-vtt-difference/"><h3>SRT、ASS、VTT 字幕格式有什麼分別？</h3><p>SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及…</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>

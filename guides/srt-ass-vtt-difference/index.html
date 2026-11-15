@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRT、ASS、VTT 字幕格式有什麼分別？一文看懂｜ZimuFix</title>
+<meta name="description" content="SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及播放器支援程度，教你按用途選擇合適的格式。">
+<link rel="canonical" href="https://zimufix.com/guides/srt-ass-vtt-difference/">
+<meta property="og:title" content="SRT、ASS、VTT 字幕格式有什麼分別？">
+<meta property="og:description" content="SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及播放器支援程度，教你按用途選擇合適的格式。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/srt-ass-vtt-difference/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "SRT、ASS、VTT 字幕格式有什麼分別？", "description": "SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及播放器支援程度，教你按用途選擇合適的格式。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/srt-ass-vtt-difference/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>SRT、ASS、VTT 字幕格式有什麼分別？</h1><p class="meta">更新日期：2026-11-14</p></section>
+    <p class="lead">下載字幕時，常常會見到 SRT、ASS、VTT 等不同副檔名。它們都是文字字幕格式，可以用記事本打開，但寫法、功能和兼容性各有不同。了解三者的分別，可以幫你避開很多播放問題。</p>
+
+    <div class="cta"><div><strong>想直接解決？</strong> 支援 SRT、ASS、VTT 等格式，一鍵轉為 UTF-8。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
+
+    <!-- 廣告位 1（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-1"></div>
+
+<h2>SRT：最簡單、兼容性最高</h2>
+<p>SRT（SubRip）是最普及的字幕格式。每句字幕由三部分組成：序號、時間碼、字幕文字，句與句之間以空行分隔。</p>
+<pre class="code">1
+00:00:01,000 --&gt; 00:00:03,500
+你好，歡迎收看。
+
+2
+00:00:04,000 --&gt; 00:00:06,000
+今天天氣很好。</pre>
+<p>時間碼格式為「時:分:秒,毫秒」，注意毫秒前面用的是逗號。SRT 只能顯示文字，部分播放器支援 <code>&lt;i&gt;</code> 斜體等簡單標籤，但不能設定位置、顏色或特效。</p>
+<p><strong>適合</strong>：一般觀看、電視及機頂盒播放、上載到大部分平台。</p>
+
+<h2>ASS／SSA：功能最強的特效字幕</h2>
+<p>ASS（Advanced SubStation Alpha）及其前身 SSA，常見於動畫字幕組作品。除了對白，檔案內還包含樣式設定，可以控制字型、大小、顏色、位置、描邊，甚至製作卡拉 OK 和動態特效。</p>
+<pre class="code">[V4+ Styles]
+Style: Default,Microsoft YaHei,20,&amp;H00FFFFFF,...
+
+[Events]
+Dialogue: 0,0:00:01.00,0:00:03.50,Default,,0,0,0,,{\an8}你好，歡迎收看。</pre>
+<p>ASS 的時間碼精確到百分之一秒，大括號內的 <code>{\an8}</code> 是特效標籤，這個例子代表把字幕放在畫面頂部。</p>
+<p><strong>適合</strong>：電腦播放、需要特效或多種樣式的字幕。<strong>缺點</strong>：不少電視和手機播放器不支援，或者會忽略特效。</p>
+
+<h2>VTT：網頁影片的標準格式</h2>
+<p>WebVTT 是網頁 HTML5 影片使用的字幕格式，YouTube 及很多網上課程平台都會使用。寫法與 SRT 相似，但檔案以 <code>WEBVTT</code> 開頭，毫秒前用的是句號，小時部分可以省略。</p>
+<pre class="code">WEBVTT
+
+00:01.000 --&gt; 00:03.500 line:90%
+你好，歡迎收看。</pre>
+<p>VTT 可以在時間碼後面加上位置等設定，例如上面的 <code>line:90%</code>。</p>
+<p><strong>適合</strong>：網頁影片、網上課程。<strong>缺點</strong>：部分電視及舊播放器不支援。</p>
+
+<h2>三種格式比較</h2>
+<table>
+<tr><th></th><th>SRT</th><th>ASS／SSA</th><th>VTT</th></tr>
+<tr><td>寫法難度</td><td>最簡單</td><td>較複雜</td><td>簡單</td></tr>
+<tr><td>樣式及特效</td><td>幾乎沒有</td><td>非常豐富</td><td>基本（位置等）</td></tr>
+<tr><td>時間精度</td><td>毫秒</td><td>百分之一秒</td><td>毫秒</td></tr>
+<tr><td>電視支援</td><td>普遍支援</td><td>經常不支援</td><td>視乎型號</td></tr>
+<tr><td>常見用途</td><td>一般觀看</td><td>動畫、特效字幕</td><td>網頁影片</td></tr>
+</table>
+
+<h2>格式以外的常見問題</h2>
+<p>不論哪一種格式，中文字幕最常遇到的問題都是<strong>編碼</strong>。同一個 SRT 檔，如果用 GBK 或 Big5 儲存，在某些播放器上就會變成亂碼。建議統一使用 UTF-8，可以用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 一鍵轉換。</p>
+
+    <!-- 廣告位 2（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <div class="cta"><div><strong>字幕亂碼修復</strong>：支援 SRT、ASS、VTT 等格式，一鍵轉為 UTF-8。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
+
+    <h2>延伸閱讀</h2>
+    <div class="tool-grid"><a class="tool-card" href="/guides/tv-subtitles-garbled/"><h3>電視、USB 播放字幕亂碼或不顯示的解決方法</h3><p>用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5…</p></a><a class="tool-card" href="/guides/subtitle-out-of-sync/"><h3>字幕不同步的原因及解決方法</h3><p>字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影…</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>

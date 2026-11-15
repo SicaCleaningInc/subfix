@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字幕不同步怎麼辦？找出原因並一次修正｜ZimuFix</title>
+<meta name="description" content="字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影片版本不同，並教你如何測量差距及修正字幕時間軸。">
+<link rel="canonical" href="https://zimufix.com/guides/subtitle-out-of-sync/">
+<meta property="og:title" content="字幕不同步的原因及解決方法">
+<meta property="og:description" content="字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影片版本不同，並教你如何測量差距及修正字幕時間軸。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/subtitle-out-of-sync/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "字幕不同步的原因及解決方法", "description": "字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影片版本不同，並教你如何測量差距及修正字幕時間軸。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-out-of-sync/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>字幕不同步的原因及解決方法</h1><p class="meta">更新日期：2026-11-14</p></section>
+    <p class="lead">下載回來的字幕，有時會比對白早一兩秒出現，有時開頭正常但越看越不對。字幕不同步看似小事，卻很影響觀看體驗。只要找出原因，大部分情況都可以在幾分鐘內修正。</p>
+
+    <div class="cta"><div><strong>想直接解決？</strong> 整體提前或延後，支援幀率轉換，檔案不會上傳。</div><a class="btn btn-primary" href="/subtitle-time-shift/">使用字幕時間軸調整</a></div>
+
+    <!-- 廣告位 1（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-1"></div>
+
+<h2>第一步：判斷是哪一種不同步</h2>
+<p>先在影片的開頭、中段和結尾各找一句對白，比較字幕出現的時間：</p>
+<table>
+<tr><th>觀察結果</th><th>原因</th><th>修正方法</th></tr>
+<tr><td>三個位置都相差同樣秒數</td><td>片頭長度不同</td><td>整體提前或延後</td></tr>
+<tr><td>開頭準確，越後差距越大</td><td>幀率不同</td><td>幀率轉換</td></tr>
+<tr><td>某一段之後突然相差很多</td><td>影片版本不同（剪輯不同）</td><td>需要分段調整或另找字幕</td></tr>
+</table>
+
+<h2>原因一：片頭長度不同</h2>
+<p>同一部電影或劇集可能有多個版本，例如有沒有片商標誌、前情提要或廣告。如果字幕是按另一個版本製作，整套字幕就會固定地快或慢幾秒。</p>
+<p><strong>測量方法</strong>：找一句清楚的對白，記下人物開口的時間（例如 00:05:12.5），再記下字幕出現的時間（例如 00:05:10.5）。字幕早了 2 秒，就需要延後 2 秒。</p>
+<p><strong>修正</strong>：在 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a> 的「整體調整」填入 <code>2</code>，下載即可。字幕太慢則填負數。</p>
+
+<h2>原因二：幀率不同</h2>
+<p>電影通常以每秒 24 格（或 23.976 格）拍攝。歐洲 PAL 制式的影片會以每秒 25 格播放，整部片因此加快約 4%，一部兩小時的電影會短了大約 5 分鐘。</p>
+<p>如果字幕按 25 fps 版本製作，配在 23.976 fps 的影片上，開頭幾乎同步，但字幕會越來越早出現，到片尾可能相差幾分鐘。反過來則越來越遲。</p>
+<p><strong>修正</strong>：在字幕時間軸調整工具的「幀率轉換」選擇對應組合：</p>
+<ul>
+<li>字幕越來越<strong>早</strong>出現：選「字幕 25 fps → 影片 23.976 fps」</li>
+<li>字幕越來越<strong>遲</strong>出現：選「字幕 23.976 fps → 影片 25 fps」</li>
+</ul>
+<p>轉換後如果開頭仍有一點差距，可以再用整體調整微調。</p>
+<p>想知道影片的幀率，可以在 VLC 播放時打開「工具」→「媒體資訊」→「編解碼器」查看，或在檔案的內容資訊中尋找「影格速率」。</p>
+
+<h2>原因三：影片版本不同</h2>
+<p>如果字幕在某一段之後突然相差很多，例如導演剪輯版多了一場戲，或者電視版刪減了片段，整體調整和幀率轉換都無法完全修正，因為差距只出現在部分段落。</p>
+<p>這種情況最實際的做法是另找與影片版本相符的字幕。如果只差一兩處，也可以把字幕分成前後兩部分，分別調整後再合併。</p>
+
+<h2>只看一次？可以在播放器臨時調整</h2>
+<p>大部分電腦播放器都可以臨時調整字幕延遲。以 VLC 為例，播放時按 <code>G</code> 或 <code>H</code> 鍵，每按一次調整 50 毫秒。不過這種調整通常不會保存，下次播放又要重來。如果會重看或分享給別人，修改字幕檔會更方便。</p>
+
+    <!-- 廣告位 2（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <div class="cta"><div><strong>字幕時間軸調整</strong>：整體提前或延後，支援幀率轉換，檔案不會上傳。</div><a class="btn btn-primary" href="/subtitle-time-shift/">立即使用</a></div>
+
+    <h2>延伸閱讀</h2>
+    <div class="tool-grid"><a class="tool-card" href="/guides/vlc-subtitle-encoding/"><h3>VLC 字幕亂碼設定教學</h3><p>VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB180…</p></a><a class="tool-card" href="/guides/srt-ass-vtt-difference/"><h3>SRT、ASS、VTT 字幕格式有什麼分別？</h3><p>SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及…</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>

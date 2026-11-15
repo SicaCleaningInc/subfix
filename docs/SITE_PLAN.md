@@ -29,9 +29,10 @@
 /ass-to-srt/                        ASS 轉 SRT           第 7 個
 
 /guides/                            教學文章（引流用）
-/guides/why-subtitles-garbled/      點解字幕會變亂碼
-/guides/vlc-subtitle-encoding/      VLC 字幕亂碼設定
-/guides/tv-subtitles-not-showing/   電視讀唔到中文字幕
+/guides/tv-subtitles-garbled/       電視、USB 播放字幕亂碼    ✅ 已完成
+/guides/vlc-subtitle-encoding/      VLC 字幕亂碼設定          ✅ 已完成
+/guides/srt-ass-vtt-difference/     SRT、ASS、VTT 分別        ✅ 已完成
+/guides/subtitle-out-of-sync/       字幕不同步原因            ✅ 已完成
 
 /about/                             關於（AdSense 必需）
 /privacy/                           私隱政策（AdSense 必需）

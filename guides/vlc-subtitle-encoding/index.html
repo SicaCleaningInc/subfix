@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLC 字幕亂碼怎麼辦？字幕編碼及字型設定教學｜ZimuFix</title>
+<meta name="description" content="VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB18030、Big5）及中文字型，或用線上工具一次修好字幕檔。">
+<link rel="canonical" href="https://zimufix.com/guides/vlc-subtitle-encoding/">
+<meta property="og:title" content="VLC 字幕亂碼設定教學">
+<meta property="og:description" content="VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB18030、Big5）及中文字型，或用線上工具一次修好字幕檔。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/vlc-subtitle-encoding/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "VLC 字幕亂碼設定教學", "description": "VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB18030、Big5）及中文字型，或用線上工具一次修好字幕檔。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/vlc-subtitle-encoding/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>VLC 字幕亂碼設定教學</h1><p class="meta">更新日期：2026-11-14</p></section>
+    <p class="lead">VLC 是最受歡迎的免費播放器之一，但播放中文字幕時，有時會出現亂碼或方格。這通常與字幕編碼或字型設定有關。以下教你兩種解決方法：在 VLC 內調整設定，或直接修好字幕檔案。</p>
+
+    <div class="cta"><div><strong>想直接解決？</strong> 一次把字幕轉為 UTF-8，以後在任何播放器都不用再調設定。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
+
+    <!-- 廣告位 1（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-1"></div>
+
+<h2>先判斷是哪一種問題</h2>
+<ul>
+<li><strong>出現怪字</strong>（例如 <span class="mojibake">ÄãºÃ</span> 或 <span class="mojibake">浣犲ソ</span>）：字幕編碼讀錯了，請看方法一或方法三。</li>
+<li><strong>出現方格</strong>（例如 <span class="mojibake">□□□</span>）：編碼大致正確，但字型不支援中文，請看方法二。</li>
+</ul>
+
+<h2>方法一：設定字幕文字編碼</h2>
+<p>VLC 預設會嘗試自動判斷字幕編碼，但遇到 GBK 或 Big5 編碼的字幕時有機會判斷錯誤。可以手動指定：</p>
+<ol>
+<li>打開 VLC，進入「工具」→「偏好設定」（英文介面為 Tools → Preferences）。</li>
+<li>在視窗左下角的「顯示設定」選擇「全部」（All），切換到進階設定。</li>
+<li>在左邊依次展開「輸入／編解碼器」→「字幕編解碼器」→「字幕」（Input / Codecs → Subtitle codecs → Subtitles）。</li>
+<li>找到「字幕文字編碼」（Subtitle text encoding），簡體字幕選「Universal, Chinese (GB18030)」，繁體舊字幕選「Traditional Chinese (Big5)」。</li>
+<li>按「儲存」，然後<strong>關閉並重新開啟影片</strong>，設定才會生效。</li>
+</ol>
+<p>注意：這個設定會套用到所有字幕。如果你同時會播放簡體和繁體字幕，每次都要重新切換，相當麻煩。這時方法三會更方便。</p>
+<p>不同版本的 VLC 選單名稱可能略有不同，如果找不到，可以在進階設定頂部的搜尋框輸入「encoding」或「編碼」。</p>
+
+<h2>方法二：更換支援中文的字型</h2>
+<p>如果字幕顯示為方格，可以更換字型：</p>
+<ol>
+<li>進入「工具」→「偏好設定」，保持「簡易」顯示設定。</li>
+<li>選擇頂部的「字幕／OSD」（Subtitles / OSD）分頁。</li>
+<li>在「字型」選擇支援中文的字型，例如 Windows 的「Microsoft JhengHei」（微軟正黑體）或「Microsoft YaHei」（微軟雅黑），Mac 的「PingFang TC」。</li>
+<li>按「儲存」，重新開啟影片。</li>
+</ol>
+
+<h2>方法三：直接把字幕轉為 UTF-8（推薦）</h2>
+<p>與其每次調整 VLC 設定，不如把字幕檔本身轉為 UTF-8。UTF-8 是國際通用標準，VLC 及絕大部分播放器、電視、手機都能正確讀取，轉換一次就不用再煩惱。</p>
+<p>使用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a>，把字幕拖放進去，工具會自動判斷原本的編碼並轉為 UTF-8，檔名維持不變，下載後覆蓋舊檔即可。</p>
+
+<h2>字幕時間不對？</h2>
+<p>如果字幕文字正常，但出現時間比對白早或遲，可以在 VLC 播放時按 <code>G</code> 或 <code>H</code> 鍵臨時調整。想永久修正，可以使用 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a>。</p>
+
+    <!-- 廣告位 2（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <div class="cta"><div><strong>字幕亂碼修復</strong>：一次把字幕轉為 UTF-8，以後在任何播放器都不用再調設定。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
+
+    <h2>延伸閱讀</h2>
+    <div class="tool-grid"><a class="tool-card" href="/guides/tv-subtitles-garbled/"><h3>電視、USB 播放字幕亂碼或不顯示的解決方法</h3><p>用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5…</p></a><a class="tool-card" href="/guides/subtitle-out-of-sync/"><h3>字幕不同步的原因及解決方法</h3><p>字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影…</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>
