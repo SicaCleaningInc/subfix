@@ -24,9 +24,9 @@
 /simplified-to-traditional-subtitles/  簡體字幕轉繁體     ✅ 已完成
 /traditional-to-simplified-subtitles/  繁體字幕轉簡體     ✅ 已完成
 /subtitle-time-shift/               字幕時間軸調整       ✅ 已完成
-/srt-to-txt/                        SRT 轉 TXT           第 5 個
-/vtt-to-srt/                        VTT 轉 SRT           第 6 個
-/ass-to-srt/                        ASS 轉 SRT           第 7 個
+/srt-to-txt/                        SRT 轉 TXT           ✅ 已完成
+/vtt-to-srt/                        VTT 轉 SRT           ✅ 已完成
+/ass-to-srt/                        ASS 轉 SRT           ✅ 已完成
 
 /guides/                            教學文章（引流用）
 /guides/tv-subtitles-garbled/       電視、USB 播放字幕亂碼    ✅ 已完成

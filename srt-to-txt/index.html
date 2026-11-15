@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRT 轉 TXT — 去除字幕時間軸，只保留對白文字｜ZimuFix</title>
+<meta name="description" content="免費線上 SRT 轉 TXT 工具。一鍵去除字幕序號及時間軸，只保留對白文字，可合併換行、移除重複句。支援 SRT、VTT、ASS、SBV，適合整理逐字稿及筆記，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/srt-to-txt/">
+<meta property="og:title" content="SRT 轉 TXT：字幕轉純文字">
+<meta property="og:description" content="免費線上 SRT 轉 TXT 工具。一鍵去除字幕序號及時間軸，只保留對白文字，可合併換行、移除重複句。支援 SRT、VTT、ASS、SBV，適合整理逐字稿及筆記，檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/srt-to-txt/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "SRT 轉 TXT：字幕轉純文字", "url": "https://zimufix.com/srt-to-txt/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "免費線上 SRT 轉 TXT 工具。一鍵去除字幕序號及時間軸，只保留對白文字，可合併換行、移除重複句。支援 SRT、VTT、ASS、SBV，適合整理逐字稿及筆記，檔案不會上傳。"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "SRT 轉 TXT 會保留時間碼嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。轉換後只保留對白文字，序號、時間碼及格式標籤都會移除。如果需要保留時間碼，可以直接用記事本打開 SRT 檔案。"}}, {"@type": "Question", "name": "可以轉換 VTT 或 ASS 字幕嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。本工具同時支援 SRT、VTT、ASS、SSA 及 SBV 字幕，ASS 的特效標籤也會自動移除。"}}, {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}}, {"@type": "Question", "name": "轉換出來的 TXT 是亂碼怎麼辦？", "acceptedAnswer": {"@type": "Answer", "text": "工具會自動偵測 GBK、Big5 等編碼，並輸出 UTF-8。如果用 Windows 記事本打開仍然亂碼，請確認已勾選「加入 BOM」。"}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>SRT 轉 TXT：字幕轉純文字</h1>
+    <p>一鍵去除序號和時間軸，只保留對白文字。適合整理逐字稿、會議記錄、學習筆記。同時支援 VTT、ASS、SBV 字幕。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="SRT 轉 TXT：字幕轉純文字工具">
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 SRT、VTT、ASS、SSA、SBV，可一次選擇多個檔案，亂碼會自動修復</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.vtt,.ass,.ssa,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-oneline" checked> 每句字幕合併為一行（移除句內換行）</label><br><label><input type="checkbox" id="opt-dedupe" checked> 移除連續重複的句子（常見於自動字幕）</label><br><label><input type="checkbox" id="opt-blank"> 句與句之間留一行空白</label><br><label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及 Windows 記事本較易正確顯示）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <!-- 廣告位 1：工具下方（AdSense 批核後啟用） -->
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps"><li><strong>選擇字幕檔案</strong>：把 SRT、VTT 或 ASS 字幕拖放到方框內，可以一次選擇多個。</li><li><strong>調整選項</strong>：選擇是否合併句內換行、移除重複句。預覽會即時更新。</li><li><strong>下載或複製</strong>：下載 TXT 檔，或直接按「複製全部文字」貼到文件、筆記軟件或 AI 工具。</li></ol>
+
+    <h2>轉換後會移除什麼？</h2>
+    <p>一個 SRT 字幕檔除了對白，還有序號、時間碼和空行。轉換為 TXT 時，工具會移除這些內容，以及斜體、顏色等格式標籤，只留下純文字對白：</p>
+    <table>
+      <tr><th>SRT 原文</th><th>轉換後的 TXT</th></tr>
+      <tr><td><code>1</code><br><code>00:00:01,000 --&gt; 00:00:03,500</code><br><code>&lt;i&gt;大家好，&lt;/i&gt;</code><br><code>歡迎收看。</code></td><td>大家好， 歡迎收看。</td></tr>
+    </table>
+    <h2>常見用途</h2>
+    <ul>
+      <li><strong>整理逐字稿</strong>：把 YouTube、網上課程或會議錄影的字幕轉成文字稿，方便閱讀和搜尋。</li>
+      <li><strong>交給 AI 摘要</strong>：純文字比字幕檔短得多，貼到 AI 工具做摘要或翻譯時更省字數。</li>
+      <li><strong>學習外語</strong>：把劇集對白整理成文字，方便抄寫、查字典和複習。</li>
+      <li><strong>製作文章或筆記</strong>：以影片內容為基礎撰寫文章時，先取得完整對白。</li>
+    </ul>
+    <h2>為什麼要移除重複句？</h2>
+    <p>YouTube 等平台的自動字幕，常常為了逐字顯示效果，把同一句話重複出現在相鄰的幾段字幕中。勾選「移除連續重複的句子」後，相鄰而完全相同的句子只會保留一次，令文字稿更乾淨。</p>
+
+    <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>常見問題</h2>
+    <details><summary>SRT 轉 TXT 會保留時間碼嗎？</summary><p>不會。轉換後只保留對白文字，序號、時間碼及格式標籤都會移除。如果需要保留時間碼，可以直接用記事本打開 SRT 檔案。</p></details><details><summary>可以轉換 VTT 或 ASS 字幕嗎？</summary><p>可以。本工具同時支援 SRT、VTT、ASS、SSA 及 SBV 字幕，ASS 的特效標籤也會自動移除。</p></details><details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details><details><summary>轉換出來的 TXT 是亂碼怎麼辦？</summary><p>工具會自動偵測 GBK、Big5 等編碼，並輸出 UTF-8。如果用 Windows 記事本打開仍然亂碼，請確認已勾選「加入 BOM」。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid"><a class="tool-card" href="/fix-garbled-subtitles/"><h3>字幕亂碼修復</h3><p>自動偵測編碼，一鍵還原亂碼字幕</p></a><a class="tool-card" href="/vtt-to-srt/"><h3>VTT 轉 SRT</h3><p>網上影片字幕轉成通用格式</p></a><a class="tool-card" href="/ass-to-srt/"><h3>ASS 轉 SRT</h3><p>移除特效，兼容所有播放器</p></a></div>
+
+    <h2>延伸閱讀</h2>
+    <ul><li><a href="/guides/srt-ass-vtt-difference/">SRT、ASS、VTT 字幕格式有什麼分別？</a></li></ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script>
+window.ZIMU_FMT_CONFIG = {"output": "txt", "accept": ["srt", "vtt", "ass", "ssa", "sbv"], "zipName": "字幕轉TXT.zip"};
+</script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-format.js"></script>
+<script src="/assets/format-convert-ui.js"></script>
+</body>
+</html>

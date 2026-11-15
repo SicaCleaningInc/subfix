@@ -56,7 +56,7 @@ Style: Default,Microsoft YaHei,20,&amp;H00FFFFFF,...
 [Events]
 Dialogue: 0,0:00:01.00,0:00:03.50,Default,,0,0,0,,{\an8}你好，歡迎收看。</pre>
 <p>ASS 的時間碼精確到百分之一秒，大括號內的 <code>{\an8}</code> 是特效標籤，這個例子代表把字幕放在畫面頂部。</p>
-<p><strong>適合</strong>：電腦播放、需要特效或多種樣式的字幕。<strong>缺點</strong>：不少電視和手機播放器不支援，或者會忽略特效。</p>
+<p><strong>適合</strong>：電腦播放、需要特效或多種樣式的字幕。<strong>缺點</strong>：不少電視和手機播放器不支援，或者會忽略特效。需要時可以用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a> 轉換。</p>
 
 <h2>VTT：網頁影片的標準格式</h2>
 <p>WebVTT 是網頁 HTML5 影片使用的字幕格式，YouTube 及很多網上課程平台都會使用。寫法與 SRT 相似，但檔案以 <code>WEBVTT</code> 開頭，毫秒前用的是句號，小時部分可以省略。</p>
@@ -65,7 +65,7 @@ Dialogue: 0,0:00:01.00,0:00:03.50,Default,,0,0,0,,{\an8}你好，歡迎收看。
 00:01.000 --&gt; 00:03.500 line:90%
 你好，歡迎收看。</pre>
 <p>VTT 可以在時間碼後面加上位置等設定，例如上面的 <code>line:90%</code>。</p>
-<p><strong>適合</strong>：網頁影片、網上課程。<strong>缺點</strong>：部分電視及舊播放器不支援。</p>
+<p><strong>適合</strong>：網頁影片、網上課程。<strong>缺點</strong>：部分電視及舊播放器不支援。需要時可以用 <a href="/vtt-to-srt/">VTT 轉 SRT 工具</a> 轉換；只想要純文字，可以用 <a href="/srt-to-txt/">SRT 轉 TXT 工具</a>。</p>
 
 <h2>三種格式比較</h2>
 <table>

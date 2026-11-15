@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASS 轉 SRT — 特效字幕轉通用格式，電視都讀到｜ZimuFix</title>
+<meta name="description" content="免費線上 ASS 轉 SRT 工具。把動畫字幕組的 ASS／SSA 特效字幕轉為 SRT，自動移除特效標籤、繪圖及註解行，電視、手機及剪片軟件都能讀取。可批量處理，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/ass-to-srt/">
+<meta property="og:title" content="ASS 轉 SRT：特效字幕轉通用格式">
+<meta property="og:description" content="免費線上 ASS 轉 SRT 工具。把動畫字幕組的 ASS／SSA 特效字幕轉為 SRT，自動移除特效標籤、繪圖及註解行，電視、手機及剪片軟件都能讀取。可批量處理，檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/ass-to-srt/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "ASS 轉 SRT：特效字幕轉通用格式", "url": "https://zimufix.com/ass-to-srt/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "免費線上 ASS 轉 SRT 工具。把動畫字幕組的 ASS／SSA 特效字幕轉為 SRT，自動移除特效標籤、繪圖及註解行，電視、手機及剪片軟件都能讀取。可批量處理，檔案不會上傳。"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ASS 轉 SRT 會保留字幕特效嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。SRT 只支援純文字，字型、顏色、位置及動態特效都會移除，只保留對白和時間。"}}, {"@type": "Question", "name": "為什麼轉換後的句數比原本少？", "acceptedAnswer": {"@type": "Answer", "text": "工具會略過註解行、繪圖指令及空白對白，這些內容不會在畫面上顯示為文字，所以句數會比 ASS 原本的行數少。"}}, {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}}, {"@type": "Question", "name": "轉換後想同時轉成繁體可以嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以先轉為 SRT，再使用簡體字幕轉繁體工具。或者直接把 ASS 檔放入簡轉繁工具，它會保留 ASS 特效並只轉換對白。"}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>ASS 轉 SRT：特效字幕轉通用格式</h1>
+    <p>把動畫字幕組常用的 ASS／SSA 特效字幕轉為 SRT。自動移除特效標籤、繪圖和註解，電視、手機、剪片軟件都能讀取。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="ASS 轉 SRT：特效字幕轉通用格式工具">
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 ASS、SSA，可一次選擇多個檔案，亂碼會自動修復</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".ass,.ssa" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-skip" checked> 略過繪圖指令（特效圖形，不是對白）</label><br><label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及 Windows 記事本較易正確顯示）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <!-- 廣告位 1：工具下方（AdSense 批核後啟用） -->
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps"><li><strong>選擇 ASS 字幕</strong>：把 .ass 或 .ssa 檔案拖放到方框內，可以一次選擇整季。</li><li><strong>檢查預覽</strong>：確認對白和時間碼正確，句數會顯示在檔名旁邊。</li><li><strong>下載 SRT</strong>：檔名保留原本名稱，只改副檔名，方便播放器自動配對影片。</li></ol>
+
+    <h2>轉換時會處理什麼？</h2>
+    <ul>
+      <li><strong>移除特效標籤</strong>：大括號內的 <code>{\an8}</code>、<code>{\fad(200,200)}</code>、<code>{\fn字型}</code> 等全部移除。</li>
+      <li><strong>還原換行</strong>：ASS 的 <code>\N</code> 會轉為正常換行。</li>
+      <li><strong>略過註解行</strong>：以 <code>Comment:</code> 開頭的行不會出現在 SRT。</li>
+      <li><strong>略過繪圖</strong>：用 <code>\p1</code> 繪製的圖形、遮罩不是對白，預設會略過。</li>
+      <li><strong>按時間排序</strong>：ASS 的對白不一定按時間排列，轉換後會重新排序並編號。</li>
+    </ul>
+    <h2>轉換後會失去什麼？</h2>
+    <p>SRT 只能顯示文字，所以 ASS 的字型、顏色、位置、描邊、卡拉 OK 及動態效果都會消失，字幕會以播放器預設樣式顯示在畫面底部。如果同一時間有多句字幕，例如對白加上畫面文字註釋，SRT 會分成多句同時顯示。</p>
+    <p>如果你用電腦播放，而播放器支援 ASS（例如 VLC、PotPlayer、mpv），建議保留原本的 ASS 檔，以享有完整特效；需要在電視、手機或剪片軟件使用時，才轉為 SRT。</p>
+
+    <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>常見問題</h2>
+    <details><summary>ASS 轉 SRT 會保留字幕特效嗎？</summary><p>不會。SRT 只支援純文字，字型、顏色、位置及動態特效都會移除，只保留對白和時間。</p></details><details><summary>為什麼轉換後的句數比原本少？</summary><p>工具會略過註解行、繪圖指令及空白對白，這些內容不會在畫面上顯示為文字，所以句數會比 ASS 原本的行數少。</p></details><details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details><details><summary>轉換後想同時轉成繁體可以嗎？</summary><p>可以先轉為 SRT，再使用簡體字幕轉繁體工具。或者直接把 ASS 檔放入簡轉繁工具，它會保留 ASS 特效並只轉換對白。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid"><a class="tool-card" href="/fix-garbled-subtitles/"><h3>字幕亂碼修復</h3><p>自動偵測編碼，一鍵還原亂碼字幕</p></a><a class="tool-card" href="/srt-to-txt/"><h3>SRT 轉 TXT</h3><p>去除時間軸，只保留對白文字</p></a><a class="tool-card" href="/vtt-to-srt/"><h3>VTT 轉 SRT</h3><p>網上影片字幕轉成通用格式</p></a></div>
+
+    <h2>延伸閱讀</h2>
+    <ul><li><a href="/guides/srt-ass-vtt-difference/">SRT、ASS、VTT 字幕格式有什麼分別？</a></li><li><a href="/guides/tv-subtitles-garbled/">電視、USB 播放字幕亂碼或不顯示的解決方法</a></li></ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script>
+window.ZIMU_FMT_CONFIG = {"output": "srt", "accept": ["ass", "ssa"], "zipName": "字幕轉SRT.zip"};
+</script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-format.js"></script>
+<script src="/assets/format-convert-ui.js"></script>
+</body>
+</html>

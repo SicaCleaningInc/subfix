@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VTT 轉 SRT — WebVTT 字幕線上轉換｜ZimuFix</title>
+<meta name="description" content="免費線上 VTT 轉 SRT 工具。把 YouTube、網上課程的 WebVTT 字幕轉為通用 SRT 格式，自動移除位置設定及講者、顏色標籤，電視及播放器都能讀取。可批量處理，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/vtt-to-srt/">
+<meta property="og:title" content="VTT 轉 SRT：WebVTT 字幕轉換">
+<meta property="og:description" content="免費線上 VTT 轉 SRT 工具。把 YouTube、網上課程的 WebVTT 字幕轉為通用 SRT 格式，自動移除位置設定及講者、顏色標籤，電視及播放器都能讀取。可批量處理，檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/vtt-to-srt/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "VTT 轉 SRT：WebVTT 字幕轉換", "url": "https://zimufix.com/vtt-to-srt/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "免費線上 VTT 轉 SRT 工具。把 YouTube、網上課程的 WebVTT 字幕轉為通用 SRT 格式，自動移除位置設定及講者、顏色標籤，電視及播放器都能讀取。可批量處理，檔案不會上傳。"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "為什麼電視讀不到 VTT 字幕？", "acceptedAnswer": {"@type": "Answer", "text": "不少電視和舊播放器只支援 SRT。VTT 的標頭、時間碼寫法和額外標籤都可能令它們無法辨認，轉為 SRT 後通常就能正常顯示。"}}, {"@type": "Question", "name": "轉換後字幕的位置設定會保留嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。SRT 不支援 VTT 的位置設定，轉換時會移除，字幕會顯示在播放器預設位置，通常是畫面底部。"}}, {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}}, {"@type": "Question", "name": "可以把 SRT 轉回 VTT 嗎？", "acceptedAnswer": {"@type": "Answer", "text": "目前本工具只支援轉為 SRT。由於 SRT 的兼容性最高，一般情況下建議使用 SRT。"}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>VTT 轉 SRT：WebVTT 字幕轉換</h1>
+    <p>把 YouTube、網上課程下載的 WebVTT 字幕轉為通用的 SRT 格式，電視、播放器、剪片軟件都能讀取。可批量處理。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="VTT 轉 SRT：WebVTT 字幕轉換工具">
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 VTT、SBV，可一次選擇多個檔案，亂碼會自動修復</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".vtt,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及 Windows 記事本較易正確顯示）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <!-- 廣告位 1：工具下方（AdSense 批核後啟用） -->
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps"><li><strong>選擇 VTT 字幕</strong>：把 .vtt 檔案拖放到方框內，YouTube 舊式的 .sbv 字幕也可以。</li><li><strong>檢查預覽</strong>：確認轉換後的時間碼和對白正確。</li><li><strong>下載 SRT</strong>：檔名會保留原本名稱，只把副檔名改為 .srt。整批字幕可以打包成 ZIP。</li></ol>
+
+    <h2>VTT 和 SRT 有什麼不同？</h2>
+    <p>兩者寫法相似，但有幾個關鍵分別，令不少播放器讀不到 VTT：</p>
+    <table>
+      <tr><th></th><th>VTT</th><th>SRT</th></tr>
+      <tr><td>檔案開頭</td><td>必須有 <code>WEBVTT</code></td><td>沒有標頭</td></tr>
+      <tr><td>序號</td><td>可有可無</td><td>每句都有</td></tr>
+      <tr><td>毫秒分隔</td><td>句號 <code>00:01.000</code></td><td>逗號 <code>00:00:01,000</code></td></tr>
+      <tr><td>小時</td><td>可以省略</td><td>必須寫出</td></tr>
+      <tr><td>額外設定</td><td>位置、講者、顏色標籤</td><td>只有簡單格式</td></tr>
+    </table>
+    <h2>轉換時會處理什麼？</h2>
+    <ul>
+      <li>移除 <code>WEBVTT</code> 標頭，以及 <code>NOTE</code>、<code>STYLE</code> 等區塊。</li>
+      <li>移除時間碼後的位置設定，例如 <code>align:start position:10%</code>。</li>
+      <li>移除講者 <code>&lt;v 名字&gt;</code>、顏色 <code>&lt;c.yellow&gt;</code> 及逐字時間標籤。</li>
+      <li>把 <code>&amp;amp;</code> 等 HTML 符號還原為正常字元。</li>
+      <li>補上序號，並把時間碼轉為 SRT 格式。</li>
+    </ul>
+
+    <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>常見問題</h2>
+    <details><summary>為什麼電視讀不到 VTT 字幕？</summary><p>不少電視和舊播放器只支援 SRT。VTT 的標頭、時間碼寫法和額外標籤都可能令它們無法辨認，轉為 SRT 後通常就能正常顯示。</p></details><details><summary>轉換後字幕的位置設定會保留嗎？</summary><p>不會。SRT 不支援 VTT 的位置設定，轉換時會移除，字幕會顯示在播放器預設位置，通常是畫面底部。</p></details><details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details><details><summary>可以把 SRT 轉回 VTT 嗎？</summary><p>目前本工具只支援轉為 SRT。由於 SRT 的兼容性最高，一般情況下建議使用 SRT。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid"><a class="tool-card" href="/fix-garbled-subtitles/"><h3>字幕亂碼修復</h3><p>自動偵測編碼，一鍵還原亂碼字幕</p></a><a class="tool-card" href="/srt-to-txt/"><h3>SRT 轉 TXT</h3><p>去除時間軸，只保留對白文字</p></a><a class="tool-card" href="/ass-to-srt/"><h3>ASS 轉 SRT</h3><p>移除特效，兼容所有播放器</p></a></div>
+
+    <h2>延伸閱讀</h2>
+    <ul><li><a href="/guides/srt-ass-vtt-difference/">SRT、ASS、VTT 字幕格式有什麼分別？</a></li><li><a href="/guides/tv-subtitles-garbled/">電視、USB 播放字幕亂碼或不顯示的解決方法</a></li></ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script>
+window.ZIMU_FMT_CONFIG = {"output": "srt", "accept": ["vtt", "sbv"], "zipName": "字幕轉SRT.zip"};
+</script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-format.js"></script>
+<script src="/assets/format-convert-ui.js"></script>
+</body>
+</html>
