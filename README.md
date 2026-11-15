@@ -1,4 +1,4 @@
-# SubFix 字幕工具
+# ZimuFix 字幕工具
 
 純靜態網站，冇 build 步驟，可以直接喺 GitHub 網頁介面改程式，Cloudflare Pages 會自動部署。
 
@@ -20,13 +20,9 @@ docs/SITE_PLAN.md              網站規劃
 
 ## 上線步驟
 
-### 1. 換域名
+### 1. 域名
 
-買咗域名之後，用 GitHub 或者文字編輯器嘅「搜尋及取代」功能，將所有 `YOUR-DOMAIN.com` 換成你嘅域名。會出現喺：
-
-- 每個 `index.html` 嘅 canonical 同 og:url
-- `robots.txt`、`sitemap.xml`
-- `about/`、`privacy/` 嘅聯絡電郵
+已經設定為 `zimufix.com`。如果將來換域名，用「搜尋及取代」將所有 `zimufix.com` 換走就得。
 
 ### 2. 部署去 Cloudflare Pages
 

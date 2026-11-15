@@ -1,8 +1,8 @@
 /* 字幕亂碼修復：介面邏輯 */
 (function () {
   'use strict';
-  var E = window.SubFixEncoding;
-  var Z = window.SubFixZip;
+  var E = window.ZimuFixEncoding;
+  var Z = window.ZimuFixZip;
   var MAX_SIZE = 20 * 1024 * 1024; // 20MB
   var ACCEPT = /\.(srt|ass|ssa|vtt|sub|txt|lrc|smi|sbv)$/i;
 

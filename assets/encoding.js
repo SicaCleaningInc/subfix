@@ -1,5 +1,5 @@
 /*
- * SubFix — 字幕編碼偵測與轉換（純瀏覽器端，檔案唔會上傳）
+ * ZimuFix — 字幕編碼偵測與轉換（純瀏覽器端，檔案唔會上傳）
  * 可同時喺瀏覽器同 Node.js 使用（方便測試）
  */
 (function (root) {
@@ -152,5 +152,5 @@
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
-  else root.SubFixEncoding = api;
+  else root.ZimuFixEncoding = api;
 })(this);

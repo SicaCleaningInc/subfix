@@ -96,5 +96,5 @@
 
   var api = { makeZip: makeZip, crc32: crc32 };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
-  else root.SubFixZip = api;
+  else root.ZimuFixZip = api;
 })(this);

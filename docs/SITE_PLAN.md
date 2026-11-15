@@ -1,4 +1,4 @@
-# SubFix 字幕工具站：網站規劃
+# ZimuFix 字幕工具站：網站規劃
 
 ## 1. 定位
 
@@ -7,19 +7,12 @@
 - **第一階段語言**：繁體中文（頁面內容用書面語，方便港台兩邊用戶搜尋）
 - **第二階段**：英文版（`/en/`），主打 CJK 字幕編碼處理
 
-## 2. 域名建議
+## 2. 域名
 
-揀域名原則：短、易記、同字幕有關、`.com` 最好。
-
-| 候選 | 備註 |
-|---|---|
-| subfix.com / subfix.io | 品牌名，最理想，但大機會已被註冊 |
-| subfixer.com | 後備 |
-| zimufix.com | 「字幕」拼音，中文用戶易明 |
-| zimutool.com | 同上 |
-
-- 喺 **Cloudflare Registrar** 買，價錢係成本價，同 Cloudflare Pages 一齊管理最方便
-- 買之前先用 Google 搜一次個名，確保冇同名大品牌，避免撞名
+- **已購買：`zimufix.com`**（Cloudflare Registrar，每年 US$11.17，已設自動續期）
+- 網站名：**ZimuFix 字幕工具**
+- Cloudflare Pages 專案名：`subfix`（後備網址 `subfix-3as.pages.dev`）
+- GitHub repo：`SicaCleaningInc/subfix`
 
 ## 3. 網址結構
 
@@ -51,7 +44,7 @@
 
 | 區塊 | 內容 | 目的 |
 |---|---|---|
-| `<title>` | 「工具名 — 一句賣點｜SubFix」，60 字元內 | 搜尋結果標題 |
+| `<title>` | 「工具名 — 一句賣點｜ZimuFix」，60 字元內 | 搜尋結果標題 |
 | `<meta description>` | 120–160 字元，包含主關鍵字同「免費」「不會上傳」 | 搜尋結果描述 |
 | 結構化資料 | WebApplication + FAQPage（JSON-LD） | 有機會喺搜尋結果顯示常見問題 |
 | H1 | 主關鍵字，例如「字幕亂碼修復」 | SEO 核心 |
