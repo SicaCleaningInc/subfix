@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>簡體字幕轉繁體 — SRT、ASS 線上簡轉繁，支援香港及台灣用字｜ZimuFix</title>
+<meta name="description" content="免費線上簡體字幕轉繁體工具。支援 SRT、ASS、VTT，可選香港繁體或台灣正體及台灣用詞，自動修復亂碼，保留時間軸及特效。可批量處理，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/simplified-to-traditional-subtitles/">
+<meta property="og:title" content="簡體字幕轉繁體 — 支援香港及台灣用字">
+<meta property="og:description" content="SRT、ASS、VTT 簡轉繁，保留時間軸及特效，檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/simplified-to-traditional-subtitles/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "簡體字幕轉繁體",
+  "url": "https://zimufix.com/simplified-to-traditional-subtitles/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "將簡體中文字幕轉換為繁體中文，支援香港繁體、台灣正體及台灣用詞。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "香港繁體和台灣正體有什麼分別？",
+     "acceptedAnswer": {"@type": "Answer", "text": "兩者部分字形不同，例如香港多用「裏」「着」，台灣多用「裡」「著」。台灣選項還可以同時轉換用詞，例如「软件」轉為「軟體」、「视频」轉為「影片」。"}},
+    {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "不會。所有轉換都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}},
+    {"@type": "Question", "name": "ASS 字幕的字型和特效會被改動嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "不會。工具只轉換對白文字，樣式設定、字型名稱及大括號內的特效標籤都會保持原樣，避免播放器找不到字型。"}},
+    {"@type": "Question", "name": "字幕本身是亂碼可以轉換嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "可以。工具會先自動偵測 GBK、Big5、UTF-8 等編碼，再進行繁簡轉換，輸出的檔案統一為 UTF-8。"}},
+    {"@type": "Question", "name": "轉換結果會有錯字嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "工具使用開源詞庫 OpenCC，會按詞語判斷一簡對多繁的情況，例如「头发」轉為「頭髮」、「发现」轉為「發現」，準確度很高，但少數特殊用法仍建議人手檢查。"}}
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>簡體字幕轉繁體</h1>
+    <p>SRT、ASS、VTT 簡轉繁，可選香港繁體或台灣正體。自動修復亂碼，保留時間軸及特效，可批量處理。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="簡體字幕轉繁體工具">
+    <div class="variants" id="variants"></div>
+
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放簡體字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 SRT、ASS、SSA、VTT、SUB、SMI、TXT，可一次選擇多個檔案</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.ass,.ssa,.vtt,.sub,.txt,.lrc,.smi,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及電視較易正確顯示）</label><br>
+      <label><input type="checkbox" id="opt-tag"> 檔名加上語言標記（例如 movie.zh-Hant.srt，方便播放器分辨字幕語言）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+
+    <div class="text-mode">
+      <h2>或者直接貼上文字</h2>
+      <div class="text-grid">
+        <textarea id="text-in" placeholder="在這裡貼上簡體中文…"></textarea>
+        <textarea id="text-out" readonly placeholder="繁體結果會顯示在這裡"></textarea>
+      </div>
+      <div class="text-actions"><button type="button" class="btn btn-primary" id="copy-out">複製結果</button></div>
+    </div>
+  </section>
+
+  <!-- 廣告位 1：工具下方（AdSense 批核後啟用） -->
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps">
+      <li><strong>選擇轉換方式</strong>：香港觀眾選「香港繁體」；台灣觀眾可選「台灣正體＋台灣用詞」，連詞語也一併轉換。</li>
+      <li><strong>選擇字幕檔案</strong>：把簡體字幕拖放到方框內。就算字幕本身是亂碼，工具也會先自動修復編碼。</li>
+      <li><strong>對照預覽並下載</strong>：左右對照轉換前後的對白，確認無誤後下載。整季字幕可以一次打包成 ZIP。</li>
+    </ol>
+
+    <h2>香港繁體、台灣正體有什麼分別？</h2>
+    <p>繁體中文在香港和台灣有不少差異。第一是<strong>字形</strong>，例如香港多寫「裏面」「着急」，台灣多寫「裡面」「著急」。第二是<strong>用詞</strong>，同一樣東西在兩地有不同叫法。</p>
+    <p>「香港繁體」只轉換字形，保留原本的用詞；「台灣正體＋台灣用詞」則會同時把大陸用語轉為台灣慣用說法：</p>
+    <table>
+      <tr><th>簡體原文</th><th>香港繁體</th><th>台灣正體＋台灣用詞</th></tr>
+      <tr><td>软件</td><td>軟件</td><td>軟體</td></tr>
+      <tr><td>视频</td><td>視頻</td><td>影片</td></tr>
+      <tr><td>信息</td><td>信息</td><td>資訊</td></tr>
+      <tr><td>打印机</td><td>打印機</td><td>印表機</td></tr>
+      <tr><td>鼠标</td><td>鼠標</td><td>滑鼠</td></tr>
+      <tr><td>出租车</td><td>出租車</td><td>計程車</td></tr>
+      <tr><td>里面</td><td>裏面</td><td>裡面</td></tr>
+      <tr><td>着急</td><td>着急</td><td>著急</td></tr>
+    </table>
+
+    <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>為什麼不能逐字轉換？</h2>
+    <p>簡體字裏有不少「一對多」的情況：一個簡體字對應多個繁體字，要看上下文才知道用哪一個。例如「发」在「头发」中是「髮」，在「发现」中是「發」；「干」可以是「乾淨」的「乾」、「幹活」的「幹」，也可以保留為「干涉」的「干」。</p>
+    <p>本工具使用開源詞庫 OpenCC，會先按詞語比對，再處理單字，因此能正確分辨大部分一對多的情況，效果遠比逐字對照表準確。</p>
+
+    <h2>ASS 特效字幕會被破壞嗎？</h2>
+    <p>不會。ASS 字幕除了對白，還包含樣式設定、字型名稱和特效標籤。如果連字型名稱也一併轉換，例如把「微软雅黑」變成「微軟雅黑」，播放器就會找不到字型。本工具只轉換每句對白的文字部分，其餘設定全部保持原樣。</p>
+
+    <h2>常見問題</h2>
+    <details><summary>香港繁體和台灣正體有什麼分別？</summary><p>兩者部分字形不同，例如香港多用「裏」「着」，台灣多用「裡」「著」。台灣選項還可以同時轉換用詞，例如「软件」轉為「軟體」、「视频」轉為「影片」。</p></details>
+    <details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有轉換都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details>
+    <details><summary>ASS 字幕的字型和特效會被改動嗎？</summary><p>不會。工具只轉換對白文字，樣式設定、字型名稱及大括號內的特效標籤都會保持原樣。</p></details>
+    <details><summary>字幕本身是亂碼可以轉換嗎？</summary><p>可以。工具會先自動偵測 GBK、Big5、UTF-8 等編碼，再進行繁簡轉換，輸出的檔案統一為 UTF-8。如果偵測錯誤，可以在檔案下方的選單手動選擇編碼。</p></details>
+    <details><summary>轉換結果會有錯字嗎？</summary><p>工具會按詞語判斷一簡對多繁的情況，準確度很高，但人名、地名或網絡用語等特殊用法，仍建議看一次預覽。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fix-garbled-subtitles/"><h3>字幕亂碼修復</h3><p>自動偵測編碼，一鍵還原亂碼字幕</p></a>
+      <a class="tool-card" href="/traditional-to-simplified-subtitles/"><h3>繁體字幕轉簡體</h3><p>台灣用詞可一併轉回大陸用詞</p></a>
+      <div class="tool-card soon"><h3>字幕時間軸調整<span class="tag-soon">即將推出</span></h3><p>字幕太快或太慢，一鍵對齊</p></div>
+    </div>
+    <p class="credit">繁簡轉換詞庫來自開源項目 <a href="https://github.com/BYVoid/OpenCC" rel="nofollow">OpenCC</a>（Apache 2.0）及 <a href="https://github.com/nk2028/opencc-js" rel="nofollow">opencc-js</a>（MIT），<a href="/assets/vendor/OPENCC-LICENSES.txt">授權條款</a>。</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script>
+window.ZIMU_ZH_CONFIG = {
+  langTag: 'zh-Hant',
+  zipName: '繁體字幕.zip',
+  variants: [
+    { label: '香港繁體', hint: '香港字形，例如「裏」「着」，用詞不變', from: 'cn', to: 'hk' },
+    { label: '台灣正體＋台灣用詞', hint: '例如 软件→軟體、视频→影片', from: 'cn', to: 'twp' },
+    { label: '台灣正體（只轉字形）', hint: '台灣字形，例如「裡」「著」，用詞不變', from: 'cn', to: 'tw' }
+  ]
+};
+</script>
+<script src="/assets/vendor/opencc-cn2t.js"></script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-zh.js"></script>
+<script src="/assets/zh-convert-ui.js"></script>
+</body>
+</html>

@@ -21,8 +21,8 @@
 ```
 /                                   首頁（所有工具列表）
 /fix-garbled-subtitles/             字幕亂碼修復         ✅ 已完成
-/simplified-to-traditional-subtitles/  簡體字幕轉繁體     第 2 個
-/traditional-to-simplified-subtitles/  繁體字幕轉簡體     第 3 個
+/simplified-to-traditional-subtitles/  簡體字幕轉繁體     ✅ 已完成
+/traditional-to-simplified-subtitles/  繁體字幕轉簡體     ✅ 已完成
 /subtitle-time-shift/               字幕時間軸調整       第 4 個
 /srt-to-txt/                        SRT 轉 TXT           第 5 個
 /vtt-to-srt/                        VTT 轉 SRT           第 6 個

@@ -50,9 +50,10 @@ Cloudflare Pages 專案 → Custom domains → Set up a custom domain → 輸入
 
 ### 5. 申請 AdSense（有 15–20 頁內容之後）
 
+AdSense 程式碼（ca-pub-8731061578516772）同 `ads.txt` 已經加好。新增頁面時，記得將 `<head>` 入面嗰段 AdSense `<script>` 一齊複製。
+
 批核後：
-1. 將 AdSense 提供嘅 `<script>` 放入每頁 `<head>`
-2. 將廣告碼放入 `<div class="ad-slot">` 入面
+1. 將廣告單元碼放入 `<div class="ad-slot">` 入面
 3. 喺 `assets/style.css` 將 `.ad-slot { display: none; ...}` 改成 `display: block`
 
 ## 本機測試
@@ -74,5 +75,3 @@ python3 -m http.server 8000
 3. 寫新嘅 `assets/xxx.js`
 4. 喺首頁將對應嘅「即將推出」卡片改成連結
 5. 喺 `sitemap.xml` 加入新網址
-
-

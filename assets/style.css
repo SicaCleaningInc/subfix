@@ -94,3 +94,21 @@ summary { font-weight: 600; cursor: pointer; }
   .hero h1 { font-size: 24px; }
   .nav a { margin-left: 12px; font-size: 14px; }
 }
+
+/* 繁簡轉換 */
+.variants { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.variant { display: flex; gap: 8px; align-items: flex-start; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; cursor: pointer; }
+.variant:has(input:checked) { border-color: var(--brand); background: #f0faf8; }
+.variant input { margin-top: 6px; }
+.variant span { display: flex; flex-direction: column; line-height: 1.5; }
+.variant small { color: var(--muted); font-size: 13px; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.text-mode { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 18px; }
+.text-mode h2 { font-size: 17px; margin: 0 0 10px; }
+.text-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.text-grid textarea { width: 100%; min-height: 180px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 15px; font-family: inherit; resize: vertical; background: #fff; }
+.text-grid textarea[readonly] { background: #fafaf8; }
+.text-actions { margin-top: 8px; text-align: right; }
+@media (max-width: 600px) { .compare, .text-grid { grid-template-columns: 1fr; } }
+
+.credit { color: var(--muted); font-size: 13px; margin-top: 30px; }

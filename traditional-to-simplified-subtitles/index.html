@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>繁體字幕轉簡體 — SRT、ASS 線上繁轉簡（繁体字幕转简体）｜ZimuFix</title>
+<meta name="description" content="免費線上繁體字幕轉簡體工具（繁体字幕转简体）。支援 SRT、ASS、VTT，可將台灣用詞一併轉為大陸用詞，自動修復亂碼，保留時間軸及特效。檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/traditional-to-simplified-subtitles/">
+<meta property="og:title" content="繁體字幕轉簡體 — SRT、ASS 線上繁轉簡">
+<meta property="og:description" content="繁转简，保留时间轴及特效，档案不会上传。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/traditional-to-simplified-subtitles/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "繁體字幕轉簡體",
+  "url": "https://zimufix.com/traditional-to-simplified-subtitles/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "將繁體中文字幕轉換為簡體中文，可將台灣用詞一併轉為大陸用詞。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "「只轉字形」和「台灣用詞轉大陸用詞」有什麼分別？",
+     "acceptedAnswer": {"@type": "Answer", "text": "「只轉字形」只把繁體字變成簡體字，例如「軟體」變成「软体」。「台灣用詞轉大陸用詞」會同時轉換說法，例如「軟體」變成「软件」、「影片」變成「视频」。"}},
+    {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "不會。所有轉換都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}},
+    {"@type": "Question", "name": "ASS 字幕的字型和特效會被改動嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "不會。工具只轉換對白文字，樣式設定、字型名稱及大括號內的特效標籤都會保持原樣。"}},
+    {"@type": "Question", "name": "Big5 編碼的舊字幕可以轉換嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "可以。工具會自動偵測 Big5、GBK、UTF-8 等編碼，轉換後統一輸出為 UTF-8。"}}
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>繁體字幕轉簡體</h1>
+    <p>SRT、ASS、VTT 繁轉簡（繁体字幕转简体），台灣用詞可一併轉為大陸用詞。自動修復 Big5 亂碼，保留時間軸及特效。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="繁體字幕轉簡體工具">
+    <div class="variants" id="variants"></div>
+
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放繁體字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 SRT、ASS、SSA、VTT、SUB、SMI、TXT，可一次選擇多個檔案</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.ass,.ssa,.vtt,.sub,.txt,.lrc,.smi,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及電視較易正確顯示）</label><br>
+      <label><input type="checkbox" id="opt-tag"> 檔名加上語言標記（例如 movie.zh-Hans.srt，方便播放器分辨字幕語言）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+
+    <div class="text-mode">
+      <h2>或者直接貼上文字</h2>
+      <div class="text-grid">
+        <textarea id="text-in" placeholder="在這裡貼上繁體中文…"></textarea>
+        <textarea id="text-out" readonly placeholder="简体结果会显示在这里"></textarea>
+      </div>
+      <div class="text-actions"><button type="button" class="btn btn-primary" id="copy-out">複製結果</button></div>
+    </div>
+  </section>
+
+  <!-- 廣告位 1：工具下方（AdSense 批核後啟用） -->
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps">
+      <li><strong>選擇轉換方式</strong>：香港繁體字幕選「只轉字形」；台灣字幕如果要給大陸觀眾看，可選「台灣用詞轉大陸用詞」。</li>
+      <li><strong>選擇字幕檔案</strong>：把繁體字幕拖放到方框內。Big5 編碼的舊字幕也會自動處理。</li>
+      <li><strong>對照預覽並下載</strong>：確認轉換前後的對白無誤後下載，整季字幕可以一次打包成 ZIP。</li>
+    </ol>
+
+    <h2>兩種轉換方式的分別</h2>
+    <p>以「這個軟體的影片很好看」為例：</p>
+    <table>
+      <tr><th>轉換方式</th><th>結果</th></tr>
+      <tr><td>只轉字形</td><td>这个软体的影片很好看</td></tr>
+      <tr><td>台灣用詞轉大陸用詞</td><td>这个软件的视频很好看</td></tr>
+    </table>
+    <p>「台灣用詞轉大陸用詞」還會處理其他常見詞語，例如「資訊」轉為「信息」、「印表機」轉為「打印机」、「滑鼠」轉為「鼠标」、「計程車」轉為「出租车」、「記憶體」轉為「内存」。</p>
+
+    <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>ASS 特效字幕會被破壞嗎？</h2>
+    <p>不會。工具只轉換每句對白的文字，樣式設定、字型名稱及大括號內的特效標籤都保持原樣，播放效果與原本一樣。</p>
+
+    <h2>常見問題</h2>
+    <details><summary>「只轉字形」和「台灣用詞轉大陸用詞」有什麼分別？</summary><p>「只轉字形」只把繁體字變成簡體字，例如「軟體」變成「软体」。「台灣用詞轉大陸用詞」會同時轉換說法，例如「軟體」變成「软件」、「影片」變成「视频」。</p></details>
+    <details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有轉換都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details>
+    <details><summary>ASS 字幕的字型和特效會被改動嗎？</summary><p>不會。工具只轉換對白文字，其餘設定保持原樣。</p></details>
+    <details><summary>Big5 編碼的舊字幕可以轉換嗎？</summary><p>可以。工具會自動偵測 Big5、GBK、UTF-8 等編碼，轉換後統一輸出為 UTF-8。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/simplified-to-traditional-subtitles/"><h3>簡體字幕轉繁體</h3><p>支援香港及台灣用字</p></a>
+      <a class="tool-card" href="/fix-garbled-subtitles/"><h3>字幕亂碼修復</h3><p>自動偵測編碼，一鍵還原亂碼字幕</p></a>
+      <div class="tool-card soon"><h3>字幕時間軸調整<span class="tag-soon">即將推出</span></h3><p>字幕太快或太慢，一鍵對齊</p></div>
+    </div>
+    <p class="credit">繁簡轉換詞庫來自開源項目 <a href="https://github.com/BYVoid/OpenCC" rel="nofollow">OpenCC</a>（Apache 2.0）及 <a href="https://github.com/nk2028/opencc-js" rel="nofollow">opencc-js</a>（MIT），<a href="/assets/vendor/OPENCC-LICENSES.txt">授權條款</a>。</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script>
+window.ZIMU_ZH_CONFIG = {
+  langTag: 'zh-Hans',
+  zipName: '简体字幕.zip',
+  variants: [
+    { label: '只轉字形', hint: '適合香港繁體字幕，用詞不變', from: 'hk', to: 'cn' },
+    { label: '台灣用詞轉大陸用詞', hint: '例如 軟體→软件、影片→视频', from: 'twp', to: 'cn' }
+  ]
+};
+</script>
+<script src="/assets/vendor/opencc-t2cn.js"></script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-zh.js"></script>
+<script src="/assets/zh-convert-ui.js"></script>
+</body>
+</html>
