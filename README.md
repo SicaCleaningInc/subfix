@@ -74,3 +74,5 @@ python3 -m http.server 8000
 3. 寫新嘅 `assets/xxx.js`
 4. 喺首頁將對應嘅「即將推出」卡片改成連結
 5. 喺 `sitemap.xml` 加入新網址
+
+
