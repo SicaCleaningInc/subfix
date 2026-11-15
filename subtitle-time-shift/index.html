@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字幕時間軸調整 — 字幕太快或太慢？線上一鍵對齊｜ZimuFix</title>
+<meta name="description" content="免費線上字幕時間軸調整工具。字幕比畫面快或慢，可整體提前或延後；越來越不同步可用幀率轉換（25 ↔ 23.976）修正。支援 SRT、ASS、VTT、LRC，可批量處理，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/subtitle-time-shift/">
+<meta property="og:title" content="字幕時間軸調整 — 線上一鍵對齊">
+<meta property="og:description" content="字幕太快或太慢，整體提前或延後，支援幀率轉換。檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/subtitle-time-shift/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "字幕時間軸調整",
+  "url": "https://zimufix.com/subtitle-time-shift/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "將字幕整體提前或延後，或進行幀率轉換，令字幕與影片同步。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "字幕比畫面快應該填正數還是負數？",
+     "acceptedAnswer": {"@type": "Answer", "text": "字幕比對白早出現，代表字幕太快，需要延後，請填正數；字幕比對白遲出現，代表字幕太慢，需要提前，請填負數。"}},
+    {"@type": "Question", "name": "字幕越來越不同步怎麼辦？",
+     "acceptedAnswer": {"@type": "Answer", "text": "如果開頭同步但越到後面差距越大，通常是字幕和影片的幀率不同，例如字幕按 25 fps 製作，影片卻是 23.976 fps。請使用幀率轉換選項修正。"}},
+    {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}},
+    {"@type": "Question", "name": "支援哪些字幕格式？",
+     "acceptedAnswer": {"@type": "Answer", "text": "支援 SRT、VTT、ASS、SSA、SBV、LRC 及 SMI。以影格計算時間的 MicroDVD SUB 格式暫不支援。"}}
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>字幕時間軸調整</h1>
+    <p>字幕比畫面快或慢？一鍵整體提前或延後。越來越不同步，可用幀率轉換修正。支援 SRT、ASS、VTT、LRC，可批量處理。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="字幕時間軸調整工具">
+    <div class="shift-controls">
+      <div class="ctl">
+        <label for="offset">整體調整（秒）</label>
+        <input type="number" id="offset" value="0" step="0.1" inputmode="decimal">
+        <div class="quick">
+          <button type="button" class="btn" data-delta="-1">−1 秒</button>
+          <button type="button" class="btn" data-delta="-0.1">−0.1</button>
+          <button type="button" class="btn" data-delta="0.1">+0.1</button>
+          <button type="button" class="btn" data-delta="1">+1 秒</button>
+          <button type="button" class="btn btn-ghost" id="reset-offset">重設</button>
+        </div>
+        <p class="hint">字幕太快（比對白早出現）→ 填<strong>正數</strong>延後；字幕太慢 → 填<strong>負數</strong>提前。</p>
+      </div>
+      <div class="ctl">
+        <label for="fps">幀率轉換（越來越不同步時使用）</label>
+        <select id="fps">
+          <option value="1">不轉換</option>
+          <option value="25/23.976">字幕 25 fps → 影片 23.976 fps（字幕越來越早）</option>
+          <option value="23.976/25">字幕 23.976 fps → 影片 25 fps（字幕越來越遲）</option>
+          <option value="25/24">字幕 25 fps → 影片 24 fps（字幕越來越早）</option>
+          <option value="24/25">字幕 24 fps → 影片 25 fps（字幕越來越遲）</option>
+          <option value="24/23.976">字幕 24 fps → 影片 23.976 fps</option>
+          <option value="23.976/24">字幕 23.976 fps → 影片 24 fps</option>
+        </select>
+        <p class="hint">開頭同步、後面差距越來越大，通常是幀率不同。可以先轉換幀率，再用左邊微調。</p>
+      </div>
+    </div>
+    <p id="summary"></p>
+
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 SRT、VTT、ASS、SSA、SBV、LRC、SMI，可一次選擇多個檔案</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.vtt,.ass,.ssa,.sbv,.lrc,.smi" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及電視較易正確顯示）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <!-- 廣告位 1：工具下方（AdSense 批核後啟用） -->
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps">
+      <li><strong>找出相差多少秒</strong>：在播放器找一句明顯的對白，記下人物開口的時間和字幕出現的時間，計算兩者相差多少。</li>
+      <li><strong>輸入調整秒數</strong>：字幕太快填正數，太慢填負數。設定會即時套用到預覽，可以對照調整前後的時間碼。</li>
+      <li><strong>下載</strong>：檔名維持不變，直接覆蓋舊檔即可。整季字幕可以一次調整，打包成 ZIP 下載。</li>
+    </ol>
+
+    <h2>字幕不同步的兩種情況</h2>
+    <h3>一、整套字幕快或慢同樣的秒數</h3>
+    <p>這是最常見的情況。原因通常是字幕所配合的影片版本不同，例如片頭多了或少了幾秒片商標誌、廣告，或者影片經過剪輯。由於整套字幕的差距一致，只要輸入秒數整體提前或延後就能解決。</p>
+    <h3>二、開頭同步，越到後面差距越大</h3>
+    <p>這種情況通常是<strong>幀率不同</strong>。電影一般以每秒 24 格（或 23.976 格）拍攝，但歐洲 PAL 制式的影片會加速至每秒 25 格播放，整部片因此短了約 4%。如果字幕按 25 fps 版本製作，配在 23.976 fps 的影片上，字幕就會越來越早出現；反之則越來越遲。</p>
+    <p>遇到這種情況，請先在「幀率轉換」選擇對應的組合，再按需要用秒數微調。</p>
+    <table>
+      <tr><th>症狀</th><th>建議設定</th></tr>
+      <tr><td>整套字幕都早了 2 秒</td><td>整體調整填 <code>2</code></td></tr>
+      <tr><td>整套字幕都遲了 1.5 秒</td><td>整體調整填 <code>-1.5</code></td></tr>
+      <tr><td>開頭同步，片尾字幕早了幾分鐘</td><td>幀率轉換選「字幕 25 fps → 影片 23.976 fps」</td></tr>
+      <tr><td>開頭同步，片尾字幕遲了幾分鐘</td><td>幀率轉換選「字幕 23.976 fps → 影片 25 fps」</td></tr>
+    </table>
+
+    <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>不想修改檔案？可以在播放器臨時調整</h2>
+    <p>如果只是看一次，也可以直接在播放器調整字幕延遲。以 VLC 為例，播放時按 <code>G</code> 或 <code>H</code> 鍵，每按一次會把字幕提前或延後 50 毫秒。不過這個設定通常不會保存，下次播放又要重新調整；用本工具修改檔案則可以一勞永逸。</p>
+
+    <h2>常見問題</h2>
+    <details><summary>字幕比畫面快應該填正數還是負數？</summary><p>字幕比對白早出現，代表字幕太快，需要延後，請填正數；字幕比對白遲出現，代表字幕太慢，需要提前，請填負數。</p></details>
+    <details><summary>字幕越來越不同步怎麼辦？</summary><p>如果開頭同步但越到後面差距越大，通常是幀率不同。請使用幀率轉換選項修正，再按需要微調秒數。</p></details>
+    <details><summary>提前之後，開頭的字幕會變成負數嗎？</summary><p>不會。時間碼最小為 0，提前後早於影片開頭的字幕會從 0 秒開始。</p></details>
+    <details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details>
+    <details><summary>支援哪些字幕格式？</summary><p>支援 SRT、VTT、ASS、SSA、SBV、LRC 及 SMI。以影格計算時間的 MicroDVD SUB 格式暫不支援。字幕如果有亂碼，會同時自動修復，輸出統一為 UTF-8。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fix-garbled-subtitles/"><h3>字幕亂碼修復</h3><p>自動偵測編碼，一鍵還原亂碼字幕</p></a>
+      <a class="tool-card" href="/simplified-to-traditional-subtitles/"><h3>簡體字幕轉繁體</h3><p>支援香港及台灣用字</p></a>
+      <a class="tool-card" href="/traditional-to-simplified-subtitles/"><h3>繁體字幕轉簡體</h3><p>台灣用詞可一併轉回大陸用詞</p></a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-time.js"></script>
+<script src="/assets/time-shift-ui.js"></script>
+</body>
+</html>

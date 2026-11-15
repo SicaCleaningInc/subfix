@@ -112,3 +112,17 @@ summary { font-weight: 600; cursor: pointer; }
 @media (max-width: 600px) { .compare, .text-grid { grid-template-columns: 1fr; } }
 
 .credit { color: var(--muted); font-size: 13px; margin-top: 30px; }
+
+/* 時間軸調整 */
+.shift-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.shift-controls .ctl { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.shift-controls .ctl > label { font-weight: 600; display: block; margin-bottom: 6px; }
+.shift-controls input[type=number], .shift-controls select { padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; font-size: 16px; font-family: inherit; }
+.shift-controls input[type=number] { width: 110px; }
+.shift-controls select { width: 100%; }
+.quick { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.quick .btn { padding: 4px 10px; font-size: 14px; }
+.hint { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+#summary { font-weight: 600; color: var(--brand-dark); margin: 0 0 6px; }
+.preview.mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; }
+@media (max-width: 600px) { .shift-controls { grid-template-columns: 1fr; } }
