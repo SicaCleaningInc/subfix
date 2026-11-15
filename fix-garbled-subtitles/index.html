@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字幕亂碼修復 — 自動偵測編碼，一鍵還原中文字幕｜SubFix</title>
+<meta name="description" content="免費線上字幕亂碼修復工具。自動偵測 GBK、Big5、UTF-8 編碼，一鍵將亂碼字幕還原成正常中文。支援 SRT、ASS、VTT，可批量處理，檔案不會上傳。">
+<link rel="canonical" href="https://YOUR-DOMAIN.com/fix-garbled-subtitles/">
+<meta property="og:title" content="字幕亂碼修復 — 一鍵還原中文字幕">
+<meta property="og:description" content="自動偵測編碼，SRT、ASS、VTT 亂碼一鍵修復。檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOUR-DOMAIN.com/fix-garbled-subtitles/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "字幕亂碼修復",
+  "url": "https://YOUR-DOMAIN.com/fix-garbled-subtitles/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "自動偵測 GBK、Big5、UTF-8 編碼，將亂碼字幕還原成正常中文。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}},
+    {"@type": "Question", "name": "修復後的字幕會改變檔名嗎？",
+     "acceptedAnswer": {"@type": "Answer", "text": "不會。下載的檔案保留原本檔名，播放器仍可自動配對同名影片。"}},
+    {"@type": "Question", "name": "什麼是 BOM？要不要勾選？",
+     "acceptedAnswer": {"@type": "Answer", "text": "BOM 是放在檔案開頭的標記，用來告訴播放器這是 UTF-8 檔案。部分舊式播放器和電視需要 BOM 才能正確顯示中文，建議保留勾選。"}},
+    {"@type": "Question", "name": "修復後仍然是亂碼怎麼辦？",
+     "acceptedAnswer": {"@type": "Answer", "text": "請在檔案下方的選單手動選擇另一種編碼，預覽會即時更新。如果所有編碼都不正常，可能是檔案曾被錯誤轉換過，或者播放器本身的字型設定有問題。"}},
+    {"@type": "Question", "name": "支援哪些字幕格式？",
+     "acceptedAnswer": {"@type": "Answer", "text": "支援 SRT、ASS、SSA、VTT、SUB、SMI、SBV、LRC 及 TXT 等文字字幕格式。"}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Sub<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/about/">關於</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>字幕亂碼修復</h1>
+    <p>自動偵測 GBK、Big5、UTF-8 編碼，一鍵將亂碼字幕還原成正常中文。支援 SRT、ASS、VTT，可批量處理。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="字幕亂碼修復工具">
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 SRT、ASS、SSA、VTT、SUB、SMI、TXT，可一次選擇多個檔案</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.ass,.ssa,.vtt,.sub,.txt,.lrc,.smi,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及電視較易正確顯示）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <!-- 廣告位 1：工具下方（AdSense 批核後啟用） -->
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps">
+      <li><strong>選擇字幕檔案</strong>：把出現亂碼的字幕拖放到上方方框，或點擊選擇檔案。可以一次選擇整季的字幕。</li>
+      <li><strong>確認預覽</strong>：工具會自動判斷原本的編碼，並顯示頭幾句對白。如果文字正常，就代表修復成功。</li>
+      <li><strong>下載</strong>：點擊「下載修復後字幕」。檔名維持不變，直接覆蓋舊檔即可，播放器會自動配對影片。</li>
+    </ol>
+
+    <h2>為什麼字幕會變成亂碼？</h2>
+    <p>電腦儲存中文時，需要先把每個字轉換成一串數字，這套對照規則就叫「編碼」。問題在於，中文世界長期存在多套互不相通的編碼：</p>
+    <ul>
+      <li><strong>GBK / GB2312</strong>：中國大陸常用，簡體中文字幕大多使用這種編碼。</li>
+      <li><strong>Big5</strong>：台灣及香港早期常用，舊的繁體中文字幕多數是 Big5。</li>
+      <li><strong>UTF-8</strong>：現今國際通用標準，可以同時表示簡體、繁體及世界各地文字。</li>
+    </ul>
+    <p>當字幕用 GBK 儲存，播放器卻以 UTF-8 或 Big5 去讀取，同一串數字就會被翻譯成完全不同的字，結果便出現亂碼。字幕本身的內容其實沒有損壞，只要用正確的編碼重新讀取，再轉存為 UTF-8，就能還原。</p>
+
+    <h3>常見的亂碼樣子</h3>
+    <p>以「你好，字幕」為例，不同的讀錯方式會出現不同的亂碼：</p>
+    <table>
+      <tr><th>亂碼樣子</th><th>原因</th></tr>
+      <tr><td><span class="mojibake">ÄãºÃ£¬×ÖÄ»</span></td><td>GBK 字幕被當成西歐編碼讀取，常見於英文版播放器或電視</td></tr>
+      <tr><td><span class="mojibake">斕疑ㄛ趼躉</span></td><td>簡體 GBK 字幕被當成繁體 Big5 讀取，看起來像中文但完全不通</td></tr>
+      <tr><td><span class="mojibake">浣犲ソ锛屽瓧骞�</span></td><td>UTF-8 字幕被當成 GBK 讀取，常見於簡體中文版 Windows</td></tr>
+      <tr><td><span class="mojibake">□□□□</span> 或 <span class="mojibake">????</span></td><td>播放器字型不支援中文，或編碼完全無法辨認</td></tr>
+    </table>
+
+    <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>不同播放器的設定方法</h2>
+    <p>如果你不想轉換檔案，也可以直接在播放器內指定字幕編碼：</p>
+    <h3>VLC</h3>
+    <p>進入「工具」→「偏好設定」→ 左下角選「全部」→「輸入／編解碼器」→「字幕編解碼器」→「字幕」，把「字幕文字編碼」改為「Universal, Chinese (GB18030)」或「Traditional Chinese (Big5)」，然後重新開啟影片。</p>
+    <h3>PotPlayer</h3>
+    <p>在播放畫面按右鍵 →「字幕」，在字幕選單中找到編碼（字元集）選項，選擇「簡體中文（GB2312）」或「繁體中文（Big5）」。不同版本的選單名稱可能略有不同。</p>
+    <h3>MPC-HC / MPC-BE</h3>
+    <p>在播放畫面按右鍵 →「字幕」→「預設樣式」，把「字元集」改為「Chinese GB2312」或「Chinese Big5」。</p>
+    <h3>智能電視、機頂盒、手機播放器</h3>
+    <p>這類裝置通常沒有編碼設定，只認得 UTF-8（部分需要 BOM）。最穩妥的方法是先用本工具轉換，並保留「加入 BOM」選項。</p>
+
+    <h2>常見問題</h2>
+    <details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。你甚至可以在載入頁面後中斷網絡再使用。</p></details>
+    <details><summary>修復後的字幕會改變檔名嗎？</summary><p>不會。下載的檔案保留原本檔名，播放器仍可自動配對同名影片。</p></details>
+    <details><summary>什麼是 BOM？要不要勾選？</summary><p>BOM 是放在檔案開頭的標記，用來告訴播放器「這是 UTF-8 檔案」。部分舊式播放器和電視需要 BOM 才能正確顯示中文，建議保留勾選。</p></details>
+    <details><summary>修復後仍然是亂碼怎麼辦？</summary><p>請在檔案下方的選單手動選擇另一種編碼，預覽會即時更新。如果所有編碼都不正常，可能是檔案曾被錯誤轉換過，或者播放器本身的字型設定有問題。</p></details>
+    <details><summary>支援哪些字幕格式？</summary><p>支援 SRT、ASS、SSA、VTT、SUB、SMI、SBV、LRC 及 TXT 等文字字幕格式。圖像式字幕（例如 SUP、IDX/SUB 圖像字幕）不適用。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid">
+      <div class="tool-card soon"><h3>簡體字幕轉繁體<span class="tag-soon">即將推出</span></h3><p>支援香港及台灣用字</p></div>
+      <div class="tool-card soon"><h3>字幕時間軸調整<span class="tag-soon">即將推出</span></h3><p>字幕太快或太慢，一鍵對齊</p></div>
+      <div class="tool-card soon"><h3>SRT 轉 TXT<span class="tag-soon">即將推出</span></h3><p>去除時間軸，只保留對白</p></div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© SubFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/fix-garbled.js"></script>
+</body>
+</html>
