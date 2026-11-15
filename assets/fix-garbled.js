@@ -15,8 +15,11 @@
   var actions = document.getElementById('bulk-actions');
 
   var items = [];
+  var STR = window.ZIMU_STRINGS || {};
+  function t(k, d) { return STR[k] != null ? STR[k] : d; }
 
   function labelOf(enc) {
+    var map = t('enc', null); if (map && map[enc]) return map[enc];
     for (var i = 0; i < E.MANUAL_ENCODINGS.length; i++) {
       if (E.MANUAL_ENCODINGS[i].id === enc) return E.MANUAL_ENCODINGS[i].label;
     }
@@ -35,7 +38,7 @@
     var lines = text.replace(/^﻿/, '').split(/\r?\n/).filter(function (l) {
       return l.trim() && !/^\d+$/.test(l.trim()) && !/-->/.test(l);
     });
-    return lines.slice(0, 8).join('\n') || '（沒有內容）';
+    return lines.slice(0, 8).join('\n') || t('empty', '（沒有內容）');
   }
 
   function download(name, bytes, type) {
@@ -52,17 +55,17 @@
 
   function statusFor(item) {
     var d = item.detection;
-    if (d.ascii) return { cls: 'ok', text: '這個檔案只有英文字元，沒有編碼問題。' };
+    if (d.ascii) return { cls: 'ok', text: t('ascii', '這個檔案只有英文字元，沒有編碼問題。') };
     if (d.reason === 'valid-utf8' || (d.reason === 'bom' && d.encoding === 'utf-8')) {
       return {
         cls: 'ok',
-        text: '這個檔案已經是 UTF-8。如果播放器仍然顯示亂碼，下載加入 BOM 的版本通常就能解決；如果仍然不行，請參考下方的播放器設定教學。'
+        text: t('utf8', '這個檔案已經是 UTF-8。如果播放器仍然顯示亂碼，下載加入 BOM 的版本通常就能解決；如果仍然不行，請參考下方的播放器設定教學。')
       };
     }
     if (d.confidence === 'low') {
-      return { cls: 'warn', text: '內容太少，無法確定編碼。請檢查下方預覽，如果文字不正常，請在選單選擇另一種編碼。' };
+      return { cls: 'warn', text: t('low', '內容太少，無法確定編碼。請檢查下方預覽，如果文字不正常，請在選單選擇另一種編碼。') };
     }
-    return { cls: 'fix', text: '偵測到原本是 ' + labelOf(d.encoding) + '，已轉換為 UTF-8。請檢查預覽，確認文字正常。' };
+    return { cls: 'fix', text: t('fixPre', '偵測到原本是 ') + labelOf(d.encoding) + t('fixPost', '，已轉換為 UTF-8。請檢查預覽，確認文字正常。') };
   }
 
   function render() {
@@ -75,7 +78,7 @@
 
       var head = el('div', 'file-head');
       head.appendChild(el('strong', 'file-name', item.name));
-      var badge = el('span', 'badge badge-' + item.detection.confidence, '偵測：' + labelOf(item.detection.encoding));
+      var badge = el('span', 'badge badge-' + item.detection.confidence, t('detected', '偵測：') + labelOf(item.detection.encoding));
       head.appendChild(badge);
       card.appendChild(head);
 
@@ -83,10 +86,10 @@
       card.appendChild(el('p', 'status status-' + st.cls, st.text));
 
       var row = el('div', 'file-row');
-      var lab = el('label', null, '原本編碼：');
+      var lab = el('label', null, t('origEnc', '原本編碼：'));
       var sel = el('select');
       E.MANUAL_ENCODINGS.forEach(function (m) {
-        var o = el('option', null, m.label);
+        var o = el('option', null, labelOf(m.id));
         o.value = m.id;
         if (m.id === item.encoding) o.selected = true;
         sel.appendChild(o);
@@ -98,7 +101,7 @@
       lab.appendChild(sel);
       row.appendChild(lab);
 
-      var btn = el('button', 'btn btn-primary', '下載修復後字幕');
+      var btn = el('button', 'btn btn-primary', t('download', '下載修復後字幕'));
       btn.type = 'button';
       btn.addEventListener('click', function () {
         var out = E.convert(item.bytes, item.encoding, bomBox.checked);
@@ -106,7 +109,7 @@
       });
       row.appendChild(btn);
 
-      var rm = el('button', 'btn btn-ghost', '移除');
+      var rm = el('button', 'btn btn-ghost', t('remove', '移除'));
       rm.type = 'button';
       rm.addEventListener('click', function () {
         items.splice(idx, 1);
@@ -115,7 +118,7 @@
       row.appendChild(rm);
       card.appendChild(row);
 
-      card.appendChild(el('div', 'preview-label', '預覽（頭幾句）：'));
+      card.appendChild(el('div', 'preview-label', t('preview', '預覽（頭幾句）：')));
       var pre = el('pre', 'preview', previewText(item.bytes, item.encoding));
       card.appendChild(pre);
 
@@ -129,12 +132,12 @@
     if (!pending) return;
     files.forEach(function (file) {
       if (!ACCEPT.test(file.name)) {
-        alertLine('「' + file.name + '」不是支援的字幕格式（支援 SRT、ASS、SSA、VTT、SUB、TXT、LRC、SMI、SBV）。');
+        alertLine(t('q1', '「') + file.name + t('unsupported', '」不是支援的字幕格式（支援 SRT、ASS、SSA、VTT、SUB、TXT、LRC、SMI、SBV）。'));
         if (--pending === 0) render();
         return;
       }
       if (file.size > MAX_SIZE) {
-        alertLine('「' + file.name + '」超過 20MB，看來不是字幕檔案。');
+        alertLine(t('q1', '「') + file.name + t('tooBig', '」超過 20MB，看來不是字幕檔案。'));
         if (--pending === 0) render();
         return;
       }
@@ -181,7 +184,7 @@
       } else used[name] = 1;
       return { name: name, data: E.convert(item.bytes, item.encoding, bomBox.checked).bytes };
     });
-    download('字幕修復.zip', Z.makeZip(files), 'application/zip');
+    download(t('zipName', '字幕修復.zip'), Z.makeZip(files), 'application/zip');
   });
 
   clearBtn.addEventListener('click', function () {

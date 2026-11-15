@@ -23,6 +23,8 @@
   var msgBox = document.getElementById('messages');
 
   var items = [];
+  var STR = window.ZIMU_STRINGS || {};
+  function t(k, d) { return STR[k] != null ? STR[k] : d; }
   var current = CFG.variants[0];
   var converters = {};
 
@@ -40,6 +42,7 @@
   }
 
   function labelOf(enc) {
+    var map = t('enc', null); if (map && map[enc]) return map[enc];
     for (var i = 0; i < E.MANUAL_ENCODINGS.length; i++) if (E.MANUAL_ENCODINGS[i].id === enc) return E.MANUAL_ENCODINGS[i].label;
     return enc;
   }
@@ -82,14 +85,14 @@
       var card = el('div', 'file-card');
       var head = el('div', 'file-head');
       head.appendChild(el('strong', 'file-name', item.name));
-      head.appendChild(el('span', 'badge badge-' + item.detection.confidence, '原本編碼：' + labelOf(item.encoding)));
+      head.appendChild(el('span', 'badge badge-' + item.detection.confidence, t('origEnc', '原本編碼：') + labelOf(item.encoding)));
       card.appendChild(head);
 
       var row = el('div', 'file-row');
-      var lab = el('label', null, '原本編碼：');
+      var lab = el('label', null, t('origEnc', '原本編碼：'));
       var sel = el('select');
       E.MANUAL_ENCODINGS.forEach(function (m) {
-        var o = el('option', null, m.label);
+        var o = el('option', null, labelOf(m.id));
         o.value = m.id;
         if (m.id === item.encoding) o.selected = true;
         sel.appendChild(o);
@@ -98,14 +101,14 @@
       lab.appendChild(sel);
       row.appendChild(lab);
 
-      var btn = el('button', 'btn btn-primary', '下載轉換後字幕');
+      var btn = el('button', 'btn btn-primary', t('download', '下載轉換後字幕'));
       btn.type = 'button';
       btn.addEventListener('click', function () {
         download(outName(item.name), E.encodeUTF8(convertItem(item), bomBox.checked));
       });
       row.appendChild(btn);
 
-      var rm = el('button', 'btn btn-ghost', '移除');
+      var rm = el('button', 'btn btn-ghost', t('remove', '移除'));
       rm.type = 'button';
       rm.addEventListener('click', function () { items.splice(idx, 1); render(); });
       row.appendChild(rm);
@@ -114,11 +117,11 @@
       var original = E.decode(item.bytes, item.encoding, false) || '';
       var grid = el('div', 'compare');
       var a = el('div');
-      a.appendChild(el('div', 'preview-label', '轉換前'));
-      a.appendChild(el('pre', 'preview', dialogueLines(original, 6).join('\n') || '（沒有內容）'));
+      a.appendChild(el('div', 'preview-label', t('before', '轉換前')));
+      a.appendChild(el('pre', 'preview', dialogueLines(original, 6).join('\n') || t('empty', '（沒有內容）')));
       var b = el('div');
-      b.appendChild(el('div', 'preview-label', '轉換後（' + current.label + '）'));
-      b.appendChild(el('pre', 'preview', dialogueLines(convertItem(item), 6).join('\n') || '（沒有內容）'));
+      b.appendChild(el('div', 'preview-label', t('after', '轉換後（') + current.label + t('afterEnd', '）')));
+      b.appendChild(el('pre', 'preview', dialogueLines(convertItem(item), 6).join('\n') || t('empty', '（沒有內容）')));
       grid.appendChild(a); grid.appendChild(b);
       card.appendChild(grid);
       list.appendChild(card);
@@ -137,12 +140,12 @@
     if (!pending) return;
     files.forEach(function (file) {
       if (!ACCEPT.test(file.name)) {
-        alertLine('「' + file.name + '」不是支援的字幕格式。');
+        alertLine(t('q1', '「') + file.name + t('unsupported', '」不是支援的字幕格式。'));
         if (--pending === 0) render();
         return;
       }
       if (file.size > MAX_SIZE) {
-        alertLine('「' + file.name + '」超過 20MB，看來不是字幕檔案。');
+        alertLine(t('q1', '「') + file.name + t('tooBig', '」超過 20MB，看來不是字幕檔案。'));
         if (--pending === 0) render();
         return;
       }
@@ -186,8 +189,8 @@
   copyBtn.addEventListener('click', function () {
     if (!textOut.value) return;
     var done = function () {
-      copyBtn.textContent = '已複製 ✓';
-      setTimeout(function () { copyBtn.textContent = '複製結果'; }, 1500);
+      copyBtn.textContent = t('copied', '已複製 ✓');
+      setTimeout(function () { copyBtn.textContent = t('copy', '複製結果'); }, 1500);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(textOut.value).then(done, function () { textOut.select(); document.execCommand('copy'); done(); });

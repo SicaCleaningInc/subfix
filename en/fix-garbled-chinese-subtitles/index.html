@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fix Garbled Chinese Subtitles — GBK / Big5 to UTF-8 Converter | ZimuFix</title>
+<meta name="description" content="Chinese subtitles showing weird characters? Free online tool that detects GBK, Big5 and UTF-8 automatically and converts SRT, ASS and VTT subtitles to UTF-8. Batch support, files never leave your browser.">
+<link rel="canonical" href="https://zimufix.com/en/fix-garbled-chinese-subtitles/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/fix-garbled-chinese-subtitles/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/fix-garbled-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/fix-garbled-subtitles/">
+<meta property="og:title" content="Fix Garbled Chinese Subtitles — GBK / Big5 to UTF-8 Converter">
+<meta property="og:description" content="Chinese subtitles showing weird characters? Free online tool that detects GBK, Big5 and UTF-8 automatically and converts SRT, ASS and VTT subtitles to UTF-8. Batch support, files never leave your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/en/fix-garbled-chinese-subtitles/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Fix Garbled Chinese Subtitles", "url": "https://zimufix.com/en/fix-garbled-chinese-subtitles/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Detects GBK, Big5 and UTF-8 and converts Chinese subtitles to UTF-8.", "inLanguage": "en"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are my subtitle files uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs inside your browser. Your files never leave your computer or phone."}}, {"@type": "Question", "name": "Will the file name change?", "acceptedAnswer": {"@type": "Answer", "text": "No. The fixed file keeps its original name, so your player still matches it to the video automatically."}}, {"@type": "Question", "name": "What is BOM and should I keep it?", "acceptedAnswer": {"@type": "Answer", "text": "A BOM is a small marker at the start of a file that tells software the file is UTF-8. Some older players and smart TVs need it to display Chinese correctly, so we recommend keeping it on."}}, {"@type": "Question", "name": "It is still garbled after fixing. What now?", "acceptedAnswer": {"@type": "Answer", "text": "Pick another encoding from the dropdown under the file — the preview updates instantly. If no encoding looks right, the file may have been converted incorrectly before, or your player is using a font without Chinese characters."}}, {"@type": "Question", "name": "Does it work for Japanese or Korean subtitles?", "acceptedAnswer": {"@type": "Answer", "text": "Automatic detection is tuned for Chinese. For Japanese or Korean files, choose Shift-JIS or EUC-KR from the dropdown and check the preview."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Fix Garbled Chinese Subtitles</h1>
+    <p>Subtitles showing symbols like <span class="mojibake">ÄãºÃ</span> instead of Chinese? Drop the file below. We detect GBK, Big5 and UTF-8 automatically and convert it to UTF-8 so it plays everywhere.</p>
+    <span class="privacy-note">🔒 Files are processed in your browser and never uploaded</span>
+  </section>
+
+  <section class="tool" aria-label="Chinese subtitle encoding fixer">
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">Drop subtitle files here, or click to choose</div>
+      <div class="small">SRT, ASS, SSA, VTT, SUB, SMI, TXT supported. You can select multiple files.</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.ass,.ssa,.vtt,.sub,.txt,.lrc,.smi,.sbv" hidden>
+    <div class="options"><label><input type="checkbox" id="opt-bom" checked> Add BOM to output (recommended — helps older players and TVs detect UTF-8)</label></div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>Download all (ZIP)</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">Clear all</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>How to use</h2>
+    <ol class="steps">
+      <li><strong>Choose your subtitle files</strong>: drag garbled subtitles into the box above. You can add a whole season at once.</li>
+      <li><strong>Check the preview</strong>: the tool detects the original encoding and shows the first few lines. If the Chinese text looks right, it worked.</li>
+      <li><strong>Download</strong>: the file keeps its original name, so just replace the old one and your player will pick it up.</li>
+    </ol>
+
+    <h2>Why do Chinese subtitles turn into gibberish?</h2>
+    <p>Computers store text as numbers, and the rule that maps characters to numbers is called an <em>encoding</em>. Chinese text has used several incompatible encodings over the years:</p>
+    <ul>
+      <li><strong>GBK / GB2312 / GB18030</strong> — common in mainland China; most Simplified Chinese subtitles from older sources use it.</li>
+      <li><strong>Big5</strong> — common in Taiwan and Hong Kong; many older Traditional Chinese subtitles use it.</li>
+      <li><strong>UTF-8</strong> — the modern international standard that covers every language.</li>
+    </ul>
+    <p>When a subtitle saved in GBK is read as UTF-8 or Windows-1252, the same numbers are interpreted as completely different characters. The subtitle itself is not damaged — it just needs to be read with the right encoding and saved as UTF-8.</p>
+
+    <h3>What garbled Chinese looks like</h3>
+    <p>Here is how the phrase 你好，字幕 ("hello, subtitles") appears when read the wrong way:</p>
+    <table>
+      <tr><th>What you see</th><th>Cause</th></tr>
+      <tr><td><span class="mojibake">ÄãºÃ£¬×ÖÄ»</span></td><td>GBK file read as Western (Windows-1252) — common on English-language players and TVs</td></tr>
+      <tr><td><span class="mojibake">斕疑ㄛ趼躉</span></td><td>GBK (Simplified) file read as Big5 (Traditional) — looks like Chinese but makes no sense</td></tr>
+      <tr><td><span class="mojibake">浣犲ソ锛屽瓧骞�</span></td><td>UTF-8 file read as GBK — common on Chinese-language Windows</td></tr>
+      <tr><td><span class="mojibake">□□□□</span></td><td>The encoding is right, but the player's font has no Chinese characters</td></tr>
+    </table>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>Fixing it in your player instead</h2>
+    <h3>VLC</h3>
+    <p>Go to Tools → Preferences, set "Show settings" to <strong>All</strong>, then open Input / Codecs → Subtitle codecs → Subtitles. Set "Subtitle text encoding" to <strong>Universal, Chinese (GB18030)</strong> for Simplified Chinese or <strong>Traditional Chinese (Big5)</strong> for older Traditional Chinese files, save, and reopen the video. Menu names can vary slightly between versions.</p>
+    <p>If you see empty squares instead, open Tools → Preferences → Subtitles / OSD and choose a font that supports Chinese, such as Microsoft YaHei on Windows or PingFang on macOS.</p>
+    <h3>Smart TVs, streaming boxes and phones</h3>
+    <p>These devices usually have no encoding setting and only read UTF-8 — some need the BOM marker too. Converting the file with this tool, with "Add BOM" enabled, is the most reliable fix.</p>
+
+    <h2>FAQ</h2>
+    <details><summary>Are my subtitle files uploaded to a server?</summary><p>No. Everything runs inside your browser. Your files never leave your computer or phone.</p></details><details><summary>Will the file name change?</summary><p>No. The fixed file keeps its original name, so your player still matches it to the video automatically.</p></details><details><summary>What is BOM and should I keep it?</summary><p>A BOM is a small marker at the start of a file that tells software the file is UTF-8. Some older players and smart TVs need it to display Chinese correctly, so we recommend keeping it on.</p></details><details><summary>It is still garbled after fixing. What now?</summary><p>Pick another encoding from the dropdown under the file — the preview updates instantly. If no encoding looks right, the file may have been converted incorrectly before, or your player is using a font without Chinese characters.</p></details><details><summary>Does it work for Japanese or Korean subtitles?</summary><p>Automatic detection is tuned for Chinese. For Japanese or Korean files, choose Shift-JIS or EUC-KR from the dropdown and check the preview.</p></details>
+
+    <h2>Related tools</h2>
+    <div class="tool-grid"><a class="tool-card" href="/en/simplified-to-traditional-chinese-subtitles/"><h3>Simplified → Traditional Chinese</h3><p>Hong Kong or Taiwan standard, keeps timing</p></a><a class="tool-card" href="/en/traditional-to-simplified-chinese-subtitles/"><h3>Traditional → Simplified Chinese</h3><p>Optionally convert Taiwan vocabulary</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+<script>
+window.ZIMU_STRINGS = {"enc": {"utf-8": "UTF-8", "gb18030": "GBK / GB18030 (Simplified Chinese)", "big5": "Big5 (Traditional Chinese)", "utf-16le": "UTF-16 LE", "utf-16be": "UTF-16 BE", "shift_jis": "Shift-JIS (Japanese)", "euc-kr": "EUC-KR (Korean)"}, "empty": "(empty)", "origEnc": "Original encoding: ", "remove": "Remove", "q1": "\"", "tooBig": "\" is larger than 20 MB and does not look like a subtitle file.", "ascii": "This file only contains English characters — there is no encoding problem.", "utf8": "This file is already UTF-8. If your player still shows garbled text, downloading the version with BOM usually fixes it. Otherwise, see the player settings below.", "low": "Not enough text to be sure of the encoding. Check the preview below and pick another encoding from the dropdown if it looks wrong.", "fixPre": "Detected ", "fixPost": " and converted to UTF-8. Check the preview to make sure the text looks right.", "detected": "Detected: ", "download": "Download fixed subtitle", "preview": "Preview (first lines):", "unsupported": "\" is not a supported subtitle format (SRT, ASS, SSA, VTT, SUB, TXT, LRC, SMI, SBV).", "zipName": "fixed-subtitles.zip"};
+</script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/fix-garbled.js"></script>
+</body>
+</html>

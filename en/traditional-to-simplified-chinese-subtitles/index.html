@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traditional to Simplified Chinese Subtitle Converter (SRT, ASS) | ZimuFix</title>
+<meta name="description" content="Free online converter for Traditional to Simplified Chinese subtitles. Optionally converts Taiwan vocabulary to mainland usage. Keeps timing and ASS effects, reads Big5 files, batch support. Files never leave your browser.">
+<link rel="canonical" href="https://zimufix.com/en/traditional-to-simplified-chinese-subtitles/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/traditional-to-simplified-chinese-subtitles/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/traditional-to-simplified-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/traditional-to-simplified-subtitles/">
+<meta property="og:title" content="Traditional to Simplified Chinese Subtitle Converter (SRT, ASS)">
+<meta property="og:description" content="Free online converter for Traditional to Simplified Chinese subtitles. Optionally converts Taiwan vocabulary to mainland usage. Keeps timing and ASS effects, reads Big5 files, batch support. Files never leave your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/en/traditional-to-simplified-chinese-subtitles/">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Traditional to Simplified Chinese Subtitles", "url": "https://zimufix.com/en/traditional-to-simplified-chinese-subtitles/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free online converter for Traditional to Simplified Chinese subtitles. Optionally converts Taiwan vocabulary to mainland usage. Keeps timing and ASS effects, reads Big5 files, batch support. Files never leave your browser.", "inLanguage": "en"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between the two options?", "acceptedAnswer": {"@type": "Answer", "text": "\"Characters only\" turns Traditional characters into Simplified ones, so 軟體 becomes 软体. \"Taiwan vocabulary → mainland\" also converts wording, so 軟體 becomes 软件 and 影片 becomes 视频."}}, {"@type": "Question", "name": "Are my files uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Conversion happens entirely in your browser."}}, {"@type": "Question", "name": "Will ASS fonts and effects break?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only the dialogue text is converted; styles, font names and override tags stay the same."}}, {"@type": "Question", "name": "Can it read old Big5 subtitles?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Big5, GBK and UTF-8 are detected automatically, and the output is UTF-8."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Traditional to Simplified Chinese Subtitles</h1>
+    <p>Convert SRT, ASS and VTT subtitles from Traditional to Simplified Chinese, with optional Taiwan-to-mainland vocabulary conversion. Old Big5 files are handled automatically.</p>
+    <span class="privacy-note">🔒 Files are processed in your browser and never uploaded</span>
+  </section>
+
+  <section class="tool" aria-label="Traditional to Simplified Chinese Subtitles">
+    <div class="variants" id="variants"></div>
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">Drop subtitle files here, or click to choose</div>
+      <div class="small">SRT, ASS, SSA, VTT, SUB, SMI, TXT supported. You can select multiple files.</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.ass,.ssa,.vtt,.sub,.txt,.lrc,.smi,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-bom" checked> Add BOM to output (recommended — helps older players and TVs detect UTF-8)</label><br>
+      <label><input type="checkbox" id="opt-tag"> Add a language tag to the file name (e.g. movie.zh-Hans.srt)</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>Download all (ZIP)</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">Clear all</button>
+    </div>
+    <div id="results"></div>
+    <div class="text-mode">
+      <h2>Or paste text</h2>
+      <div class="text-grid">
+        <textarea id="text-in" placeholder="Paste Traditional Chinese here…"></textarea>
+        <textarea id="text-out" readonly placeholder="Simplified Chinese result"></textarea>
+      </div>
+      <div class="text-actions"><button type="button" class="btn btn-primary" id="copy-out">Copy result</button></div>
+    </div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>How to use</h2>
+    <ol class="steps"><li><strong>Choose an option</strong>: "Characters only" for Hong Kong subtitles; "Taiwan vocabulary → mainland" if the subtitles are for a mainland audience.</li><li><strong>Add your subtitles</strong>: drag files into the box. Big5-encoded files are read automatically.</li><li><strong>Compare and download</strong>: check the preview, then download individually or as a ZIP.</li></ol>
+
+    <h2>The two options compared</h2>
+    <p>Using the sentence 這個軟體的影片很好看 ("this software's videos are great"):</p>
+    <table>
+      <tr><th>Option</th><th>Result</th></tr>
+      <tr><td>Characters only</td><td>这个软体的影片很好看</td></tr>
+      <tr><td>Taiwan vocabulary → mainland</td><td>这个软件的视频很好看</td></tr>
+    </table>
+    <p>The vocabulary option also handles terms like 資訊 → 信息 (information), 印表機 → 打印机 (printer), 滑鼠 → 鼠标 (mouse), 計程車 → 出租车 (taxi) and 記憶體 → 内存 (memory).</p>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>FAQ</h2>
+    <details><summary>What is the difference between the two options?</summary><p>&quot;Characters only&quot; turns Traditional characters into Simplified ones, so 軟體 becomes 软体. &quot;Taiwan vocabulary → mainland&quot; also converts wording, so 軟體 becomes 软件 and 影片 becomes 视频.</p></details><details><summary>Are my files uploaded?</summary><p>No. Conversion happens entirely in your browser.</p></details><details><summary>Will ASS fonts and effects break?</summary><p>No. Only the dialogue text is converted; styles, font names and override tags stay the same.</p></details><details><summary>Can it read old Big5 subtitles?</summary><p>Yes. Big5, GBK and UTF-8 are detected automatically, and the output is UTF-8.</p></details>
+
+    <h2>Related tools</h2>
+    <div class="tool-grid"><a class="tool-card" href="/en/simplified-to-traditional-chinese-subtitles/"><h3>Simplified → Traditional Chinese</h3><p>Hong Kong or Taiwan standard, keeps timing</p></a><a class="tool-card" href="/en/fix-garbled-chinese-subtitles/"><h3>Fix Garbled Chinese Subtitles</h3><p>Convert GBK / Big5 subtitles to UTF-8</p></a></div>
+    <p class="credit">Conversion dictionaries from the open-source projects <a href="https://github.com/BYVoid/OpenCC" rel="nofollow">OpenCC</a> (Apache 2.0) and <a href="https://github.com/nk2028/opencc-js" rel="nofollow">opencc-js</a> (MIT). <a href="/assets/vendor/OPENCC-LICENSES.txt">Licenses</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+<script>
+window.ZIMU_STRINGS = {"enc": {"utf-8": "UTF-8", "gb18030": "GBK / GB18030 (Simplified Chinese)", "big5": "Big5 (Traditional Chinese)", "utf-16le": "UTF-16 LE", "utf-16be": "UTF-16 BE", "shift_jis": "Shift-JIS (Japanese)", "euc-kr": "EUC-KR (Korean)"}, "empty": "(empty)", "origEnc": "Original encoding: ", "remove": "Remove", "q1": "\"", "tooBig": "\" is larger than 20 MB and does not look like a subtitle file.", "download": "Download converted subtitle", "before": "Before", "after": "After (", "afterEnd": ")", "unsupported": "\" is not a supported subtitle format.", "copied": "Copied ✓", "copy": "Copy result"};
+window.ZIMU_ZH_CONFIG = {"langTag": "zh-Hans", "zipName": "simplified-chinese-subtitles.zip", "variants": [{"label": "Characters only", "hint": "Best for Hong Kong subtitles; wording unchanged", "from": "hk", "to": "cn"}, {"label": "Taiwan vocabulary → mainland", "hint": "e.g. 軟體 → 软件, 影片 → 视频", "from": "twp", "to": "cn"}]};
+</script>
+<script src="/assets/vendor/opencc-t2cn.js"></script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-zh.js"></script>
+<script src="/assets/zh-convert-ui.js"></script>
+</body>
+</html>

@@ -36,7 +36,12 @@
 
 /about/                             關於（AdSense 必需）
 /privacy/                           私隱政策（AdSense 必需）
-/en/...                             第二階段：英文版
+/en/                                英文首頁                  ✅ 已完成
+/en/fix-garbled-chinese-subtitles/  英文亂碼修復              ✅ 已完成
+/en/simplified-to-traditional-chinese-subtitles/  英文簡轉繁 ✅ 已完成
+/en/traditional-to-simplified-chinese-subtitles/  英文繁轉簡 ✅ 已完成
+/en/privacy/                        英文私隱政策              ✅ 已完成
+（英文版主攻「中日韓字幕」niche，唔同大站搶通用格式轉換關鍵字）
 ```
 
 ## 4. 工具頁面模板
