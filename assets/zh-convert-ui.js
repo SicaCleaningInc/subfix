@@ -25,7 +25,19 @@
   var items = [];
   var STR = window.ZIMU_STRINGS || {};
   function t(k, d) { return STR[k] != null ? STR[k] : d; }
-  var current = CFG.variants[0];
+  // 按瀏覽器語言揀預設選項，例如台灣用戶預設「台灣正體＋台灣用詞」
+  function defaultIndex() {
+    var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+    for (var a = 0; a < langs.length; a++) {
+      var l = String(langs[a]).toLowerCase();
+      for (var i = 0; i < CFG.variants.length; i++) {
+        var locs = CFG.variants[i].locales || [];
+        if (locs.indexOf(l) !== -1) return i;
+      }
+    }
+    return 0;
+  }
+  var current = CFG.variants[defaultIndex()];
   var converters = {};
 
   function getConv() {
@@ -163,7 +175,7 @@
     var lab = el('label', 'variant');
     var r = el('input');
     r.type = 'radio'; r.name = 'variant'; r.value = i;
-    if (i === 0) r.checked = true;
+    if (v === current) r.checked = true;
     r.addEventListener('change', function () {
       current = CFG.variants[i];
       render();

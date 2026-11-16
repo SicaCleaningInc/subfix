@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>簡體字幕轉繁體 — SRT、ASS 線上簡轉繁，支援香港及台灣用字｜ZimuFix</title>
-<meta name="description" content="免費線上簡體字幕轉繁體工具。支援 SRT、ASS、VTT，可選香港繁體或台灣正體及台灣用詞，自動修復亂碼，保留時間軸及特效。可批量處理，檔案不會上傳。">
+<meta name="description" content="免費線上簡體字幕轉繁體（簡轉繁）工具，簡體字幕檔一鍵轉成繁體／正體中文。支援 SRT、ASS、VTT，可選香港繁體或台灣正體及台灣用詞，自動修復亂碼，保留時間軸及特效。可批量處理，檔案不會上傳。">
 <link rel="canonical" href="https://zimufix.com/simplified-to-traditional-subtitles/">
 <link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/simplified-to-traditional-subtitles/">
 <link rel="alternate" hreflang="en" href="https://zimufix.com/en/simplified-to-traditional-chinese-subtitles/">
@@ -58,7 +58,7 @@
 <main class="wrap">
   <section class="hero">
     <h1>簡體字幕轉繁體</h1>
-    <p>SRT、ASS、VTT 簡轉繁，可選香港繁體或台灣正體。自動修復亂碼，保留時間軸及特效，可批量處理。</p>
+    <p>SRT、ASS、VTT 字幕檔簡轉繁，可選香港繁體或台灣正體中文。自動修復亂碼，保留時間軸及特效，可批量處理。</p>
     <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
   </section>
 
@@ -120,6 +120,9 @@
     <!-- 廣告位 2：內容中段（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
 
+    <h2>台灣用戶建議選哪一項？</h2>
+    <p>如果字幕是給台灣觀眾看，建議選「台灣正體＋台灣用詞」。除了把簡體字轉為正體中文，還會把對岸用語換成台灣慣用說法，例如「视频」轉為「影片」、「软件」轉為「軟體」、「网络」轉為「網路」，看起來會自然得多。工具會按你的瀏覽器語言自動選擇預設選項，台灣用戶開啟頁面時已預先選好。</p>
+
     <h2>為什麼不能逐字轉換？</h2>
     <p>簡體字裏有不少「一對多」的情況：一個簡體字對應多個繁體字，要看上下文才知道用哪一個。例如「发」在「头发」中是「髮」，在「发现」中是「發」；「干」可以是「乾淨」的「乾」、「幹活」的「幹」，也可以保留為「干涉」的「干」。</p>
     <p>本工具使用開源詞庫 OpenCC，會先按詞語比對，再處理單字，因此能正確分辨大部分一對多的情況，效果遠比逐字對照表準確。</p>
@@ -156,8 +159,8 @@ window.ZIMU_ZH_CONFIG = {
   langTag: 'zh-Hant',
   zipName: '繁體字幕.zip',
   variants: [
-    { label: '香港繁體', hint: '香港字形，例如「裏」「着」，用詞不變', from: 'cn', to: 'hk' },
-    { label: '台灣正體＋台灣用詞', hint: '例如 软件→軟體、视频→影片', from: 'cn', to: 'twp' },
+    { label: '香港繁體', hint: '香港字形，例如「裏」「着」，用詞不變', from: 'cn', to: 'hk', locales: ["zh-hk", "zh-mo", "zh-hant-hk", "zh-hant-mo"] },
+    { label: '台灣正體＋台灣用詞', hint: '例如 软件→軟體、视频→影片', from: 'cn', to: 'twp', locales: ["zh-tw", "zh-hant-tw"] },
     { label: '台灣正體（只轉字形）', hint: '台灣字形，例如「裡」「著」，用詞不變', from: 'cn', to: 'tw' }
   ]
 };
