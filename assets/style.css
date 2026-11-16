@@ -138,3 +138,17 @@ summary { font-weight: 600; cursor: pointer; }
 .cta { display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: #f0faf8; border: 1px solid #cde9e4; border-radius: var(--radius); padding: 14px 18px; margin: 24px 0; }
 .cta .btn { text-decoration: none; white-space: nowrap; }
 pre.code { background: #1f2933; color: #e6edf3; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 14px; line-height: 1.6; font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+/* 雙語字幕合併 */
+.merge-slots { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: stretch; }
+.merge-slot { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.merge-slot h3 { margin: 0; font-size: 16px; }
+.merge-slot .drop { padding: 22px 12px; }
+.merge-slot .info { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; min-height: 28px; }
+.swap-col { display: flex; align-items: center; }
+#merge-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin: 16px 0 6px; font-size: 15px; }
+#merge-opts fieldset { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin: 0; }
+#merge-opts legend { font-weight: 600; padding: 0 4px; }
+#merge-opts label { display: block; }
+#output { margin-top: 14px; }
+@media (max-width: 700px) { .merge-slots, #merge-opts { grid-template-columns: 1fr; } .swap-col { justify-content: center; } }

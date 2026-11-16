@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merge Bilingual Subtitles — Combine Chinese & English SRT Online | ZimuFix</title>
+<meta name="description" content="Free online tool to merge two subtitle files into one bilingual subtitle — e.g. Chinese on top, English below. Lines are matched by time, works with SRT, VTT and ASS, outputs SRT or styled ASS. Files never leave your browser.">
+<link rel="canonical" href="https://zimufix.com/en/merge-bilingual-subtitles/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/bilingual-subtitles-merge/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/merge-bilingual-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/bilingual-subtitles-merge/">
+<meta property="og:title" content="Merge Bilingual Subtitles">
+<meta property="og:description" content="Combine two subtitle files into a dual-language subtitle, matched by time. Files never leave your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/en/merge-bilingual-subtitles/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Merge Bilingual Subtitles", "url": "https://zimufix.com/en/merge-bilingual-subtitles/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Combine two subtitle files in different languages into one bilingual subtitle.", "inLanguage": "en"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I merge subtitles with different numbers of lines?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Lines are matched by overlapping time, not by line number, so it still works when one language splits a sentence into two cues or the timing is slightly off."}}, {"@type": "Question", "name": "Are my files uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser and your files never leave your device."}}, {"@type": "Question", "name": "SRT or ASS — which should I choose?", "acceptedAnswer": {"@type": "Answer", "text": "SRT simply stacks the two languages on two lines and works on almost every player and TV. ASS lets the top line be large and white and the bottom line smaller and coloured, which looks nicer, but some TVs and mobile players do not support it."}}, {"@type": "Question", "name": "The two subtitles are out of sync. What should I do?", "acceptedAnswer": {"@type": "Answer", "text": "Align the second subtitle first with a timing tool, then merge. If the subtitles come from different cuts of the video, the gap may not be fully fixable."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Merge Bilingual Subtitles</h1>
+    <p>Combine two subtitle files — for example Chinese and English — into one dual-language subtitle. Lines are matched by time automatically. Export as SRT, or as ASS with a large top line and a smaller coloured bottom line.</p>
+    <span class="privacy-note">🔒 Files are processed in your browser and never uploaded</span>
+  </section>
+
+  <section class="tool" aria-label="Bilingual subtitle merger">
+    <div class="merge-slots">
+      <div class="merge-slot">
+        <h3>① Main subtitle (e.g. Chinese)</h3>
+        <label class="drop" id="drop-a" for="file-a" tabindex="0"><div class="big">Drop or click to choose the main subtitle</div><div class="small">SRT · VTT · ASS · SBV</div></label>
+        <input type="file" id="file-a" accept=".srt,.vtt,.ass,.ssa,.sbv" hidden>
+        <div class="info" id="info-a"></div>
+      </div>
+      <div class="swap-col"><button type="button" class="btn" id="swap" title="Swap the two subtitles">⇄</button></div>
+      <div class="merge-slot">
+        <h3>② Second subtitle (e.g. English)</h3>
+        <label class="drop" id="drop-b" for="file-b" tabindex="0"><div class="big">Drop or click to choose the second subtitle</div><div class="small">SRT · VTT · ASS · SBV</div></label>
+        <input type="file" id="file-b" accept=".srt,.vtt,.ass,.ssa,.sbv" hidden>
+        <div class="info" id="info-b"></div>
+      </div>
+    </div>
+    <p class="hint">Timing follows the main subtitle; overlapping lines from the second subtitle are matched automatically. You can drop both files onto either box at once.</p>
+    <div id="merge-opts">
+      <fieldset><legend>Which language goes on top?</legend>
+        <label><input type="radio" name="top" value="a" checked> Main subtitle on top</label>
+        <label><input type="radio" name="top" value="b"> Second subtitle on top</label>
+      </fieldset>
+      <fieldset><legend>Output format</legend>
+        <label><input type="radio" name="fmt" value="srt" checked> SRT (two lines, works everywhere)</label>
+        <label><input type="radio" name="fmt" value="ass"> ASS (large top line, smaller coloured bottom line)</label>
+      </fieldset>
+      <label><input type="checkbox" id="opt-oneline" checked> Keep each language on a single line</label>
+      <label><input type="checkbox" id="opt-unmatched" checked> Keep unmatched lines (so no dialogue is lost)</label>
+      <label><input type="checkbox" id="opt-bom" checked> Add BOM to output (recommended)</label>
+    </div>
+    <div id="messages"></div>
+    <div id="output" hidden>
+      <p id="summary" class="status status-fix"></p>
+      <button type="button" class="btn btn-primary" id="download">Download bilingual subtitle</button>
+      <div class="preview-label" style="margin-top:12px">Preview (first lines)</div>
+      <pre class="preview mono" id="preview"></pre>
+    </div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>How to use</h2>
+    <ol class="steps">
+      <li><strong>Add two subtitles</strong>: the main subtitle (e.g. Chinese) on the left and the second one (e.g. English) on the right. You can drop both files at once.</li>
+      <li><strong>Choose layout and format</strong>: pick which language goes on top and whether to export SRT or ASS. The preview updates instantly.</li>
+      <li><strong>Download</strong>: the file is saved as <code>name.bilingual.srt</code>. Rename it to match your video if you want your player to load it automatically.</li>
+    </ol>
+
+    <h2>How lines are matched</h2>
+    <p>Subtitles in different languages rarely split sentences the same way — one Chinese line may be two English cues. Merging by line number quickly drifts out of sync. This tool uses the main subtitle's timing and attaches every second-language line that clearly overlaps it, so small timing differences and split sentences are handled, while neighbouring lines that barely touch are not mixed in.</p>
+
+    <h2>Popular uses</h2>
+    <ul>
+      <li><strong>Language learning</strong> — watch with your native language and the language you are learning side by side.</li>
+      <li><strong>Reviewing translations</strong> — check an English translation of a Chinese drama or short video line by line.</li>
+      <li><strong>Family viewing</strong> — one subtitle that works for viewers who read different languages.</li>
+    </ul>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>FAQ</h2>
+    <details><summary>Can I merge subtitles with different numbers of lines?</summary><p>Yes. Lines are matched by overlapping time, not by line number, so it still works when one language splits a sentence into two cues or the timing is slightly off.</p></details><details><summary>Are my files uploaded?</summary><p>No. Everything runs in your browser and your files never leave your device.</p></details><details><summary>SRT or ASS — which should I choose?</summary><p>SRT simply stacks the two languages on two lines and works on almost every player and TV. ASS lets the top line be large and white and the bottom line smaller and coloured, which looks nicer, but some TVs and mobile players do not support it.</p></details><details><summary>The two subtitles are out of sync. What should I do?</summary><p>Align the second subtitle first with a timing tool, then merge. If the subtitles come from different cuts of the video, the gap may not be fully fixable.</p></details>
+
+    <h2>Related tools</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/en/fix-garbled-chinese-subtitles/"><h3>Fix Garbled Chinese Subtitles</h3><p>Convert GBK / Big5 subtitles to UTF-8</p></a>
+      <a class="tool-card" href="/en/simplified-to-traditional-chinese-subtitles/"><h3>Simplified → Traditional Chinese</h3><p>Hong Kong or Taiwan standard, keeps timing</p></a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+
+<script>window.ZIMU_STRINGS = {"q1": "\"", "unsupported": "\" is not supported (SRT, VTT, ASS, SSA, SBV only).", "tooBig": "\" is larger than 20 MB and does not look like a subtitle file.", "noFile": "No file selected", "cuesPre": "", "cuesPost": " lines", "sumPre": "Merged into ", "sumMid": " lines; ", "sumPost": " contain both languages.", "suffix": "bilingual"};</script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/subtitle-format.js"></script>
+<script src="/assets/subtitle-merge.js"></script>
+<script src="/assets/merge-ui.js"></script>
+</body>
+</html>

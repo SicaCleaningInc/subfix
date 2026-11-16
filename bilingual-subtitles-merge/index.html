@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>雙語字幕合併 — 中英字幕線上合併成一個 SRT／ASS｜ZimuFix</title>
+<meta name="description" content="免費線上雙語字幕合併工具。把中文和英文等兩個字幕檔合併成上下雙行的雙語字幕，按時間自動配對，支援 SRT、VTT、ASS 輸入，可輸出 SRT 或上大下細的 ASS。適合學外語、短劇出海及字幕組，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/bilingual-subtitles-merge/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/bilingual-subtitles-merge/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/merge-bilingual-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/bilingual-subtitles-merge/">
+<meta property="og:title" content="雙語字幕合併 — 中英字幕線上合併">
+<meta property="og:description" content="兩個字幕檔合併成上下雙行的雙語字幕，按時間自動配對，檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/bilingual-subtitles-merge/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "雙語字幕合併", "url": "https://zimufix.com/bilingual-subtitles-merge/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "把兩個不同語言的字幕檔按時間合併成雙語字幕。", "inLanguage": "zh-Hant"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "兩個字幕的句數不同可以合併嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。工具按時間重疊配對，而不是按句子序號。就算第二字幕把一句拆成兩句，或者時間有少許偏差，都能正確合併。"}}, {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}}, {"@type": "Question", "name": "SRT 和 ASS 輸出有什麼分別？", "acceptedAnswer": {"@type": "Answer", "text": "SRT 只是把兩種語言放在上下兩行，幾乎所有播放器和電視都支援。ASS 可以設定上行大字白色、下行細字淺黃色，觀看效果更好，但部分電視和手機播放器不支援。"}}, {"@type": "Question", "name": "兩個字幕時間完全對不上怎麼辦？", "acceptedAnswer": {"@type": "Answer", "text": "請先用字幕時間軸調整工具把第二字幕對齊，再進行合併。如果兩個字幕來自不同影片版本，時間差距可能無法完全修正。"}}, {"@type": "Question", "name": "可以合併簡體和繁體嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以，任何兩種語言或文字都能合併。如果想把簡體字幕轉為繁體再合併，可以先用簡體字幕轉繁體工具。"}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>雙語字幕合併</h1>
+    <p>把中文和英文等兩個字幕檔，合併成上下雙行的雙語字幕。按時間自動配對，可輸出 SRT 或上大下細的 ASS。適合學外語、短劇出海及字幕組。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="雙語字幕合併工具">
+    <div class="merge-slots">
+      <div class="merge-slot">
+        <h3>① 主字幕（例如中文）</h3>
+        <label class="drop" id="drop-a" for="file-a" tabindex="0"><div class="big">拖放或點擊選擇主字幕</div><div class="small">SRT · VTT · ASS · SBV</div></label>
+        <input type="file" id="file-a" accept=".srt,.vtt,.ass,.ssa,.sbv" hidden>
+        <div class="info" id="info-a"></div>
+      </div>
+      <div class="swap-col"><button type="button" class="btn" id="swap" title="對調兩個字幕">⇄</button></div>
+      <div class="merge-slot">
+        <h3>② 第二字幕（例如英文）</h3>
+        <label class="drop" id="drop-b" for="file-b" tabindex="0"><div class="big">拖放或點擊選擇第二字幕</div><div class="small">SRT · VTT · ASS · SBV</div></label>
+        <input type="file" id="file-b" accept=".srt,.vtt,.ass,.ssa,.sbv" hidden>
+        <div class="info" id="info-b"></div>
+      </div>
+    </div>
+    <p class="hint">合併時以主字幕的時間為準，自動找出時間重疊的第二字幕句子。可以一次拖放兩個檔案到任何一格。</p>
+    <div id="merge-opts">
+      <fieldset><legend>哪一種語言放上面？</legend>
+        <label><input type="radio" name="top" value="a" checked> 主字幕在上</label>
+        <label><input type="radio" name="top" value="b"> 第二字幕在上</label>
+      </fieldset>
+      <fieldset><legend>輸出格式</legend>
+        <label><input type="radio" name="fmt" value="srt" checked> SRT（兩行文字，兼容性最高）</label>
+        <label><input type="radio" name="fmt" value="ass"> ASS（上大下細、不同顏色）</label>
+      </fieldset>
+      <label><input type="checkbox" id="opt-oneline" checked> 每種語言合併為一行</label>
+      <label><input type="checkbox" id="opt-unmatched" checked> 保留配對不到的句子（避免遺漏對白）</label>
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="output" hidden>
+      <p id="summary" class="status status-fix"></p>
+      <button type="button" class="btn btn-primary" id="download">下載雙語字幕</button>
+      <div class="preview-label" style="margin-top:12px">合併結果預覽（頭幾句）</div>
+      <pre class="preview mono" id="preview"></pre>
+    </div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps">
+      <li><strong>選擇兩個字幕</strong>：左邊放主字幕（例如中文），右邊放第二字幕（例如英文）。也可以一次拖放兩個檔案。</li>
+      <li><strong>選擇排列及格式</strong>：決定哪種語言在上面，以及輸出 SRT 還是 ASS。預覽會即時更新。</li>
+      <li><strong>下載</strong>：檔名會加上 <code>.bilingual</code>，例如 <code>movie.bilingual.srt</code>。如果要給播放器自動載入，可以改成與影片相同的檔名。</li>
+    </ol>
+
+    <h2>工具如何配對兩種語言？</h2>
+    <p>不同語言的字幕，句數和斷句位置往往不一樣。例如中文一句「我們走吧」，英文版可能拆成「Let's」和「go」兩句。如果按序號逐句合併，很快就會錯位。</p>
+    <p>本工具以主字幕的時間為準，找出時間有明顯重疊的第二字幕句子，再合併到同一句。輕微的時間偏差、一句拆成多句的情況都能處理；只碰到一點點邊的相鄰句子則不會被誤配。</p>
+
+    <h2>常見用途</h2>
+    <ul>
+      <li><strong>學習外語</strong>：看劇時同時顯示母語和外語，方便對照學習。</li>
+      <li><strong>短劇、短片出海</strong>：翻譯完英文字幕後，製作中英對照版本給團隊審稿，檢查翻譯是否準確。</li>
+      <li><strong>字幕組及雙語發布</strong>：製作上中下英、上大下細的雙語字幕，提升觀看體驗。</li>
+      <li><strong>家庭觀影</strong>：長輩看中文、小朋友看英文，一套字幕兩代都看得懂。</li>
+    </ul>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>SRT 還是 ASS？</h2>
+    <table>
+      <tr><th></th><th>SRT</th><th>ASS</th></tr>
+      <tr><td>效果</td><td>兩行同樣大小的文字</td><td>上行大字白色、下行細字淺黃色</td></tr>
+      <tr><td>電視、手機支援</td><td>普遍支援</td><td>部分不支援</td></tr>
+      <tr><td>適合</td><td>一般觀看、上載平台</td><td>電腦播放、燒錄字幕到影片</td></tr>
+    </table>
+
+    <h2>常見問題</h2>
+    <details><summary>兩個字幕的句數不同可以合併嗎？</summary><p>可以。工具按時間重疊配對，而不是按句子序號。就算第二字幕把一句拆成兩句，或者時間有少許偏差，都能正確合併。</p></details><details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details><details><summary>SRT 和 ASS 輸出有什麼分別？</summary><p>SRT 只是把兩種語言放在上下兩行，幾乎所有播放器和電視都支援。ASS 可以設定上行大字白色、下行細字淺黃色，觀看效果更好，但部分電視和手機播放器不支援。</p></details><details><summary>兩個字幕時間完全對不上怎麼辦？</summary><p>請先用字幕時間軸調整工具把第二字幕對齊，再進行合併。如果兩個字幕來自不同影片版本，時間差距可能無法完全修正。</p></details><details><summary>可以合併簡體和繁體嗎？</summary><p>可以，任何兩種語言或文字都能合併。如果想把簡體字幕轉為繁體再合併，可以先用簡體字幕轉繁體工具。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/subtitle-time-shift/"><h3>字幕時間軸調整</h3><p>合併前先把兩個字幕對齊</p></a>
+      <a class="tool-card" href="/simplified-to-traditional-subtitles/"><h3>簡體字幕轉繁體</h3><p>支援香港及台灣用字</p></a>
+      <a class="tool-card" href="/fix-garbled-subtitles/"><h3>字幕亂碼修復</h3><p>自動偵測編碼，一鍵還原亂碼字幕</p></a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script src="/assets/encoding.js"></script>
+<script src="/assets/subtitle-format.js"></script>
+<script src="/assets/subtitle-merge.js"></script>
+<script src="/assets/merge-ui.js"></script>
+</body>
+</html>

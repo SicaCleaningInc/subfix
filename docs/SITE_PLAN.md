@@ -28,6 +28,8 @@
 /vtt-to-srt/                        VTT 轉 SRT           ✅ 已完成
 /ass-to-srt/                        ASS 轉 SRT           ✅ 已完成
 
+/bilingual-subtitles-merge/         雙語字幕合併          ✅ 已完成
+/en/merge-bilingual-subtitles/      英文雙語字幕合併      ✅ 已完成
 /guides/                            教學文章（引流用）
 /guides/tv-subtitles-garbled/       電視、USB 播放字幕亂碼    ✅ 已完成
 /guides/vlc-subtitle-encoding/      VLC 字幕亂碼設定          ✅ 已完成
@@ -97,3 +99,13 @@
 - 拖放成個資料夾
 - 簡繁轉換同亂碼修復一次過做
 - PWA：可以加到手機主畫面，離線使用
+
+## 8. 短劇／短片創作者方向（2026-11-15 驗證）
+
+| 關鍵字 | 結果 | 決定 |
+|---|---|---|
+| 雙語字幕合併 | 只有 2 個工具，冇繁體專頁 | ✅ 已做 |
+| 字幕斷句 | 冇工具，只有文章 | 下一個：直式短劇斷句工具＋教學 |
+| bilingual subtitles merge | 有 Reddit 帖排前 | ✅ 已做英文版 |
+| srt 翻譯 | 已有 AI 翻譯工具 | 暫時唔做 |
+| 剪映 字幕 導出 srt | 電腦版剪映已可直接匯出 | 唔做工具，可寫教學引流 |
