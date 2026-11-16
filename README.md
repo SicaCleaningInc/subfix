@@ -16,6 +16,9 @@ robots.txt  sitemap.xml        SEO
 _headers                       Cloudflare 安全標頭
 404.html                       找不到頁面
 docs/SITE_PLAN.md              網站規劃
+favicon.svg / favicon.ico      網站圖示
+apple-touch-icon.png           iPhone 主畫面圖示
+og.png / og-en.png             分享連結時顯示嘅預覽圖（中文／英文）
 ```
 
 ## 上線步驟
@@ -75,3 +78,4 @@ python3 -m http.server 8000
 3. 寫新嘅 `assets/xxx.js`
 4. 喺首頁將對應嘅「即將推出」卡片改成連結
 5. 喺 `sitemap.xml` 加入新網址
+6. 由其他頁面複製 `<head>` 入面嘅 favicon、og:image 同 AdSense 標籤
