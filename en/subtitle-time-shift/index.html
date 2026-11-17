@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subtitle Timing Adjuster — Shift SRT Subtitles Earlier or Later Online | ZimuFix</title>
+<meta name="description" content="Free online tool to fix out-of-sync subtitles. Shift SRT, ASS, VTT and LRC subtitles earlier or later, or convert frame rate (25 ↔ 23.976 fps) when they drift. Batch support, files never leave your browser.">
+<link rel="canonical" href="https://zimufix.com/en/subtitle-time-shift/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/subtitle-time-shift/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/subtitle-time-shift/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/subtitle-time-shift/">
+<meta property="og:title" content="Subtitle Timing Adjuster — Shift SRT Subtitles Earlier or Later Online">
+<meta property="og:description" content="Free online tool to fix out-of-sync subtitles. Shift SRT, ASS, VTT and LRC subtitles earlier or later, or convert frame rate (25 ↔ 23.976 fps) when they drift. Batch support, files never leave your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/en/subtitle-time-shift/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Subtitle Timing Adjuster", "url": "https://zimufix.com/en/subtitle-time-shift/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Shift subtitles earlier or later or convert frame rate so they match the video.", "inLanguage": "en"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Subtitles appear before the dialogue — positive or negative?", "acceptedAnswer": {"@type": "Answer", "text": "If subtitles show up too early, they need to be delayed: enter a positive number. If they appear too late, enter a negative number to bring them earlier."}}, {"@type": "Question", "name": "Subtitles drift further out of sync over time. What now?", "acceptedAnswer": {"@type": "Answer", "text": "If the start is in sync but the gap grows towards the end, the subtitle and video have different frame rates — for example a 25 fps subtitle on a 23.976 fps video. Use the frame-rate conversion option, then fine-tune with the offset."}}, {"@type": "Question", "name": "Are my files uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser and your files never leave your device."}}, {"@type": "Question", "name": "Which formats are supported?", "acceptedAnswer": {"@type": "Answer", "text": "SRT, VTT, ASS, SSA, SBV, LRC and SMI. Frame-based MicroDVD SUB files are not supported."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Subtitle Timing Adjuster</h1>
+    <p>Subtitles too early or too late? Shift the whole file in one click. If they drift further out of sync over time, fix it with frame-rate conversion. Works with SRT, ASS, VTT and LRC.</p>
+    <span class="privacy-note">🔒 Files are processed in your browser and never uploaded</span>
+  </section>
+
+  <section class="tool" aria-label="Subtitle timing adjuster">
+    <div class="shift-controls">
+      <div class="ctl">
+        <label for="offset">Shift (seconds)</label>
+        <input type="number" id="offset" value="0" step="0.1" inputmode="decimal">
+        <div class="quick">
+          <button type="button" class="btn" data-delta="-1">−1 s</button>
+          <button type="button" class="btn" data-delta="-0.1">−0.1</button>
+          <button type="button" class="btn" data-delta="0.1">+0.1</button>
+          <button type="button" class="btn" data-delta="1">+1 s</button>
+          <button type="button" class="btn btn-ghost" id="reset-offset">Reset</button>
+        </div>
+        <p class="hint">Subtitles too early → enter a <strong>positive</strong> number to delay. Too late → enter a <strong>negative</strong> number.</p>
+      </div>
+      <div class="ctl">
+        <label for="fps">Frame-rate conversion (when sync drifts)</label>
+        <select id="fps">
+          <option value="1">No conversion</option>
+          <option value="25/23.976">Subtitle 25 fps → video 23.976 fps (subs get earlier)</option>
+          <option value="23.976/25">Subtitle 23.976 fps → video 25 fps (subs get later)</option>
+          <option value="25/24">Subtitle 25 fps → video 24 fps (subs get earlier)</option>
+          <option value="24/25">Subtitle 24 fps → video 25 fps (subs get later)</option>
+          <option value="24/23.976">Subtitle 24 fps → video 23.976 fps</option>
+          <option value="23.976/24">Subtitle 23.976 fps → video 24 fps</option>
+        </select>
+        <p class="hint">In sync at the start but worse towards the end? That is a frame-rate mismatch. Convert first, then fine-tune on the left.</p>
+      </div>
+    </div>
+    <p id="summary"></p>
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">Drop subtitle files here, or click to choose</div>
+      <div class="small">SRT, VTT, ASS, SSA, SBV, LRC, SMI supported. You can select multiple files.</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.vtt,.ass,.ssa,.sbv,.lrc,.smi" hidden>
+    <div class="options"><label><input type="checkbox" id="opt-bom" checked> Add BOM to output (recommended — helps older players and TVs detect UTF-8)</label></div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>Download all (ZIP)</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">Clear all</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>How to use</h2>
+    <ol class="steps">
+      <li><strong>Measure the gap</strong>: find a clear line of dialogue and compare when the actor speaks with when the subtitle appears.</li>
+      <li><strong>Enter the offset</strong>: positive to delay, negative to advance. The preview shows timestamps before and after.</li>
+      <li><strong>Download</strong>: the file keeps its name, so just replace the old one. A whole season can be adjusted at once and downloaded as a ZIP.</li>
+    </ol>
+    <h2>Two kinds of out-of-sync subtitles</h2>
+    <h3>1. The whole file is off by the same amount</h3>
+    <p>This is the most common case. The subtitle was made for a different release of the video — one with a longer or shorter intro, an extra studio logo, or ads. Because the gap is constant, a single offset fixes it.</p>
+    <h3>2. In sync at the start, worse towards the end</h3>
+    <p>This is almost always a <strong>frame-rate mismatch</strong>. Films are shot at 24 (or 23.976) frames per second, but European PAL releases are sped up to 25 fps, making the film about 4% shorter — roughly five minutes over a two-hour movie. A subtitle timed for the 25 fps release will drift earlier and earlier on a 23.976 fps video, and vice versa.</p>
+    <table>
+      <tr><th>Symptom</th><th>Setting</th></tr>
+      <tr><td>Every line is 2 seconds early</td><td>Shift: <code>2</code></td></tr>
+      <tr><td>Every line is 1.5 seconds late</td><td>Shift: <code>-1.5</code></td></tr>
+      <tr><td>In sync at first, minutes early by the end</td><td>Frame rate: subtitle 25 fps → video 23.976 fps</td></tr>
+      <tr><td>In sync at first, minutes late by the end</td><td>Frame rate: subtitle 23.976 fps → video 25 fps</td></tr>
+    </table>
+    <div class="ad-slot" id="ad-2"></div>
+    <h2>Quick fix in VLC</h2>
+    <p>For a one-off viewing, press <code>G</code> or <code>H</code> in VLC to move subtitles by 50 ms per press. The setting is usually not saved, so fixing the file is better if you will watch again or share it.</p>
+    <h2>FAQ</h2>
+    <details><summary>Subtitles appear before the dialogue — positive or negative?</summary><p>If subtitles show up too early, they need to be delayed: enter a positive number. If they appear too late, enter a negative number to bring them earlier.</p></details><details><summary>Subtitles drift further out of sync over time. What now?</summary><p>If the start is in sync but the gap grows towards the end, the subtitle and video have different frame rates — for example a 25 fps subtitle on a 23.976 fps video. Use the frame-rate conversion option, then fine-tune with the offset.</p></details><details><summary>Are my files uploaded?</summary><p>No. Everything runs in your browser and your files never leave your device.</p></details><details><summary>Which formats are supported?</summary><p>SRT, VTT, ASS, SSA, SBV, LRC and SMI. Frame-based MicroDVD SUB files are not supported.</p></details>
+    <h2>Related tools</h2>
+    <div class="tool-grid"><a class="tool-card" href="/en/merge-bilingual-subtitles/"><h3>Merge Bilingual Subtitles</h3><p>Combine two languages into one dual-language file</p></a><a class="tool-card" href="/en/fix-garbled-chinese-subtitles/"><h3>Fix Garbled Chinese Subtitles</h3><p>Convert GBK / Big5 subtitles to UTF-8</p></a><a class="tool-card" href="/en/srt-to-txt/"><h3>SRT to TXT</h3><p>Strip timestamps, keep the dialogue</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+<script>window.ZIMU_STRINGS = {"enc": {"utf-8": "UTF-8", "gb18030": "GBK / GB18030 (Simplified Chinese)", "big5": "Big5 (Traditional Chinese)", "utf-16le": "UTF-16 LE", "utf-16be": "UTF-16 BE", "shift_jis": "Shift-JIS (Japanese)", "euc-kr": "EUC-KR (Korean)"}, "empty": "(empty)", "origEnc": "Original encoding: ", "remove": "Remove", "q1": "\"", "tooBig": "\" is larger than 20 MB and does not look like a subtitle file.", "later": "Delay by ", "earlier": "Advance by ", "sec": " s", "fps": "Frame rate: ", "current": "Current setting: ", "join": ", ", "none": "Current setting: no change", "noTime": "(no timestamps found)", "last": "  (last line)", "download": "Download adjusted subtitle", "before": "Before", "after": "After", "unsupported": "\" is not supported. Use SRT, VTT, ASS, SSA, SBV, LRC or SMI (frame-based MicroDVD SUB files are not supported).", "zipName": "adjusted-subtitles.zip"};</script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-time.js"></script>
+<script src="/assets/time-shift-ui.js"></script>
+</body>
+</html>

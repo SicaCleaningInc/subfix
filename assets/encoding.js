@@ -13,7 +13,7 @@
   for (var i = 0; i < COMMON.length; i++) COMMON_SET[COMMON[i]] = 1;
 
   // 自動偵測時比較嘅編碼
-  var AUTO_CANDIDATES = ['utf-8', 'gb18030', 'big5'];
+  var AUTO_CANDIDATES = ['gb18030', 'big5', 'shift_jis', 'euc-kr'];
 
   // 手動揀選時可用嘅編碼
   var MANUAL_ENCODINGS = [
@@ -62,35 +62,53 @@
     return true;
   }
 
-  /**
-   * 為一段解碼後嘅文字評分：
-   * 常用中文字比例愈高愈好；亂碼符號（�）同私用區字元扣分。
-   */
-  function scoreText(text) {
-    if (text == null) return { score: -Infinity, cjk: 0, hits: 0, bad: 0 };
-    var cjk = 0, hits = 0, bad = 0, nonAscii = 0;
+  // 韓文常用音節（用嚟判斷 EUC-KR 解碼係咪啱）
+  var KO = '이가는을를에의다고하지서요니습어나아그한사기리도로해게있거수보자내대시일것우만면주제했라말정여오원마저들데소무상부야래안전과경생금장인와께세까았었겠네죠뭐왜너난날알없좋같때더잘못할줄진짜미바구국결문계조실성연중동물위두모비어떻게뭔데요건엄빠누형님씨';
+  var KO_SET = {};
+  for (var k = 0; k < KO.length; k++) KO_SET[KO[k]] = 1;
+
+  /** 統計一段解碼後文字嘅特徵 */
+  function analyze(text) {
+    var st = { nonAscii: 0, bad: 0, cjk: 0, zhHits: 0, kana: 0, hwKana: 0, hangul: 0, koHits: 0 };
+    if (text == null) return null;
     for (var i = 0; i < text.length; i++) {
-      var ch = text[i];
       var c = text.charCodeAt(i);
       if (c < 0x80) continue;
-      nonAscii++;
-      if (c === 0xfffd) { bad += 1; continue; }
-      if ((c >= 0xe000 && c <= 0xf8ff) || (c >= 0x80 && c <= 0x9f)) { bad += 1; continue; }
-      if (c >= 0x4e00 && c <= 0x9fff) {
-        cjk++;
-        if (COMMON_SET[ch]) hits++;
-      }
+      st.nonAscii++;
+      var ch = text[i];
+      if (c === 0xfffd || (c >= 0xe000 && c <= 0xf8ff) || (c >= 0x80 && c <= 0x9f)) st.bad++;
+      else if (c >= 0x4e00 && c <= 0x9fff) { st.cjk++; if (COMMON_SET[ch]) st.zhHits++; }
+      else if (c >= 0x3040 && c <= 0x30ff) st.kana++;
+      else if (c >= 0xff61 && c <= 0xff9f) st.hwKana++;
+      else if (c >= 0xac00 && c <= 0xd7a3) { st.hangul++; if (KO_SET[ch]) st.koHits++; }
     }
-    var ratio = cjk ? hits / cjk : 0;
-    var badRatio = nonAscii ? bad / nonAscii : 0;
-    return {
-      score: ratio - badRatio * 3,
-      cjk: cjk,
-      hits: hits,
-      bad: bad,
-      ratio: ratio
-    };
+    return st;
   }
+
+  /**
+   * 按候選編碼評分：
+   * 中文睇常用字命中率；日文睇假名比例；韓文睇常用音節命中率。
+   * 解錯編碼通常會出現 �、半形片假名或者冷僻字，會扣分。
+   */
+  function scoreFor(enc, text) {
+    var st = analyze(text);
+    if (!st || !st.nonAscii) return { score: -Infinity, ratio: 0, bad: 0, cjk: 0 };
+    var n = st.nonAscii;
+    var badR = st.bad / n, hwR = st.hwKana / n, hgR = st.hangul / n, kanaR = st.kana / n;
+    var zhR = st.cjk ? st.zhHits / st.cjk : 0;
+    var score;
+    if (enc === 'shift_jis') {
+      score = (st.kana >= 3 ? kanaR * 0.9 + zhR * 0.2 : 0) - badR * 3 - hwR * 3 - hgR * 2;
+    } else if (enc === 'euc-kr') {
+      score = (st.hangul >= 3 ? (st.koHits / st.hangul) * hgR : 0) - badR * 3 - hwR * 3;
+    } else {
+      score = zhR * (st.cjk / n) - badR * 3 - hwR * 2 - hgR * 2 - kanaR * 0.5;
+    }
+    return { score: score, ratio: zhR, bad: st.bad, cjk: st.cjk };
+  }
+
+  /** 舊介面：只按中文常用字評分（保留俾其他程式用） */
+  function scoreText(text) { return scoreFor('gb18030', text); }
 
   /**
    * 偵測編碼。回傳：
@@ -111,11 +129,11 @@
       return { encoding: 'utf-8', confidence: 'high', reason: 'valid-utf8', ascii: false, results: [] };
     }
 
-    // 簡體 GBK vs 繁體 Big5：用常用字命中率比較
+    // GBK、Big5、Shift-JIS、EUC-KR 逐個試，揀分數最高嘅
     var results = [];
     for (var i = 0; i < AUTO_CANDIDATES.length; i++) {
       var enc = AUTO_CANDIDATES[i];
-      var s = scoreText(decode(bytes, enc, false));
+      var s = scoreFor(enc, decode(bytes, enc, false));
       results.push({ encoding: enc, score: s.score, ratio: s.ratio, bad: s.bad, cjk: s.cjk });
     }
     results.sort(function (a, b) { return b.score - a.score; });
@@ -148,6 +166,7 @@
     convert: convert,
     encodeUTF8: encodeUTF8,
     scoreText: scoreText,
+    scoreFor: scoreFor,
     MANUAL_ENCODINGS: MANUAL_ENCODINGS
   };
 

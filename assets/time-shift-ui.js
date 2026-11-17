@@ -19,6 +19,8 @@
   var msgBox = document.getElementById('messages');
 
   var items = [];
+  var STR = window.ZIMU_STRINGS || {};
+  function t(k, d) { return STR[k] != null ? STR[k] : d; }
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -38,10 +40,10 @@
 
   function updateSummary() {
     var ms = offsetMs(), parts = [];
-    if (ms > 0) parts.push('延後 ' + (ms / 1000) + ' 秒');
-    else if (ms < 0) parts.push('提前 ' + (-ms / 1000) + ' 秒');
-    if (scale() !== 1) parts.push('幀率轉換：' + fpsSel.options[fpsSel.selectedIndex].text);
-    summary.textContent = parts.length ? '目前設定：' + parts.join('，') : '目前設定：不作調整';
+    if (ms > 0) parts.push(t('later', '延後 ') + (ms / 1000) + t('sec', ' 秒'));
+    else if (ms < 0) parts.push(t('earlier', '提前 ') + (-ms / 1000) + t('sec', ' 秒'));
+    if (scale() !== 1) parts.push(t('fps', '幀率轉換：') + fpsSel.options[fpsSel.selectedIndex].text);
+    summary.textContent = parts.length ? t('current', '目前設定：') + parts.join(t('join', '，')) : t('none', '目前設定：不作調整');
   }
 
   function timingLines(text) {
@@ -57,9 +59,9 @@
 
   function previewOf(text) {
     var lines = timingLines(text);
-    if (!lines.length) return '（找不到時間碼）';
+    if (!lines.length) return t('noTime', '（找不到時間碼）');
     if (lines.length <= 4) return lines.join('\n');
-    return lines.slice(0, 3).join('\n') + '\n⋯\n' + lines[lines.length - 1] + '（最後一句）';
+    return lines.slice(0, 3).join('\n') + '\n⋯\n' + lines[lines.length - 1] + t('last', '（最後一句）');
   }
 
   function download(name, bytes, type) {
@@ -88,13 +90,13 @@
       card.appendChild(head);
 
       var row = el('div', 'file-row');
-      var btn = el('button', 'btn btn-primary', '下載調整後字幕');
+      var btn = el('button', 'btn btn-primary', t('download', '下載調整後字幕'));
       btn.type = 'button';
       btn.addEventListener('click', function () {
         download(item.name, E.encodeUTF8(shifted(item), bomBox.checked));
       });
       row.appendChild(btn);
-      var rm = el('button', 'btn btn-ghost', '移除');
+      var rm = el('button', 'btn btn-ghost', t('remove', '移除'));
       rm.type = 'button';
       rm.addEventListener('click', function () { items.splice(idx, 1); render(); });
       row.appendChild(rm);
@@ -102,10 +104,10 @@
 
       var grid = el('div', 'compare');
       var a = el('div');
-      a.appendChild(el('div', 'preview-label', '調整前'));
+      a.appendChild(el('div', 'preview-label', t('before', '調整前')));
       a.appendChild(el('pre', 'preview mono', previewOf(E.decode(item.bytes, item.encoding, false) || '')));
       var b = el('div');
-      b.appendChild(el('div', 'preview-label', '調整後'));
+      b.appendChild(el('div', 'preview-label', t('after', '調整後')));
       b.appendChild(el('pre', 'preview mono', previewOf(shifted(item))));
       grid.appendChild(a); grid.appendChild(b);
       card.appendChild(grid);
@@ -126,12 +128,12 @@
     files.forEach(function (file) {
       var ext = TM.extOf(file.name);
       if (!TM.SUPPORTED[ext]) {
-        alertLine('「' + file.name + '」暫不支援。本工具支援 SRT、VTT、ASS、SSA、SBV、LRC、SMI；以影格計算的 SUB（MicroDVD）字幕暫不適用。');
+        alertLine(t('q1', '「') + file.name + t('unsupported', '」暫不支援。本工具支援 SRT、VTT、ASS、SSA、SBV、LRC、SMI；以影格計算的 SUB（MicroDVD）字幕暫不適用。'));
         if (--pending === 0) render();
         return;
       }
       if (file.size > MAX_SIZE) {
-        alertLine('「' + file.name + '」超過 20MB，看來不是字幕檔案。');
+        alertLine(t('q1', '「') + file.name + t('tooBig', '」超過 20MB，看來不是字幕檔案。'));
         if (--pending === 0) render();
         return;
       }
@@ -175,7 +177,7 @@
       if (used[name]) { var n = used[name]++; name = name.replace(/(\.[^.]+)$/, '(' + n + ')$1'); } else used[name] = 1;
       return { name: name, data: E.encodeUTF8(shifted(item), bomBox.checked) };
     });
-    download('字幕時間軸調整.zip', Z.makeZip(files), 'application/zip');
+    download(t('zipName', '字幕時間軸調整.zip'), Z.makeZip(files), 'application/zip');
   });
   clearBtn.addEventListener('click', function () { items = []; render(); });
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字幕斷句工具 — 直式短劇、短影片字幕自動斷行｜ZimuFix</title>
+<meta name="description" content="免費線上字幕斷句工具。設定每行字數，自動在標點及停頓位斷行，太長的句子拆成多句並按字數分配時間。適合直式短劇、抖音、Reels、YouTube Shorts 字幕，支援 SRT、VTT、ASS，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/subtitle-line-break/">
+<meta property="og:title" content="字幕斷句工具 — 直式短劇字幕自動斷行">
+<meta property="og:description" content="設定每行字數，自動斷行及拆句，適合直式短劇及短影片。檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/subtitle-line-break/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "字幕斷句", "url": "https://zimufix.com/subtitle-line-break/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "按每行字數自動為字幕斷行及拆句，適合直式短劇及短影片。", "inLanguage": "zh-Hant"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "直式短劇字幕每行應該幾多個字？", "acceptedAnswer": {"@type": "Answer", "text": "手機直式畫面較窄，一般建議每行 10 至 14 個中文字，最好單行顯示，觀眾一眼就能看完。橫式影片可以放寬到每行 14 至 20 字、最多兩行。"}}, {"@type": "Question", "name": "長句拆開之後，時間怎樣計算？", "acceptedAnswer": {"@type": "Answer", "text": "工具會按每段的字數比例分配原本的時間。例如 6 秒的長句拆成字數相同的三段，每段各佔 2 秒，前後相連，不會重疊或留空。"}}, {"@type": "Question", "name": "英文字會被斬開嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。英文單字會當作一個整體處理，只會在空格位置斷行。英文字母及數字以半個中文字寬計算。"}}, {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}}, {"@type": "Question", "name": "ASS 字幕斷句後會保留特效嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。斷句後統一輸出 SRT，ASS 的樣式及特效標籤會移除。如果需要特效字幕，建議先斷句，再在剪輯軟件中套用樣式。"}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>字幕斷句工具</h1>
+    <p>直式短劇、短影片字幕太長，手機畫面放不下？設定每行字數，自動在標點及停頓位斷行，太長的句子拆成多句並按字數分配時間。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="字幕斷句工具">
+    <div class="break-controls">
+      <div><label for="preset">預設</label>
+        <select id="preset">
+          <option value="v12-1">直式短劇（每行 12 字，單行）</option>
+          <option value="v12-2">直式影片（每行 12 字，最多兩行）</option>
+          <option value="h16-2">橫式影片（每行 16 字，最多兩行）</option>
+          <option value="en">英文字幕（每行約 42 字母，最多兩行）</option>
+          <option value="custom">自訂</option>
+        </select></div>
+      <div><label for="max-w">每行最多字數</label><input type="number" id="max-w" value="12" min="4" max="60" step="1"></div>
+      <div><label for="max-lines">每句最多行數</label><select id="max-lines"><option value="1">1 行</option><option value="2">2 行</option></select></div>
+    </div>
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 SRT、VTT、ASS、SSA、SBV，可一次選擇多個檔案，輸出 SRT</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.vtt,.ass,.ssa,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-punct"> 逗號、句號改為空格（很多字幕規範的做法）</label><br>
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps">
+      <li><strong>選擇預設</strong>：直式短劇選「每行 12 字，單行」；也可以自訂每行字數和行數。</li>
+      <li><strong>選擇字幕檔案</strong>：剪映、AI 配音工具或翻譯工具輸出的 SRT 都可以，亂碼會自動修復。</li>
+      <li><strong>對照預覽並下載</strong>：右邊黑底預覽模擬手機畫面效果。滿意後下載，再匯入剪輯軟件即可。</li>
+    </ol>
+
+    <h2>為什麼直式短劇要特別斷句？</h2>
+    <p>手機直式畫面的寬度只有橫式的一半左右，同樣大小的字幕，每行能放的字數也大減。字幕一旦太長，剪輯軟件會自動換成三四行，遮住演員的臉；或者字體被迫縮小，觀眾來不及看完。短劇節奏快，對白密集，斷句是否舒服，直接影響完播率。</p>
+
+    <h2>字幕斷句的原則</h2>
+    <h3>一、在語意停頓處斷開</h3>
+    <p>斷句應該跟隨說話的停頓，在逗號、句號或語氣轉折的位置斷開，不要把緊扣的詞組拆在兩行。本工具會優先在標點和空格後斷行，同時避免前半行太短。</p>
+    <table>
+      <tr><th>效果</th><th>斷句方式</th></tr>
+      <tr><td>❌ 生硬</td><td>你對他不滿，可能是因為他<br>酗酒，更有可能是他剛甩掉他老婆</td></tr>
+      <tr><td>✅ 自然</td><td>你對他不滿，<br>可能是因為他酗酒，<br>更有可能是他剛甩掉他老婆</td></tr>
+    </table>
+    <h3>二、控制每行字數</h3>
+    <table>
+      <tr><th>影片類型</th><th>建議每行字數</th><th>建議行數</th></tr>
+      <tr><td>直式短劇、抖音、Reels、Shorts</td><td>10–14 字</td><td>1 行</td></tr>
+      <tr><td>橫式影片、YouTube</td><td>14–20 字</td><td>最多 2 行</td></tr>
+      <tr><td>英文字幕</td><td>約 42 個字母</td><td>最多 2 行</td></tr>
+    </table>
+    <h3>三、太長就拆成兩句</h3>
+    <p>如果一句對白超過字數上限，與其擠成三行，不如拆成前後兩句輪流出現。本工具會按字數比例分配原本的時間，例如 4 秒的句子拆成字數相若的兩段，各顯示約 2 秒。</p>
+    <h3>四、標點符號的處理</h3>
+    <p>不少字幕規範會把句中的逗號改為空格、刪除句末句號，畫面更簡潔。勾選「逗號、句號改為空格」即可一併處理；問號、感嘆號則會保留，以免改變語氣。</p>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>常見問題</h2>
+    <details><summary>直式短劇字幕每行應該幾多個字？</summary><p>手機直式畫面較窄，一般建議每行 10 至 14 個中文字，最好單行顯示，觀眾一眼就能看完。橫式影片可以放寬到每行 14 至 20 字、最多兩行。</p></details><details><summary>長句拆開之後，時間怎樣計算？</summary><p>工具會按每段的字數比例分配原本的時間。例如 6 秒的長句拆成字數相同的三段，每段各佔 2 秒，前後相連，不會重疊或留空。</p></details><details><summary>英文字會被斬開嗎？</summary><p>不會。英文單字會當作一個整體處理，只會在空格位置斷行。英文字母及數字以半個中文字寬計算。</p></details><details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details><details><summary>ASS 字幕斷句後會保留特效嗎？</summary><p>不會。斷句後統一輸出 SRT，ASS 的樣式及特效標籤會移除。如果需要特效字幕，建議先斷句，再在剪輯軟件中套用樣式。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/simplified-to-traditional-subtitles/"><h3>簡體字幕轉繁體</h3><p>剪映字幕轉繁體，支援香港及台灣用字</p></a>
+      <a class="tool-card" href="/bilingual-subtitles-merge/"><h3>雙語字幕合併</h3><p>中英字幕合併成上下雙行</p></a>
+      <a class="tool-card" href="/subtitle-time-shift/"><h3>字幕時間軸調整</h3><p>字幕太快或太慢，一鍵對齊</p></a>
+    </div>
+    <h2>延伸閱讀</h2>
+    <ul><li><a href="/guides/capcut-export-srt/">剪映如何匯出 SRT 字幕？轉繁體、斷句、雙語一次搞定</a></li></ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/subtitle-format.js"></script>
+<script src="/assets/subtitle-break.js"></script>
+<script src="/assets/break-ui.js"></script>
+</body>
+</html>

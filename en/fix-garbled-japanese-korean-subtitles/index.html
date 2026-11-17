@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fix Garbled Japanese &amp; Korean Subtitles — Shift-JIS / EUC-KR to UTF-8 | ZimuFix</title>
+<meta name="description" content="Japanese or Korean subtitles showing gibberish? Free online tool that auto-detects Shift-JIS, EUC-KR and other encodings and converts SRT, ASS and VTT subtitles to UTF-8. Batch support, files never leave your browser.">
+<link rel="canonical" href="https://zimufix.com/en/fix-garbled-japanese-korean-subtitles/">
+<meta property="og:title" content="Fix Garbled Japanese &amp; Korean Subtitles — Shift-JIS / EUC-KR to UTF-8">
+<meta property="og:description" content="Japanese or Korean subtitles showing gibberish? Free online tool that auto-detects Shift-JIS, EUC-KR and other encodings and converts SRT, ASS and VTT subtitles to UTF-8. Batch support, files never leave your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/en/fix-garbled-japanese-korean-subtitles/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Fix Garbled Japanese & Korean Subtitles", "url": "https://zimufix.com/en/fix-garbled-japanese-korean-subtitles/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Detects Shift-JIS and EUC-KR and converts Japanese and Korean subtitles to UTF-8.", "inLanguage": "en"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which encodings are detected automatically?", "acceptedAnswer": {"@type": "Answer", "text": "UTF-8, UTF-16, Shift-JIS (Japanese, including Windows CP932), EUC-KR / CP949 (Korean), GBK and Big5 (Chinese). If detection picks the wrong one, choose another from the dropdown and the preview updates instantly."}}, {"@type": "Question", "name": "Are my subtitle files uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs inside your browser. Your files never leave your computer or phone."}}, {"@type": "Question", "name": "Will the file name change?", "acceptedAnswer": {"@type": "Answer", "text": "No. The fixed file keeps its original name, so your player still matches it to the video."}}, {"@type": "Question", "name": "What about EUC-JP or ISO-2022-JP files?", "acceptedAnswer": {"@type": "Answer", "text": "These older Japanese encodings are rare in subtitle files and are not detected automatically. Most Japanese subtitles use Shift-JIS or UTF-8."}}, {"@type": "Question", "name": "It shows empty squares instead of Japanese or Korean.", "acceptedAnswer": {"@type": "Answer", "text": "The encoding is fine, but your player is using a font without those characters. Choose a font such as Meiryo or Yu Gothic for Japanese, or Malgun Gothic for Korean, in your player settings."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Fix Garbled Japanese &amp; Korean Subtitles</h1>
+    <p>Anime or K-drama subtitles turned into symbols? Drop the file below. We detect Shift-JIS, EUC-KR and other encodings automatically and convert to UTF-8 so they play on any device.</p>
+    <span class="privacy-note">🔒 Files are processed in your browser and never uploaded</span>
+  </section>
+
+  <section class="tool" aria-label="Japanese and Korean subtitle encoding fixer">
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">Drop subtitle files here, or click to choose</div>
+      <div class="small">SRT, ASS, SSA, VTT, SUB, SMI, TXT supported. You can select multiple files.</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.ass,.ssa,.vtt,.sub,.txt,.lrc,.smi,.sbv" hidden>
+    <div class="options"><label><input type="checkbox" id="opt-bom" checked> Add BOM to output (recommended — helps older players and TVs detect UTF-8)</label></div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>Download all (ZIP)</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">Clear all</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>How to use</h2>
+    <ol class="steps">
+      <li><strong>Choose your subtitle files</strong>: drag garbled Japanese or Korean subtitles into the box. A whole season at once is fine.</li>
+      <li><strong>Check the preview</strong>: the detected encoding is shown next to each file, with the first few lines of dialogue.</li>
+      <li><strong>Download</strong>: the file keeps its original name — replace the old one and your player picks it up.</li>
+    </ol>
+
+    <h2>Why Japanese and Korean subtitles break</h2>
+    <p>Older Japanese subtitles are usually saved in <strong>Shift-JIS</strong>, and older Korean ones in <strong>EUC-KR</strong> (or its Windows extension CP949). Players that expect UTF-8 — most smart TVs, phones and many web players — read the bytes with the wrong rules and display nonsense. The text is not damaged; it just needs converting.</p>
+
+    <h3>What it looks like</h3>
+    <table>
+      <tr><th>What you see</th><th>What happened</th></tr>
+      <tr><td><span class="mojibake">偙傫偵偪偼丄帤枊</span></td><td>Japanese Shift-JIS read as Chinese GBK — common on Chinese-language Windows</td></tr>
+      <tr><td><span class="mojibake">縺薙ｓ縺ｫ縺｡縺ｯ</span></td><td>Japanese UTF-8 read as Shift-JIS — common on Japanese-language Windows</td></tr>
+      <tr><td><span class="mojibake">¾È³çÇÏ¼¼¿ä</span></td><td>Korean EUC-KR read as Western (Windows-1252) — common on English players and TVs</td></tr>
+      <tr><td><span class="mojibake">救崇窍技夸</span></td><td>Korean EUC-KR read as Chinese GBK</td></tr>
+    </table>
+    <p>The original text in these examples is こんにちは (Japanese "hello") and 안녕하세요 (Korean "hello").</p>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>Fixing it in VLC instead</h2>
+    <p>Go to Tools → Preferences, set "Show settings" to <strong>All</strong>, open Input / Codecs → Subtitle codecs → Subtitles and set "Subtitle text encoding" to <strong>Japanese (Shift-JIS)</strong> or <strong>Korean (EUC-KR/CP949)</strong>. Save and reopen the video. The setting applies to every subtitle, so converting the file once is usually easier.</p>
+
+    <h2>FAQ</h2>
+    <details><summary>Which encodings are detected automatically?</summary><p>UTF-8, UTF-16, Shift-JIS (Japanese, including Windows CP932), EUC-KR / CP949 (Korean), GBK and Big5 (Chinese). If detection picks the wrong one, choose another from the dropdown and the preview updates instantly.</p></details><details><summary>Are my subtitle files uploaded?</summary><p>No. Everything runs inside your browser. Your files never leave your computer or phone.</p></details><details><summary>Will the file name change?</summary><p>No. The fixed file keeps its original name, so your player still matches it to the video.</p></details><details><summary>What about EUC-JP or ISO-2022-JP files?</summary><p>These older Japanese encodings are rare in subtitle files and are not detected automatically. Most Japanese subtitles use Shift-JIS or UTF-8.</p></details><details><summary>It shows empty squares instead of Japanese or Korean.</summary><p>The encoding is fine, but your player is using a font without those characters. Choose a font such as Meiryo or Yu Gothic for Japanese, or Malgun Gothic for Korean, in your player settings.</p></details>
+
+    <h2>Related tools</h2>
+    <div class="tool-grid"><a class="tool-card" href="/en/fix-garbled-chinese-subtitles/"><h3>Fix Garbled Chinese Subtitles</h3><p>Convert GBK / Big5 subtitles to UTF-8</p></a><a class="tool-card" href="/en/merge-bilingual-subtitles/"><h3>Merge Bilingual Subtitles</h3><p>Combine two languages into one dual-language file</p></a><a class="tool-card" href="/en/subtitle-time-shift/"><h3>Subtitle Timing Adjuster</h3><p>Shift subtitles earlier or later, fix frame rate</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+<script>
+window.ZIMU_STRINGS = {"enc": {"utf-8": "UTF-8", "gb18030": "GBK / GB18030 (Simplified Chinese)", "big5": "Big5 (Traditional Chinese)", "utf-16le": "UTF-16 LE", "utf-16be": "UTF-16 BE", "shift_jis": "Shift-JIS (Japanese)", "euc-kr": "EUC-KR (Korean)"}, "empty": "(empty)", "origEnc": "Original encoding: ", "remove": "Remove", "q1": "\"", "tooBig": "\" is larger than 20 MB and does not look like a subtitle file.", "ascii": "This file only contains English characters — there is no encoding problem.", "utf8": "This file is already UTF-8. If your player still shows garbled text, downloading the version with BOM usually fixes it.", "low": "Not enough text to be sure of the encoding. Check the preview and pick another encoding from the dropdown if it looks wrong.", "fixPre": "Detected ", "fixPost": " and converted to UTF-8. Check the preview to make sure the text looks right.", "detected": "Detected: ", "download": "Download fixed subtitle", "preview": "Preview (first lines):", "unsupported": "\" is not a supported subtitle format (SRT, ASS, SSA, VTT, SUB, TXT, LRC, SMI, SBV).", "zipName": "fixed-subtitles.zip"};
+</script>
+<script src="/assets/encoding.js"></script>
+<script src="/assets/zip.js"></script>
+<script src="/assets/fix-garbled.js"></script>
+</body>
+</html>

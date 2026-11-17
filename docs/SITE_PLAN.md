@@ -105,7 +105,18 @@
 | 關鍵字 | 結果 | 決定 |
 |---|---|---|
 | 雙語字幕合併 | 只有 2 個工具，冇繁體專頁 | ✅ 已做 |
-| 字幕斷句 | 冇工具，只有文章 | 下一個：直式短劇斷句工具＋教學 |
+| 字幕斷句 | 冇工具，只有文章 | ✅ 已做 /subtitle-line-break/ |
 | bilingual subtitles merge | 有 Reddit 帖排前 | ✅ 已做英文版 |
 | srt 翻譯 | 已有 AI 翻譯工具 | 暫時唔做 |
-| 剪映 字幕 導出 srt | 電腦版剪映已可直接匯出 | 唔做工具，可寫教學引流 |
+| 剪映 字幕 導出 srt | 電腦版剪映已可直接匯出 | ✅ 已寫教學 /guides/capcut-export-srt/ |
+
+## 9. 第三批（2026-11-15）
+- 日文 Shift-JIS、韓文 EUC-KR 自動偵測（encoding.js），英文頁 /en/fix-garbled-japanese-korean-subtitles/
+- 英文版第二批：/en/subtitle-time-shift/、/en/srt-to-txt/、/en/vtt-to-srt/、/en/ass-to-srt/（已加 hreflang）
+- 產生程式喺 build/（en.py、en2.py、guides.py、formats.py、merge_pages.py、break_page.py、headtags.py）；重新產生後要再行 headtags.py
+
+## 10. 引流（2026-11-16）
+- 播放器教學：/guides/plex-jellyfin-emby-chinese-subtitles/、/en/guides/plex-jellyfin-emby-chinese-subtitles/、/en/guides/apple-tv-iphone-mac-chinese-subtitles/、英文教學目錄 /en/guides/
+- 開源 repo：github.com/SicaCleaningInc/cjk-subtitle-encoding（關於頁同英文首頁有連結）
+- AlternativeTo 登記
+- 產生程式：build/en_guides.py（英文教學）

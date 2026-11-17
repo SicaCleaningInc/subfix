@@ -152,3 +152,10 @@ pre.code { background: #1f2933; color: #e6edf3; padding: 14px 16px; border-radiu
 #merge-opts label { display: block; }
 #output { margin-top: 14px; }
 @media (max-width: 700px) { .merge-slots, #merge-opts { grid-template-columns: 1fr; } .swap-col { justify-content: center; } }
+
+/* 字幕斷句 */
+.break-controls { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.break-controls label { font-weight: 600; font-size: 15px; display: block; margin-bottom: 4px; }
+.break-controls select, .break-controls input[type=number] { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; font-size: 16px; font-family: inherit; }
+.preview.phone { max-width: 260px; margin-left: auto; margin-right: auto; text-align: center; background: #111; color: #fff; border-color: #111; font-weight: 600; }
+@media (max-width: 600px) { .break-controls { grid-template-columns: 1fr; } }
