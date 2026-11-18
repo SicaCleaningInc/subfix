@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kodi 中文字幕亂碼、方格解決方法：字型及字元集設定｜ZimuFix</title>
+<meta name="description" content="Kodi 播放中文字幕變成方格或亂碼？教你把字型改為 Arial based、設定字幕字元集，以及把字幕轉為 UTF-8 一勞永逸。">
+<link rel="canonical" href="https://zimufix.com/guides/kodi-chinese-subtitles/">
+<meta property="og:title" content="Kodi 中文字幕亂碼、方格的解決方法">
+<meta property="og:description" content="Kodi 播放中文字幕變成方格或亂碼？教你把字型改為 Arial based、設定字幕字元集，以及把字幕轉為 UTF-8 一勞永逸。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/kodi-chinese-subtitles/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Kodi 中文字幕亂碼、方格的解決方法", "description": "Kodi 播放中文字幕變成方格或亂碼？教你把字型改為 Arial based、設定字幕字元集，以及把字幕轉為 UTF-8 一勞永逸。", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": "https://zimufix.com/guides/kodi-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>Kodi 中文字幕亂碼、方格的解決方法</h1><p class="meta">更新日期：2026-11-17</p></section>
+    <p class="lead">Kodi 預設的介面字型不包含中文字，所以很多人第一次用 Kodi 播中文字幕，看到的都是一排排方格。只要改兩個設定，再處理好字幕編碼，就能正常顯示。</p>
+
+    <div class="cta"><div><strong>想直接解決？</strong> 自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
+
+    <!-- 廣告位 1（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-1"></div>
+
+<h2>步驟一：把字型改為「Arial based」</h2>
+<p>這一步解決<strong>方格</strong>問題。Kodi 預設字型沒有中文字，要換成支援中文的字型：</p>
+<ol>
+<li>進入「設定」→「介面」→「外觀」（Skin）。</li>
+<li>把「字型」（Fonts）改為 <strong>Arial based</strong>。</li>
+<li>介面會短暫重新載入，之後中文介面和字幕都能顯示。</li>
+</ol>
+<p>字幕本身的字型可以在「設定」→「播放器」→「語言」→「字幕」中再調整（較新版本設定名稱可能略有不同）。</p>
+
+<h2>步驟二：設定字幕字元集</h2>
+<p>這一步解決<strong>亂碼</strong>問題。在「設定」→「播放器」→「語言」中找到字幕的「字元集」（Character set），簡體字幕選「Chinese Simplified (GBK)」，繁體字幕選「Chinese Traditional (Big5)」。</p>
+<p>不過字元集是全域設定，如果你同時有簡體和繁體的舊字幕，總有一邊會亂碼。</p>
+
+<h2>步驟三（建議）：把字幕統一轉為 UTF-8</h2>
+<p>最乾淨的做法是把所有字幕轉為 UTF-8。UTF-8 字幕不受字元集設定影響，簡體、繁體、日文、韓文都能正確顯示。用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 一次拖入多個字幕，轉換後打包成 ZIP 下載，再覆蓋原檔即可。</p>
+
+<h2>字幕命名讓 Kodi 自動載入</h2>
+<p>把字幕和影片放在同一個資料夾，並使用相同檔名，例如：</p>
+<pre><code>Movie (2024).mkv
+Movie (2024).zh.srt</code></pre>
+<p>Kodi 會自動載入。如果想在播放時切換簡體和繁體，可以用 <a href="/simplified-to-traditional-subtitles/">簡體轉繁體工具</a> 另外生成一份繁體字幕。</p>
+
+    <!-- 廣告位 2（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
+
+    <h2>延伸閱讀</h2>
+    <div class="tool-grid"><a class="tool-card" href="/guides/plex-jellyfin-emby-chinese-subtitles/"><h3>Plex、Jellyfin、Emby 中文字幕亂碼或顯示方格的解決方法</h3><p>用 Plex、Jellyfin 或 Emby 架設家庭影音伺服器，中文字幕卻出現…</p></a><a class="tool-card" href="/guides/android-tv-subtitles/"><h3>小米電視、Android TV 字幕亂碼或不顯示的解決方法</h3><p>用小米電視、TCL、Sony 等 Android TV / Google TV …</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>
