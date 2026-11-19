@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字幕編碼是什麼？UTF-8、BOM、GBK、Big5、ANSI 一文看懂｜ZimuFix</title>
+<meta name="description" content="字幕亂碼的根本原因是編碼。用簡單例子解釋 UTF-8、UTF-8 BOM、GBK、Big5 和 ANSI 的分別，以及如何把字幕統一轉為 UTF-8。">
+<link rel="canonical" href="https://zimufix.com/guides/subtitle-encoding-utf8/">
+<meta property="og:title" content="字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂">
+<meta property="og:description" content="字幕亂碼的根本原因是編碼。用簡單例子解釋 UTF-8、UTF-8 BOM、GBK、Big5 和 ANSI 的分別，以及如何把字幕統一轉為 UTF-8。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/subtitle-encoding-utf8/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂", "description": "字幕亂碼的根本原因是編碼。用簡單例子解釋 UTF-8、UTF-8 BOM、GBK、Big5 和 ANSI 的分別，以及如何把字幕統一轉為 UTF-8。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-encoding-utf8/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂</h1><p class="meta">更新日期：2026-11-18</p></section>
+    <p class="lead">電腦儲存文字時，要把每個字轉成數字，這套規則就叫「編碼」。同一段數字，用不同編碼解讀，就會得出完全不同的字，這就是亂碼的來源。</p>
+
+    <div class="cta"><div><strong>想直接解決？</strong> 自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
+
+    <!-- 廣告位 1（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-1"></div>
+
+<h2>常見的中文編碼</h2>
+<table>
+<tr><th>編碼</th><th>用途</th><th>備註</th></tr>
+<tr><td>UTF-8</td><td>全世界通用</td><td>支援所有語言，現今標準</td></tr>
+<tr><td>GBK／GB18030</td><td>簡體中文</td><td>舊簡體字幕常用</td></tr>
+<tr><td>Big5</td><td>繁體中文</td><td>舊台灣、香港字幕常用</td></tr>
+<tr><td>Shift-JIS</td><td>日文</td><td>舊日文字幕常用</td></tr>
+<tr><td>EUC-KR</td><td>韓文</td><td>舊韓文字幕常用</td></tr>
+</table>
+
+<h2>ANSI 是什麼？</h2>
+<p>Windows 記事本的「ANSI」並不是一種固定編碼，而是跟隨系統地區：簡體中文 Windows 上等於 GBK，繁體中文 Windows 上等於 Big5。所以同一個「ANSI」字幕，在另一部電腦打開就可能變成亂碼。</p>
+
+<h2>UTF-8 與 UTF-8 BOM</h2>
+<p>BOM 是放在檔案最開頭的幾個標記位元組，用來告訴軟件「這是 UTF-8」。</p>
+<ul>
+<li>大部分電腦播放器不需要 BOM。</li>
+<li>部分電視和舊播放器需要 BOM 才會正確辨認，所以字幕加上 BOM 通常更兼容。</li>
+</ul>
+
+<h2>為什麼會出現亂碼</h2>
+<p>例如「你好」用 GBK 儲存，播放器卻當成 UTF-8 讀取，就會顯示成一堆怪字。只要用正確的編碼重新讀取，再存成 UTF-8，就能完全還原。</p>
+
+<h2>如何轉成 UTF-8</h2>
+<ul>
+<li><strong>最簡單</strong>：用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a>，自動偵測原本編碼並轉為 UTF-8，可一次處理多個檔案。</li>
+<li><strong>記事本</strong>：如果記事本能正確顯示文字，選「另存新檔」，在「編碼」選 UTF-8 即可。如果記事本打開已經是亂碼，代表它猜錯了，直接另存會令文字永久損壞。</li>
+</ul>
+<p>想了解亂碼的不同症狀，可以看 <a href="/guides/subtitle-boxes-squares/">字幕變成方格或問號的原因</a>。</p>
+
+    <!-- 廣告位 2（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
+
+    <h2>延伸閱讀</h2>
+    <div class="tool-grid"><a class="tool-card" href="/guides/subtitle-boxes-squares/"><h3>字幕變成方格或問號的原因及解決方法</h3><p>字幕顯示為「□□□」方格、「???」問號或「锟斤拷」之類的怪字？不同症狀代表不同…</p></a><a class="tool-card" href="/guides/vlc-subtitle-encoding/"><h3>VLC 字幕亂碼設定教學</h3><p>VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB180…</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>

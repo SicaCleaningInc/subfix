@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>字幕檔名怎樣改才會自動載入？Plex、Kodi、VLC、電視命名規則｜ZimuFix</title>
+<meta name="description" content="字幕放在影片旁邊卻不出現？教你字幕檔名的正確寫法、語言標記（.zh、.chi）、多條字幕的命名方法，適用於 Plex、Kodi、Jellyfin、VLC 及電視。">
+<link rel="canonical" href="https://zimufix.com/guides/subtitle-file-naming/">
+<meta property="og:title" content="字幕檔名命名規則：讓播放器自動載入字幕">
+<meta property="og:description" content="字幕放在影片旁邊卻不出現？教你字幕檔名的正確寫法、語言標記（.zh、.chi）、多條字幕的命名方法，適用於 Plex、Kodi、Jellyfin、VLC 及電視。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/subtitle-file-naming/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "字幕檔名命名規則：讓播放器自動載入字幕", "description": "字幕放在影片旁邊卻不出現？教你字幕檔名的正確寫法、語言標記（.zh、.chi）、多條字幕的命名方法，適用於 Plex、Kodi、Jellyfin、VLC 及電視。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-file-naming/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>字幕檔名命名規則：讓播放器自動載入字幕</h1><p class="meta">更新日期：2026-11-18</p></section>
+    <p class="lead">很多「字幕不出現」的問題，原因其實只是檔名不對。播放器靠檔名把字幕配對到影片，只要跟着下面的規則命名，大部分播放器都會自動載入。</p>
+
+    <div class="cta"><div><strong>想直接解決？</strong> 自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
+
+    <!-- 廣告位 1（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-1"></div>
+
+<h2>基本規則：與影片同名</h2>
+<p>字幕檔名要與影片<strong>完全相同</strong>，只有副檔名不同，並放在同一個資料夾：</p>
+<pre><code>Movie (2024).mkv
+Movie (2024).srt</code></pre>
+<p>多一個空格、少一個點、全形和半形括號不同，都可能令電視或播放器找不到字幕。最穩陣的做法是複製影片檔名，再貼上作字幕檔名。</p>
+
+<h2>加上語言標記</h2>
+<p>在副檔名前加上語言代碼，播放器就會知道這是中文字幕：</p>
+<pre><code>Movie (2024).zh.srt
+Movie (2024).chi.srt</code></pre>
+<ul>
+<li><code>.zh</code>（ISO 639-1）和 <code>.chi</code> 或 <code>.zho</code>（ISO 639-2）是最多軟件支援的中文代碼。</li>
+<li>部分軟件可辨認 <code>zh-TW</code>、<code>zh-HK</code> 等地區標記，但並非每個軟件都支援，不確定時用 <code>.zh</code> 最安全。</li>
+<li>英文用 <code>.en</code> 或 <code>.eng</code>，日文用 <code>.ja</code> 或 <code>.jpn</code>，韓文用 <code>.ko</code> 或 <code>.kor</code>。</li>
+</ul>
+
+<h2>同一部影片有多條字幕</h2>
+<pre><code>Movie (2024).zh.srt
+Movie (2024).en.srt
+Movie (2024).zh.forced.srt</code></pre>
+<p><code>.forced</code> 用於只翻譯外語對白或畫面文字的「強制字幕」，Plex、Jellyfin 等軟件支援這個標記。</p>
+<p>想簡體和繁體各一份？用 <a href="/simplified-to-traditional-subtitles/">簡體轉繁體工具</a> 生成繁體版，工具可以自動在檔名加入語言標記。</p>
+
+<h2>各播放器的分別</h2>
+<ul>
+<li><strong>電視、機頂盒</strong>：最嚴格，通常只接受完全同名，部分型號不認語言標記。詳見 <a href="/guides/tv-subtitles-garbled/">電視字幕問題</a>。</li>
+<li><strong>Plex、Jellyfin、Emby</strong>：支援語言標記，加入字幕後要重新掃描媒體庫。詳見 <a href="/guides/plex-jellyfin-emby-chinese-subtitles/">Plex、Jellyfin、Emby 中文字幕</a>。</li>
+<li><strong>Kodi</strong>：支援語言標記，亦可在播放時手動選擇字幕。</li>
+<li><strong>VLC</strong>：較寬鬆，檔名開頭與影片相同的字幕一般都會載入。</li>
+</ul>
+
+<h2>檔名正確仍然不出現？</h2>
+<p>先檢查字幕格式和編碼。電視一般只支援 SRT 和 UTF-8，可以用 <a href="/ass-to-srt/">ASS 轉 SRT</a> 及 <a href="/fix-garbled-subtitles/">字幕亂碼修復</a> 處理。</p>
+
+    <!-- 廣告位 2（AdSense 批核後啟用） -->
+    <div class="ad-slot" id="ad-2"></div>
+
+    <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
+
+    <h2>延伸閱讀</h2>
+    <div class="tool-grid"><a class="tool-card" href="/guides/tv-subtitles-garbled/"><h3>電視、USB 播放字幕亂碼或不顯示的解決方法</h3><p>用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5…</p></a><a class="tool-card" href="/guides/plex-jellyfin-emby-chinese-subtitles/"><h3>Plex、Jellyfin、Emby 中文字幕亂碼或顯示方格的解決方法</h3><p>用 Plex、Jellyfin 或 Emby 架設家庭影音伺服器，中文字幕卻出現…</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>
