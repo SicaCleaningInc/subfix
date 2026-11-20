@@ -24,11 +24,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Fix Chinese Subtitles on Xiaomi TV, Android TV & Google TV", "description": "Chinese subtitles garbled, showing boxes or not appearing on a Xiaomi, TCL, Sony or other Android TV / Google TV? Check encoding, file names and format, or switch to a better player.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/android-tv-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Which player is best for subtitles on Android TV?", "acceptedAnswer": {"@type": "Answer", "text": "VLC and Kodi are free and handle encodings, formats and fonts well. Kodi is better for large libraries."}}, {"@type": "Question", "name": "Why does my Xiaomi TV show subtitles for some videos but not others?", "acceptedAnswer": {"@type": "Answer", "text": "Usually the file name doesn't exactly match the video, or the subtitle is ASS. Rename it to match and convert to SRT."}}, {"@type": "Question", "name": "Can I use a USB drive formatted as NTFS?", "acceptedAnswer": {"@type": "Answer", "text": "Many Android TVs read NTFS, but FAT32 and exFAT are the most compatible. If the TV doesn't see your files, try exFAT."}}, {"@type": "Question", "name": "Do embedded MKV subtitles work on Android TV?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes, but not always. If not, extract them to SRT."}}]}
+</script>
 </head>
 <body>
 
@@ -40,42 +43,53 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
     <section class="hero"><h1>Fix Chinese Subtitles on Xiaomi TV, Android TV &amp; Google TV</h1><p class="meta">Updated: 2026-11-18</p></section>
     <p class="lead">Xiaomi TVs and boxes, TCL, Sony and most Google TV devices run Android. Their built-in video players handle subtitles far worse than a computer, and the usual problems are garbled text, boxes, or no subtitles at all.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>Problem 1: Garbled subtitles</h2>
-<p>Built-in players mostly expect <strong>UTF-8</strong>. Older GBK or Big5 subtitles that look fine on a PC turn into gibberish on the TV.</p>
-<p><strong>Fix:</strong> convert the file with the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a> and keep the "add BOM" option on; some TVs need the BOM to recognise UTF-8.</p>
 
-<h2>Problem 2: Subtitles not showing</h2>
-<ul>
+<nav class="g-jump vis" aria-label="What do you see?"><p class="g-jump-label">What do you see?</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>Problem 1: Garbled subtitles</span></a><a class="g-jump-card" href="#s2"><span class="g-vis muted" aria-hidden="true">(no subtitles)</span><span class="g-jump-title"><span class="g-badge sm">B</span>Problem 2: Subtitles not showing</span></a><a class="g-jump-card" href="#s3"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">C</span>Problem 3: Boxes instead of characters</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Problem 1: Garbled subtitles</h2></div>
+<div class="g-body"><p>Built-in players mostly expect <strong>UTF-8</strong>. Older GBK or Big5 subtitles that look fine on a PC turn into gibberish on the TV.</p>
+<p><strong>Fix:</strong> convert the file with the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a> and keep the "add BOM" option on; some TVs need the BOM to recognise UTF-8.</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Problem 2: Subtitles not showing</h2></div>
+<div class="g-body"><ul>
 <li><strong>Name mismatch:</strong> the subtitle must match the video, e.g. <code>Movie.mp4</code> and <code>Movie.srt</code>.</li>
 <li><strong>Unsupported format:</strong> built-in players have limited ASS/SSA support. <a href="/en/ass-to-srt/">Convert to SRT</a>.</li>
 <li><strong>Different folder:</strong> keep the subtitle in the same folder on the USB drive or NAS.</li>
-</ul>
-
-<h2>Problem 3: Boxes instead of characters</h2>
-<p>With the system language set to English, some built-in players do not load a Chinese font. Try switching the TV language to Chinese, or use one of the players below.</p>
-
-<h2>Best fix: install a third-party player</h2>
-<p>Install <strong>VLC</strong>, <strong>Kodi</strong> or <strong>MX Player</strong> from Google Play. Their subtitle format, encoding and font support is far more complete.</p>
+</ul></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Problem 3: Boxes instead of characters</h2></div>
+<div class="g-body"><p>With the system language set to English, some built-in players do not load a Chinese font. Try switching the TV language to Chinese, or use one of the players below.</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Best fix: install a third-party player</h2></div>
+<div class="g-body"><p>Install <strong>VLC</strong>, <strong>Kodi</strong> or <strong>MX Player</strong> from Google Play. Their subtitle format, encoding and font support is far more complete.</p>
 <ul>
 <li>VLC: free, no ads, lets you set the subtitle encoding.</li>
 <li>Kodi: great for large libraries; see the <a href="/en/guides/kodi-chinese-subtitles/">Kodi Chinese subtitles guide</a>.</li>
 <li>Streaming from a NAS? See <a href="/en/guides/plex-jellyfin-emby-chinese-subtitles/">Plex, Jellyfin & Emby Chinese subtitles</a>.</li>
-</ul>
-
-<h2>Want Chinese and English at the same time?</h2>
-<p>TVs usually show only one subtitle track. Combine both languages into one SRT with the <a href="/en/merge-bilingual-subtitles/">bilingual subtitle merger</a>.</p>
-
+</ul></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>Want Chinese and English at the same time?</h2></div>
+<div class="g-body"><p>TVs usually show only one subtitle track. Combine both languages into one SRT with the <a href="/en/merge-bilingual-subtitles/">bilingual subtitle merger</a>.</p></div>
+</section>
+<section class="g-card" id="faq">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>Which player is best for subtitles on Android TV?</summary><p>VLC and Kodi are free and handle encodings, formats and fonts well. Kodi is better for large libraries.</p></details><details><summary>Why does my Xiaomi TV show subtitles for some videos but not others?</summary><p>Usually the file name doesn't exactly match the video, or the subtitle is ASS. Rename it to match and convert to SRT.</p></details><details><summary>Can I use a USB drive formatted as NTFS?</summary><p>Many Android TVs read NTFS, but FAT32 and exFAT are the most compatible. If the TV doesn't see your files, try exFAT.</p></details><details><summary>Do embedded MKV subtitles work on Android TV?</summary><p>Often yes, but not always. If not, <a href="/en/guides/extract-subtitles-from-mkv-mp4/">extract them to SRT</a>.</p></details></div>
+</section>
     <div class="ad-slot" id="ad-2"></div>
     <div class="cta"><div><strong>Garbled Subtitle Fixer</strong>: Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open tool</a></div>
     <h2>More guides</h2>
-    <ul><li><a href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a></li><li><a href="/en/guides/kodi-chinese-subtitles/">How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)</a></li><li><a href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a></li><li><a href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a></li><li><a href="/en/guides/youtube-chinese-subtitles-upload/">Fix Garbled Chinese Subtitles When Uploading SRT to YouTube</a></li><li><a href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a></li><li><a href="/en/guides/subtitle-boxes-question-marks/">Why Subtitles Show Boxes or Question Marks (and How to Fix It)</a></li></ul>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a><a class="g-pill" href="/en/guides/kodi-chinese-subtitles/">How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)</a><a class="g-pill" href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a><a class="g-pill" href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a><a class="g-pill" href="/en/guides/youtube-chinese-subtitles-upload/">Fix Garbled Chinese Subtitles When Uploading SRT to YouTube</a><a class="g-pill" href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a><a class="g-pill" href="/en/guides/subtitle-boxes-question-marks/">Why Subtitles Show Boxes or Question Marks (and How to Fix It)</a></div>
   </article>
 </main>
 

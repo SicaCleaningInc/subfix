@@ -6,6 +6,9 @@
 <title>SRT、ASS、VTT 字幕格式有什麼分別？一文看懂｜ZimuFix</title>
 <meta name="description" content="SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及播放器支援程度，教你按用途選擇合適的格式。">
 <link rel="canonical" href="https://zimufix.com/guides/srt-ass-vtt-difference/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/srt-ass-vtt-difference/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/srt-vs-ass-vs-vtt/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/srt-ass-vtt-difference/">
 <meta property="og:title" content="SRT、ASS、VTT 字幕格式有什麼分別？">
 <meta property="og:description" content="SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及播放器支援程度，教你按用途選擇合適的格式。">
 <meta property="og:type" content="article">
@@ -21,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "SRT、ASS、VTT 字幕格式有什麼分別？", "description": "SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及播放器支援程度，教你按用途選擇合適的格式。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/srt-ass-vtt-difference/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -37,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>SRT、ASS、VTT 字幕格式有什麼分別？</h1><p class="meta">更新日期：2026-11-14</p></section>
     <p class="lead">下載字幕時，常常會見到 SRT、ASS、VTT 等不同副檔名。它們都是文字字幕格式，可以用記事本打開，但寫法、功能和兼容性各有不同。了解三者的分別，可以幫你避開很多播放問題。</p>
@@ -47,8 +50,11 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>SRT：最簡單、兼容性最高</h2>
-<p>SRT（SubRip）是最普及的字幕格式。每句字幕由三部分組成：序號、時間碼、字幕文字，句與句之間以空行分隔。</p>
+
+<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>SRT：最簡單、兼容性最高</span><span class="g-jump-sub">SRT（SubRip）是最普及的字幕格式。</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>ASS／SSA：功能最強的特效字幕</span><span class="g-jump-sub">ASS（Advanced SubStation Alpha）及其前身…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>VTT：網頁影片的標準格式</span><span class="g-jump-sub">WebVTT 是網頁 HTML5 影片使用的字幕格式，YouTube…</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>三種格式比較</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>格式以外的常見問題</span><span class="g-jump-sub">不論哪一種格式，中文字幕最常遇到的問題都是編碼。</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>SRT：最簡單、兼容性最高</h2></div>
+<div class="g-body"><p>SRT（SubRip）是最普及的字幕格式。每句字幕由三部分組成：序號、時間碼、字幕文字，句與句之間以空行分隔。</p>
 <pre class="code">1
 00:00:01,000 --&gt; 00:00:03,500
 你好，歡迎收看。
@@ -57,39 +63,45 @@
 00:00:04,000 --&gt; 00:00:06,000
 今天天氣很好。</pre>
 <p>時間碼格式為「時:分:秒,毫秒」，注意毫秒前面用的是逗號。SRT 只能顯示文字，部分播放器支援 <code>&lt;i&gt;</code> 斜體等簡單標籤，但不能設定位置、顏色或特效。</p>
-<p><strong>適合</strong>：一般觀看、電視及機頂盒播放、上載到大部分平台。</p>
-
-<h2>ASS／SSA：功能最強的特效字幕</h2>
-<p>ASS（Advanced SubStation Alpha）及其前身 SSA，常見於動畫字幕組作品。除了對白，檔案內還包含樣式設定，可以控制字型、大小、顏色、位置、描邊，甚至製作卡拉 OK 和動態特效。</p>
+<p><strong>適合</strong>：一般觀看、電視及機頂盒播放、上載到大部分平台。</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>ASS／SSA：功能最強的特效字幕</h2></div>
+<div class="g-body"><p>ASS（Advanced SubStation Alpha）及其前身 SSA，常見於動畫字幕組作品。除了對白，檔案內還包含樣式設定，可以控制字型、大小、顏色、位置、描邊，甚至製作卡拉 OK 和動態特效。</p>
 <pre class="code">[V4+ Styles]
 Style: Default,Microsoft YaHei,20,&amp;H00FFFFFF,...
 
 [Events]
 Dialogue: 0,0:00:01.00,0:00:03.50,Default,,0,0,0,,{\an8}你好，歡迎收看。</pre>
 <p>ASS 的時間碼精確到百分之一秒，大括號內的 <code>{\an8}</code> 是特效標籤，這個例子代表把字幕放在畫面頂部。</p>
-<p><strong>適合</strong>：電腦播放、需要特效或多種樣式的字幕。<strong>缺點</strong>：不少電視和手機播放器不支援，或者會忽略特效。需要時可以用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a> 轉換。</p>
-
-<h2>VTT：網頁影片的標準格式</h2>
-<p>WebVTT 是網頁 HTML5 影片使用的字幕格式，YouTube 及很多網上課程平台都會使用。寫法與 SRT 相似，但檔案以 <code>WEBVTT</code> 開頭，毫秒前用的是句號，小時部分可以省略。</p>
+<p><strong>適合</strong>：電腦播放、需要特效或多種樣式的字幕。<strong>缺點</strong>：不少電視和手機播放器不支援，或者會忽略特效。需要時可以用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a> 轉換。</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>VTT：網頁影片的標準格式</h2></div>
+<div class="g-body"><p>WebVTT 是網頁 HTML5 影片使用的字幕格式，YouTube 及很多網上課程平台都會使用。寫法與 SRT 相似，但檔案以 <code>WEBVTT</code> 開頭，毫秒前用的是句號，小時部分可以省略。</p>
 <pre class="code">WEBVTT
 
 00:01.000 --&gt; 00:03.500 line:90%
 你好，歡迎收看。</pre>
 <p>VTT 可以在時間碼後面加上位置等設定，例如上面的 <code>line:90%</code>。</p>
-<p><strong>適合</strong>：網頁影片、網上課程。<strong>缺點</strong>：部分電視及舊播放器不支援。需要時可以用 <a href="/vtt-to-srt/">VTT 轉 SRT 工具</a> 轉換；只想要純文字，可以用 <a href="/srt-to-txt/">SRT 轉 TXT 工具</a>。</p>
-
-<h2>三種格式比較</h2>
-<table>
+<p><strong>適合</strong>：網頁影片、網上課程。<strong>缺點</strong>：部分電視及舊播放器不支援。需要時可以用 <a href="/vtt-to-srt/">VTT 轉 SRT 工具</a> 轉換；只想要純文字，可以用 <a href="/srt-to-txt/">SRT 轉 TXT 工具</a>。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>三種格式比較</h2></div>
+<div class="g-body"><table>
 <tr><th></th><th>SRT</th><th>ASS／SSA</th><th>VTT</th></tr>
 <tr><td>寫法難度</td><td>最簡單</td><td>較複雜</td><td>簡單</td></tr>
 <tr><td>樣式及特效</td><td>幾乎沒有</td><td>非常豐富</td><td>基本（位置等）</td></tr>
 <tr><td>時間精度</td><td>毫秒</td><td>百分之一秒</td><td>毫秒</td></tr>
 <tr><td>電視支援</td><td>普遍支援</td><td>經常不支援</td><td>視乎型號</td></tr>
 <tr><td>常見用途</td><td>一般觀看</td><td>動畫、特效字幕</td><td>網頁影片</td></tr>
-</table>
+</table></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>格式以外的常見問題</h2></div>
+<div class="g-body"><p>不論哪一種格式，中文字幕最常遇到的問題都是<strong>編碼</strong>。同一個 SRT 檔，如果用 GBK 或 Big5 儲存，在某些播放器上就會變成亂碼。建議統一使用 UTF-8，可以用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 一鍵轉換。</p></div>
+</section>
 
-<h2>格式以外的常見問題</h2>
-<p>不論哪一種格式，中文字幕最常遇到的問題都是<strong>編碼</strong>。同一個 SRT 檔，如果用 GBK 或 Big5 儲存，在某些播放器上就會變成亂碼。建議統一使用 UTF-8，可以用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 一鍵轉換。</p>
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -97,7 +109,7 @@ Dialogue: 0,0:00:01.00,0:00:03.50,Default,,0,0,0,,{\an8}你好，歡迎收看。
     <div class="cta"><div><strong>字幕亂碼修復</strong>：支援 SRT、ASS、VTT 等格式，一鍵轉為 UTF-8。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/tv-subtitles-garbled/"><h3>電視、USB 播放字幕亂碼或不顯示的解決方法</h3><p>用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5…</p></a><a class="tool-card" href="/guides/subtitle-out-of-sync/"><h3>字幕不同步的原因及解決方法</h3><p>字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/tv-subtitles-garbled/">電視、USB 播放字幕亂碼或不顯示的解決方法</a><a class="g-pill" href="/guides/subtitle-out-of-sync/">字幕不同步的原因及解決方法</a></div>
   </article>
 </main>
 

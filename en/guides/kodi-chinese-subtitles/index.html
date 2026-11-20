@@ -24,11 +24,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)", "description": "Chinese subtitles in Kodi showing as boxes or gibberish? Switch the font to Arial based, set the subtitle character set, and convert subtitles to UTF-8 for good.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/kodi-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Do I need to change the font on every Kodi device?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the setting is per device. Set Arial based on each Kodi install."}}, {"@type": "Question", "name": "My skin doesn't offer Arial based. What now?", "acceptedAnswer": {"@type": "Answer", "text": "Some third-party skins have their own font list. Switch to the default skin (Estuary) or pick a font that includes CJK characters."}}, {"@type": "Question", "name": "Can Kodi download Chinese subtitles automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Kodi has subtitle add-ons that search online databases. Downloaded files may still be GBK or Big5, so convert them to UTF-8 if they come out garbled."}}, {"@type": "Question", "name": "Does this work on Kodi for Android TV and Fire TV?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The menus are the same on every platform."}}]}
+</script>
 </head>
 <body>
 
@@ -40,38 +43,48 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
     <section class="hero"><h1>How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)</h1><p class="meta">Updated: 2026-11-18</p></section>
     <p class="lead">Kodi's default skin font has no Chinese characters, so many people see rows of boxes the first time they play a Chinese subtitle. Two settings plus correctly encoded files fix it.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>Step 1: Switch the font to "Arial based"</h2>
-<p>This fixes the <strong>boxes</strong>:</p>
+
+<nav class="g-jump vis" aria-label="What do you see?"><p class="g-jump-label">What do you see?</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">A</span>Step 1: Switch the font to &quot;Arial based&quot;</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">B</span>Step 2: Set the subtitle character set</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Step 1: Switch the font to "Arial based"</h2></div>
+<div class="g-body"><p>This fixes the <strong>boxes</strong>:</p>
 <ol>
 <li>Go to Settings → Interface → Skin.</li>
 <li>Change Fonts to <strong>Arial based</strong>.</li>
 <li>The interface reloads, and Chinese text in menus and subtitles can now be displayed.</li>
 </ol>
-<p>You can fine-tune the subtitle font itself under Settings → Player → Language → Subtitles (names may differ slightly between versions).</p>
-
-<h2>Step 2: Set the subtitle character set</h2>
-<p>This fixes <strong>garbled text</strong>. Under Settings → Player → Language, set the subtitle Character set to Chinese Simplified (GBK) or Chinese Traditional (Big5).</p>
-<p>It is a global setting, so if you have both Simplified and Traditional files in legacy encodings, one of them will still break.</p>
-
-<h2>Step 3 (recommended): Convert all subtitles to UTF-8</h2>
-<p>UTF-8 subtitles ignore the character set setting and display Simplified, Traditional, Japanese and Korean correctly. Drop several files at once into the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a>, download them as a ZIP, and replace the originals.</p>
-
-<h2>Name subtitles so Kodi loads them automatically</h2>
-<pre><code>Movie (2024).mkv
+<p>You can fine-tune the subtitle font itself under Settings → Player → Language → Subtitles (names may differ slightly between versions).</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Step 2: Set the subtitle character set</h2></div>
+<div class="g-body"><p>This fixes <strong>garbled text</strong>. Under Settings → Player → Language, set the subtitle Character set to Chinese Simplified (GBK) or Chinese Traditional (Big5).</p>
+<p>It is a global setting, so if you have both Simplified and Traditional files in legacy encodings, one of them will still break.</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Step 3 (recommended): Convert all subtitles to UTF-8</h2></div>
+<div class="g-body"><p>UTF-8 subtitles ignore the character set setting and display Simplified, Traditional, Japanese and Korean correctly. Drop several files at once into the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a>, download them as a ZIP, and replace the originals.</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Name subtitles so Kodi loads them automatically</h2></div>
+<div class="g-body"><pre><code>Movie (2024).mkv
 Movie (2024).zh.srt</code></pre>
-<p>Want both Simplified and Traditional? Generate a second copy with the <a href="/en/simplified-to-traditional-chinese-subtitles/">Simplified to Traditional converter</a>.</p>
-
+<p>Want both Simplified and Traditional? Generate a second copy with the <a href="/en/simplified-to-traditional-chinese-subtitles/">Simplified to Traditional converter</a>.</p></div>
+</section>
+<section class="g-card" id="faq">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>Do I need to change the font on every Kodi device?</summary><p>Yes, the setting is per device. Set Arial based on each Kodi install.</p></details><details><summary>My skin doesn&#x27;t offer Arial based. What now?</summary><p>Some third-party skins have their own font list. Switch to the default skin (Estuary) or pick a font that includes CJK characters.</p></details><details><summary>Can Kodi download Chinese subtitles automatically?</summary><p>Kodi has subtitle add-ons that search online databases. Downloaded files may still be GBK or Big5, so convert them to UTF-8 if they come out garbled.</p></details><details><summary>Does this work on Kodi for Android TV and Fire TV?</summary><p>Yes. The menus are the same on every platform.</p></details></div>
+</section>
     <div class="ad-slot" id="ad-2"></div>
     <div class="cta"><div><strong>Garbled Subtitle Fixer</strong>: Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open tool</a></div>
     <h2>More guides</h2>
-    <ul><li><a href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a></li><li><a href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a></li><li><a href="/en/guides/android-tv-chinese-subtitles/">Fix Chinese Subtitles on Xiaomi TV, Android TV &amp; Google TV</a></li><li><a href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a></li><li><a href="/en/guides/youtube-chinese-subtitles-upload/">Fix Garbled Chinese Subtitles When Uploading SRT to YouTube</a></li><li><a href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a></li><li><a href="/en/guides/subtitle-boxes-question-marks/">Why Subtitles Show Boxes or Question Marks (and How to Fix It)</a></li></ul>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a><a class="g-pill" href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a><a class="g-pill" href="/en/guides/android-tv-chinese-subtitles/">Fix Chinese Subtitles on Xiaomi TV, Android TV &amp; Google TV</a><a class="g-pill" href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a><a class="g-pill" href="/en/guides/youtube-chinese-subtitles-upload/">Fix Garbled Chinese Subtitles When Uploading SRT to YouTube</a><a class="g-pill" href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a><a class="g-pill" href="/en/guides/subtitle-boxes-question-marks/">Why Subtitles Show Boxes or Question Marks (and How to Fix It)</a></div>
   </article>
 </main>
 

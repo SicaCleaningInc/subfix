@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subtitles Out of Sync? 3 Causes and How to Fix Them | ZimuFix</title>
+<meta name="description" content="Subtitles early, late, or drifting further out of sync? Learn to tell a constant offset from a frame-rate mismatch or a different cut, and fix each one.">
+<link rel="canonical" href="https://zimufix.com/en/guides/subtitles-out-of-sync/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/subtitles-out-of-sync/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/subtitle-out-of-sync/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/subtitle-out-of-sync/">
+<meta property="og:title" content="Subtitles Out of Sync? 3 Causes and How to Fix Them">
+<meta property="og:description" content="Subtitles early, late, or drifting further out of sync? Learn to tell a constant offset from a frame-rate mismatch or a different cut, and fix each one.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/en/guides/subtitles-out-of-sync/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=17">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Subtitles Out of Sync: 3 Causes and How to Fix Each", "description": "Subtitles early, late, or drifting further out of sync? Learn to tell a constant offset from a frame-rate mismatch or a different cut, and fix each one.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/subtitles-out-of-sync/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "How do I know if subtitles are early or late?", "acceptedAnswer": {"@type": "Answer", "text": "If you read the line before you hear it, the subtitle is early: delay it (positive number). If you hear it first, the subtitle is late: advance it (negative number)."}}, {"@type": "Question", "name": "What frame rate is my video?", "acceptedAnswer": {"@type": "Answer", "text": "In VLC, open Tools → Media Information → Codec. On Windows, the file's Properties → Details also show the frame rate."}}, {"@type": "Question", "name": "Does shifting change the subtitle text?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only the timecodes change; text, formatting and line numbers stay the same."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide g2">
+    <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
+    <section class="hero"><h1>Subtitles Out of Sync: 3 Causes and How to Fix Each</h1><p class="meta">Updated: 2026-11-20</p></section>
+    <p class="lead">Subtitles that are too early or too late have three main causes. Each needs a different fix, so diagnose first.</p>
+    <div class="cta"><div><strong>Quick fix:</strong> Shift a whole subtitle file earlier or later, or convert between frame rates.</div><a class="btn btn-primary" href="/en/subtitle-time-shift/">Open Subtitle Time Shift</a></div>
+    <div class="ad-slot" id="ad-1"></div>
+
+
+<nav class="g-jump" aria-label="On this page"><p class="g-jump-label">On this page</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>Step 1: Work out which kind of drift you have</span><span class="g-jump-sub">Pick one line near the start, one in the middle and one near the end, …</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>Cause 1: Different intro length</span><span class="g-jump-sub">The same film or episode can come in versions with or without studio l…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>Cause 2: Different frame rate</span><span class="g-jump-sub">Films are usually shot at 24 (or 23.976) frames per second.</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Cause 3: A different cut</span><span class="g-jump-sub">If the subtitles are fine until a certain point and then jump out of s…</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>Watching just once? Adjust in the player</span><span class="g-jump-sub">Most desktop players can delay subtitles on the fly.</span></a><a class="g-jump-card" href="#s6"><span class="g-jump-title"><span class="g-badge sm">?</span>FAQ</span><span class="g-jump-sub">If you read the line before you hear it, the subtitle is early: delay …</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Step 1: Work out which kind of drift you have</h2></div>
+<div class="g-body"><p>Pick one line near the start, one in the middle and one near the end, and compare when the subtitle appears with when the line is spoken.</p>
+<table>
+<tr><th>What you see</th><th>Cause</th><th>Fix</th></tr>
+<tr><td>Same offset everywhere</td><td>Different intro length</td><td>Shift everything</td></tr>
+<tr><td>Fine at the start, worse later</td><td>Different frame rate</td><td>Frame-rate conversion</td></tr>
+<tr><td>Suddenly off after one point</td><td>Different cut of the video</td><td>Shift in parts, or find another subtitle</td></tr>
+</table></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Cause 1: Different intro length</h2></div>
+<div class="g-body"><p>The same film or episode can come in versions with or without studio logos, recaps or ads. A subtitle made for another version is off by a fixed number of seconds.</p>
+<p><strong>Measure it:</strong> note when a character starts speaking (e.g. 00:05:12.5) and when the subtitle appears (e.g. 00:05:10.5). The subtitle is 2 seconds early, so delay it by 2 seconds.</p>
+<p><strong>Fix:</strong> enter 2 in the <a href="/en/subtitle-time-shift/">Subtitle Time Shift tool</a> and download. Use a negative number if subtitles are late.</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Cause 2: Different frame rate</h2></div>
+<div class="g-body"><p>Films are usually shot at 24 (or 23.976) frames per second. PAL releases play at 25 fps, about 4% faster, so a two-hour film runs roughly 5 minutes shorter.</p>
+<p>A subtitle made for a 25 fps release on a 23.976 fps video starts almost in sync, then appears earlier and earlier, minutes off by the end. The reverse makes it later and later.</p>
+<ul>
+<li>Subtitles appear <strong>earlier and earlier</strong>: convert 25 fps → 23.976 fps.</li>
+<li>Subtitles appear <strong>later and later</strong>: convert 23.976 fps → 25 fps.</li>
+</ul>
+<p>Use the frame-rate option in the <a href="/en/subtitle-time-shift/">Subtitle Time Shift tool</a>, then fine-tune any remaining offset. To check a video's frame rate in VLC: Tools → Media Information → Codec.</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Cause 3: A different cut</h2></div>
+<div class="g-body"><p>If the subtitles are fine until a certain point and then jump out of sync, the video probably has an extra or removed scene (director's cut, TV edit). A single shift or frame-rate conversion can't fix that. The practical fix is to find a subtitle that matches your version; if there's only one jump, split the file, shift the second half, and join them.</p></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>Watching just once? Adjust in the player</h2></div>
+<div class="g-body"><p>Most desktop players can delay subtitles on the fly. In VLC, press <kbd>G</kbd> or <kbd>H</kbd> to move them by 50 ms. The change usually isn't saved, so edit the file if you'll watch again or share it. You can also test timing in the <a href="/en/online-subtitle-player/">online subtitle player</a> and download the corrected SRT.</p></div>
+</section>
+<section class="g-card" id="s6">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>How do I know if subtitles are early or late?</summary><p>If you read the line before you hear it, the subtitle is early: delay it (positive number). If you hear it first, the subtitle is late: advance it (negative number).</p></details>
+<details><summary>What frame rate is my video?</summary><p>In VLC, open Tools → Media Information → Codec. On Windows, the file's Properties → Details also show the frame rate.</p></details>
+<details><summary>Does shifting change the subtitle text?</summary><p>No. Only the timecodes change; text, formatting and line numbers stay the same.</p></details></div>
+</section>
+<div class="ad-slot" id="ad-2"></div>
+    <div class="cta"><div><strong>Subtitle Time Shift</strong>: Shift a whole subtitle file earlier or later, or convert between frame rates.</div><a class="btn btn-primary" href="/en/subtitle-time-shift/">Open tool</a></div>
+    <h2>More guides</h2>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/tv-usb-chinese-subtitles-garbled/">TV Subtitles Garbled or Not Showing From a USB Drive: 5 Causes and Fixes</a><a class="g-pill" href="/en/guides/vlc-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in VLC</a><a class="g-pill" href="/en/guides/srt-vs-ass-vs-vtt/">SRT vs ASS vs VTT: Subtitle Formats Explained</a><a class="g-pill" href="/en/guides/capcut-export-srt/">How to Export SRT Subtitles From CapCut Desktop</a><a class="g-pill" href="/en/guides/subtitle-file-naming/">Subtitle File Naming: Make Players Load Subtitles Automatically</a><a class="g-pill" href="/en/guides/extract-subtitles-from-mkv-mp4/">How to Extract Embedded Subtitles From MKV or MP4</a><a class="g-pill" href="/en/guides/burn-subtitles-into-video/">How to Burn Subtitles Into a Video (Hardsubs)</a><a class="g-pill" href="/en/guides/sup-idx-to-srt-ocr/">Convert SUP and IDX/SUB Image Subtitles to SRT</a><a class="g-pill" href="/en/guides/subtitle-encoding-explained/">Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI</a><a class="g-pill" href="/en/guides/samsung-lg-tv-chinese-subtitles/">Fix Chinese Subtitles on Samsung and LG TVs</a><a class="g-pill" href="/en/guides/kmplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in KMPlayer</a><a class="g-pill" href="/en/guides/windows-media-player-subtitles/">Windows Media Player: Load Subtitles and Fix Garbled Text</a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+</body>
+</html>

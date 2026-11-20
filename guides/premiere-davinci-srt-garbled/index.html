@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Premiere Pro、DaVinci Resolve 匯入 SRT 中文字幕亂碼", "description": "在 Premiere Pro 或達芬奇（DaVinci Resolve）匯入 SRT 字幕後中文變亂碼或方格？教你把字幕轉為 UTF-8，以及設定中文字型。", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": "https://zimufix.com/guides/premiere-davinci-srt-garbled/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -40,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>Premiere Pro、DaVinci Resolve 匯入 SRT 中文字幕亂碼</h1><p class="meta">更新日期：2026-11-17</p></section>
     <p class="lead">剪片時匯入現成的 SRT 字幕可以省下大量時間。但在 Premiere Pro 或 DaVinci Resolve 匯入後，中文有時會變成亂碼或方格。兩個原因：編碼和字型。</p>
@@ -50,23 +50,31 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>原因一：字幕編碼不是 UTF-8</h2>
-<p>剪片軟件讀取 SRT 時，一般預期是 UTF-8。GBK 或 Big5 編碼的舊字幕匯入後就會變成亂碼，而且通常沒有選項讓你改編碼。</p>
-<p><strong>解決方法</strong>：匯入前先用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 轉為 UTF-8，再重新匯入。</p>
 
-<h2>原因二：字型沒有中文字</h2>
-<p>如果字幕顯示為方格，代表字幕軌使用的字型不支援中文。</p>
+<nav class="g-jump vis" aria-label="先選擇你看到的情況"><p class="g-jump-label">先選擇你看到的情況</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>原因一：字幕編碼不是 UTF-8</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">B</span>原因二：字型沒有中文字</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>原因一：字幕編碼不是 UTF-8</h2></div>
+<div class="g-body"><p>剪片軟件讀取 SRT 時，一般預期是 UTF-8。GBK 或 Big5 編碼的舊字幕匯入後就會變成亂碼，而且通常沒有選項讓你改編碼。</p>
+<p><strong>解決方法</strong>：匯入前先用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 轉為 UTF-8，再重新匯入。</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>原因二：字型沒有中文字</h2></div>
+<div class="g-body"><p>如果字幕顯示為方格，代表字幕軌使用的字型不支援中文。</p>
 <ul>
 <li><strong>Premiere Pro</strong>：選取字幕片段，在「基本圖形」或「文字」面板把字型改為中文字型，例如思源黑體、微軟正黑體或蘋方。</li>
 <li><strong>DaVinci Resolve</strong>：選取字幕軌，在「檢查器」（Inspector）中把字型改為中文字型。</li>
 </ul>
-<p>各版本的面板名稱可能略有不同。</p>
+<p>各版本的面板名稱可能略有不同。</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>直式短片的字幕太長</h2></div>
+<div class="g-body"><p>為抖音、Reels、Shorts 製作直式影片時，一行字太長會超出畫面。可以先用 <a href="/subtitle-line-break/">字幕斷句工具</a> 按每行字數自動斷行，再匯入剪片軟件。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>ASS 字幕匯入不了</h2></div>
+<div class="g-body"><p>大部分剪片軟件不直接支援 ASS。用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a> 先轉換格式。</p></div>
+</section>
 
-<h2>直式短片的字幕太長</h2>
-<p>為抖音、Reels、Shorts 製作直式影片時，一行字太長會超出畫面。可以先用 <a href="/subtitle-line-break/">字幕斷句工具</a> 按每行字數自動斷行，再匯入剪片軟件。</p>
-
-<h2>ASS 字幕匯入不了</h2>
-<p>大部分剪片軟件不直接支援 ASS。用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a> 先轉換格式。</p>
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -74,7 +82,7 @@
     <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/capcut-export-srt/"><h3>剪映如何匯出 SRT 字幕？轉繁體、斷句、雙語一次搞定</h3><p>教你用電腦版剪映把自動識別的字幕匯出（導出）為 SRT 檔，以及匯出後如何轉為繁…</p></a><a class="tool-card" href="/guides/srt-ass-vtt-difference/"><h3>SRT、ASS、VTT 字幕格式有什麼分別？</h3><p>SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/capcut-export-srt/">剪映如何匯出 SRT 字幕？轉繁體、斷句、雙語一次搞定</a><a class="g-pill" href="/guides/srt-ass-vtt-difference/">SRT、ASS、VTT 字幕格式有什麼分別？</a></div>
   </article>
 </main>
 

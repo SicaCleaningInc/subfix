@@ -24,11 +24,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Why Subtitles Show Boxes or Question Marks (and How to Fix It)", "description": "Subtitles showing □□□ boxes, ??? question marks or random symbols? Each symptom has a different cause. Learn whether it is an encoding or a font problem and fix it.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/subtitle-boxes-question-marks/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Can question marks \"???\" be turned back into Chinese?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. The original characters were replaced when the file was saved with the wrong encoding. Find the original subtitle instead."}}, {"@type": "Question", "name": "What does \"锟斤拷\" mean?", "acceptedAnswer": {"@type": "Answer", "text": "It is a classic sign of text that was converted between encodings incorrectly and then saved. The original characters are lost."}}, {"@type": "Question", "name": "Why do I see boxes only for some characters?", "acceptedAnswer": {"@type": "Answer", "text": "The font covers common characters but not rare ones. Switch to a font with full CJK coverage, such as Noto Sans CJK."}}, {"@type": "Question", "name": "How do I stop this from happening?", "acceptedAnswer": {"@type": "Answer", "text": "Always save subtitles as UTF-8, and don't re-save a file that already looks garbled. See subtitle encoding explained."}}]}
+</script>
 </head>
 <body>
 
@@ -40,36 +43,46 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
     <section class="hero"><h1>Why Subtitles Show Boxes or Question Marks (and How to Fix It)</h1><p class="meta">Updated: 2026-11-18</p></section>
     <p class="lead">Broken subtitles come in three flavours: random symbols (mojibake), boxes, and question marks. They have different causes, so identify which one you have first.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>Symptom 1: Random symbols like "ÖÐÎÄ" or "銝剜?"</h2>
-<p>This is a classic <strong>encoding error</strong>: the subtitle was saved as GBK or Big5 but the player read it with a different encoding. The text is still there and can be fully restored.</p>
-<p><strong>Fix:</strong> the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a> detects the original encoding and converts it to UTF-8. For Japanese or Korean, use the <a href="/en/fix-garbled-japanese-korean-subtitles/">Japanese & Korean fixer</a>.</p>
 
-<h2>Symptom 2: Boxes "□□□"</h2>
-<p>Boxes usually mean the <strong>font is missing those characters</strong>. The encoding is fine, but the player's font has no Chinese, Japanese or Korean glyphs.</p>
-<p><strong>Fix:</strong> choose a CJK font in the player's subtitle settings. In Kodi, set the interface font to Arial based (see the <a href="/en/guides/kodi-chinese-subtitles/">Kodi guide</a>).</p>
-
-<h2>Symptom 3: Question marks "???" or "锟斤拷"</h2>
-<p>This usually means the file was <strong>already damaged by an earlier conversion</strong>: someone opened it with the wrong encoding and saved it, replacing the original characters.</p>
-<p>The original text is gone and no tool can fully restore it. Re-download the original subtitle if you can. If only part of the file is damaged, the <a href="/en/fix-garbled-chinese-subtitles/">fixer</a> will recover what it can.</p>
-
-<h2>Prevent it from happening again</h2>
-<ul>
+<nav class="g-jump vis" aria-label="What do you see?"><p class="g-jump-label">What do you see?</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>Symptom 1: Random symbols like &quot;ÖÐÎÄ&quot; or &quot;銝剜?&quot;</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">B</span>Symptom 2: Boxes &quot;□□□&quot;</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Symptom 1: Random symbols like "ÖÐÎÄ" or "銝剜?"</h2></div>
+<div class="g-body"><p>This is a classic <strong>encoding error</strong>: the subtitle was saved as GBK or Big5 but the player read it with a different encoding. The text is still there and can be fully restored.</p>
+<p><strong>Fix:</strong> the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a> detects the original encoding and converts it to UTF-8. For Japanese or Korean, use the <a href="/en/fix-garbled-japanese-korean-subtitles/">Japanese & Korean fixer</a>.</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Symptom 2: Boxes "□□□"</h2></div>
+<div class="g-body"><p>Boxes usually mean the <strong>font is missing those characters</strong>. The encoding is fine, but the player's font has no Chinese, Japanese or Korean glyphs.</p>
+<p><strong>Fix:</strong> choose a CJK font in the player's subtitle settings. In Kodi, set the interface font to Arial based (see the <a href="/en/guides/kodi-chinese-subtitles/">Kodi guide</a>).</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Symptom 3: Question marks "???" or "锟斤拷"</h2></div>
+<div class="g-body"><p>This usually means the file was <strong>already damaged by an earlier conversion</strong>: someone opened it with the wrong encoding and saved it, replacing the original characters.</p>
+<p>The original text is gone and no tool can fully restore it. Re-download the original subtitle if you can. If only part of the file is damaged, the <a href="/en/fix-garbled-chinese-subtitles/">fixer</a> will recover what it can.</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Prevent it from happening again</h2></div>
+<div class="g-body"><ul>
 <li>Always save subtitles as UTF-8.</li>
 <li>Don't save subtitles as "ANSI" in old versions of Windows Notepad.</li>
 <li>Use a player font that supports Chinese.</li>
-</ul>
-
+</ul></div>
+</section>
+<section class="g-card" id="faq">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>Can question marks &quot;???&quot; be turned back into Chinese?</summary><p>Usually not. The original characters were replaced when the file was saved with the wrong encoding. Find the original subtitle instead.</p></details><details><summary>What does &quot;锟斤拷&quot; mean?</summary><p>It is a classic sign of text that was converted between encodings incorrectly and then saved. The original characters are lost.</p></details><details><summary>Why do I see boxes only for some characters?</summary><p>The font covers common characters but not rare ones. Switch to a font with full CJK coverage, such as Noto Sans CJK.</p></details><details><summary>How do I stop this from happening?</summary><p>Always save subtitles as UTF-8, and don't re-save a file that already looks garbled. See <a href="/en/guides/subtitle-encoding-explained/">subtitle encoding explained</a>.</p></details></div>
+</section>
     <div class="ad-slot" id="ad-2"></div>
     <div class="cta"><div><strong>Garbled Subtitle Fixer</strong>: Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open tool</a></div>
     <h2>More guides</h2>
-    <ul><li><a href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a></li><li><a href="/en/guides/kodi-chinese-subtitles/">How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)</a></li><li><a href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a></li><li><a href="/en/guides/android-tv-chinese-subtitles/">Fix Chinese Subtitles on Xiaomi TV, Android TV &amp; Google TV</a></li><li><a href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a></li><li><a href="/en/guides/youtube-chinese-subtitles-upload/">Fix Garbled Chinese Subtitles When Uploading SRT to YouTube</a></li><li><a href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a></li></ul>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a><a class="g-pill" href="/en/guides/kodi-chinese-subtitles/">How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)</a><a class="g-pill" href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a><a class="g-pill" href="/en/guides/android-tv-chinese-subtitles/">Fix Chinese Subtitles on Xiaomi TV, Android TV &amp; Google TV</a><a class="g-pill" href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a><a class="g-pill" href="/en/guides/youtube-chinese-subtitles-upload/">Fix Garbled Chinese Subtitles When Uploading SRT to YouTube</a><a class="g-pill" href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a></div>
   </article>
 </main>
 

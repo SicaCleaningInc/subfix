@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "iPhone、Android 手機播放外掛字幕教學", "description": "想在 iPhone 或 Android 手機看有外掛字幕的影片？教你用 VLC 載入 SRT 字幕、設定字幕編碼，以及在手機上修復亂碼字幕。", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": "https://zimufix.com/guides/mobile-subtitles-iphone-android/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -40,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>iPhone、Android 手機播放外掛字幕教學</h1><p class="meta">更新日期：2026-11-17</p></section>
     <p class="lead">手機內建的相片或影片 App 一般不能載入外掛 SRT 字幕。想在手機上看有字幕的影片，最簡單的方法是安裝免費的 VLC，再把影片和字幕一起放進去。</p>
@@ -50,25 +50,34 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>步驟一：安裝 VLC</h2>
-<p>iPhone 在 App Store、Android 在 Google Play 搜尋「VLC」，安裝官方的 VLC for Mobile，免費而且沒有廣告。</p>
 
-<h2>步驟二：把影片和字幕放進手機</h2>
-<ul>
+<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>步驟一：安裝 VLC</span><span class="g-jump-sub">iPhone 在 App Store、Android 在 Googl…</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>步驟二：把影片和字幕放進手機</span><span class="g-jump-sub">字幕要和影片同名，例如 Movie.mp4 配 Movie.srt，…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>步驟三：字幕亂碼怎麼辦</span><span class="g-jump-sub">VLC 手機版的設定中有「字幕」→「文字編碼」（Text Encod…</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Android 其他播放器</span><span class="g-jump-sub">MX Player 也很常用，字幕亂碼的處理方法見 MX Playe…</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>Apple TV、Mac 用戶</span><span class="g-jump-sub">如果你用 Apple TV 或 Mac，可以參考英文教學 Apple…</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>步驟一：安裝 VLC</h2></div>
+<div class="g-body"><p>iPhone 在 App Store、Android 在 Google Play 搜尋「VLC」，安裝官方的 VLC for Mobile，免費而且沒有廣告。</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>步驟二：把影片和字幕放進手機</h2></div>
+<div class="g-body"><ul>
 <li><strong>iPhone</strong>：可以用「檔案」App 把影片和字幕放進 VLC 的資料夾；或在電腦用 Finder／iTunes 的檔案分享傳送；VLC 亦提供 Wi-Fi 上傳功能。</li>
 <li><strong>Android</strong>：直接把影片和字幕複製到手機的同一個資料夾。</li>
 </ul>
-<p>字幕要和影片<strong>同名</strong>，例如 <code>Movie.mp4</code> 配 <code>Movie.srt</code>，VLC 會自動載入。</p>
+<p>字幕要和影片<strong>同名</strong>，例如 <code>Movie.mp4</code> 配 <code>Movie.srt</code>，VLC 會自動載入。</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>步驟三：字幕亂碼怎麼辦</h2></div>
+<div class="g-body"><p>VLC 手機版的設定中有「字幕」→「文字編碼」（Text Encoding）選項，簡體字幕可試 GB18030，繁體字幕可試 Big5。</p>
+<p>更簡單的做法是先把字幕轉為 UTF-8：在手機瀏覽器開啟 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a>，選擇字幕，下載修好的版本即可。整個過程在瀏覽器內完成，檔案不會上傳。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Android 其他播放器</h2></div>
+<div class="g-body"><p>MX Player 也很常用，字幕亂碼的處理方法見 <a href="/guides/mx-player-subtitle-garbled/">MX Player 字幕亂碼教學</a>。</p></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>Apple TV、Mac 用戶</h2></div>
+<div class="g-body"><p>如果你用 Apple TV 或 Mac，可以參考英文教學 <a href="/en/guides/apple-tv-iphone-mac-chinese-subtitles/">Apple TV、iPhone、Mac 中文字幕</a>。</p></div>
+</section>
 
-<h2>步驟三：字幕亂碼怎麼辦</h2>
-<p>VLC 手機版的設定中有「字幕」→「文字編碼」（Text Encoding）選項，簡體字幕可試 GB18030，繁體字幕可試 Big5。</p>
-<p>更簡單的做法是先把字幕轉為 UTF-8：在手機瀏覽器開啟 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a>，選擇字幕，下載修好的版本即可。整個過程在瀏覽器內完成，檔案不會上傳。</p>
-
-<h2>Android 其他播放器</h2>
-<p>MX Player 也很常用，字幕亂碼的處理方法見 <a href="/guides/mx-player-subtitle-garbled/">MX Player 字幕亂碼教學</a>。</p>
-
-<h2>Apple TV、Mac 用戶</h2>
-<p>如果你用 Apple TV 或 Mac，可以參考英文教學 <a href="/en/guides/apple-tv-iphone-mac-chinese-subtitles/">Apple TV、iPhone、Mac 中文字幕</a>。</p>
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -76,7 +85,7 @@
     <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/mx-player-subtitle-garbled/"><h3>MX Player 字幕亂碼解決方法</h3><p>MX Player 播放中文字幕出現亂碼？教你在字幕設定中更改字元編碼，或把字幕…</p></a><a class="tool-card" href="/guides/subtitle-boxes-squares/"><h3>字幕變成方格或問號的原因及解決方法</h3><p>字幕顯示為「□□□」方格、「???」問號或「锟斤拷」之類的怪字？不同症狀代表不同…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/mx-player-subtitle-garbled/">MX Player 字幕亂碼解決方法</a><a class="g-pill" href="/guides/subtitle-boxes-squares/">字幕變成方格或問號的原因及解決方法</a></div>
   </article>
 </main>
 

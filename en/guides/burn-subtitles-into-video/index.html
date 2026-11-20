@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Burn Subtitles Into a Video (HandBrake, ffmpeg) | ZimuFix</title>
+<meta name="description" content="Permanently embed SRT subtitles into a video so they show on any device, using free HandBrake or ffmpeg, without Chinese turning into gibberish or boxes.">
+<link rel="canonical" href="https://zimufix.com/en/guides/burn-subtitles-into-video/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/burn-subtitles-into-video/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/burn-subtitles-into-video/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/burn-subtitles-into-video/">
+<meta property="og:title" content="How to Burn Subtitles Into a Video (HandBrake, ffmpeg)">
+<meta property="og:description" content="Permanently embed SRT subtitles into a video so they show on any device, using free HandBrake or ffmpeg, without Chinese turning into gibberish or boxes.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/en/guides/burn-subtitles-into-video/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=17">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to Burn Subtitles Into a Video (Hardsubs)", "description": "Permanently embed SRT subtitles into a video so they show on any device, using free HandBrake or ffmpeg, without Chinese turning into gibberish or boxes.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/burn-subtitles-into-video/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Does burning subtitles reduce video quality?", "acceptedAnswer": {"@type": "Answer", "text": "It requires re-encoding, which can lose a little quality. Use a high quality setting in HandBrake to keep it unnoticeable."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly as long as any re-encode: often a few minutes to real time depending on your computer and settings."}}, {"@type": "Question", "name": "Can I remove burned-in subtitles later?", "acceptedAnswer": {"@type": "Answer", "text": "No. Keep your original video if you might need a clean copy."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide g2">
+    <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
+    <section class="hero"><h1>How to Burn Subtitles Into a Video (Hardsubs)</h1><p class="meta">Updated: 2026-11-20</p></section>
+    <p class="lead">Some devices and platforms can't show external subtitles. Burning them into the picture ("hardsubs") makes them visible everywhere.</p>
+    <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
+    <div class="ad-slot" id="ad-1"></div>
+
+
+<nav class="g-jump" aria-label="On this page"><p class="g-jump-label">On this page</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>Hardsubs vs softsubs</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>Prepare the subtitle first</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>Method 1: HandBrake (free, graphical)</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Method 2: ffmpeg (great for batches)</span><span class="g-jump-sub">If Chinese shows as boxes, the default font lacks Chinese characters.</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>Just want softsubs?</span><span class="g-jump-sub">No re-encoding, much faster:</span></a><a class="g-jump-card" href="#s6"><span class="g-jump-title"><span class="g-badge sm">F</span>Bilingual hardsubs</span><span class="g-jump-sub">Combine Chinese and English with the bilingual subtitle merger first, …</span></a><a class="g-jump-card" href="#s7"><span class="g-jump-title"><span class="g-badge sm">?</span>FAQ</span><span class="g-jump-sub">It requires re-encoding, which can lose a little quality.</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Hardsubs vs softsubs</h2></div>
+<div class="g-body"><ul>
+<li><strong>Hardsubs</strong> are part of the picture: always visible, can't be turned off.</li>
+<li><strong>Softsubs</strong> are a separate track in the file: can be toggled, but the player must support them.</li>
+</ul></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Prepare the subtitle first</h2></div>
+<div class="g-body"><ol>
+<li>Make sure it's <strong>UTF-8</strong>, or the burned text will be garbled: <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a>.</li>
+<li>Get the timing right: <a href="/en/subtitle-time-shift/">Subtitle Time Shift</a>.</li>
+<li>For vertical video, keep lines short: <a href="/subtitle-line-break/">line-break tool</a> (Chinese interface).</li>
+</ol></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Method 1: HandBrake (free, graphical)</h2></div>
+<div class="g-body"><ol>
+<li>Install HandBrake and open the video.</li>
+<li>Go to the Subtitles tab and import the SRT file.</li>
+<li>If there is a Character Code option, choose UTF-8.</li>
+<li>Tick <strong>Burn In</strong> for that subtitle.</li>
+<li>Choose where to save and start encoding.</li>
+</ol></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Method 2: ffmpeg (great for batches)</h2></div>
+<div class="g-body"><pre><code>ffmpeg -i video.mp4 -vf "subtitles=sub.srt" -c:a copy output.mp4</code></pre>
+<p>If Chinese shows as boxes, the default font lacks Chinese characters. Name a Chinese font you have installed:</p>
+<pre><code>ffmpeg -i video.mp4 -vf "subtitles=sub.srt:force_style='FontName=Noto Sans CJK TC'" -c:a copy output.mp4</code></pre></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>Just want softsubs?</h2></div>
+<div class="g-body"><p>No re-encoding, much faster:</p>
+<pre><code>ffmpeg -i video.mp4 -i sub.srt -c copy -c:s mov_text output.mp4</code></pre></div>
+</section>
+<section class="g-card" id="s6">
+<div class="g-head"><span class="g-badge">F</span><h2>Bilingual hardsubs</h2></div>
+<div class="g-body"><p>Combine Chinese and English with the <a href="/en/merge-bilingual-subtitles/">bilingual subtitle merger</a> first, then burn the merged file.</p></div>
+</section>
+<section class="g-card" id="s7">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>Does burning subtitles reduce video quality?</summary><p>It requires re-encoding, which can lose a little quality. Use a high quality setting in HandBrake to keep it unnoticeable.</p></details>
+<details><summary>How long does it take?</summary><p>Roughly as long as any re-encode: often a few minutes to real time depending on your computer and settings.</p></details>
+<details><summary>Can I remove burned-in subtitles later?</summary><p>No. Keep your original video if you might need a clean copy.</p></details></div>
+</section>
+<div class="ad-slot" id="ad-2"></div>
+    <div class="cta"><div><strong>Garbled Subtitle Fixer</strong>: Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open tool</a></div>
+    <h2>More guides</h2>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/tv-usb-chinese-subtitles-garbled/">TV Subtitles Garbled or Not Showing From a USB Drive: 5 Causes and Fixes</a><a class="g-pill" href="/en/guides/vlc-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in VLC</a><a class="g-pill" href="/en/guides/srt-vs-ass-vs-vtt/">SRT vs ASS vs VTT: Subtitle Formats Explained</a><a class="g-pill" href="/en/guides/subtitles-out-of-sync/">Subtitles Out of Sync: 3 Causes and How to Fix Each</a><a class="g-pill" href="/en/guides/capcut-export-srt/">How to Export SRT Subtitles From CapCut Desktop</a><a class="g-pill" href="/en/guides/subtitle-file-naming/">Subtitle File Naming: Make Players Load Subtitles Automatically</a><a class="g-pill" href="/en/guides/extract-subtitles-from-mkv-mp4/">How to Extract Embedded Subtitles From MKV or MP4</a><a class="g-pill" href="/en/guides/sup-idx-to-srt-ocr/">Convert SUP and IDX/SUB Image Subtitles to SRT</a><a class="g-pill" href="/en/guides/subtitle-encoding-explained/">Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI</a><a class="g-pill" href="/en/guides/samsung-lg-tv-chinese-subtitles/">Fix Chinese Subtitles on Samsung and LG TVs</a><a class="g-pill" href="/en/guides/kmplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in KMPlayer</a><a class="g-pill" href="/en/guides/windows-media-player-subtitles/">Windows Media Player: Load Subtitles and Fix Garbled Text</a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+</body>
+</html>

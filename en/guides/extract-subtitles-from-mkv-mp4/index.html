@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Extract Subtitles From MKV or MP4 (MKVToolNix, ffmpeg) | ZimuFix</title>
+<meta name="description" content="Pull embedded subtitle tracks out of MKV or MP4 files with free tools like MKVToolNix and ffmpeg, and learn what to do with image-based PGS subtitles.">
+<link rel="canonical" href="https://zimufix.com/en/guides/extract-subtitles-from-mkv-mp4/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/extract-subtitles-from-mkv-mp4/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/extract-mkv-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/extract-mkv-subtitles/">
+<meta property="og:title" content="How to Extract Subtitles From MKV or MP4 (MKVToolNix, ffmpeg)">
+<meta property="og:description" content="Pull embedded subtitle tracks out of MKV or MP4 files with free tools like MKVToolNix and ffmpeg, and learn what to do with image-based PGS subtitles.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/en/guides/extract-subtitles-from-mkv-mp4/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=17">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to Extract Embedded Subtitles From MKV or MP4", "description": "Pull embedded subtitle tracks out of MKV or MP4 files with free tools like MKVToolNix and ffmpeg, and learn what to do with image-based PGS subtitles.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/extract-subtitles-from-mkv-mp4/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "How do I know which track is Chinese?", "acceptedAnswer": {"@type": "Answer", "text": "mkvmerge -i (or ffprobe) lists each track with its language tag, such as chi or zh. Untagged tracks may need a quick test extraction."}}, {"@type": "Question", "name": "ffmpeg says the subtitle codec is not supported for SRT. Why?", "acceptedAnswer": {"@type": "Answer", "text": "The track is probably image-based (PGS or VobSub). Those need OCR; see the image subtitles guide."}}, {"@type": "Question", "name": "Does extracting change the video?", "acceptedAnswer": {"@type": "Answer", "text": "No. Extraction only reads the file and writes a separate subtitle file."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide g2">
+    <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
+    <section class="hero"><h1>How to Extract Embedded Subtitles From MKV or MP4</h1><p class="meta">Updated: 2026-11-20</p></section>
+    <p class="lead">MKV files often contain several subtitle tracks. Extract one and you can fix its encoding, convert Chinese, adjust timing or combine it with another language.</p>
+    <div class="cta"><div><strong>Quick fix:</strong> Convert Simplified Chinese subtitles to Traditional, with Hong Kong or Taiwan wording.</div><a class="btn btn-primary" href="/en/simplified-to-traditional-chinese-subtitles/">Open Simplified to Traditional</a></div>
+    <div class="ad-slot" id="ad-1"></div>
+
+
+<nav class="g-jump" aria-label="On this page"><p class="g-jump-label">On this page</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>First: text or image subtitles?</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>Method 1: MKVToolNix (MKV)</span><span class="g-jump-sub">MKVToolNix is a free, open-source MKV toolkit for Windows, Mac and Lin…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>Method 2: ffmpeg (MKV and MP4)</span><span class="g-jump-sub">0:s:0 is the first subtitle track, 0:s:1 the second, and so on.</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Common next steps</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">?</span>FAQ</span><span class="g-jump-sub">mkvmerge -i (or ffprobe) lists each track with its language tag, such …</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>First: text or image subtitles?</h2></div>
+<div class="g-body"><ul>
+<li><strong>Text subtitles</strong> (SRT, ASS, SSA, WebVTT) can be edited right after extraction.</li>
+<li><strong>Image subtitles</strong> (Blu-ray PGS/SUP, DVD VobSub) are pictures and need OCR to become SRT. See <a href="/en/guides/sup-idx-to-srt-ocr/">image subtitles to SRT</a>.</li>
+</ul></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Method 1: MKVToolNix (MKV)</h2></div>
+<div class="g-body"><p>MKVToolNix is a free, open-source MKV toolkit for Windows, Mac and Linux.</p>
+<ol>
+<li>Install MKVToolNix.</li>
+<li>List the tracks and their IDs:
+<pre><code>mkvmerge -i movie.mkv</code></pre></li>
+<li>If the subtitle is track 2, extract it:
+<pre><code>mkvextract movie.mkv tracks 2:movie.zh.srt</code></pre>
+Use <code>.ass</code> as the extension if the track is ASS.</li>
+</ol>
+<p>Prefer clicking? Graphical front ends built on MKVToolNix, such as gMKVExtractGUI, let you tick the tracks to extract.</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Method 2: ffmpeg (MKV and MP4)</h2></div>
+<div class="g-body"><pre><code>ffmpeg -i movie.mkv -map 0:s:0 movie.zh.srt</code></pre>
+<p><code>0:s:0</code> is the first subtitle track, <code>0:s:1</code> the second, and so on. ffmpeg converts text subtitles to the format you name.</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Common next steps</h2></div>
+<div class="g-body"><ul>
+<li>Garbled Chinese: <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a></li>
+<li>Simplified to Traditional: <a href="/en/simplified-to-traditional-chinese-subtitles/">converter</a></li>
+<li>ASS to SRT: <a href="/en/ass-to-srt/">converter</a></li>
+<li>Chinese + English: <a href="/en/merge-bilingual-subtitles/">bilingual merger</a></li>
+</ul></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>How do I know which track is Chinese?</summary><p>mkvmerge -i (or ffprobe) lists each track with its language tag, such as chi or zh. Untagged tracks may need a quick test extraction.</p></details>
+<details><summary>ffmpeg says the subtitle codec is not supported for SRT. Why?</summary><p>The track is probably image-based (PGS or VobSub). Those need OCR; see the image subtitles guide.</p></details>
+<details><summary>Does extracting change the video?</summary><p>No. Extraction only reads the file and writes a separate subtitle file.</p></details></div>
+</section>
+<div class="ad-slot" id="ad-2"></div>
+    <div class="cta"><div><strong>Simplified to Traditional</strong>: Convert Simplified Chinese subtitles to Traditional, with Hong Kong or Taiwan wording.</div><a class="btn btn-primary" href="/en/simplified-to-traditional-chinese-subtitles/">Open tool</a></div>
+    <h2>More guides</h2>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/tv-usb-chinese-subtitles-garbled/">TV Subtitles Garbled or Not Showing From a USB Drive: 5 Causes and Fixes</a><a class="g-pill" href="/en/guides/vlc-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in VLC</a><a class="g-pill" href="/en/guides/srt-vs-ass-vs-vtt/">SRT vs ASS vs VTT: Subtitle Formats Explained</a><a class="g-pill" href="/en/guides/subtitles-out-of-sync/">Subtitles Out of Sync: 3 Causes and How to Fix Each</a><a class="g-pill" href="/en/guides/capcut-export-srt/">How to Export SRT Subtitles From CapCut Desktop</a><a class="g-pill" href="/en/guides/subtitle-file-naming/">Subtitle File Naming: Make Players Load Subtitles Automatically</a><a class="g-pill" href="/en/guides/burn-subtitles-into-video/">How to Burn Subtitles Into a Video (Hardsubs)</a><a class="g-pill" href="/en/guides/sup-idx-to-srt-ocr/">Convert SUP and IDX/SUB Image Subtitles to SRT</a><a class="g-pill" href="/en/guides/subtitle-encoding-explained/">Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI</a><a class="g-pill" href="/en/guides/samsung-lg-tv-chinese-subtitles/">Fix Chinese Subtitles on Samsung and LG TVs</a><a class="g-pill" href="/en/guides/kmplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in KMPlayer</a><a class="g-pill" href="/en/guides/windows-media-player-subtitles/">Windows Media Player: Load Subtitles and Fix Garbled Text</a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+</body>
+</html>

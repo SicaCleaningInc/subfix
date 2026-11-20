@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Plex、Jellyfin、Emby 中文字幕亂碼或顯示方格的解決方法", "description": "用 Plex、Jellyfin 或 Emby 架設家庭影音伺服器，中文字幕卻出現亂碼、方格或完全不顯示？本文按編碼、字型、檔名三個原因逐一教你解決。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/plex-jellyfin-emby-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -40,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>Plex、Jellyfin、Emby 中文字幕亂碼或顯示方格的解決方法</h1><p class="meta">更新日期：2026-11-14</p></section>
     <p class="lead">自己架設 Plex、Jellyfin 或 Emby 影音伺服器，最常遇到的問題之一就是中文字幕：有時是一堆怪字，有時是「□□□」方格，有時甚至完全找不到字幕。這三種情況原因各不相同，先判斷是哪一種，再對症下藥。</p>
@@ -50,25 +50,21 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>先判斷是哪一種問題</h2>
-<table>
-<tr><th>症狀</th><th>原因</th><th>解決方法</th></tr>
-<tr><td>出現 <span class="mojibake">ÄãºÃ</span>、<span class="mojibake">浣犲ソ</span> 之類的怪字</td><td>字幕檔不是 UTF-8 編碼</td><td>方法一</td></tr>
-<tr><td>顯示為方格 □□□</td><td>播放端沒有中文字型</td><td>方法二</td></tr>
-<tr><td>字幕選單內找不到字幕</td><td>檔名不符合伺服器規則</td><td>方法三</td></tr>
-</table>
 
-<h2>方法一：把字幕轉為 UTF-8</h2>
-<p>舊的中文字幕多數是 GBK（簡體）或 Big5（繁體）編碼，而影音伺服器和各平台的播放 App 一般預期 UTF-8，於是在部分或全部裝置上顯示為亂碼。</p>
+<nav class="g-jump vis" aria-label="先選擇你看到的情況"><p class="g-jump-label">先選擇你看到的情況</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>方法一：把字幕轉為 UTF-8</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">B</span>方法二：方格 □□□ — 補上中文字型</span></a><a class="g-jump-card" href="#s3"><span class="g-vis muted" aria-hidden="true">（沒有字幕）</span><span class="g-jump-title"><span class="g-badge sm">C</span>方法三：找不到字幕 — 檢查檔名</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>方法一：把字幕轉為 UTF-8</h2></div>
+<div class="g-body"><p>舊的中文字幕多數是 GBK（簡體）或 Big5（繁體）編碼，而影音伺服器和各平台的播放 App 一般預期 UTF-8，於是在部分或全部裝置上顯示為亂碼。</p>
 <ol>
 <li>打開 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a>，把字幕拖放進去，可以一次處理整季。</li>
 <li>確認預覽正常，保留「加入 BOM」，然後下載。檔名維持不變。</li>
 <li>用新檔案覆蓋媒體庫資料夾內的舊字幕。</li>
 <li>在伺服器為該影片重新整理中繼資料（Plex 為「Refresh Metadata」，Jellyfin 和 Emby 也有相應的重新整理選項），讓伺服器重新讀取字幕。</li>
-</ol>
-
-<h2>方法二：方格 □□□ — 補上中文字型</h2>
-<p>出現方格代表文字本身沒問題，只是負責顯示的裝置缺少中文字型。這情況最常見於 <strong>ASS</strong> 字幕，因為 ASS 是由伺服器或 App 提供的字型來繪製。</p>
+</ol></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>方法二：方格 □□□ — 補上中文字型</h2></div>
+<div class="g-body"><p>出現方格代表文字本身沒問題，只是負責顯示的裝置缺少中文字型。這情況最常見於 <strong>ASS</strong> 字幕，因為 ASS 是由伺服器或 App 提供的字型來繪製。</p>
 <h3>Jellyfin</h3>
 <ol>
 <li>下載一個支援中文的字型，例如 Noto Sans CJK（OTF 格式較穩定）。</li>
@@ -81,19 +77,23 @@
 <ul>
 <li><strong>把 ASS 轉為 SRT</strong>：使用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a>。SRT 由播放 App 用自己的字型顯示，可以避開大部分字型問題，但會失去特效樣式。</li>
 <li><strong>更新 App</strong>：iOS 18、tvOS 18 及 macOS 15 推出後，不少 Apple 裝置出現中文 ASS 字幕變方格，多個播放 App 其後已推出更新修正。</li>
-</ul>
-
-<h2>方法三：找不到字幕 — 檢查檔名</h2>
-<p>Plex 只會讀取符合命名規則的外掛字幕：字幕檔名要與影片相同，後面加上語言代碼和副檔名。語言代碼使用 ISO 639-1 的兩個字母或 ISO 639-2/B 的三個字母，中文是 <code>zh</code> 或 <code>chi</code>：</p>
+</ul></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>方法三：找不到字幕 — 檢查檔名</h2></div>
+<div class="g-body"><p>Plex 只會讀取符合命名規則的外掛字幕：字幕檔名要與影片相同，後面加上語言代碼和副檔名。語言代碼使用 ISO 639-1 的兩個字母或 ISO 639-2/B 的三個字母，中文是 <code>zh</code> 或 <code>chi</code>：</p>
 <pre class="code">Movies/千與千尋 (2001)/千與千尋 (2001).mkv
 Movies/千與千尋 (2001)/千與千尋 (2001).zh.srt
 Movies/千與千尋 (2001)/千與千尋 (2001).en.srt
 Movies/千與千尋 (2001)/千與千尋 (2001).en.forced.srt</pre>
 <p>Plex 只認得 <code>forced</code>、<code>sdh</code> 等特定標記，如果加了自創的後綴，例如 <code>.zh.繁中.srt</code>，字幕可能會被忽略。Jellyfin 和 Emby 也採用相近的「檔名.語言.srt」格式，所以這種命名方式三者通用。</p>
-<p>改好檔名後，記得重新整理中繼資料。</p>
+<p>改好檔名後，記得重新整理中繼資料。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>進階：中英雙語字幕</h2></div>
+<div class="g-body"><p>想同時顯示中文和英文？可以用 <a href="/bilingual-subtitles-merge/">雙語字幕合併工具</a> 把兩個字幕合成一個，再按上面的規則命名，例如 <code>千與千尋 (2001).zh.srt</code>。想把簡體字幕轉成繁體，可以先用 <a href="/simplified-to-traditional-subtitles/">簡體字幕轉繁體工具</a>。</p></div>
+</section>
 
-<h2>進階：中英雙語字幕</h2>
-<p>想同時顯示中文和英文？可以用 <a href="/bilingual-subtitles-merge/">雙語字幕合併工具</a> 把兩個字幕合成一個，再按上面的規則命名，例如 <code>千與千尋 (2001).zh.srt</code>。想把簡體字幕轉成繁體，可以先用 <a href="/simplified-to-traditional-subtitles/">簡體字幕轉繁體工具</a>。</p>
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -101,7 +101,7 @@ Movies/千與千尋 (2001)/千與千尋 (2001).en.forced.srt</pre>
     <div class="cta"><div><strong>字幕亂碼修復</strong>：先把字幕轉為 UTF-8，大部分亂碼問題即可解決，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/tv-subtitles-garbled/"><h3>電視、USB 播放字幕亂碼或不顯示的解決方法</h3><p>用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5…</p></a><a class="tool-card" href="/guides/srt-ass-vtt-difference/"><h3>SRT、ASS、VTT 字幕格式有什麼分別？</h3><p>SRT、ASS、VTT 是最常見的三種字幕格式。本文以實例解釋三者的寫法、特色及…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/tv-subtitles-garbled/">電視、USB 播放字幕亂碼或不顯示的解決方法</a><a class="g-pill" href="/guides/srt-ass-vtt-difference/">SRT、ASS、VTT 字幕格式有什麼分別？</a></div>
   </article>
 </main>
 

@@ -6,6 +6,9 @@
 <title>Samsung、LG 電視字幕亂碼或不顯示？USB 播放字幕設定｜ZimuFix</title>
 <meta name="description" content="Samsung（Tizen）或 LG（webOS）電視用 USB 播放影片，字幕亂碼、方格或不出現？教你設定字幕編碼、檔名及格式。">
 <link rel="canonical" href="https://zimufix.com/guides/samsung-lg-tv-subtitles/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/samsung-lg-tv-subtitles/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/samsung-lg-tv-chinese-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/samsung-lg-tv-subtitles/">
 <meta property="og:title" content="Samsung、LG 電視字幕亂碼或不顯示的解決方法">
 <meta property="og:description" content="Samsung（Tizen）或 LG（webOS）電視用 USB 播放影片，字幕亂碼、方格或不出現？教你設定字幕編碼、檔名及格式。">
 <meta property="og:type" content="article">
@@ -21,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Samsung、LG 電視字幕亂碼或不顯示的解決方法", "description": "Samsung（Tizen）或 LG（webOS）電視用 USB 播放影片，字幕亂碼、方格或不出現？教你設定字幕編碼、檔名及格式。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/samsung-lg-tv-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -37,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>Samsung、LG 電視字幕亂碼或不顯示的解決方法</h1><p class="meta">更新日期：2026-11-18</p></section>
     <p class="lead">Samsung 和 LG 電視都可以用 USB 播放影片和外掛字幕，但對字幕的要求比電腦嚴格。字幕出問題時，可以按以下順序檢查。</p>
@@ -47,26 +50,35 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>一、字幕亂碼</h2>
-<p>部分 Samsung 和 LG 型號在播放影片時，字幕設定中有「編碼」選項，可以嘗試改為中文編碼。不過不同型號、不同系統版本的選項差別很大，有些型號完全沒有這個選項。</p>
-<p><strong>最可靠的方法</strong>：用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 把字幕轉為 UTF-8，並保留「加入 BOM」選項。UTF-8 加 BOM 是電視最容易正確辨認的格式。</p>
 
-<h2>二、字幕不出現</h2>
-<ul>
+<nav class="g-jump vis" aria-label="先選擇你看到的情況"><p class="g-jump-label">先選擇你看到的情況</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>一、字幕亂碼</span></a><a class="g-jump-card" href="#s2"><span class="g-vis muted" aria-hidden="true">（沒有字幕）</span><span class="g-jump-title"><span class="g-badge sm">B</span>二、字幕不出現</span></a><a class="g-jump-card" href="#s3"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">C</span>三、字幕顯示為方格</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>一、字幕亂碼</h2></div>
+<div class="g-body"><p>部分 Samsung 和 LG 型號在播放影片時，字幕設定中有「編碼」選項，可以嘗試改為中文編碼。不過不同型號、不同系統版本的選項差別很大，有些型號完全沒有這個選項。</p>
+<p><strong>最可靠的方法</strong>：用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 把字幕轉為 UTF-8，並保留「加入 BOM」選項。UTF-8 加 BOM 是電視最容易正確辨認的格式。</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>二、字幕不出現</h2></div>
+<div class="g-body"><ul>
 <li>字幕要與影片<strong>完全同名</strong>，放在 USB 的同一個資料夾，見 <a href="/guides/subtitle-file-naming/">字幕檔名命名規則</a>。</li>
 <li>播放時打開選單，確認字幕已開啟。</li>
 <li>建議使用 SRT 格式。ASS 特效字幕在部分型號只能顯示純文字或不能顯示，可以先 <a href="/ass-to-srt/">轉為 SRT</a>。</li>
 <li>MKV 內嵌字幕不出現，可以先 <a href="/guides/extract-mkv-subtitles/">抽出為 SRT</a> 作外掛字幕。</li>
-</ul>
+</ul></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>三、字幕顯示為方格</h2></div>
+<div class="g-body"><p>電視系統語言設為英文時，部分型號可能無法正確顯示中文字幕。可以試把電視語言改為中文。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>四、字幕和聲音不同步</h2></div>
+<div class="g-body"><p>用 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a> 修改字幕檔，比在電視上逐次調整方便。</p></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>還是不行？</h2></div>
+<div class="g-body"><p>可以用 Plex 或 Jellyfin 等媒體伺服器串流到電視，對字幕的支援更好，見 <a href="/guides/plex-jellyfin-emby-chinese-subtitles/">Plex、Jellyfin、Emby 中文字幕教學</a>。</p></div>
+</section>
 
-<h2>三、字幕顯示為方格</h2>
-<p>電視系統語言設為英文時，部分型號可能無法正確顯示中文字幕。可以試把電視語言改為中文。</p>
-
-<h2>四、字幕和聲音不同步</h2>
-<p>用 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a> 修改字幕檔，比在電視上逐次調整方便。</p>
-
-<h2>還是不行？</h2>
-<p>可以用 Plex 或 Jellyfin 等媒體伺服器串流到電視，對字幕的支援更好，見 <a href="/guides/plex-jellyfin-emby-chinese-subtitles/">Plex、Jellyfin、Emby 中文字幕教學</a>。</p>
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -74,7 +86,7 @@
     <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/tv-subtitles-garbled/"><h3>電視、USB 播放字幕亂碼或不顯示的解決方法</h3><p>用電視或機頂盒經 USB 播放影片，字幕變成亂碼、方格或完全不顯示？本文整理 5…</p></a><a class="tool-card" href="/guides/subtitle-file-naming/"><h3>字幕檔名命名規則：讓播放器自動載入字幕</h3><p>字幕放在影片旁邊卻不出現？教你字幕檔名的正確寫法、語言標記（.zh、.chi）、…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/tv-subtitles-garbled/">電視、USB 播放字幕亂碼或不顯示的解決方法</a><a class="g-pill" href="/guides/subtitle-file-naming/">字幕檔名命名規則：讓播放器自動載入字幕</a></div>
   </article>
 </main>
 

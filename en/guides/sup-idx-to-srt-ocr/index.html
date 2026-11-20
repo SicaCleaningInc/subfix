@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convert SUP or IDX/SUB Image Subtitles to SRT With OCR (Subtitle Edit) | ZimuFix</title>
+<meta name="description" content="Blu-ray SUP (PGS) or DVD IDX/SUB subtitles can&#x27;t be edited because they&#x27;re images. Use free Subtitle Edit OCR to turn Chinese image subtitles into editable SRT.">
+<link rel="canonical" href="https://zimufix.com/en/guides/sup-idx-to-srt-ocr/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/sup-idx-to-srt-ocr/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/sup-idx-to-srt/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/sup-idx-to-srt/">
+<meta property="og:title" content="Convert SUP or IDX/SUB Image Subtitles to SRT With OCR (Subtitle Edit)">
+<meta property="og:description" content="Blu-ray SUP (PGS) or DVD IDX/SUB subtitles can&#x27;t be edited because they&#x27;re images. Use free Subtitle Edit OCR to turn Chinese image subtitles into editable SRT.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/en/guides/sup-idx-to-srt-ocr/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=17">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Convert SUP and IDX/SUB Image Subtitles to SRT", "description": "Blu-ray SUP (PGS) or DVD IDX/SUB subtitles can't be edited because they're images. Use free Subtitle Edit OCR to turn Chinese image subtitles into editable SRT.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/sup-idx-to-srt-ocr/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Is there a Mac version of Subtitle Edit?", "acceptedAnswer": {"@type": "Answer", "text": "Subtitle Edit is built for Windows. Mac users typically run it through Wine or a Windows virtual machine, or use other OCR tools."}}, {"@type": "Question", "name": "Why are some characters wrong after OCR?", "acceptedAnswer": {"@type": "Answer", "text": "OCR guesses from image shapes. Small fonts, outlines and similar-looking characters cause errors. Proofreading is always needed."}}, {"@type": "Question", "name": "Can I keep the original positions and colours?", "acceptedAnswer": {"@type": "Answer", "text": "No. SRT is plain text, so styling from the images is not kept."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide g2">
+    <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
+    <section class="hero"><h1>Convert SUP and IDX/SUB Image Subtitles to SRT</h1><p class="meta">Updated: 2026-11-20</p></section>
+    <p class="lead">Subtitles ripped from Blu-ray or DVD are often SUP or IDX/SUB files: a series of images, not text. Many TVs don't support them, and you can't edit them. OCR (text recognition) turns them into SRT.</p>
+    <div class="cta"><div><strong>Quick fix:</strong> Convert Simplified Chinese subtitles to Traditional, with Hong Kong or Taiwan wording.</div><a class="btn btn-primary" href="/en/simplified-to-traditional-chinese-subtitles/">Open Simplified to Traditional</a></div>
+    <div class="ad-slot" id="ad-1"></div>
+
+
+<nav class="g-jump" aria-label="On this page"><p class="g-jump-label">On this page</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>The tool: Subtitle Edit</span><span class="g-jump-sub">Subtitle Edit is a free, open-source subtitle editor for Windows with …</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>Steps</span><span class="g-jump-sub">Option names and OCR engines change between versions; follow what your…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>Better accuracy</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>After you have an SRT</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">?</span>FAQ</span><span class="g-jump-sub">Subtitle Edit is built for Windows.</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>The tool: Subtitle Edit</h2></div>
+<div class="g-body"><p>Subtitle Edit is a free, open-source subtitle editor for Windows with built-in OCR, including Chinese.</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Steps</h2></div>
+<div class="g-body"><ol>
+<li>Install and open Subtitle Edit.</li>
+<li>Use File → Open and choose the <code>.sup</code> file, or the DVD <code>.idx</code> (keep the matching <code>.sub</code> next to it).</li>
+<li>The OCR window opens. Pick an OCR engine and language: Traditional or Simplified Chinese. You may be prompted to download language data the first time.</li>
+<li>Start OCR, then review the result and correct misread characters.</li>
+<li>Click OK and save as SRT.</li>
+</ol>
+<p>Option names and OCR engines change between versions; follow what your version shows.</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Better accuracy</h2></div>
+<div class="g-body"><ul>
+<li>Chinese OCR always makes some mistakes, especially with look-alike characters, so proofread line by line.</li>
+<li>If the source is Simplified, OCR it as Simplified, then convert with the <a href="/en/simplified-to-traditional-chinese-subtitles/">Simplified to Traditional converter</a>. That is usually more accurate than recognising Traditional directly.</li>
+</ul></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>After you have an SRT</h2></div>
+<div class="g-body"><ul>
+<li>Make sure it's UTF-8: <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a></li>
+<li>Timing off: <a href="/en/subtitle-time-shift/">Subtitle Time Shift</a></li>
+<li>Need to pull the subtitle out of a video first: <a href="/en/guides/extract-subtitles-from-mkv-mp4/">extract subtitles from MKV</a></li>
+</ul></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>Is there a Mac version of Subtitle Edit?</summary><p>Subtitle Edit is built for Windows. Mac users typically run it through Wine or a Windows virtual machine, or use other OCR tools.</p></details>
+<details><summary>Why are some characters wrong after OCR?</summary><p>OCR guesses from image shapes. Small fonts, outlines and similar-looking characters cause errors. Proofreading is always needed.</p></details>
+<details><summary>Can I keep the original positions and colours?</summary><p>No. SRT is plain text, so styling from the images is not kept.</p></details></div>
+</section>
+<div class="ad-slot" id="ad-2"></div>
+    <div class="cta"><div><strong>Simplified to Traditional</strong>: Convert Simplified Chinese subtitles to Traditional, with Hong Kong or Taiwan wording.</div><a class="btn btn-primary" href="/en/simplified-to-traditional-chinese-subtitles/">Open tool</a></div>
+    <h2>More guides</h2>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/tv-usb-chinese-subtitles-garbled/">TV Subtitles Garbled or Not Showing From a USB Drive: 5 Causes and Fixes</a><a class="g-pill" href="/en/guides/vlc-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in VLC</a><a class="g-pill" href="/en/guides/srt-vs-ass-vs-vtt/">SRT vs ASS vs VTT: Subtitle Formats Explained</a><a class="g-pill" href="/en/guides/subtitles-out-of-sync/">Subtitles Out of Sync: 3 Causes and How to Fix Each</a><a class="g-pill" href="/en/guides/capcut-export-srt/">How to Export SRT Subtitles From CapCut Desktop</a><a class="g-pill" href="/en/guides/subtitle-file-naming/">Subtitle File Naming: Make Players Load Subtitles Automatically</a><a class="g-pill" href="/en/guides/extract-subtitles-from-mkv-mp4/">How to Extract Embedded Subtitles From MKV or MP4</a><a class="g-pill" href="/en/guides/burn-subtitles-into-video/">How to Burn Subtitles Into a Video (Hardsubs)</a><a class="g-pill" href="/en/guides/subtitle-encoding-explained/">Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI</a><a class="g-pill" href="/en/guides/samsung-lg-tv-chinese-subtitles/">Fix Chinese Subtitles on Samsung and LG TVs</a><a class="g-pill" href="/en/guides/kmplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in KMPlayer</a><a class="g-pill" href="/en/guides/windows-media-player-subtitles/">Windows Media Player: Load Subtitles and Fix Garbled Text</a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+</body>
+</html>

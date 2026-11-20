@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI | ZimuFix</title>
+<meta name="description" content="Garbled subtitles come from encoding mix-ups. A plain-English explanation of UTF-8, UTF-8 BOM, GBK, Big5, Shift-JIS and ANSI, and how to convert subtitles to UTF-8.">
+<link rel="canonical" href="https://zimufix.com/en/guides/subtitle-encoding-explained/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/subtitle-encoding-explained/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/subtitle-encoding-utf8/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/subtitle-encoding-utf8/">
+<meta property="og:title" content="Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI">
+<meta property="og:description" content="Garbled subtitles come from encoding mix-ups. A plain-English explanation of UTF-8, UTF-8 BOM, GBK, Big5, Shift-JIS and ANSI, and how to convert subtitles to UTF-8.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/en/guides/subtitle-encoding-explained/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=17">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI", "description": "Garbled subtitles come from encoding mix-ups. A plain-English explanation of UTF-8, UTF-8 BOM, GBK, Big5, Shift-JIS and ANSI, and how to convert subtitles to UTF-8.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/subtitle-encoding-explained/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "How can I tell what encoding a subtitle uses?", "acceptedAnswer": {"@type": "Answer", "text": "Drop it into the Garbled Subtitle Fixer: it shows the detected encoding and a preview. Text editors like Notepad++ and VS Code also display the encoding in the status bar."}}, {"@type": "Question", "name": "Is UTF-16 OK for subtitles?", "acceptedAnswer": {"@type": "Answer", "text": "Many players support it, but TVs often don't. UTF-8 is the safer choice."}}, {"@type": "Question", "name": "Will converting to UTF-8 change my subtitle?", "acceptedAnswer": {"@type": "Answer", "text": "Only the encoding changes. Text, timing and line breaks stay the same."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide g2">
+    <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
+    <section class="hero"><h1>Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI</h1><p class="meta">Updated: 2026-11-20</p></section>
+    <p class="lead">Computers store text as numbers, and the rule that maps characters to numbers is called an encoding. Read the same numbers with a different rule and you get different characters. That is where garbled subtitles come from.</p>
+    <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
+    <div class="ad-slot" id="ad-1"></div>
+
+
+<nav class="g-jump" aria-label="On this page"><p class="g-jump-label">On this page</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>Common encodings for CJK subtitles</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>What is &quot;ANSI&quot;?</span><span class="g-jump-sub">&quot;ANSI&quot; in Windows Notepad isn&#x27;t one fixed encoding.</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>UTF-8 vs UTF-8 with BOM</span><span class="g-jump-sub">A BOM is a few marker bytes at the start of a file that announce &quot;this…</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Why garbled text happens</span><span class="g-jump-sub">Save &quot;你好&quot; as GBK, open it as UTF-8, and you get symbols like ÄãºÃ.</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>How to convert to UTF-8</span><span class="g-jump-sub">Different symptoms explained: boxes vs question marks vs symbols.</span></a><a class="g-jump-card" href="#s6"><span class="g-jump-title"><span class="g-badge sm">?</span>FAQ</span><span class="g-jump-sub">Drop it into the Garbled Subtitle Fixer: it shows the detected encodin…</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Common encodings for CJK subtitles</h2></div>
+<div class="g-body"><table>
+<tr><th>Encoding</th><th>Used for</th><th>Notes</th></tr>
+<tr><td>UTF-8</td><td>Everything</td><td>Supports all languages; today's standard</td></tr>
+<tr><td>GBK / GB18030</td><td>Simplified Chinese</td><td>Common in older Simplified subtitles</td></tr>
+<tr><td>Big5</td><td>Traditional Chinese</td><td>Common in older Taiwan and Hong Kong subtitles</td></tr>
+<tr><td>Shift-JIS</td><td>Japanese</td><td>Common in older Japanese subtitles</td></tr>
+<tr><td>EUC-KR</td><td>Korean</td><td>Common in older Korean subtitles</td></tr>
+</table></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>What is "ANSI"?</h2></div>
+<div class="g-body"><p>"ANSI" in Windows Notepad isn't one fixed encoding. It follows the system locale: GBK on Simplified Chinese Windows, Big5 on Traditional Chinese Windows. An "ANSI" subtitle from one computer can be garbled on another.</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>UTF-8 vs UTF-8 with BOM</h2></div>
+<div class="g-body"><p>A BOM is a few marker bytes at the start of a file that announce "this is UTF-8".</p>
+<ul>
+<li>Most computer players don't need it.</li>
+<li>Some TVs and older players do, so subtitles with a BOM are generally more compatible.</li>
+</ul></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Why garbled text happens</h2></div>
+<div class="g-body"><p>Save "你好" as GBK, open it as UTF-8, and you get symbols like <span class="mojibake">ÄãºÃ</span>. Read it again with the right encoding and save as UTF-8, and the text is fully restored.</p></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>How to convert to UTF-8</h2></div>
+<div class="g-body"><ul>
+<li><strong>Easiest:</strong> the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a> detects the original encoding and converts to UTF-8, many files at once. Japanese and Korean: the <a href="/en/fix-garbled-japanese-korean-subtitles/">Japanese & Korean fixer</a>.</li>
+<li><strong>Notepad:</strong> only if Notepad already shows the text correctly. Use Save As and pick UTF-8. If Notepad shows gibberish, it guessed wrong, and saving will permanently damage the text.</li>
+</ul>
+<p>Different symptoms explained: <a href="/en/guides/subtitle-boxes-question-marks/">boxes vs question marks vs symbols</a>.</p></div>
+</section>
+<section class="g-card" id="s6">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>How can I tell what encoding a subtitle uses?</summary><p>Drop it into the Garbled Subtitle Fixer: it shows the detected encoding and a preview. Text editors like Notepad++ and VS Code also display the encoding in the status bar.</p></details>
+<details><summary>Is UTF-16 OK for subtitles?</summary><p>Many players support it, but TVs often don't. UTF-8 is the safer choice.</p></details>
+<details><summary>Will converting to UTF-8 change my subtitle?</summary><p>Only the encoding changes. Text, timing and line breaks stay the same.</p></details></div>
+</section>
+<div class="ad-slot" id="ad-2"></div>
+    <div class="cta"><div><strong>Garbled Subtitle Fixer</strong>: Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open tool</a></div>
+    <h2>More guides</h2>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/tv-usb-chinese-subtitles-garbled/">TV Subtitles Garbled or Not Showing From a USB Drive: 5 Causes and Fixes</a><a class="g-pill" href="/en/guides/vlc-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in VLC</a><a class="g-pill" href="/en/guides/srt-vs-ass-vs-vtt/">SRT vs ASS vs VTT: Subtitle Formats Explained</a><a class="g-pill" href="/en/guides/subtitles-out-of-sync/">Subtitles Out of Sync: 3 Causes and How to Fix Each</a><a class="g-pill" href="/en/guides/capcut-export-srt/">How to Export SRT Subtitles From CapCut Desktop</a><a class="g-pill" href="/en/guides/subtitle-file-naming/">Subtitle File Naming: Make Players Load Subtitles Automatically</a><a class="g-pill" href="/en/guides/extract-subtitles-from-mkv-mp4/">How to Extract Embedded Subtitles From MKV or MP4</a><a class="g-pill" href="/en/guides/burn-subtitles-into-video/">How to Burn Subtitles Into a Video (Hardsubs)</a><a class="g-pill" href="/en/guides/sup-idx-to-srt-ocr/">Convert SUP and IDX/SUB Image Subtitles to SRT</a><a class="g-pill" href="/en/guides/samsung-lg-tv-chinese-subtitles/">Fix Chinese Subtitles on Samsung and LG TVs</a><a class="g-pill" href="/en/guides/kmplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in KMPlayer</a><a class="g-pill" href="/en/guides/windows-media-player-subtitles/">Windows Media Player: Load Subtitles and Fix Garbled Text</a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -6,6 +6,9 @@
 <title>如何把字幕燒入影片？HandBrake、ffmpeg 硬字幕教學｜ZimuFix</title>
 <meta name="description" content="想把 SRT 字幕永久嵌入影片，在任何裝置都顯示？教你用免費的 HandBrake 或 ffmpeg 製作硬字幕，以及避免中文變成亂碼或方格。">
 <link rel="canonical" href="https://zimufix.com/guides/burn-subtitles-into-video/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/burn-subtitles-into-video/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/burn-subtitles-into-video/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/burn-subtitles-into-video/">
 <meta property="og:title" content="把字幕燒入影片（硬字幕）教學">
 <meta property="og:description" content="想把 SRT 字幕永久嵌入影片，在任何裝置都顯示？教你用免費的 HandBrake 或 ffmpeg 製作硬字幕，以及避免中文變成亂碼或方格。">
 <meta property="og:type" content="article">
@@ -21,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "把字幕燒入影片（硬字幕）教學", "description": "想把 SRT 字幕永久嵌入影片，在任何裝置都顯示？教你用免費的 HandBrake 或 ffmpeg 製作硬字幕，以及避免中文變成亂碼或方格。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/burn-subtitles-into-video/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -37,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>把字幕燒入影片（硬字幕）教學</h1><p class="meta">更新日期：2026-11-18</p></section>
     <p class="lead">有些裝置或平台不支援外掛字幕，例如部分社交媒體或舊電視。這時可以把字幕「燒」進畫面，變成硬字幕，之後在任何地方播放都會看到。</p>
@@ -47,40 +50,50 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>硬字幕和軟字幕的分別</h2>
-<ul>
+
+<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>硬字幕和軟字幕的分別</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>燒錄前先準備好字幕</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>方法一：HandBrake（免費、有圖形介面）</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>方法二：ffmpeg（適合大量處理）</span><span class="g-jump-sub">如果中文顯示為方格，代表預設字型沒有中文字，可以指定中文字型：</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>只想加入軟字幕？</span><span class="g-jump-sub">不重新編碼、速度快很多：</span></a><a class="g-jump-card" href="#s6"><span class="g-jump-title"><span class="g-badge sm">F</span>雙語硬字幕</span><span class="g-jump-sub">先用 雙語字幕合併工具 把中英字幕合成一個檔案，再用上面的方法燒入，…</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>硬字幕和軟字幕的分別</h2></div>
+<div class="g-body"><ul>
 <li><strong>硬字幕</strong>：字幕成為畫面的一部分，不能關掉，但任何播放器都會顯示。</li>
 <li><strong>軟字幕</strong>：字幕作為獨立軌道放在影片檔內，可以開關，但要播放器支援。</li>
-</ul>
-
-<h2>燒錄前先準備好字幕</h2>
-<ol>
+</ul></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>燒錄前先準備好字幕</h2></div>
+<div class="g-body"><ol>
 <li>確認字幕是 <strong>UTF-8</strong>，否則燒出來會是亂碼：用 <a href="/fix-garbled-subtitles/">字幕亂碼修復</a> 轉換。</li>
 <li>時間軸要對準：用 <a href="/subtitle-time-shift/">字幕時間軸調整</a> 修正。</li>
 <li>直式短片一行字不要太長：用 <a href="/subtitle-line-break/">字幕斷句工具</a> 自動斷行。</li>
-</ol>
-
-<h2>方法一：HandBrake（免費、有圖形介面）</h2>
-<ol>
+</ol></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>方法一：HandBrake（免費、有圖形介面）</h2></div>
+<div class="g-body"><ol>
 <li>安裝 HandBrake，開啟影片。</li>
 <li>進入「字幕」（Subtitles）分頁，選擇匯入字幕，載入 SRT 檔。</li>
 <li>匯入時如有「字元編碼」（Character Code）選項，選 UTF-8。</li>
 <li>勾選該字幕的「燒入」（Burn In）。</li>
 <li>設定輸出位置，按開始編碼。</li>
-</ol>
-
-<h2>方法二：ffmpeg（適合大量處理）</h2>
-<pre><code>ffmpeg -i video.mp4 -vf "subtitles=sub.srt" -c:a copy output.mp4</code></pre>
+</ol></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>方法二：ffmpeg（適合大量處理）</h2></div>
+<div class="g-body"><pre><code>ffmpeg -i video.mp4 -vf "subtitles=sub.srt" -c:a copy output.mp4</code></pre>
 <p>如果中文顯示為方格，代表預設字型沒有中文字，可以指定中文字型：</p>
 <pre><code>ffmpeg -i video.mp4 -vf "subtitles=sub.srt:force_style='FontName=Noto Sans CJK TC'" -c:a copy output.mp4</code></pre>
-<p>字型名稱要換成你電腦上已安裝的中文字型。</p>
+<p>字型名稱要換成你電腦上已安裝的中文字型。</p></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>只想加入軟字幕？</h2></div>
+<div class="g-body"><p>不重新編碼、速度快很多：</p>
+<pre><code>ffmpeg -i video.mp4 -i sub.srt -c copy -c:s mov_text output.mp4</code></pre></div>
+</section>
+<section class="g-card" id="s6">
+<div class="g-head"><span class="g-badge">F</span><h2>雙語硬字幕</h2></div>
+<div class="g-body"><p>先用 <a href="/bilingual-subtitles-merge/">雙語字幕合併工具</a> 把中英字幕合成一個檔案，再用上面的方法燒入，就能做出中英對照的影片。</p></div>
+</section>
 
-<h2>只想加入軟字幕？</h2>
-<p>不重新編碼、速度快很多：</p>
-<pre><code>ffmpeg -i video.mp4 -i sub.srt -c copy -c:s mov_text output.mp4</code></pre>
-
-<h2>雙語硬字幕</h2>
-<p>先用 <a href="/bilingual-subtitles-merge/">雙語字幕合併工具</a> 把中英字幕合成一個檔案，再用上面的方法燒入，就能做出中英對照的影片。</p>
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -88,7 +101,7 @@
     <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/extract-mkv-subtitles/"><h3>從 MKV、MP4 影片抽出內嵌字幕</h3><p>想把 MKV 或 MP4 影片內的字幕抽出來修改、轉繁體或翻譯？教你用 MKVT…</p></a><a class="tool-card" href="/guides/premiere-davinci-srt-garbled/"><h3>Premiere Pro、DaVinci Resolve 匯入 SRT 中文字幕亂碼</h3><p>在 Premiere Pro 或達芬奇（DaVinci Resolve）匯入 S…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/extract-mkv-subtitles/">從 MKV、MP4 影片抽出內嵌字幕</a><a class="g-pill" href="/guides/premiere-davinci-srt-garbled/">Premiere Pro、DaVinci Resolve 匯入 SRT 中文字幕亂碼</a></div>
   </article>
 </main>
 

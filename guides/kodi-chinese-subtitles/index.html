@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Kodi 中文字幕亂碼、方格的解決方法", "description": "Kodi 播放中文字幕變成方格或亂碼？教你把字型改為 Arial based、設定字幕字元集，以及把字幕轉為 UTF-8 一勞永逸。", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": "https://zimufix.com/guides/kodi-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -40,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>Kodi 中文字幕亂碼、方格的解決方法</h1><p class="meta">更新日期：2026-11-17</p></section>
     <p class="lead">Kodi 預設的介面字型不包含中文字，所以很多人第一次用 Kodi 播中文字幕，看到的都是一排排方格。只要改兩個設定，再處理好字幕編碼，就能正常顯示。</p>
@@ -50,27 +50,35 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>步驟一：把字型改為「Arial based」</h2>
-<p>這一步解決<strong>方格</strong>問題。Kodi 預設字型沒有中文字，要換成支援中文的字型：</p>
+
+<nav class="g-jump vis" aria-label="先選擇你看到的情況"><p class="g-jump-label">先選擇你看到的情況</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">A</span>步驟一：把字型改為「Arial based」</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">B</span>步驟二：設定字幕字元集</span></a><a class="g-jump-card" href="#s4"><span class="g-vis muted" aria-hidden="true">（沒有字幕）</span><span class="g-jump-title"><span class="g-badge sm">D</span>字幕命名讓 Kodi 自動載入</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>步驟一：把字型改為「Arial based」</h2></div>
+<div class="g-body"><p>這一步解決<strong>方格</strong>問題。Kodi 預設字型沒有中文字，要換成支援中文的字型：</p>
 <ol>
 <li>進入「設定」→「介面」→「外觀」（Skin）。</li>
 <li>把「字型」（Fonts）改為 <strong>Arial based</strong>。</li>
 <li>介面會短暫重新載入，之後中文介面和字幕都能顯示。</li>
 </ol>
-<p>字幕本身的字型可以在「設定」→「播放器」→「語言」→「字幕」中再調整（較新版本設定名稱可能略有不同）。</p>
-
-<h2>步驟二：設定字幕字元集</h2>
-<p>這一步解決<strong>亂碼</strong>問題。在「設定」→「播放器」→「語言」中找到字幕的「字元集」（Character set），簡體字幕選「Chinese Simplified (GBK)」，繁體字幕選「Chinese Traditional (Big5)」。</p>
-<p>不過字元集是全域設定，如果你同時有簡體和繁體的舊字幕，總有一邊會亂碼。</p>
-
-<h2>步驟三（建議）：把字幕統一轉為 UTF-8</h2>
-<p>最乾淨的做法是把所有字幕轉為 UTF-8。UTF-8 字幕不受字元集設定影響，簡體、繁體、日文、韓文都能正確顯示。用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 一次拖入多個字幕，轉換後打包成 ZIP 下載，再覆蓋原檔即可。</p>
-
-<h2>字幕命名讓 Kodi 自動載入</h2>
-<p>把字幕和影片放在同一個資料夾，並使用相同檔名，例如：</p>
+<p>字幕本身的字型可以在「設定」→「播放器」→「語言」→「字幕」中再調整（較新版本設定名稱可能略有不同）。</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>步驟二：設定字幕字元集</h2></div>
+<div class="g-body"><p>這一步解決<strong>亂碼</strong>問題。在「設定」→「播放器」→「語言」中找到字幕的「字元集」（Character set），簡體字幕選「Chinese Simplified (GBK)」，繁體字幕選「Chinese Traditional (Big5)」。</p>
+<p>不過字元集是全域設定，如果你同時有簡體和繁體的舊字幕，總有一邊會亂碼。</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>步驟三（建議）：把字幕統一轉為 UTF-8</h2></div>
+<div class="g-body"><p>最乾淨的做法是把所有字幕轉為 UTF-8。UTF-8 字幕不受字元集設定影響，簡體、繁體、日文、韓文都能正確顯示。用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 一次拖入多個字幕，轉換後打包成 ZIP 下載，再覆蓋原檔即可。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>字幕命名讓 Kodi 自動載入</h2></div>
+<div class="g-body"><p>把字幕和影片放在同一個資料夾，並使用相同檔名，例如：</p>
 <pre><code>Movie (2024).mkv
 Movie (2024).zh.srt</code></pre>
-<p>Kodi 會自動載入。如果想在播放時切換簡體和繁體，可以用 <a href="/simplified-to-traditional-subtitles/">簡體轉繁體工具</a> 另外生成一份繁體字幕。</p>
+<p>Kodi 會自動載入。如果想在播放時切換簡體和繁體，可以用 <a href="/simplified-to-traditional-subtitles/">簡體轉繁體工具</a> 另外生成一份繁體字幕。</p></div>
+</section>
+
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -78,7 +86,7 @@ Movie (2024).zh.srt</code></pre>
     <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/plex-jellyfin-emby-chinese-subtitles/"><h3>Plex、Jellyfin、Emby 中文字幕亂碼或顯示方格的解決方法</h3><p>用 Plex、Jellyfin 或 Emby 架設家庭影音伺服器，中文字幕卻出現…</p></a><a class="tool-card" href="/guides/android-tv-subtitles/"><h3>小米電視、Android TV 字幕亂碼或不顯示的解決方法</h3><p>用小米電視、TCL、Sony 等 Android TV / Google TV …</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/plex-jellyfin-emby-chinese-subtitles/">Plex、Jellyfin、Emby 中文字幕亂碼或顯示方格的解決方法</a><a class="g-pill" href="/guides/android-tv-subtitles/">小米電視、Android TV 字幕亂碼或不顯示的解決方法</a></div>
   </article>
 </main>
 

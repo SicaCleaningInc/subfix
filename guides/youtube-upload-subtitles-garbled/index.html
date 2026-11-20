@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "YouTube 上傳 SRT 字幕亂碼的解決方法", "description": "上傳 SRT 字幕到 YouTube 後中文變成亂碼，或時間對不上？教你把字幕轉為 UTF-8、修正時間軸，以及在 YouTube Studio 正確上傳字幕。", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": "https://zimufix.com/guides/youtube-upload-subtitles-garbled/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -40,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>YouTube 上傳 SRT 字幕亂碼的解決方法</h1><p class="meta">更新日期：2026-11-17</p></section>
     <p class="lead">為 YouTube 影片加上字幕，可以增加觀看時間，也讓不同語言的觀眾看得懂。但上傳 SRT 後，中文字幕有時會變成亂碼，或者時間完全對不上。以下逐一解決。</p>
@@ -50,27 +50,36 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>中文字幕變亂碼：字幕不是 UTF-8</h2>
-<p>YouTube 建議字幕使用 UTF-8 編碼。如果字幕是從舊軟件或網上下載，很可能是 GBK 或 Big5，上傳後就會變成亂碼。</p>
-<p>上傳前先用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 轉為 UTF-8，在預覽中確認中文正常，再下載上傳。</p>
 
-<h2>在 YouTube Studio 上傳字幕</h2>
-<ol>
+<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>中文字幕變亂碼：字幕不是 UTF-8</span><span class="g-jump-sub">YouTube 建議字幕使用 UTF-8 編碼。</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>在 YouTube Studio 上傳字幕</span><span class="g-jump-sub">YouTube 介面會不時更新，按鈕名稱可能略有不同。</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>字幕時間對不上</span><span class="g-jump-sub">如果影片開頭剪掉了一段，字幕就會整體提早或延遲。</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>同時提供簡體和繁體</span><span class="g-jump-sub">觀眾來自不同地區時，可以上傳兩條字幕。</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>從剪映匯出字幕</span><span class="g-jump-sub">如果字幕是在剪映製作，可以參考 剪映匯出 SRT 教學。</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>中文字幕變亂碼：字幕不是 UTF-8</h2></div>
+<div class="g-body"><p>YouTube 建議字幕使用 UTF-8 編碼。如果字幕是從舊軟件或網上下載，很可能是 GBK 或 Big5，上傳後就會變成亂碼。</p>
+<p>上傳前先用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 轉為 UTF-8，在預覽中確認中文正常，再下載上傳。</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>在 YouTube Studio 上傳字幕</h2></div>
+<div class="g-body"><ol>
 <li>登入 YouTube Studio，在左邊選「字幕」。</li>
 <li>選擇影片，加入語言（例如「中文（香港）」或「中文（台灣）」）。</li>
 <li>選「上傳檔案」→「有時間碼」，再選擇 SRT 檔。</li>
 <li>檢查預覽，確認無誤後發佈。</li>
 </ol>
-<p>YouTube 介面會不時更新，按鈕名稱可能略有不同。</p>
+<p>YouTube 介面會不時更新，按鈕名稱可能略有不同。</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>字幕時間對不上</h2></div>
+<div class="g-body"><p>如果影片開頭剪掉了一段，字幕就會整體提早或延遲。用 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a> 把所有字幕一次向前或向後移，再重新上傳。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>同時提供簡體和繁體</h2></div>
+<div class="g-body"><p>觀眾來自不同地區時，可以上傳兩條字幕。用 <a href="/simplified-to-traditional-subtitles/">簡體轉繁體工具</a> 或 <a href="/traditional-to-simplified-subtitles/">繁體轉簡體工具</a> 生成另一個版本，分別上傳為「中文（簡體）」和「中文（繁體）」。</p></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>從剪映匯出字幕</h2></div>
+<div class="g-body"><p>如果字幕是在剪映製作，可以參考 <a href="/guides/capcut-export-srt/">剪映匯出 SRT 教學</a>。</p></div>
+</section>
 
-<h2>字幕時間對不上</h2>
-<p>如果影片開頭剪掉了一段，字幕就會整體提早或延遲。用 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a> 把所有字幕一次向前或向後移，再重新上傳。</p>
-
-<h2>同時提供簡體和繁體</h2>
-<p>觀眾來自不同地區時，可以上傳兩條字幕。用 <a href="/simplified-to-traditional-subtitles/">簡體轉繁體工具</a> 或 <a href="/traditional-to-simplified-subtitles/">繁體轉簡體工具</a> 生成另一個版本，分別上傳為「中文（簡體）」和「中文（繁體）」。</p>
-
-<h2>從剪映匯出字幕</h2>
-<p>如果字幕是在剪映製作，可以參考 <a href="/guides/capcut-export-srt/">剪映匯出 SRT 教學</a>。</p>
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -78,7 +87,7 @@
     <div class="cta"><div><strong>字幕亂碼修復</strong>：自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/capcut-export-srt/"><h3>剪映如何匯出 SRT 字幕？轉繁體、斷句、雙語一次搞定</h3><p>教你用電腦版剪映把自動識別的字幕匯出（導出）為 SRT 檔，以及匯出後如何轉為繁…</p></a><a class="tool-card" href="/guides/premiere-davinci-srt-garbled/"><h3>Premiere Pro、DaVinci Resolve 匯入 SRT 中文字幕亂碼</h3><p>在 Premiere Pro 或達芬奇（DaVinci Resolve）匯入 S…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/capcut-export-srt/">剪映如何匯出 SRT 字幕？轉繁體、斷句、雙語一次搞定</a><a class="g-pill" href="/guides/premiere-davinci-srt-garbled/">Premiere Pro、DaVinci Resolve 匯入 SRT 中文字幕亂碼</a></div>
   </article>
 </main>
 

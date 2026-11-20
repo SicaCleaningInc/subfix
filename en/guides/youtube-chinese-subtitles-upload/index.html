@@ -24,11 +24,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Fix Garbled Chinese Subtitles When Uploading SRT to YouTube", "description": "Uploaded an SRT to YouTube and the Chinese text is garbled or out of sync? Convert the file to UTF-8, fix the timing, and upload subtitles correctly in YouTube Studio.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/youtube-chinese-subtitles-upload/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Which subtitle formats does YouTube accept?", "acceptedAnswer": {"@type": "Answer", "text": "Common ones include SRT, SBV and WebVTT. SRT in UTF-8 is the safest choice."}}, {"@type": "Question", "name": "Should I upload Traditional or Simplified Chinese?", "acceptedAnswer": {"@type": "Answer", "text": "Upload both if your audience spans regions: label one Chinese (Traditional) or (Hong Kong/Taiwan) and the other Chinese (Simplified)."}}, {"@type": "Question", "name": "Can I download YouTube auto captions and fix them?", "acceptedAnswer": {"@type": "Answer", "text": "YouTube Studio lets you download captions for your own videos. Edit them, convert to UTF-8, and upload again."}}, {"@type": "Question", "name": "Do subtitles help YouTube SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Captions make your content accessible to more viewers and can improve watch time; YouTube can also use caption text to understand your video."}}]}
+</script>
 </head>
 <body>
 
@@ -40,36 +43,46 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
     <section class="hero"><h1>Fix Garbled Chinese Subtitles When Uploading SRT to YouTube</h1><p class="meta">Updated: 2026-11-18</p></section>
     <p class="lead">Subtitles increase watch time and open your videos to more viewers. But Chinese SRT files sometimes turn into gibberish after upload, or the timing is off. Here is how to fix both.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>Garbled Chinese: the file is not UTF-8</h2>
-<p>YouTube recommends UTF-8 for subtitle files. Subtitles from older software or downloaded online are often GBK or Big5, which show up garbled.</p>
-<p>Before uploading, convert the file with the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a>, check the preview, then upload the downloaded file.</p>
 
-<h2>Uploading subtitles in YouTube Studio</h2>
-<ol>
+<nav class="g-jump" aria-label="On this page"><p class="g-jump-label">On this page</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>Garbled Chinese: the file is not UTF-8</span><span class="g-jump-sub">YouTube recommends UTF-8 for subtitle files.</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>Uploading subtitles in YouTube Studio</span><span class="g-jump-sub">YouTube updates its interface regularly, so button names may differ sl…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>Timing is off</span><span class="g-jump-sub">If you trimmed the start of the video, every line will be early or lat…</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Offer both Simplified and Traditional</span><span class="g-jump-sub">Create the second version with the Simplified to Traditional or Tradit…</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Garbled Chinese: the file is not UTF-8</h2></div>
+<div class="g-body"><p>YouTube recommends UTF-8 for subtitle files. Subtitles from older software or downloaded online are often GBK or Big5, which show up garbled.</p>
+<p>Before uploading, convert the file with the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a>, check the preview, then upload the downloaded file.</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Uploading subtitles in YouTube Studio</h2></div>
+<div class="g-body"><ol>
 <li>Open YouTube Studio and choose Subtitles in the left menu.</li>
 <li>Pick the video and add a language, e.g. Chinese (Hong Kong) or Chinese (Taiwan).</li>
 <li>Choose Upload file → With timing, then select the SRT file.</li>
 <li>Check the preview and publish.</li>
 </ol>
-<p>YouTube updates its interface regularly, so button names may differ slightly.</p>
-
-<h2>Timing is off</h2>
-<p>If you trimmed the start of the video, every line will be early or late. Shift them all at once with the <a href="/en/subtitle-time-shift/">Subtitle Time Shift tool</a> and upload again.</p>
-
-<h2>Offer both Simplified and Traditional</h2>
-<p>Create the second version with the <a href="/en/simplified-to-traditional-chinese-subtitles/">Simplified to Traditional</a> or <a href="/en/traditional-to-simplified-chinese-subtitles/">Traditional to Simplified</a> converter, and upload them as separate languages.</p>
-
+<p>YouTube updates its interface regularly, so button names may differ slightly.</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Timing is off</h2></div>
+<div class="g-body"><p>If you trimmed the start of the video, every line will be early or late. Shift them all at once with the <a href="/en/subtitle-time-shift/">Subtitle Time Shift tool</a> and upload again.</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Offer both Simplified and Traditional</h2></div>
+<div class="g-body"><p>Create the second version with the <a href="/en/simplified-to-traditional-chinese-subtitles/">Simplified to Traditional</a> or <a href="/en/traditional-to-simplified-chinese-subtitles/">Traditional to Simplified</a> converter, and upload them as separate languages.</p></div>
+</section>
+<section class="g-card" id="faq">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>Which subtitle formats does YouTube accept?</summary><p>Common ones include SRT, SBV and WebVTT. SRT in UTF-8 is the safest choice.</p></details><details><summary>Should I upload Traditional or Simplified Chinese?</summary><p>Upload both if your audience spans regions: label one Chinese (Traditional) or (Hong Kong/Taiwan) and the other Chinese (Simplified).</p></details><details><summary>Can I download YouTube auto captions and fix them?</summary><p>YouTube Studio lets you download captions for your own videos. Edit them, convert to UTF-8, and upload again.</p></details><details><summary>Do subtitles help YouTube SEO?</summary><p>Captions make your content accessible to more viewers and can improve watch time; YouTube can also use caption text to understand your video.</p></details></div>
+</section>
     <div class="ad-slot" id="ad-2"></div>
     <div class="cta"><div><strong>Garbled Subtitle Fixer</strong>: Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open tool</a></div>
     <h2>More guides</h2>
-    <ul><li><a href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a></li><li><a href="/en/guides/kodi-chinese-subtitles/">How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)</a></li><li><a href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a></li><li><a href="/en/guides/android-tv-chinese-subtitles/">Fix Chinese Subtitles on Xiaomi TV, Android TV &amp; Google TV</a></li><li><a href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a></li><li><a href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a></li><li><a href="/en/guides/subtitle-boxes-question-marks/">Why Subtitles Show Boxes or Question Marks (and How to Fix It)</a></li></ul>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/potplayer-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in PotPlayer</a><a class="g-pill" href="/en/guides/kodi-chinese-subtitles/">How to Fix Chinese Subtitles in Kodi (Boxes or Garbled Text)</a><a class="g-pill" href="/en/guides/mx-player-chinese-subtitles-garbled/">How to Fix Garbled Chinese Subtitles in MX Player</a><a class="g-pill" href="/en/guides/android-tv-chinese-subtitles/">Fix Chinese Subtitles on Xiaomi TV, Android TV &amp; Google TV</a><a class="g-pill" href="/en/guides/phone-chinese-subtitles-iphone-android/">How to Play External Chinese Subtitles on iPhone &amp; Android</a><a class="g-pill" href="/en/guides/premiere-davinci-chinese-srt/">Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</a><a class="g-pill" href="/en/guides/subtitle-boxes-question-marks/">Why Subtitles Show Boxes or Question Marks (and How to Fix It)</a></div>
   </article>
 </main>
 

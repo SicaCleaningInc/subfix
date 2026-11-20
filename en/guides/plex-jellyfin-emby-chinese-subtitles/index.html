@@ -24,11 +24,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "Fix Chinese Subtitles in Plex, Jellyfin and Emby", "description": "Chinese subtitles in Plex, Jellyfin or Emby showing gibberish, empty squares or not appearing at all? Find the cause — encoding, fonts or file naming — and fix it step by step.", "datePublished": "2026-11-16", "dateModified": "2026-11-16", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/plex-jellyfin-emby-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Why do subtitles work in Plex on my computer but not on my TV app?", "acceptedAnswer": {"@type": "Answer", "text": "Different Plex apps render subtitles differently. Some TV apps lack Chinese fonts or can't read non-UTF-8 files, so the server may need to burn the subtitles in, which also uses more CPU."}}, {"@type": "Question", "name": "Does Plex need a Plex Pass to show subtitles?", "acceptedAnswer": {"@type": "Answer", "text": "No. External SRT subtitles work on the free plan."}}, {"@type": "Question", "name": "Jellyfin shows the subtitle but in the wrong language label. How do I fix it?", "acceptedAnswer": {"@type": "Answer", "text": "Add a language tag to the file name, such as .zh.srt, then refresh the item's metadata. See subtitle file naming."}}, {"@type": "Question", "name": "Should I convert all my subtitles at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you have many legacy GBK or Big5 files. The fixer takes multiple files and downloads them as a ZIP."}}]}
+</script>
 </head>
 <body>
 
@@ -40,33 +43,29 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
     <section class="hero"><h1>Fix Chinese Subtitles in Plex, Jellyfin and Emby</h1><p class="meta">Updated: 2026-11-16</p></section>
     <p class="lead">Home media servers are great until Chinese subtitles turn into gibberish, empty squares (□□□) or simply don't show up. These are three different problems with three different fixes. Work out which one you have first.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Convert GBK / Big5 subtitles to UTF-8 in your browser.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Fix Garbled Chinese Subtitles</a></div>
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>Which problem do you have?</h2>
-<table>
-<tr><th>What you see</th><th>Cause</th><th>Jump to</th></tr>
-<tr><td>Random symbols like <span class="mojibake">ÄãºÃ</span> or <span class="mojibake">浣犲ソ</span></td><td>Subtitle file is not UTF-8</td><td>Fix 1</td></tr>
-<tr><td>Empty squares □□□</td><td>The client has no Chinese font</td><td>Fix 2</td></tr>
-<tr><td>Subtitle not listed at all</td><td>File name not recognised</td><td>Fix 3</td></tr>
-</table>
 
-<h2>Fix 1: Convert the subtitle to UTF-8</h2>
-<p>Older Chinese subtitles are usually saved as GBK (Simplified) or Big5 (Traditional). Media servers and their apps generally expect UTF-8, so these files appear as gibberish on some or all devices.</p>
+<nav class="g-jump vis" aria-label="What do you see?"><p class="g-jump-label">What do you see?</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>Fix 1: Convert the subtitle to UTF-8</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">B</span>Fix 2: Empty squares — add a Chinese font</span></a><a class="g-jump-card" href="#s3"><span class="g-vis muted" aria-hidden="true">(no subtitles)</span><span class="g-jump-title"><span class="g-badge sm">C</span>Fix 3: Subtitle doesn&#x27;t appear — check the file name</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>Fix 1: Convert the subtitle to UTF-8</h2></div>
+<div class="g-body"><p>Older Chinese subtitles are usually saved as GBK (Simplified) or Big5 (Traditional). Media servers and their apps generally expect UTF-8, so these files appear as gibberish on some or all devices.</p>
 <ol>
 <li>Open the <a href="/en/fix-garbled-chinese-subtitles/">Chinese subtitle encoding fixer</a> and drop in the subtitle files — a whole season at once is fine.</li>
 <li>Check the preview, keep "Add BOM" ticked, and download. The file name stays the same.</li>
 <li>Replace the old files in your library folder.</li>
 <li>Refresh the metadata for that title (in Plex: "Refresh Metadata"; Jellyfin and Emby have an equivalent refresh option) so the server re-reads the subtitle.</li>
 </ol>
-<p>Japanese (Shift-JIS) and Korean (EUC-KR) subtitles have the same problem — use the <a href="/en/fix-garbled-japanese-korean-subtitles/">Japanese &amp; Korean fixer</a>.</p>
-
-<h2>Fix 2: Empty squares — add a Chinese font</h2>
-<p>Squares mean the text is correct but the device drawing it has no font containing Chinese characters. This most often affects <strong>ASS</strong> subtitles, which are rendered with fonts supplied by the server or the app.</p>
+<p>Japanese (Shift-JIS) and Korean (EUC-KR) subtitles have the same problem — use the <a href="/en/fix-garbled-japanese-korean-subtitles/">Japanese &amp; Korean fixer</a>.</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>Fix 2: Empty squares — add a Chinese font</h2></div>
+<div class="g-body"><p>Squares mean the text is correct but the device drawing it has no font containing Chinese characters. This most often affects <strong>ASS</strong> subtitles, which are rendered with fonts supplied by the server or the app.</p>
 <h3>Jellyfin</h3>
 <ol>
 <li>Download a font that covers Chinese, such as Noto Sans CJK (OTF format works well).</li>
@@ -79,24 +78,30 @@
 <ul>
 <li><strong>Convert ASS to SRT</strong> with the <a href="/en/ass-to-srt/">ASS to SRT converter</a>. SRT is rendered with the client's own fonts, which avoids most font problems (you lose styling).</li>
 <li><strong>Update the app</strong>: several Apple-device font issues were fixed in app updates. See <a href="/en/guides/apple-tv-iphone-mac-chinese-subtitles/">Chinese subtitles on Apple TV, iPhone and Mac</a>.</li>
-</ul>
-
-<h2>Fix 3: Subtitle doesn't appear — check the file name</h2>
-<p>Plex only picks up external subtitles that follow its naming rules: the subtitle must have the same name as the video, followed by a language code and the extension. The language code is a 2-letter ISO 639-1 or 3-letter ISO 639-2/B code. For Chinese, that means <code>zh</code> or <code>chi</code>:</p>
+</ul></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>Fix 3: Subtitle doesn't appear — check the file name</h2></div>
+<div class="g-body"><p>Plex only picks up external subtitles that follow its naming rules: the subtitle must have the same name as the video, followed by a language code and the extension. The language code is a 2-letter ISO 639-1 or 3-letter ISO 639-2/B code. For Chinese, that means <code>zh</code> or <code>chi</code>:</p>
 <pre class="code">Movies/Spirited Away (2001)/Spirited Away (2001).mkv
 Movies/Spirited Away (2001)/Spirited Away (2001).zh.srt
 Movies/Spirited Away (2001)/Spirited Away (2001).en.srt
 Movies/Spirited Away (2001)/Spirited Away (2001).en.forced.srt</pre>
 <p>Plex only recognises certain extra tags such as <code>forced</code> and <code>sdh</code>; an unknown suffix like <code>.zh.mysubs.srt</code> may be silently ignored. Jellyfin and Emby use a very similar <code>name.language.srt</code> pattern, so the same naming works across all three.</p>
-<p>After renaming, refresh the metadata so the server rescans the folder.</p>
-
-<h2>Bonus: bilingual subtitles</h2>
-<p>Want Chinese and English at the same time? Merge two subtitle files into one with the <a href="/en/merge-bilingual-subtitles/">bilingual subtitle merger</a>, then name it like any other subtitle (for example <code>Movie (2020).zh.srt</code>).</p>
-
+<p>After renaming, refresh the metadata so the server rescans the folder.</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>Bonus: bilingual subtitles</h2></div>
+<div class="g-body"><p>Want Chinese and English at the same time? Merge two subtitle files into one with the <a href="/en/merge-bilingual-subtitles/">bilingual subtitle merger</a>, then name it like any other subtitle (for example <code>Movie (2020).zh.srt</code>).</p></div>
+</section>
+<section class="g-card" id="faq">
+<div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>
+<div class="g-body"><details><summary>Why do subtitles work in Plex on my computer but not on my TV app?</summary><p>Different Plex apps render subtitles differently. Some TV apps lack Chinese fonts or can't read non-UTF-8 files, so the server may need to burn the subtitles in, which also uses more CPU.</p></details><details><summary>Does Plex need a Plex Pass to show subtitles?</summary><p>No. External SRT subtitles work on the free plan.</p></details><details><summary>Jellyfin shows the subtitle but in the wrong language label. How do I fix it?</summary><p>Add a language tag to the file name, such as <code>.zh.srt</code>, then refresh the item's metadata. See <a href="/en/guides/subtitle-file-naming/">subtitle file naming</a>.</p></details><details><summary>Should I convert all my subtitles at once?</summary><p>Yes, if you have many legacy GBK or Big5 files. The <a href="/en/fix-garbled-chinese-subtitles/">fixer</a> takes multiple files and downloads them as a ZIP.</p></details></div>
+</section>
     <div class="ad-slot" id="ad-2"></div>
     <div class="cta"><div><strong>Fix Garbled Chinese Subtitles</strong>: Convert GBK / Big5 subtitles to UTF-8 in your browser.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open tool</a></div>
     <h2>More guides</h2>
-    <ul><li><a href="/en/guides/apple-tv-iphone-mac-chinese-subtitles/">Chinese Subtitles Showing Boxes on Apple TV, iPhone and Mac</a></li></ul>
+    <div class="g-pills"><a class="g-pill" href="/en/guides/apple-tv-iphone-mac-chinese-subtitles/">Chinese Subtitles Showing Boxes on Apple TV, iPhone and Mac</a></div>
   </article>
 </main>
 

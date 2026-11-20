@@ -6,6 +6,9 @@
 <title>如何從 MKV、MP4 抽出內嵌字幕？MKVToolNix、ffmpeg 教學｜ZimuFix</title>
 <meta name="description" content="想把 MKV 或 MP4 影片內的字幕抽出來修改、轉繁體或翻譯？教你用 MKVToolNix 及 ffmpeg 抽出字幕軌，以及圖形字幕（PGS）的處理方法。">
 <link rel="canonical" href="https://zimufix.com/guides/extract-mkv-subtitles/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/extract-mkv-subtitles/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/extract-subtitles-from-mkv-mp4/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/extract-mkv-subtitles/">
 <meta property="og:title" content="從 MKV、MP4 影片抽出內嵌字幕">
 <meta property="og:description" content="想把 MKV 或 MP4 影片內的字幕抽出來修改、轉繁體或翻譯？教你用 MKVToolNix 及 ffmpeg 抽出字幕軌，以及圖形字幕（PGS）的處理方法。">
 <meta property="og:type" content="article">
@@ -21,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=16">
+<link rel="stylesheet" href="/assets/style.css?v=17">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "從 MKV、MP4 影片抽出內嵌字幕", "description": "想把 MKV 或 MP4 影片內的字幕抽出來修改、轉繁體或翻譯？教你用 MKVToolNix 及 ffmpeg 抽出字幕軌，以及圖形字幕（PGS）的處理方法。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/extract-mkv-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -37,7 +40,7 @@
 </header>
 
 <main class="wrap">
-  <article class="content guide">
+  <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
     <section class="hero"><h1>從 MKV、MP4 影片抽出內嵌字幕</h1><p class="meta">更新日期：2026-11-18</p></section>
     <p class="lead">MKV 影片常常內嵌多條字幕。抽出來之後，你可以修正亂碼、簡繁轉換、調整時間軸，或與另一種語言合併成雙語字幕。以下介紹兩個免費方法。</p>
@@ -47,14 +50,18 @@
     <!-- 廣告位 1（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-1"></div>
 
-<h2>先分辨：文字字幕還是圖形字幕</h2>
-<ul>
+
+<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>先分辨：文字字幕還是圖形字幕</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>方法一：MKVToolNix（適合 MKV）</span><span class="g-jump-sub">MKVToolNix 是免費、開源的 MKV 工具組，支援 Wind…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>方法二：ffmpeg（MKV、MP4 都適用）</span><span class="g-jump-sub">0:s:0 代表第一條字幕軌，第二條是 0:s:1，如此類推。</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>抽出後常見的下一步</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>先分辨：文字字幕還是圖形字幕</h2></div>
+<div class="g-body"><ul>
 <li><strong>文字字幕</strong>（SRT、ASS、SSA、WebVTT）：抽出後可以直接編輯。</li>
 <li><strong>圖形字幕</strong>（藍光的 PGS／SUP、DVD 的 VobSub）：字幕其實是圖片，要經過文字辨識（OCR）才能變成 SRT，見 <a href="/guides/sup-idx-to-srt/">圖形字幕轉 SRT 教學</a>。</li>
-</ul>
-
-<h2>方法一：MKVToolNix（適合 MKV）</h2>
-<p>MKVToolNix 是免費、開源的 MKV 工具組，支援 Windows、Mac 和 Linux。</p>
+</ul></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>方法一：MKVToolNix（適合 MKV）</h2></div>
+<div class="g-body"><p>MKVToolNix 是免費、開源的 MKV 工具組，支援 Windows、Mac 和 Linux。</p>
 <ol>
 <li>安裝 MKVToolNix。</li>
 <li>用以下指令列出影片內的所有軌道及編號：
@@ -63,19 +70,23 @@
 <pre><code>mkvextract movie.mkv tracks 2:movie.zh.srt</code></pre>
 如果該軌是 ASS 字幕，副檔名改為 <code>.ass</code>。</li>
 </ol>
-<p>不想用指令？可以找以 MKVToolNix 為基礎的圖形介面工具，例如 gMKVExtractGUI，勾選字幕軌即可抽出。</p>
-
-<h2>方法二：ffmpeg（MKV、MP4 都適用）</h2>
-<pre><code>ffmpeg -i movie.mkv -map 0:s:0 movie.zh.srt</code></pre>
-<p><code>0:s:0</code> 代表第一條字幕軌，第二條是 <code>0:s:1</code>，如此類推。ffmpeg 會把文字字幕轉成你指定的格式。</p>
-
-<h2>抽出後常見的下一步</h2>
-<ul>
+<p>不想用指令？可以找以 MKVToolNix 為基礎的圖形介面工具，例如 gMKVExtractGUI，勾選字幕軌即可抽出。</p></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>方法二：ffmpeg（MKV、MP4 都適用）</h2></div>
+<div class="g-body"><pre><code>ffmpeg -i movie.mkv -map 0:s:0 movie.zh.srt</code></pre>
+<p><code>0:s:0</code> 代表第一條字幕軌，第二條是 <code>0:s:1</code>，如此類推。ffmpeg 會把文字字幕轉成你指定的格式。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>抽出後常見的下一步</h2></div>
+<div class="g-body"><ul>
 <li>中文亂碼：<a href="/fix-garbled-subtitles/">字幕亂碼修復</a></li>
 <li>簡體轉繁體：<a href="/simplified-to-traditional-subtitles/">簡體字幕轉繁體</a></li>
 <li>ASS 轉 SRT：<a href="/ass-to-srt/">ASS 轉 SRT</a></li>
 <li>中英合併：<a href="/bilingual-subtitles-merge/">雙語字幕合併</a></li>
-</ul>
+</ul></div>
+</section>
+
 
     <!-- 廣告位 2（AdSense 批核後啟用） -->
     <div class="ad-slot" id="ad-2"></div>
@@ -83,7 +94,7 @@
     <div class="cta"><div><strong>簡體字幕轉繁體</strong>：抽出字幕後一鍵轉繁體，支援香港及台灣用字。</div><a class="btn btn-primary" href="/simplified-to-traditional-subtitles/">立即使用</a></div>
 
     <h2>延伸閱讀</h2>
-    <div class="tool-grid"><a class="tool-card" href="/guides/sup-idx-to-srt/"><h3>SUP、IDX/SUB 圖形字幕轉 SRT 教學</h3><p>藍光的 SUP（PGS）或 DVD 的 IDX/SUB 字幕無法編輯？教你用免費…</p></a><a class="tool-card" href="/guides/burn-subtitles-into-video/"><h3>把字幕燒入影片（硬字幕）教學</h3><p>想把 SRT 字幕永久嵌入影片，在任何裝置都顯示？教你用免費的 HandBrak…</p></a></div>
+    <div class="g-pills"><a class="g-pill" href="/guides/sup-idx-to-srt/">SUP、IDX/SUB 圖形字幕轉 SRT 教學</a><a class="g-pill" href="/guides/burn-subtitles-into-video/">把字幕燒入影片（硬字幕）教學</a></div>
   </article>
 </main>
 
