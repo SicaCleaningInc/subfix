@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online Subtitle Player — Play Video With SRT or VTT Subtitles, No Upload | ZimuFix</title>
+<meta name="description" content="Free online subtitle player: play a local video with SRT, VTT or ASS subtitles right in your browser, no upload. Auto-fixes garbled text, adjust subtitle timing live, and download the corrected SRT.">
+<link rel="canonical" href="https://zimufix.com/en/online-subtitle-player/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/online-subtitle-player/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/online-subtitle-player/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/online-subtitle-player/">
+<meta property="og:title" content="Online Subtitle Player — Play Video With SRT or VTT Subtitles, No Upload">
+<meta property="og:description" content="Free online subtitle player: play a local video with SRT, VTT or ASS subtitles right in your browser, no upload. Auto-fixes garbled text, adjust subtitle timing live, and download the corrected SRT.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/en/online-subtitle-player/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=16">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Online Subtitle Player", "url": "https://zimufix.com/en/online-subtitle-player/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": "en", "description": "Play a local video with SRT, VTT or ASS subtitles in your browser. Fix garbled text, adjust timing and convert Chinese."}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Are my video and subtitle uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Both files are read and played inside your browser and never leave your computer or phone, so even large videos start instantly."}}, {"@type": "Question", "name": "Why won't my video play?", "acceptedAnswer": {"@type": "Answer", "text": "The player uses your browser's built-in decoders. MP4 (H.264) and WebM work almost everywhere; HEVC/H.265 and some MKV files may not. Try Chrome or Edge, or convert the video to MP4."}}, {"@type": "Question", "name": "Can I play VTT subtitles online?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. SRT, VTT (WebVTT), ASS, SSA and SBV are supported. ASS styling and positioning are not kept; lines are shown as regular subtitles."}}, {"@type": "Question", "name": "What if the subtitles are garbled?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing to do: the player detects GBK, Big5, Shift-JIS, EUC-KR and other encodings automatically. The downloaded SRT is UTF-8."}}, {"@type": "Question", "name": "Can I save the timing changes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Click \"Download fixed SRT\" to save a subtitle file with your timing shift and Chinese conversion applied, ready for any player."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body class="page-wide">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap wide">
+  <section class="hero">
+    <h1>Online Subtitle Player: Play Video With SRT, VTT or ASS Subtitles</h1>
+    <p>Pick a video and a subtitle file from your computer or phone and play them together in the browser. Garbled text is fixed automatically, and you can shift the timing live.</p>
+    <span class="privacy-note">🔒 Your files are played locally and never uploaded</span>
+  </section>
+
+  <section class="pl-layout" aria-label="Online Subtitle Player: Play Video With SRT, VTT or ASS Subtitles">
+    <div class="pl-main" id="pl-main">
+      <label class="drop" id="pl-drop" for="pl-input" tabindex="0">
+        <div class="big">Drop a video and a subtitle file here, or click to choose</div>
+        <div class="small">Pick a video (MP4, WebM, MKV) and a subtitle (SRT, VTT, ASS, SSA, SBV) together. Garbled text is fixed automatically.</div>
+      </label>
+      <input type="file" id="pl-input" multiple accept="video/*,audio/*,.mkv,.srt,.vtt,.ass,.ssa,.sbv" hidden>
+      <div class="pl-wrap" id="pl-wrap" hidden><video id="pl-video" controls playsinline></video></div>
+      <style id="pl-cue-style"></style>
+      <div class="pl-files">
+        <div class="pl-file"><span class="pl-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M10 9l5 3-5 3z"></path></svg></span><span class="pl-meta"><strong id="pl-vname">No video selected</strong><span>Video</span></span><button type="button" class="btn" data-pick>Choose</button></div>
+        <div class="pl-file"><span class="pl-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M7 14h4M13 14h4M7 11h10"></path></svg></span><span class="pl-meta"><strong id="pl-sname">No subtitle selected</strong><span id="pl-sinfo">SRT, VTT, ASS, SSA, SBV</span></span><button type="button" class="btn" data-pick>Choose</button></div>
+      </div>
+      <div id="pl-info" class="pl-info" role="status"></div>
+    </div>
+    <aside class="pl-side" aria-label="Subtitle settings">
+      <div class="pl-card">
+        <h2>Subtitle timing</h2>
+        <p class="sub">Subtitles too early? Press + to delay. Too late? Press − to advance.</p>
+        <span id="pl-offset">0.0 s</span>
+        <div class="pl-grid4">
+          <button type="button" class="btn" data-shift="-1000">−1s</button>
+          <button type="button" class="btn" data-shift="-100">−0.1</button>
+          <button type="button" class="btn" data-shift="100">+0.1</button>
+          <button type="button" class="btn" data-shift="1000">+1s</button>
+        </div>
+        <button type="button" class="pl-reset" data-shift="0">Reset</button>
+      </div>
+      <div class="pl-card pl-gap">
+        <div>
+          <h2 style="margin-bottom:8px">Text size</h2>
+          <div class="seg" role="group" aria-label="Text size">
+            <button type="button" data-size="80%" aria-pressed="false">Small</button>
+            <button type="button" data-size="100%" aria-pressed="true">Medium</button>
+            <button type="button" data-size="130%" aria-pressed="false">Large</button>
+            <button type="button" data-size="170%" aria-pressed="false">Extra large</button>
+          </div>
+        </div>
+        <div>
+          <label class="h" for="pl-zh">Chinese conversion</label>
+          <select id="pl-zh"><option value="none">Original</option><option value="cn2hk">To Traditional (Hong Kong)</option><option value="cn2tw">To Traditional (Taiwan)</option><option value="t2cn">To Simplified</option></select>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary pl-dl" id="pl-download" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>Download fixed SRT</button>
+      <p class="pl-keys">Shortcuts G / H: subtitles 0.1 s earlier / later</p>
+    </aside>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>How to use</h2>
+    <ol class="steps">
+      <li><strong>Choose files</strong>: drop the video and subtitle into the box together, or one after the other.</li>
+      <li><strong>Play</strong>: subtitles appear on the video; garbled encodings are fixed automatically.</li>
+      <li><strong>Adjust</strong>: subtitles early or late? Use −0.1s / +0.1s or the G / H keys. Change text size or convert Chinese as needed.</li>
+      <li><strong>Save</strong>: click "Download fixed SRT" to keep the corrected timing for your TV or other players.</li>
+    </ol>
+
+    <h2>When is this useful?</h2>
+    <ul>
+      <li>Check whether a downloaded subtitle is in sync before copying it to your TV.</li>
+      <li>Watch a video with subtitles on a computer without VLC or other players installed.</li>
+      <li>Proofread translations, or test subtitles exported from CapCut or YouTube.</li>
+      <li>Play VTT files online on a work or school computer where you can't install software.</li>
+    </ul>
+
+    <h2>Supported formats</h2>
+    <table>
+      <tr><th>Type</th><th>Formats</th></tr>
+      <tr><td>Subtitles</td><td>SRT, VTT (WebVTT), ASS, SSA, SBV</td></tr>
+      <tr><td>Video</td><td>MP4 (H.264) and WebM work best; MKV and MOV depend on your browser and codec</td></tr>
+      <tr><td>Encodings</td><td>UTF-8, UTF-16, GBK/GB18030, Big5, Shift-JIS, EUC-KR (auto-detected)</td></tr>
+    </table>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>FAQ</h2>
+    <details><summary>Are my video and subtitle uploaded?</summary><p>No. Both files are read and played inside your browser and never leave your computer or phone, so even large videos start instantly.</p></details><details><summary>Why won&#x27;t my video play?</summary><p>The player uses your browser&#x27;s built-in decoders. MP4 (H.264) and WebM work almost everywhere; HEVC/H.265 and some MKV files may not. Try Chrome or Edge, or convert the video to MP4.</p></details><details><summary>Can I play VTT subtitles online?</summary><p>Yes. SRT, VTT (WebVTT), ASS, SSA and SBV are supported. ASS styling and positioning are not kept; lines are shown as regular subtitles.</p></details><details><summary>What if the subtitles are garbled?</summary><p>Nothing to do: the player detects GBK, Big5, Shift-JIS, EUC-KR and other encodings automatically. The downloaded SRT is UTF-8.</p></details><details><summary>Can I save the timing changes?</summary><p>Yes. Click &quot;Download fixed SRT&quot; to save a subtitle file with your timing shift and Chinese conversion applied, ready for any player.</p></details>
+
+    <h2>Related tools</h2>
+    <div class="tool-grid"><a class="tool-card" href="/en/subtitle-time-shift/"><h3>Subtitle Timing Adjuster</h3><p>Shift a whole file earlier or later, fix frame rate</p></a><a class="tool-card" href="/en/vtt-to-srt/"><h3>VTT to SRT</h3><p>Convert WebVTT to the universal SRT format</p></a><a class="tool-card" href="/en/fix-garbled-chinese-subtitles/"><h3>Fix Garbled Chinese Subtitles</h3><p>Batch-convert to UTF-8</p></a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/privacy/">Privacy</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+
+<script>
+window.ZIMU_STRINGS = {zhFail:'Could not load the Chinese converter. Check your connection and try again.',noCues:'No subtitles found. Make sure the file is SRT, VTT, ASS, SSA or SBV.',subMsg:'Subtitle loaded: {name} ({n} lines, {enc})',needVideo:'Now choose a video file.',videoMsg:'Video loaded: {name}',sinfoFixed:'{enc} → UTF-8 fixed · {n} lines',sinfoOk:'UTF-8 · {n} lines',needSub:'Now choose a subtitle file.',unknown:'Unsupported file type. Choose a video (MP4, WebM, MKV) and a subtitle (SRT, VTT, ASS).',videoError:'Your browser cannot play this video format (e.g. HEVC/H.265 or some MKV files). Try Chrome or Edge, or convert the video to MP4 (H.264).'};
+</script>
+<script src="/assets/encoding.js?v=16"></script>
+<script src="/assets/subtitle-format.js?v=16"></script>
+<script src="/assets/player-ui.js?v=16"></script>
+</body>
+</html>
