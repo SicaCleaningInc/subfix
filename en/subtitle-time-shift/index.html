@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Subtitle Timing Adjuster — Shift SRT Subtitles Earlier or Later Online | ZimuFix</title>
-<meta name="description" content="Free online tool to fix out-of-sync subtitles. Shift SRT, ASS, VTT and LRC subtitles earlier or later, or convert frame rate (25 ↔ 23.976 fps) when they drift. Batch support, files never leave your browser.">
+<title>Shift Subtitles Online — Fix Subtitle Delay, Sync & Frame Rate (SRT, ASS, VTT) | ZimuFix</title>
+<meta name="description" content="Free online subtitle sync tool. Shift subtitles earlier or later to fix subtitle delay, or change subtitle frame rate (23.976, 24, 25 fps) when they drift. Works with SRT, ASS, VTT and LRC. Files never leave your browser.">
 <link rel="canonical" href="https://zimufix.com/en/subtitle-time-shift/">
 <link rel="alternate" hreflang="en" href="https://zimufix.com/en/subtitle-time-shift/">
 <link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/subtitle-time-shift/">
 <link rel="alternate" hreflang="x-default" href="https://zimufix.com/subtitle-time-shift/">
-<meta property="og:title" content="Subtitle Timing Adjuster — Shift SRT Subtitles Earlier or Later Online">
-<meta property="og:description" content="Free online tool to fix out-of-sync subtitles. Shift SRT, ASS, VTT and LRC subtitles earlier or later, or convert frame rate (25 ↔ 23.976 fps) when they drift. Batch support, files never leave your browser.">
+<meta property="og:title" content="Shift Subtitles Online — Fix Subtitle Delay, Sync & Frame Rate (SRT, ASS, VTT)">
+<meta property="og:description" content="Free online subtitle sync tool. Shift subtitles earlier or later to fix subtitle delay, or change subtitle frame rate (23.976, 24, 25 fps) when they drift. Works with SRT, ASS, VTT and LRC. Files never leave your browser.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zimufix.com/en/subtitle-time-shift/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -29,7 +29,7 @@
 {"@context": "https://schema.org", "@type": "WebApplication", "name": "Subtitle Timing Adjuster", "url": "https://zimufix.com/en/subtitle-time-shift/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Shift subtitles earlier or later or convert frame rate so they match the video.", "inLanguage": "en"}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Subtitles appear before the dialogue — positive or negative?", "acceptedAnswer": {"@type": "Answer", "text": "If subtitles show up too early, they need to be delayed: enter a positive number. If they appear too late, enter a negative number to bring them earlier."}}, {"@type": "Question", "name": "Subtitles drift further out of sync over time. What now?", "acceptedAnswer": {"@type": "Answer", "text": "If the start is in sync but the gap grows towards the end, the subtitle and video have different frame rates — for example a 25 fps subtitle on a 23.976 fps video. Use the frame-rate conversion option, then fine-tune with the offset."}}, {"@type": "Question", "name": "Are my files uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser and your files never leave your device."}}, {"@type": "Question", "name": "Which formats are supported?", "acceptedAnswer": {"@type": "Answer", "text": "SRT, VTT, ASS, SSA, SBV, LRC and SMI. Frame-based MicroDVD SUB files are not supported."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Subtitles appear before the dialogue — positive or negative?", "acceptedAnswer": {"@type": "Answer", "text": "If subtitles show up too early, they need to be delayed: enter a positive number. If they appear too late, enter a negative number to bring them earlier."}}, {"@type": "Question", "name": "Subtitles drift further out of sync over time. What now?", "acceptedAnswer": {"@type": "Answer", "text": "If the start is in sync but the gap grows towards the end, the subtitle and video have different frame rates — for example a 25 fps subtitle on a 23.976 fps video. Use the frame-rate conversion option, then fine-tune with the offset."}}, {"@type": "Question", "name": "Are my files uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser and your files never leave your device."}}, {"@type": "Question", "name": "Which formats are supported?", "acceptedAnswer": {"@type": "Answer", "text": "SRT, VTT, ASS, SSA, SBV, LRC and SMI. Frame-based MicroDVD SUB files are not supported."}}, {"@type": "Question", "name": "How do I know if subtitles are early or late?", "acceptedAnswer": {"@type": "Answer", "text": "If you read the line before you hear it, the subtitle is early: enter a positive number to delay it. If you hear the line first, the subtitle is late: enter a negative number."}}, {"@type": "Question", "name": "Can I sync subtitles online without installing anything?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. This tool runs entirely in your browser on Windows, Mac, Linux, iPhone and Android. Nothing is installed and your files are not uploaded."}}, {"@type": "Question", "name": "Can I shift only part of a subtitle file?", "acceptedAnswer": {"@type": "Answer", "text": "The tool shifts the whole file. If only the second half is off (for example after an extra scene), split the file, shift the second part and join them, or look for a subtitle made for your version."}}, {"@type": "Question", "name": "Does shifting change the subtitle text or formatting?", "acceptedAnswer": {"@type": "Answer", "text": "No. Only the timecodes change. Text, line breaks and ASS styling stay exactly the same."}}]}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 </head>
@@ -44,7 +44,7 @@
 
 <main class="wrap">
   <section class="hero">
-    <span class="hero-ico ico c-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></span><h1>Subtitle Timing Adjuster</h1>
+    <span class="hero-ico ico c-fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></span><h1>Shift Subtitles Online: Fix Subtitle Delay &amp; Sync</h1>
     <p>Subtitles too early or too late? Shift the whole file in one click. If they drift further out of sync over time, fix it with frame-rate conversion. Works with SRT, ASS, VTT and LRC.</p>
     <span class="privacy-note">🔒 Files are processed in your browser and never uploaded</span>
   </section>
@@ -94,7 +94,7 @@
 
   <div class="ad-slot" id="ad-1"></div>
 
-  <article class="content">
+  <article class="content" data-seo="v20">
     <h2>How to use</h2>
     <ol class="steps">
       <li><strong>Measure the gap</strong>: find a clear line of dialogue and compare when the actor speaks with when the subtitle appears.</li>
@@ -116,8 +116,30 @@
     <div class="ad-slot" id="ad-2"></div>
     <h2>Quick fix in VLC</h2>
     <p>For a one-off viewing, press <code>G</code> or <code>H</code> in VLC to move subtitles by 50 ms per press. The setting is usually not saved, so fixing the file is better if you will watch again or share it.</p>
+    <h2>How to fix subtitle delay</h2>
+<p>Subtitle delay is the gap between when a line is spoken and when it appears. Fix it in three steps:</p>
+<ol>
+<li><strong>Find a clear line</strong> near the start of the video and note the time the actor starts speaking, e.g. 00:05:12.5.</li>
+<li><strong>Find the same line in the subtitle</strong> (or watch when it appears), e.g. 00:05:10.5.</li>
+<li><strong>Enter the difference</strong> in the tool above. Here the subtitle is 2 seconds early, so enter <code>2</code> to delay it. If it were 2 seconds late, enter <code>-2</code>.</li>
+</ol>
+<p>Then check a line near the end of the video. If it is still in sync, you are done. If the gap has grown, you also need a frame-rate change.</p>
+
+<h2>How to change subtitle frame rate (23.976, 24, 25 fps)</h2>
+<p>If subtitles start in sync but slowly drift, the subtitle was timed for a video with a different frame rate. Choose the matching conversion in the tool:</p>
+<table>
+<tr><th>What you see</th><th>Conversion to choose</th></tr>
+<tr><td>Subtitles appear earlier and earlier</td><td>25 fps → 23.976 fps (or 25 → 24)</td></tr>
+<tr><td>Subtitles appear later and later</td><td>23.976 fps → 25 fps (or 24 → 25)</td></tr>
+<tr><td>Small drift over a long film</td><td>24 fps ↔ 23.976 fps</td></tr>
+</table>
+<p>To check your video's frame rate in VLC, open Tools → Media Information → Codec. More causes and examples: <a href="/en/guides/subtitles-out-of-sync/">why subtitles go out of sync</a>.</p>
+
+<h2>Works with every player</h2>
+<p>The tool changes the subtitle file itself, so the fix works everywhere: VLC, Plex, Jellyfin, Kodi, smart TVs, phones and video editors. You don't need to adjust the delay again each time you watch. Want to check the timing before downloading? Load the video and subtitle in the <a href="/en/online-subtitle-player/">online subtitle player</a> and adjust it live.</p>
+
     <h2>FAQ</h2>
-    <details><summary>Subtitles appear before the dialogue — positive or negative?</summary><p>If subtitles show up too early, they need to be delayed: enter a positive number. If they appear too late, enter a negative number to bring them earlier.</p></details><details><summary>Subtitles drift further out of sync over time. What now?</summary><p>If the start is in sync but the gap grows towards the end, the subtitle and video have different frame rates — for example a 25 fps subtitle on a 23.976 fps video. Use the frame-rate conversion option, then fine-tune with the offset.</p></details><details><summary>Are my files uploaded?</summary><p>No. Everything runs in your browser and your files never leave your device.</p></details><details><summary>Which formats are supported?</summary><p>SRT, VTT, ASS, SSA, SBV, LRC and SMI. Frame-based MicroDVD SUB files are not supported.</p></details>
+    <details><summary>Subtitles appear before the dialogue — positive or negative?</summary><p>If subtitles show up too early, they need to be delayed: enter a positive number. If they appear too late, enter a negative number to bring them earlier.</p></details><details><summary>Subtitles drift further out of sync over time. What now?</summary><p>If the start is in sync but the gap grows towards the end, the subtitle and video have different frame rates — for example a 25 fps subtitle on a 23.976 fps video. Use the frame-rate conversion option, then fine-tune with the offset.</p></details><details><summary>Are my files uploaded?</summary><p>No. Everything runs in your browser and your files never leave your device.</p></details><details><summary>Which formats are supported?</summary><p>SRT, VTT, ASS, SSA, SBV, LRC and SMI. Frame-based MicroDVD SUB files are not supported.</p></details><details><summary>How do I know if subtitles are early or late?</summary><p>If you read the line before you hear it, the subtitle is early: enter a positive number to delay it. If you hear the line first, the subtitle is late: enter a negative number.</p></details><details><summary>Can I sync subtitles online without installing anything?</summary><p>Yes. This tool runs entirely in your browser on Windows, Mac, Linux, iPhone and Android. Nothing is installed and your files are not uploaded.</p></details><details><summary>Can I shift only part of a subtitle file?</summary><p>The tool shifts the whole file. If only the second half is off (for example after an extra scene), split the file, shift the second part and join them, or look for a subtitle made for your version.</p></details><details><summary>Does shifting change the subtitle text or formatting?</summary><p>No. Only the timecodes change. Text, line breaks and ASS styling stay exactly the same.</p></details>
     <h2>Related tools</h2>
     <div class="tool-grid"><a class="tool-card" href="/en/merge-bilingual-subtitles/"><h3>Merge Bilingual Subtitles</h3><p>Combine two languages into one dual-language file</p></a><a class="tool-card" href="/en/fix-garbled-chinese-subtitles/"><h3>Fix Garbled Chinese Subtitles</h3><p>Convert GBK / Big5 subtitles to UTF-8</p></a><a class="tool-card" href="/en/srt-to-txt/"><h3>SRT to TXT</h3><p>Strip timestamps, keep the dialogue</p></a></div>
   </article>
