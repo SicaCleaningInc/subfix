@@ -321,3 +321,48 @@ pre.code { background: #1f2933; color: #e6edf3; padding: 14px 16px; border-radiu
 .sponsor-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .content .btn-primary, .content a.btn-primary { color: #fff; text-decoration: none; }
 .content a.btn { text-decoration: none; }
+
+/* 教學目錄（方案 2：側欄分類） */
+.gi { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+.gi-side { flex: 1 1 220px; max-width: 250px; padding: 36px 0; position: sticky; top: 72px; }
+.gi-search { display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--card); color: var(--muted); margin-bottom: 18px; }
+.gi-search input { flex: 1; min-width: 0; border: none; background: transparent; font: inherit; font-size: 14px; outline: none; color: var(--text); }
+.gi-cats { display: flex; flex-direction: column; gap: 2px; }
+.gi-cats a { display: flex; justify-content: space-between; gap: 8px; padding: 9px 12px; border-radius: 8px; color: #344054; text-decoration: none; font-size: 15px; }
+.gi-cats a:hover { background: #f2f4f7; color: var(--text); }
+.gi-cats a.on { background: var(--brand-soft); color: var(--brand-dark); font-weight: 700; }
+.gi-cats .n { color: #667085; font-weight: 500; }
+.gi-main { flex: 999 1 560px; min-width: 0; padding: 36px 0 0; }
+.gi-main h1 { margin: 0 0 6px; font-size: 32px; font-weight: 900; }
+.gi-sub { margin: 0 0 22px; color: var(--muted); font-size: 16px; }
+.gi-sponsor { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; padding: 22px; background: #0b0d12; border-radius: 18px; color: #e7e9ee; margin-bottom: 32px; }
+.gi-sp-logo { flex: none; width: 56px; height: 56px; border-radius: 14px; background: #1a1d29; color: #818cf8; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; }
+.gi-sp-text { flex: 1 1 280px; min-width: 0; }
+.gi-sp-text p { margin: 0; font-size: 14px; color: #c3c8d4; line-height: 1.6; }
+.gi-sp-tag { font-size: 12px; font-weight: 700; color: #a5b4fc; letter-spacing: 1px; }
+.gi-sponsor .gi-sp-title { margin: 2px 0 4px; font-size: 19px; font-weight: 700; color: #fff; }
+.gi-sp-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.gi-sp-cta, .gi-sp-rev { min-height: 42px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 10px; text-decoration: none; font-size: 14px; }
+.gi-sp-cta { background: #6366f1; color: #fff; font-weight: 700; }
+.gi-sp-cta:hover { background: #4f46e5; color: #fff; }
+.gi-sp-rev { border: 1px solid #3a3f52; color: #e7e9ee; }
+.gi-sp-rev:hover { border-color: #818cf8; color: #fff; }
+.gi-group { margin-bottom: 30px; scroll-margin-top: 84px; }
+.gi-group h2 { margin: 0 0 4px; font-size: 18px; }
+.gi-list { border-top: 1px solid var(--line); }
+.gi-row { display: flex; gap: 16px; align-items: baseline; padding: 12px 4px; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--text); }
+.gi-row:hover { background: #f9fafb; color: var(--text); }
+.gi-row:hover strong { color: var(--brand); }
+.gi-row strong { flex: 0 0 210px; font-size: 15px; }
+.gi-row span { flex: 1; min-width: 0; font-size: 14px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gi-none { color: var(--muted); }
+@media (max-width: 700px) {
+  .gi { gap: 0; }
+  .gi-side { position: static; max-width: none; padding: 24px 0 0; }
+  .gi-cats { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .gi-cats a { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 14px; }
+  .gi-main { padding-top: 24px; }
+  .gi-row { flex-direction: column; gap: 2px; }
+  .gi-row strong { flex: none; }
+  .gi-row span { white-space: normal; }
+}
