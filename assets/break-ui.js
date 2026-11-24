@@ -7,6 +7,8 @@
   var MAX_SIZE = 20 * 1024 * 1024;
   var PRESETS = { 'v12-1': [12, 1], 'v12-2': [12, 2], 'h16-2': [16, 2], 'en': [21, 2] };
   var items = [];
+  var STR = window.ZIMU_STRINGS || {};
+  function t(k, d) { return STR[k] != null ? STR[k] : d; }
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -50,22 +52,22 @@
       var card = el('div', 'file-card');
       var head = el('div', 'file-head');
       head.appendChild(el('strong', 'file-name', item.name + ' → ' + outName(item.name)));
-      head.appendChild(el('span', 'badge badge-high', r.stats.before + ' 句 → ' + r.stats.after + ' 句'));
+      head.appendChild(el('span', 'badge badge-high', r.stats.before + t('cues', ' 句') + ' → ' + r.stats.after + t('cues', ' 句')));
       card.appendChild(head);
-      card.appendChild(el('p', 'status status-fix', '斷行 ' + r.stats.wrapped + ' 句，其中 ' + r.stats.split + ' 句因為太長拆開成多句，時間按字數比例分配。'));
+      card.appendChild(el('p', 'status status-fix', t('w1', '斷行 ') + r.stats.wrapped + t('w2', ' 句，其中 ') + r.stats.split + t('w3', ' 句因為太長拆開成多句，時間按字數比例分配。')));
       var row = el('div', 'file-row');
-      var btn = el('button', 'btn btn-primary', '下載斷句後字幕');
+      var btn = el('button', 'btn btn-primary', t('download', '下載斷句後字幕'));
       btn.type = 'button';
       btn.addEventListener('click', function () { download(outName(item.name), E.encodeUTF8(B.toSRT(process(item).cues), $('opt-bom').checked)); });
       row.appendChild(btn);
-      var rm = el('button', 'btn btn-ghost', '移除');
+      var rm = el('button', 'btn btn-ghost', t('remove', '移除'));
       rm.type = 'button';
       rm.addEventListener('click', function () { items.splice(idx, 1); render(); });
       row.appendChild(rm);
       card.appendChild(row);
       var grid = el('div', 'compare');
-      var a = el('div'); a.appendChild(el('div', 'preview-label', '斷句前')); a.appendChild(el('pre', 'preview', previewCues(original)));
-      var b = el('div'); b.appendChild(el('div', 'preview-label', '斷句後')); b.appendChild(el('pre', 'preview phone', previewCues(r.cues)));
+      var a = el('div'); a.appendChild(el('div', 'preview-label', t('before', '斷句前'))); a.appendChild(el('pre', 'preview', previewCues(original)));
+      var b = el('div'); b.appendChild(el('div', 'preview-label', t('after', '斷句後'))); b.appendChild(el('pre', 'preview phone', previewCues(r.cues)));
       grid.appendChild(a); grid.appendChild(b);
       card.appendChild(grid);
       list.appendChild(card);
@@ -82,8 +84,8 @@
     var files = Array.prototype.slice.call(fileList), pending = files.length;
     if (!pending) return;
     files.forEach(function (file) {
-      if (ACCEPT.indexOf(F.extOf(file.name)) === -1) { msg('「' + file.name + '」不是支援的格式（支援 SRT、VTT、ASS、SSA、SBV）。'); if (--pending === 0) render(); return; }
-      if (file.size > MAX_SIZE) { msg('「' + file.name + '」超過 20MB，看來不是字幕檔案。'); if (--pending === 0) render(); return; }
+      if (ACCEPT.indexOf(F.extOf(file.name)) === -1) { msg(t('q1', '「') + file.name + t('unsupported', '」不是支援的格式（支援 SRT、VTT、ASS、SSA、SBV）。')); if (--pending === 0) render(); return; }
+      if (file.size > MAX_SIZE) { msg(t('q1', '「') + file.name + t('tooBig', '」超過 20MB，看來不是字幕檔案。')); if (--pending === 0) render(); return; }
       file.arrayBuffer().then(function (buf) {
         var bytes = new Uint8Array(buf);
         items.push({ name: file.name, bytes: bytes, encoding: E.detectEncoding(bytes).encoding });
@@ -114,7 +116,7 @@
       if (used[name]) { var n = used[name]++; name = name.replace(/(\.[^.]+)$/, '(' + n + ')$1'); } else used[name] = 1;
       return { name: name, data: E.encodeUTF8(B.toSRT(process(item).cues), $('opt-bom').checked) };
     });
-    download('字幕斷句.zip', Z.makeZip(files), 'application/zip');
+    download(t('zipName', '字幕斷句.zip'), Z.makeZip(files), 'application/zip');
   });
   $('clear-all').addEventListener('click', function () { items = []; render(); });
 })();

@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=22">
+<link rel="stylesheet" href="/assets/style.css?v=26">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂", "description": "字幕亂碼的根本原因是編碼。用簡單例子解釋 UTF-8、UTF-8 BOM、GBK、Big5 和 ANSI 的分別，以及如何把字幕統一轉為 UTF-8。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-encoding-utf8/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
@@ -52,7 +52,6 @@
 
 
 <nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>常見的中文編碼</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>ANSI 是什麼？</span><span class="g-jump-sub">Windows 記事本的「ANSI」並不是一種固定編碼，而是跟隨系統…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>UTF-8 與 UTF-8 BOM</span><span class="g-jump-sub">BOM 是放在檔案最開頭的幾個標記位元組，用來告訴軟件「這是 UTF…</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>為什麼會出現亂碼</span><span class="g-jump-sub">例如「你好」用 GBK 儲存，播放器卻當成 UTF-8 讀取，就會顯…</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>如何轉成 UTF-8</span><span class="g-jump-sub">想了解亂碼的不同症狀，可以看 字幕變成方格或問號的原因。</span></a></div></nav>
-<aside class="ad-open" aria-label="廣告合作"><span>此位置可刊登推薦工具，接觸正在解決這類字幕問題的讀者。</span><a href="/advertise/">廣告合作 ›</a></aside>
 <section class="g-card" id="s1">
 <div class="g-head"><span class="g-badge">A</span><h2>常見的中文編碼</h2></div>
 <div class="g-body"><table>

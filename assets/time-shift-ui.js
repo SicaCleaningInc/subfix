@@ -33,6 +33,12 @@
     var v = parseFloat(offsetIn.value);
     return isFinite(v) ? Math.round(v * 1000) : 0;
   }
+  /* 毫秒轉為秒的字串，最多三位小數，去掉尾隨的 0（1100 → "1.1"） */
+  function fmtSec(ms) {
+    var neg = ms < 0, a = Math.abs(ms), s = String(Math.floor(a / 1000)), f = a % 1000;
+    if (f) s += '.' + ('00' + f).slice(-3).replace(/0+$/, '');
+    return (neg ? '-' : '') + s;
+  }
   function scale() {
     var p = fpsSel.value.split('/');
     return p.length === 2 ? parseFloat(p[0]) / parseFloat(p[1]) : 1;
@@ -40,8 +46,8 @@
 
   function updateSummary() {
     var ms = offsetMs(), parts = [];
-    if (ms > 0) parts.push(t('later', '延後 ') + (ms / 1000) + t('sec', ' 秒'));
-    else if (ms < 0) parts.push(t('earlier', '提前 ') + (-ms / 1000) + t('sec', ' 秒'));
+    if (ms > 0) parts.push(t('later', '延後 ') + fmtSec(ms) + t('sec', ' 秒'));
+    else if (ms < 0) parts.push(t('earlier', '提前 ') + fmtSec(-ms) + t('sec', ' 秒'));
     if (scale() !== 1) parts.push(t('fps', '幀率轉換：') + fpsSel.options[fpsSel.selectedIndex].text);
     summary.textContent = parts.length ? t('current', '目前設定：') + parts.join(t('join', '，')) : t('none', '目前設定：不作調整');
   }
@@ -151,8 +157,9 @@
   fpsSel.addEventListener('change', render);
   Array.prototype.forEach.call(document.querySelectorAll('[data-delta]'), function (b) {
     b.addEventListener('click', function () {
-      var v = (parseFloat(offsetIn.value) || 0) + parseFloat(b.getAttribute('data-delta'));
-      offsetIn.value = Math.round(v * 1000) / 1000;
+      /* 以整數毫秒計算，避免浮點誤差（例如 1 + 0.1 = 1.100000023…） */
+      var ms = offsetMs() + Math.round(parseFloat(b.getAttribute('data-delta')) * 1000);
+      offsetIn.value = fmtSec(ms);
       render();
     });
   });
