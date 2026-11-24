@@ -29,10 +29,16 @@
     return n;
   }
 
-  function offsetMs() {
-    var v = parseFloat(offsetIn.value);
-    return isFinite(v) ? Math.round(v * 1000) : 0;
+  /* 位移量一律以整數毫秒儲存（1.1 秒 = 1100），只喺顯示時先轉做秒 */
+  var offMs = 0;
+  function parseMs(str) {
+    var m = /^\s*([+-]?)(\d*)(?:[.,](\d*))?\s*$/.exec(String(str));
+    if (!m || (m[2] === '' && !m[3])) return null;
+    var ms = parseInt(m[2] || '0', 10) * 1000 + parseInt(((m[3] || '') + '000').slice(0, 3), 10);
+    return m[1] === '-' ? -ms : ms;
   }
+  function offsetMs() { return offMs; }
+  function setOffset(ms) { offMs = ms; offsetIn.value = fmtSec(ms); }
   /* 毫秒轉為秒的字串，最多三位小數，去掉尾隨的 0（1100 → "1.1"） */
   function fmtSec(ms) {
     var neg = ms < 0, a = Math.abs(ms), s = String(Math.floor(a / 1000)), f = a % 1000;
@@ -153,18 +159,22 @@
 
   var timer = null;
   function scheduleRender() { clearTimeout(timer); timer = setTimeout(render, 120); }
-  offsetIn.addEventListener('input', scheduleRender);
+  offsetIn.addEventListener('input', function () { var v = parseMs(offsetIn.value); offMs = v == null ? 0 : v; scheduleRender(); });
+  offsetIn.addEventListener('blur', function () { offsetIn.value = fmtSec(offMs); });
+  offsetIn.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+    e.preventDefault(); setOffset(offMs + (e.key === 'ArrowUp' ? 100 : -100)); render();
+  });
   fpsSel.addEventListener('change', render);
   Array.prototype.forEach.call(document.querySelectorAll('[data-delta]'), function (b) {
     b.addEventListener('click', function () {
       /* 以整數毫秒計算，避免浮點誤差（例如 1 + 0.1 = 1.100000023…） */
-      var ms = offsetMs() + Math.round(parseFloat(b.getAttribute('data-delta')) * 1000);
-      offsetIn.value = fmtSec(ms);
+      setOffset(offMs + Math.round(parseFloat(b.getAttribute('data-delta')) * 1000));
       render();
     });
   });
   document.getElementById('reset-offset').addEventListener('click', function () {
-    offsetIn.value = 0; fpsSel.value = '1'; render();
+    setOffset(0); fpsSel.value = '1'; render();
   });
 
   input.addEventListener('change', function () { handleFiles(input.files); input.value = ''; });
