@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple TV、iPhone、Mac 中文字幕變方格？Infuse、Plex、VLC 解決方法｜ZimuFix</title>
+<meta name="description" content="iOS 18、tvOS 18 及 macOS 15 之後，不少人在 Infuse、Plex、VLC 看到中文字幕變成空白方格。本文解釋原因，並整理大部分人用過有效的解決方法。">
+<link rel="canonical" href="https://zimufix.com/guides/apple-tv-iphone-mac-chinese-subtitles/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/guides/apple-tv-iphone-mac-chinese-subtitles/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/guides/apple-tv-iphone-mac-chinese-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/guides/apple-tv-iphone-mac-chinese-subtitles/">
+<meta property="og:title" content="Apple TV、iPhone、Mac 中文字幕變成方格的解決方法">
+<meta property="og:description" content="iOS 18、tvOS 18 及 macOS 15 之後，不少人在 Infuse、Plex、VLC 看到中文字幕變成空白方格。本文解釋原因，並整理大部分人用過有效的解決方法。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zimufix.com/guides/apple-tv-iphone-mac-chinese-subtitles/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=27">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Apple TV、iPhone、Mac 中文字幕變成方格的解決方法", "description": "iOS 18、tvOS 18 及 macOS 15 之後，不少人在 Infuse、Plex、VLC 看到中文字幕變成空白方格。本文解釋原因，並整理大部分人用過有效的解決方法。", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://zimufix.com/guides/apple-tv-iphone-mac-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apple TV 內置的「TV」App 支援外掛 SRT 字幕嗎？", "acceptedAnswer": {"@type": "Answer", "text": "內置的 TV App 不會為你自己的影片載入獨立的 SRT 檔案。請改用 VLC、Infuse 等第三方播放器，或 Plex 之類的媒體伺服器。"}}, {"@type": "Question", "name": "為甚麼 Apple TV 上的中文字幕會變成方格？", "acceptedAnswer": {"@type": "Answer", "text": "播放器或字幕樣式可能指定了一個沒有中文字的字型。把 ASS 轉為 SRT，並把檔案轉為 UTF-8，通常就能解決。"}}, {"@type": "Question", "name": "在 Mac 上不安裝任何軟件可以看字幕嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。用 Safari 或 Chrome 打開線上字幕播放器，選擇影片和字幕檔案即可。"}}, {"@type": "Question", "name": "iPad 也適用嗎？", "acceptedAnswer": {"@type": "Answer", "text": "適用。iPad 使用的 App 與 iPhone 相同，可參考手機播放外掛字幕教學。"}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="content guide g2">
+    <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
+    <section class="hero"><h1>Apple TV、iPhone、Mac 中文字幕變成方格的解決方法</h1><p class="meta">更新日期：2026-11-24</p></section>
+    <p class="lead">更新 Apple TV、iPhone、iPad 或 Mac 之後，中文字幕突然變成一排排空白方格（□□□）？你並不孤單。Apple 2024 年的系統更新之後，Infuse、Plex 及 VLC 都有用戶回報同樣問題。這是字型問題，字幕檔案本身沒有損壞，有幾種方法可以解決。</p>
+    <div class="cta"><div><strong>想直接解決？</strong> 中文 ASS 字幕在 Apple 裝置變成方格，最快的做法是轉為 SRT。</div><a class="btn btn-primary" href="/ass-to-srt/">使用 ASS 轉 SRT</a></div>
+    <div class="ad-slot" id="ad-1"></div>
+
+<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>發生了甚麼事</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>先分清楚：方格還是亂碼？</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>方法一：更新播放器 App</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>方法二：把 ASS 轉為 SRT</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>方法三：Apple TV 上的 Plex 改用舊版播放器</span></a><a class="g-jump-card" href="#s6"><span class="g-jump-title"><span class="g-badge sm">F</span>方法四：在 iPhone、iPad 安裝中文系統字型</span></a><a class="g-jump-card" href="#s7"><span class="g-jump-title"><span class="g-badge sm">G</span>仍然未解決？</span></a></div></nav>
+<section class="g-card" id="s1">
+<div class="g-head"><span class="g-badge">A</span><h2>發生了甚麼事</h2></div>
+<div class="g-body"><p>由 iOS 18、tvOS 18 及 macOS 15 開始，部分影片 App 顯示的中文開始變成方格，主要出現在 <strong>ASS</strong> 字幕。Infuse 社群論壇的回報指出，SRT 字幕不受影響，只有 ASS 才會出事。Apple 開發者論壇上亦有開發者把相關問題，聯繫到 macOS 15 處理蘋方（PingFang）系統字型的改動。</p></div>
+</section>
+<section class="g-card" id="s2">
+<div class="g-head"><span class="g-badge">B</span><h2>先分清楚：方格還是亂碼？</h2></div>
+<div class="g-body"><ul>
+<li><strong>空白方格 □□□</strong> → 字型問題，請使用下面的方法。</li>
+<li><strong>一堆怪符號</strong>，例如 <span class="mojibake">ÄãºÃ</span> → 編碼問題，請用<a href="/fix-garbled-subtitles/">字幕亂碼修復</a>轉換檔案。</li>
+</ul></div>
+</section>
+<section class="g-card" id="s3">
+<div class="g-head"><span class="g-badge">C</span><h2>方法一：更新播放器 App</h2></div>
+<div class="g-body"><p>系統更新後，App 開發者陸續推出修正。例如 Infuse 7.8.4 就修正了 iOS／tvOS 18 及 macOS 15 上的字幕問題。嘗試其他方法之前，先確認 Infuse、Plex 或 VLC 已經是最新版本。</p></div>
+</section>
+<section class="g-card" id="s4">
+<div class="g-head"><span class="g-badge">D</span><h2>方法二：把 ASS 轉為 SRT</h2></div>
+<div class="g-body"><p>由於問題主要影響 ASS 字幕，轉為 SRT 是最快、最通用的做法。使用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a>，樣式和特效會被移除，但對白和時間軸保持不變，App 會改用自己的字型顯示文字。</p></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>方法三：Apple TV 上的 Plex 改用舊版播放器</h2></div>
+<div class="g-body"><p>有 Apple TV 用戶回報，在 Plex 設定中開啟 <strong>「使用舊版影片播放器」（use old video player）</strong> 後，中文字幕就能正常顯示，代價是部分字幕樣式會消失。</p></div>
+</section>
+<section class="g-card" id="s6">
+<div class="g-head"><span class="g-badge">F</span><h2>方法四：在 iPhone、iPad 安裝中文系統字型</h2></div>
+<div class="g-body"><p>有用戶發現較新的 iOS 及 iPadOS 預設沒有安裝簡體中文蘋方字型，到 <strong>「設定」→「一般」→「字體」</strong>下載後，中文 ASS 字幕就恢復正常。不同版本的選單名稱可能略有分別。</p></div>
+</section>
+<section class="g-card" id="s7">
+<div class="g-head"><span class="g-badge">G</span><h2>仍然未解決？</h2></div>
+<div class="g-body"><ul>
+<li>試試同一個字幕在另一個 App 能否正常顯示。如果可以，請把問題連同範例檔案回報給 App 開發者。</li>
+<li>如果只需要同時顯示中英文，可以<a href="/bilingual-subtitles-merge/">合併成一個 SRT</a>，SRT 是支援最廣泛的格式。</li>
+</ul>
+<p class="hint">以上方法整理自 Infuse、Plex 及 Apple 開發者論壇上用戶和開發者的回報。Apple 及 App 開發者之後的更新可能會改變情況。</p></div>
+</section>
+<section class="g-card" id="faq">
+<div class="g-head"><span class="g-badge">?</span><h2>常見問題</h2></div>
+<div class="g-body"><details><summary>Apple TV 內置的「TV」App 支援外掛 SRT 字幕嗎？</summary><p>內置的 TV App 不會為你自己的影片載入獨立的 SRT 檔案。請改用 VLC、Infuse 等第三方播放器，或 Plex 之類的媒體伺服器。</p></details><details><summary>為甚麼 Apple TV 上的中文字幕會變成方格？</summary><p>播放器或字幕樣式可能指定了一個沒有中文字的字型。把 ASS 轉為 SRT，並把檔案轉為 UTF-8，通常就能解決。</p></details><details><summary>在 Mac 上不安裝任何軟件可以看字幕嗎？</summary><p>可以。用 Safari 或 Chrome 打開<a href="/online-subtitle-player/">線上字幕播放器</a>，選擇影片和字幕檔案即可。</p></details><details><summary>iPad 也適用嗎？</summary><p>適用。iPad 使用的 App 與 iPhone 相同，可參考<a href="/guides/mobile-subtitles-iphone-android/">手機播放外掛字幕教學</a>。</p></details></div>
+</section>
+    <div class="ad-slot" id="ad-2"></div>
+    <div class="cta"><div><strong>ASS 轉 SRT</strong>：中文 ASS 字幕在 Apple 裝置變成方格的最快解決方法。</div><a class="btn btn-primary" href="/ass-to-srt/">打開工具</a></div>
+    <h2>更多教學</h2>
+    <div class="g-pills"><a class="g-pill" href="/guides/plex-jellyfin-emby-chinese-subtitles/">Plex、Jellyfin、Emby 中文字幕問題</a><a class="g-pill" href="/guides/subtitle-boxes-squares/">字幕變成方格的原因及解決方法</a></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a><a href="/advertise/">廣告合作</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+</body>
+</html>
