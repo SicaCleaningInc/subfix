@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subtitle Line Breaker — Auto Wrap &amp; Split Long Subtitles for Shorts, Reels and TikTok | ZimuFix</title>
+<meta name="description" content="Free online subtitle line breaker. Set a maximum line length and long subtitles are wrapped at natural pauses and split into separate cues, with timing shared out by length. For Shorts, Reels, TikTok and vertical dramas. SRT, VTT and ASS. Files never leave your browser.">
+<link rel="canonical" href="https://zimufix.com/en/subtitle-line-break/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/subtitle-line-break/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/subtitle-line-break/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/subtitle-line-break/">
+<meta property="og:title" content="Subtitle Line Breaker — wrap and split long subtitles">
+<meta property="og:description" content="Set a line length and long subtitles are wrapped and split automatically. For Shorts, Reels and vertical video. Files never leave your browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/en/subtitle-line-break/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=27">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Subtitle Line Breaker", "url": "https://zimufix.com/en/subtitle-line-break/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Wraps and splits long subtitle lines to a set length, for vertical and short-form video.", "inLanguage": "en"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many characters per line for vertical video?", "acceptedAnswer": {"@type": "Answer", "text": "Phone screens in portrait are narrow. For Chinese, 10–14 characters on a single line is a good target. For English, keep lines to about 32–42 characters. Landscape video can use up to two longer lines."}}, {"@type": "Question", "name": "How is the timing worked out when a long line is split?", "acceptedAnswer": {"@type": "Answer", "text": "The original duration is shared out in proportion to the length of each part. A 6-second line split into three equal parts gets 2 seconds each, back to back, with no gaps or overlaps."}}, {"@type": "Question", "name": "Will English words be cut in half?", "acceptedAnswer": {"@type": "Answer", "text": "No. English words are kept whole and only broken at spaces. Latin letters and digits count as half the width of a Chinese character."}}, {"@type": "Question", "name": "Are my subtitle files uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs in your browser and your files never leave your device."}}, {"@type": "Question", "name": "Does it keep ASS styling?", "acceptedAnswer": {"@type": "Answer", "text": "No. The output is always SRT, so ASS styles and effect tags are removed. If you need styled subtitles, break the lines first, then apply styles in your editor."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/en/">Zimu<span>Fix</span> Subtitle Tools</a>
+    <nav class="nav"><a href="/en/">All tools</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/" hreflang="zh-Hant" lang="zh-Hant">中文</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="hero-ico ico c-make"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 16h4M10 13h4"/></svg></span><h1>Subtitle Line Breaker</h1>
+    <p>Subtitles too long for a phone screen? Set a maximum line length. Lines are wrapped at punctuation and natural pauses, and anything still too long is split into separate cues with the time shared out by length.</p>
+    <span class="privacy-note">🔒 Files are processed in your browser and never uploaded</span>
+  </section>
+
+  <section class="tool" aria-label="Subtitle line breaker">
+    <div class="break-controls">
+      <div><label for="preset">Preset</label>
+        <select id="preset">
+          <option value="en">English (about 42 letters, up to 2 lines)</option>
+          <option value="v12-1">Vertical drama, Chinese (12 characters, 1 line)</option>
+          <option value="v12-2">Vertical video, Chinese (12 characters, up to 2 lines)</option>
+          <option value="h16-2">Landscape video, Chinese (16 characters, up to 2 lines)</option>
+          <option value="custom">Custom</option>
+        </select></div>
+      <div><label for="max-w">Max width per line (Chinese characters)</label><input type="number" id="max-w" value="21" min="4" max="60" step="1"></div>
+      <div><label for="max-lines">Max lines per subtitle</label><select id="max-lines"><option value="1">1 line</option><option value="2" selected>2 lines</option></select></div>
+    </div>
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">Drop subtitle files here, or click to choose</div>
+      <div class="small">SRT, VTT, ASS, SSA and SBV. Several files at once. Output is SRT.</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.vtt,.ass,.ssa,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-punct"> Replace Chinese commas and full stops with spaces (common subtitle style)</label><br>
+      <label><input type="checkbox" id="opt-bom" checked> Add BOM to the output (recommended)</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>Download all (ZIP)</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">Clear all</button>
+    </div>
+    <div id="results"></div>
+  </section>
+
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>How to use</h2>
+    <ol class="steps">
+      <li><strong>Pick a preset</strong>: English subtitles use about 42 letters and up to two lines. Chinese vertical dramas usually use 12 characters on one line. You can also set your own numbers.</li>
+      <li><strong>Choose your subtitle files</strong>: SRT exported from CapCut, AI dubbing or translation tools all work. Garbled encodings are fixed automatically.</li>
+      <li><strong>Compare and download</strong>: the dark preview on the right shows roughly how it looks on a phone. Download and import it back into your editor.</li>
+    </ol>
+
+    <h2>Why vertical video needs shorter lines</h2>
+    <p>A portrait phone screen is about half as wide as landscape video, so far fewer characters fit on a line. When a subtitle is too long, editors wrap it onto three or four lines and cover the speaker's face, or the text has to shrink until viewers can't read it in time. Short, evenly paced lines keep people watching.</p>
+
+    <h2>Line-length guide</h2>
+    <table>
+      <tr><th>Video type</th><th>Per line</th><th>Lines</th></tr>
+      <tr><td>English, landscape (YouTube)</td><td>about 42 letters</td><td>up to 2</td></tr>
+      <tr><td>English, vertical (Shorts, Reels, TikTok)</td><td>about 32 letters</td><td>1–2</td></tr>
+      <tr><td>Chinese, vertical drama</td><td>10–14 characters</td><td>1</td></tr>
+      <tr><td>Chinese, landscape</td><td>14–20 characters</td><td>up to 2</td></tr>
+    </table>
+    <p>The width setting counts Chinese characters; English letters and digits count as half a character, so 21 is roughly 42 English letters.</p>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>FAQ</h2>
+    <details><summary>How many characters per line for vertical video?</summary><p>Phone screens in portrait are narrow. For Chinese, 10–14 characters on a single line is a good target. For English, keep lines to about 32–42 characters. Landscape video can use up to two longer lines.</p></details><details><summary>How is the timing worked out when a long line is split?</summary><p>The original duration is shared out in proportion to the length of each part. A 6-second line split into three equal parts gets 2 seconds each, back to back, with no gaps or overlaps.</p></details><details><summary>Will English words be cut in half?</summary><p>No. English words are kept whole and only broken at spaces. Latin letters and digits count as half the width of a Chinese character.</p></details><details><summary>Are my subtitle files uploaded?</summary><p>No. Everything runs in your browser and your files never leave your device.</p></details><details><summary>Does it keep ASS styling?</summary><p>No. The output is always SRT, so ASS styles and effect tags are removed. If you need styled subtitles, break the lines first, then apply styles in your editor.</p></details>
+
+    <h2>Related tools</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/en/merge-bilingual-subtitles/"><h3>Merge Bilingual Subtitles</h3><p>Combine two languages into one file</p></a>
+      <a class="tool-card" href="/en/subtitle-time-shift/"><h3>Subtitle Timing Adjuster</h3><p>Shift subtitles earlier or later</p></a>
+      <a class="tool-card" href="/en/simplified-to-traditional-chinese-subtitles/"><h3>Simplified to Traditional</h3><p>Convert Chinese subtitles</p></a>
+    </div>
+    <h2>Related guide</h2>
+    <ul><li><a href="/en/guides/capcut-export-srt/">How to export SRT from CapCut</a></li></ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/en/">Home</a><a href="/en/guides/">Guides</a><a href="/en/about/">About</a><a href="/en/privacy/">Privacy</a><a href="/en/advertise/">Advertise</a><a href="/" lang="zh-Hant">中文版</a>
+    <p>© ZimuFix. All files are processed in your browser.</p>
+  </div>
+</footer>
+<script>
+window.ZIMU_STRINGS = {"cues": " cues", "w1": "Re-wrapped ", "w2": " cues; ", "w3": " were too long and split into several cues, with time shared out by length.", "download": "Download re-wrapped subtitle", "remove": "Remove", "before": "Before", "after": "After", "q1": "\"", "unsupported": "\" is not a supported format (SRT, VTT, ASS, SSA, SBV).", "tooBig": "\" is larger than 20 MB and does not look like a subtitle file.", "zipName": "line-break-subtitles.zip"};
+</script>
+<script src="/assets/encoding.js?v=27"></script>
+<script src="/assets/zip.js?v=27"></script>
+<script src="/assets/subtitle-format.js?v=27"></script>
+<script src="/assets/subtitle-break.js?v=27"></script>
+<script src="/assets/break-ui.js?v=27"></script>
+<script src="/assets/try-input.js?v=27" data-mode="text" data-sample="long"></script>
+</body>
+</html>

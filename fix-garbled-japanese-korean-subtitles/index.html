@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日文、韓文字幕亂碼修復 — Shift-JIS、EUC-KR 轉 UTF-8｜ZimuFix</title>
+<meta name="description" content="日劇、動畫、韓劇字幕出現亂碼？免費線上工具自動偵測 Shift-JIS、EUC-KR 等編碼，一鍵轉為 UTF-8。支援 SRT、ASS、VTT，可批量處理，檔案不會上傳。">
+<link rel="canonical" href="https://zimufix.com/fix-garbled-japanese-korean-subtitles/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zimufix.com/fix-garbled-japanese-korean-subtitles/">
+<link rel="alternate" hreflang="en" href="https://zimufix.com/en/fix-garbled-japanese-korean-subtitles/">
+<link rel="alternate" hreflang="x-default" href="https://zimufix.com/fix-garbled-japanese-korean-subtitles/">
+<meta property="og:title" content="日文、韓文字幕亂碼修復">
+<meta property="og:description" content="自動偵測 Shift-JIS、EUC-KR，一鍵轉為 UTF-8。檔案不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zimufix.com/fix-garbled-japanese-korean-subtitles/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:image" content="https://zimufix.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=27">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "日文、韓文字幕亂碼修復", "url": "https://zimufix.com/fix-garbled-japanese-korean-subtitles/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "自動偵測 Shift-JIS 及 EUC-KR，將日文、韓文字幕轉為 UTF-8。", "inLanguage": "zh-Hant"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "可以自動偵測哪些編碼？", "acceptedAnswer": {"@type": "Answer", "text": "UTF-8、UTF-16、日文 Shift-JIS（包括 Windows CP932）、韓文 EUC-KR／CP949，以及中文 GBK 和 Big5。如果偵測錯了，可以在檔案下方的選單改選其他編碼，預覽會即時更新。"}}, {"@type": "Question", "name": "字幕檔案會上傳到伺服器嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。"}}, {"@type": "Question", "name": "修復後的字幕會改變檔名嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不會。下載的檔案保留原本檔名，播放器仍可自動配對同名影片。"}}, {"@type": "Question", "name": "EUC-JP、ISO-2022-JP 的檔案可以嗎？", "acceptedAnswer": {"@type": "Answer", "text": "這兩種舊式日文編碼在字幕檔案中很少見，暫時不會自動偵測。絕大部分日文字幕都是 Shift-JIS 或 UTF-8。"}}, {"@type": "Question", "name": "修復後顯示方格，看不到日文或韓文？", "acceptedAnswer": {"@type": "Answer", "text": "編碼已經正確，但播放器使用的字型沒有日文或韓文字。請在播放器設定中選擇支援的字型，例如日文用 Meiryo 或 Yu Gothic，韓文用 Malgun Gothic。"}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Zimu<span>Fix</span> 字幕工具</a>
+    <nav class="nav"><a href="/">所有工具</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/en/" hreflang="en" lang="en">EN</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="hero-ico ico c-fix"><b>あ</b></span><h1>日文、韓文字幕亂碼修復</h1>
+    <p>日劇、動畫或韓劇字幕變成一堆符號？把檔案拖放到下面，自動偵測 Shift-JIS、EUC-KR 等編碼並轉為 UTF-8，在任何裝置都能正常顯示。</p>
+    <span class="privacy-note">🔒 檔案只在你的瀏覽器內處理，不會上傳</span>
+  </section>
+
+  <section class="tool" aria-label="日文、韓文字幕亂碼修復工具">
+    <label class="drop" id="drop" for="file-input" tabindex="0">
+      <div class="big">拖放字幕檔案到這裡，或點擊選擇檔案</div>
+      <div class="small">支援 SRT、ASS、SSA、VTT、SUB、SMI、TXT，可一次選擇多個檔案</div>
+    </label>
+    <input type="file" id="file-input" multiple accept=".srt,.ass,.ssa,.vtt,.sub,.txt,.lrc,.smi,.sbv" hidden>
+    <div class="options">
+      <label><input type="checkbox" id="opt-bom" checked> 輸出時加入 BOM（建議保留，舊式播放器及電視較易正確顯示）</label>
+    </div>
+    <div id="messages"></div>
+    <div id="bulk-actions" hidden>
+      <button type="button" class="btn btn-primary" id="zip-all" hidden>全部下載（ZIP）</button>
+      <button type="button" class="btn btn-ghost" id="clear-all">清除全部</button>
+    </div>
+    <div id="results"></div>
+  </section>
+  <div class="ad-slot" id="ad-1"></div>
+
+  <article class="content">
+    <h2>使用方法</h2>
+    <ol class="steps">
+      <li><strong>選擇字幕檔案</strong>：把出現亂碼的日文或韓文字幕拖放到上方方框，可以一次選擇整季。</li>
+      <li><strong>確認預覽</strong>：每個檔案旁邊會顯示偵測到的編碼，以及頭幾句對白。文字正常就代表修復成功。</li>
+      <li><strong>下載</strong>：檔名維持不變，直接覆蓋舊檔即可，播放器會自動配對影片。</li>
+    </ol>
+
+    <h2>日文、韓文字幕為甚麼會變亂碼？</h2>
+    <p>舊的日文字幕大多以 <strong>Shift-JIS</strong> 儲存，舊的韓文字幕則多數是 <strong>EUC-KR</strong>（或 Windows 的擴充版 CP949）。智能電視、手機及很多網頁播放器預期 UTF-8，用錯誤的規則去讀取，就會顯示一堆怪字。字幕內容其實沒有損壞，只要轉換成 UTF-8 就能還原。</p>
+
+    <h3>常見的亂碼樣子</h3>
+    <table>
+      <tr><th>亂碼樣子</th><th>原因</th></tr>
+      <tr><td><span class="mojibake">偙傫偵偪偼丄帤枊</span></td><td>日文 Shift-JIS 被當成中文 GBK 讀取，常見於中文版 Windows</td></tr>
+      <tr><td><span class="mojibake">縺薙ｓ縺ｫ縺｡縺ｯ</span></td><td>日文 UTF-8 被當成 Shift-JIS 讀取，常見於日文版 Windows</td></tr>
+      <tr><td><span class="mojibake">¾È³çÇÏ¼¼¿ä</span></td><td>韓文 EUC-KR 被當成西歐編碼讀取，常見於英文版播放器或電視</td></tr>
+      <tr><td><span class="mojibake">救崇窍技夸</span></td><td>韓文 EUC-KR 被當成中文 GBK 讀取</td></tr>
+    </table>
+    <p>以上例子的原文是こんにちは（日文「你好」）及안녕하세요（韓文「你好」）。</p>
+
+    <div class="ad-slot" id="ad-2"></div>
+
+    <h2>改用 VLC 設定也可以</h2>
+    <p>進入「工具」→「偏好設定」，左下角選「全部」，打開「輸入／編解碼器」→「字幕編解碼器」→「字幕」，把「字幕文字編碼」改為 <strong>Japanese (Shift-JIS)</strong> 或 <strong>Korean (EUC-KR/CP949)</strong>，儲存後重新開啟影片。這個設定會影響所有字幕，所以一般直接轉換檔案會方便得多。</p>
+
+    <h2>常見問題</h2>
+    <details><summary>可以自動偵測哪些編碼？</summary><p>UTF-8、UTF-16、日文 Shift-JIS（包括 Windows CP932）、韓文 EUC-KR／CP949，以及中文 GBK 和 Big5。如果偵測錯了，可以在檔案下方的選單改選其他編碼，預覽會即時更新。</p></details><details><summary>字幕檔案會上傳到伺服器嗎？</summary><p>不會。所有處理都在你的瀏覽器內完成，字幕檔案不會離開你的電腦或手機。</p></details><details><summary>修復後的字幕會改變檔名嗎？</summary><p>不會。下載的檔案保留原本檔名，播放器仍可自動配對同名影片。</p></details><details><summary>EUC-JP、ISO-2022-JP 的檔案可以嗎？</summary><p>這兩種舊式日文編碼在字幕檔案中很少見，暫時不會自動偵測。絕大部分日文字幕都是 Shift-JIS 或 UTF-8。</p></details><details><summary>修復後顯示方格，看不到日文或韓文？</summary><p>編碼已經正確，但播放器使用的字型沒有日文或韓文字。請在播放器設定中選擇支援的字型，例如日文用 Meiryo 或 Yu Gothic，韓文用 Malgun Gothic。</p></details>
+
+    <h2>相關工具</h2>
+    <div class="tool-grid">
+      <a class="tool-card" href="/fix-garbled-subtitles/"><h3>中文字幕亂碼修復</h3><p>GBK、Big5 字幕轉 UTF-8</p></a>
+      <a class="tool-card" href="/bilingual-subtitles-merge/"><h3>雙語字幕合併</h3><p>兩種語言合成一個字幕</p></a>
+      <a class="tool-card" href="/subtitle-time-shift/"><h3>字幕時間軸調整</h3><p>字幕太快或太慢，一鍵對齊</p></a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="/">首頁</a><a href="/guides/">教學</a><a href="/about/">關於</a><a href="/privacy/">私隱政策</a><a href="/advertise/">廣告合作</a><a href="/en/" lang="en">English</a>
+    <p>© ZimuFix 字幕工具。所有檔案均在瀏覽器內處理。</p>
+  </div>
+</footer>
+<script src="/assets/encoding.js?v=27"></script>
+<script src="/assets/zip.js?v=27"></script>
+<script src="/assets/fix-garbled.js?v=27"></script>
+<script src="/assets/try-input.js?v=27" data-mode="text" data-mojibake="1" data-sample="cjk"></script>
+</body>
+</html>
