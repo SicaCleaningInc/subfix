@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "從 MKV、MP4 影片抽出內嵌字幕", "description": "想把 MKV 或 MP4 影片內的字幕抽出來修改、轉繁體或翻譯？教你用 MKVToolNix 及 ffmpeg 抽出字幕軌，以及圖形字幕（PGS）的處理方法。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/extract-mkv-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "從 MKV、MP4 影片抽出內嵌字幕", "description": "想把 MKV 或 MP4 影片內的字幕抽出來修改、轉繁體或翻譯？教你用 MKVToolNix 及 ffmpeg 抽出字幕軌，以及圖形字幕（PGS）的處理方法。", "datePublished": "2026-11-18", "dateModified": "2026-11-27", "mainEntityOfPage": "https://zimufix.com/guides/extract-mkv-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 </head>
@@ -42,7 +42,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
-    <section class="hero"><h1>從 MKV、MP4 影片抽出內嵌字幕</h1><p class="meta">更新日期：2026-11-18</p></section>
+    <section class="hero"><h1>從 MKV、MP4 影片抽出內嵌字幕</h1><p class="meta">更新日期：2026-11-27</p></section>
     <p class="lead">MKV 影片常常內嵌多條字幕。抽出來之後，你可以修正亂碼、簡繁轉換、調整時間軸，或與另一種語言合併成雙語字幕。以下介紹兩個免費方法。</p>
 
     <div class="cta"><div><strong>想直接解決？</strong> 抽出字幕後一鍵轉繁體，支援香港及台灣用字。</div><a class="btn btn-primary" href="/simplified-to-traditional-subtitles/">使用簡體字幕轉繁體</a></div>
@@ -51,7 +51,7 @@
     <div class="ad-slot" id="ad-1"></div>
 
 
-<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>先分辨：文字字幕還是圖形字幕</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>方法一：MKVToolNix（適合 MKV）</span><span class="g-jump-sub">MKVToolNix 是免費、開源的 MKV 工具組，支援 Wind…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>方法二：ffmpeg（MKV、MP4 都適用）</span><span class="g-jump-sub">0:s:0 代表第一條字幕軌，第二條是 0:s:1，如此類推。</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>抽出後常見的下一步</span></a></div></nav>
+<nav class="g-jump" aria-label="本頁內容"><p class="g-jump-label">本頁內容</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-jump-title"><span class="g-badge sm">A</span>先分辨：文字字幕還是圖形字幕</span></a><a class="g-jump-card" href="#s2"><span class="g-jump-title"><span class="g-badge sm">B</span>方法一：MKVToolNix（適合 MKV）</span><span class="g-jump-sub">MKVToolNix 是免費、開源的 MKV 工具組，支援 Wind…</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>方法二：ffmpeg（MKV、MP4 都適用）</span><span class="g-jump-sub">0:s:0 代表第一條字幕軌，第二條是 0:s:1，如此類推。</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>抽出後常見的下一步</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>疑難排解對照表</span></a></div></nav>
 <section class="g-card" id="s1">
 <div class="g-head"><span class="g-badge">A</span><h2>先分辨：文字字幕還是圖形字幕</h2></div>
 <div class="g-body"><ul>
@@ -70,12 +70,12 @@
 <pre><code>mkvextract movie.mkv tracks 2:movie.zh.srt</code></pre>
 如果該軌是 ASS 字幕，副檔名改為 <code>.ass</code>。</li>
 </ol>
-<p>不想用指令？可以找以 MKVToolNix 為基礎的圖形介面工具，例如 gMKVExtractGUI，勾選字幕軌即可抽出。</p></div>
+<p>不想用指令？可以找以 MKVToolNix 為基礎的圖形介面工具，例如 gMKVExtractGUI，勾選字幕軌即可抽出。</p><figure class="g-fig"><img src="/assets/img/guides/mkv-1.webp" width="1280" height="800" alt="MKVToolNix 載入 MKV 後，下方「軌道」列表會列出影片、音訊及 SubRip/SRT 字幕軌。" loading="lazy" decoding="async"><figcaption>MKVToolNix 載入 MKV 後，下方「軌道」列表會列出影片、音訊及 SubRip/SRT 字幕軌。</figcaption></figure><figure class="g-fig"><img src="/assets/img/guides/mkv-2.webp" width="1280" height="800" alt="選取字幕軌後，右邊可設定語言（圖中為 Chinese (zh)）等屬性。" loading="lazy" decoding="async"><figcaption>選取字幕軌後，右邊可設定語言（圖中為 Chinese (zh)）等屬性。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s3">
 <div class="g-head"><span class="g-badge">C</span><h2>方法二：ffmpeg（MKV、MP4 都適用）</h2></div>
 <div class="g-body"><pre><code>ffmpeg -i movie.mkv -map 0:s:0 movie.zh.srt</code></pre>
-<p><code>0:s:0</code> 代表第一條字幕軌，第二條是 <code>0:s:1</code>，如此類推。ffmpeg 會把文字字幕轉成你指定的格式。</p></div>
+<p><code>0:s:0</code> 代表第一條字幕軌，第二條是 <code>0:s:1</code>，如此類推。ffmpeg 會把文字字幕轉成你指定的格式。</p><figure class="g-fig"><img src="/assets/img/guides/mkv-3.webp" width="1280" height="800" alt="用 ffmpeg 把字幕軌抽出為 extracted.srt，抽出後內容立即可以查看。" loading="lazy" decoding="async"><figcaption>用 ffmpeg 把字幕軌抽出為 extracted.srt，抽出後內容立即可以查看。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>抽出後常見的下一步</h2></div>
@@ -85,6 +85,10 @@
 <li>ASS 轉 SRT：<a href="/ass-to-srt/">ASS 轉 SRT</a></li>
 <li>中英合併：<a href="/bilingual-subtitles-merge/">雙語字幕合併</a></li>
 </ul></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>疑難排解對照表</h2></div>
+<div class="g-body"><table><tr><th>看到的情況</th><th>可能原因</th><th>怎樣處理</th></tr><tr><td>字幕軌類型是 PGS 或 HDMV PGS</td><td>這是圖形字幕，每句都是一張圖片</td><td>先抽出為 .sup，再用 <a href="/guides/sup-idx-to-srt/">Subtitle Edit OCR 轉 SRT</a></td></tr><tr><td>ffmpeg 顯示「Subtitle encoding currently only possible from text to text or bitmap to bitmap」</td><td>嘗試把圖形字幕直接輸出為 SRT</td><td>改用 <code>-c:s copy</code> 輸出 .sup 檔，再做 OCR</td></tr><tr><td>MP4 的字幕軌叫 mov_text</td><td>MP4 內嵌文字字幕的格式</td><td>ffmpeg 可以直接轉為 SRT，指令與 MKV 相同</td></tr><tr><td>有幾條字幕軌，不知道哪條是中文</td><td>字幕軌的語言標籤不一定齊全</td><td>在 MKVToolNix 看「語言」一欄，或用 ffprobe 列出（見下方）</td></tr><tr><td>抽出後中文變亂碼</td><td>字幕軌本身就是舊編碼</td><td>用<a href="/fix-garbled-subtitles/">字幕亂碼修復</a>轉為 UTF-8</td></tr></table><p>用 ffprobe 列出所有字幕軌的編號、格式及語言：</p><pre><code>ffprobe -v error -select_streams s -show_entries stream=index,codec_name:stream_tags=language -of csv=p=0 input.mkv</code></pre><p>再用 <code>-map 0:s:1</code> 之類指定要抽出的字幕軌（0 是第一條字幕軌）。</p></div>
 </section>
 
 

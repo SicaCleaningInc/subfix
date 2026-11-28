@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂", "description": "字幕亂碼的根本原因是編碼。用簡單例子解釋 UTF-8、UTF-8 BOM、GBK、Big5 和 ANSI 的分別，以及如何把字幕統一轉為 UTF-8。", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-encoding-utf8/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂", "description": "字幕亂碼的根本原因是編碼。用簡單例子解釋 UTF-8、UTF-8 BOM、GBK、Big5 和 ANSI 的分別，以及如何把字幕統一轉為 UTF-8。", "datePublished": "2026-11-18", "dateModified": "2026-11-27", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-encoding-utf8/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 </head>
@@ -42,7 +42,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
-    <section class="hero"><h1>字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂</h1><p class="meta">更新日期：2026-11-18</p></section>
+    <section class="hero"><h1>字幕編碼是什麼？UTF-8、BOM、GBK、Big5 一文看懂</h1><p class="meta">更新日期：2026-11-27</p></section>
     <p class="lead">電腦儲存文字時，要把每個字轉成數字，這套規則就叫「編碼」。同一段數字，用不同編碼解讀，就會得出完全不同的字，這就是亂碼的來源。</p>
 
     <div class="cta"><div><strong>想直接解決？</strong> 自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
@@ -73,11 +73,11 @@
 <ul>
 <li>大部分電腦播放器不需要 BOM。</li>
 <li>部分電視和舊播放器需要 BOM 才會正確辨認，所以字幕加上 BOM 通常更兼容。</li>
-</ul></div>
+</ul><figure class="g-fig"><img src="/assets/img/guides/encoding-1.webp" width="1280" height="800" alt="記事本「另存新檔」底部的編碼選單。不同版本選項略有不同，Windows 11 記事本另有「UTF-8 (BOM)」。" loading="lazy" decoding="async"><figcaption>記事本「另存新檔」底部的編碼選單。不同版本選項略有不同，Windows 11 記事本另有「UTF-8 (BOM)」。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>為什麼會出現亂碼</h2></div>
-<div class="g-body"><p>例如「你好」用 GBK 儲存，播放器卻當成 UTF-8 讀取，就會顯示成一堆怪字。只要用正確的編碼重新讀取，再存成 UTF-8，就能完全還原。</p></div>
+<div class="g-body"><p>例如「你好」用 GBK 儲存，播放器卻當成 UTF-8 讀取，就會顯示成一堆怪字。只要用正確的編碼重新讀取，再存成 UTF-8，就能完全還原。</p><figure class="g-fig"><img src="/assets/img/guides/encoding-bytes-zh.webp" width="1350" height="608" alt="「你好」在四種編碼下儲存的位元組完全不同（實際計算結果）。" loading="lazy" decoding="async"><figcaption>「你好」在四種編碼下儲存的位元組完全不同（實際計算結果）。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s5">
 <div class="g-head"><span class="g-badge">E</span><h2>如何轉成 UTF-8</h2></div>

@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Fix Chinese Subtitles in Plex, Jellyfin and Emby", "description": "Chinese subtitles in Plex, Jellyfin or Emby showing gibberish, empty squares or not appearing at all? Find the cause — encoding, fonts or file naming — and fix it step by step.", "datePublished": "2026-11-16", "dateModified": "2026-11-16", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/plex-jellyfin-emby-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Fix Chinese Subtitles in Plex, Jellyfin and Emby", "description": "Chinese subtitles in Plex, Jellyfin or Emby showing gibberish, empty squares or not appearing at all? Find the cause — encoding, fonts or file naming — and fix it step by step.", "datePublished": "2026-11-16", "dateModified": "2026-11-27", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/plex-jellyfin-emby-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -45,7 +45,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
-    <section class="hero"><h1>Fix Chinese Subtitles in Plex, Jellyfin and Emby</h1><p class="meta">Updated: 2026-11-16</p></section>
+    <section class="hero"><h1>Fix Chinese Subtitles in Plex, Jellyfin and Emby</h1><p class="meta">Updated: 2026-11-27</p></section>
     <p class="lead">Home media servers are great until Chinese subtitles turn into gibberish, empty squares (□□□) or simply don't show up. These are three different problems with three different fixes. Work out which one you have first.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Convert GBK / Big5 subtitles to UTF-8 in your browser.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Fix Garbled Chinese Subtitles</a></div>
     <div class="ad-slot" id="ad-1"></div>
@@ -61,7 +61,7 @@
 <li>Replace the old files in your library folder.</li>
 <li>Refresh the metadata for that title (in Plex: "Refresh Metadata"; Jellyfin and Emby have an equivalent refresh option) so the server re-reads the subtitle.</li>
 </ol>
-<p>Japanese (Shift-JIS) and Korean (EUC-KR) subtitles have the same problem — use the <a href="/en/fix-garbled-japanese-korean-subtitles/">Japanese &amp; Korean fixer</a>.</p></div>
+<p>Japanese (Shift-JIS) and Korean (EUC-KR) subtitles have the same problem — use the <a href="/en/fix-garbled-japanese-korean-subtitles/">Japanese &amp; Korean fixer</a>.</p><figure class="g-fig"><img src="/assets/img/guides/tool-fix-en.webp" width="1248" height="1199" alt="Convert to UTF-8 before adding it back to the library, so the server no longer garbles it." loading="lazy" decoding="async"><figcaption>Convert to UTF-8 before adding it back to the library, so the server no longer garbles it.</figcaption></figure></div>
 </section>
 <section class="g-card" id="s2">
 <div class="g-head"><span class="g-badge">B</span><h2>Fix 2: Empty squares — add a Chinese font</h2></div>
@@ -88,11 +88,11 @@ Movies/Spirited Away (2001)/Spirited Away (2001).zh.srt
 Movies/Spirited Away (2001)/Spirited Away (2001).en.srt
 Movies/Spirited Away (2001)/Spirited Away (2001).en.forced.srt</pre>
 <p>Plex only recognises certain extra tags such as <code>forced</code> and <code>sdh</code>; an unknown suffix like <code>.zh.mysubs.srt</code> may be silently ignored. Jellyfin and Emby use a very similar <code>name.language.srt</code> pattern, so the same naming works across all three.</p>
-<p>After renaming, refresh the metadata so the server rescans the folder.</p></div>
+<p>After renaming, refresh the metadata so the server rescans the folder.</p><figure class="g-fig"><img src="/assets/img/guides/naming-1.webp" width="1280" height="800" alt="Name the subtitle after the video plus a language tag (e.g. movie.zh.srt) so the server matches it." loading="lazy" decoding="async"><figcaption>Name the subtitle after the video plus a language tag (e.g. movie.zh.srt) so the server matches it.</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>Bonus: bilingual subtitles</h2></div>
-<div class="g-body"><p>Want Chinese and English at the same time? Merge two subtitle files into one with the <a href="/en/merge-bilingual-subtitles/">bilingual subtitle merger</a>, then name it like any other subtitle (for example <code>Movie (2020).zh.srt</code>).</p></div>
+<div class="g-body"><p>Want Chinese and English at the same time? Merge two subtitle files into one with the <a href="/en/merge-bilingual-subtitles/">bilingual subtitle merger</a>, then name it like any other subtitle (for example <code>Movie (2020).zh.srt</code>).</p><figure class="g-fig tall"><img src="/assets/img/guides/tool-merge-en.webp" width="1248" height="1523" alt="Merging bilingual subtitles: timing follows the main subtitle and the second language is matched automatically." loading="lazy" decoding="async"><figcaption>Merging bilingual subtitles: timing follows the main subtitle and the second language is matched automatically.</figcaption></figure></div>
 </section>
 <section class="g-card" id="faq">
 <div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>

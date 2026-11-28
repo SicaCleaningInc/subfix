@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Apple TV、iPhone、Mac 中文字幕變成方格的解決方法", "description": "iOS 18、tvOS 18 及 macOS 15 之後，不少人在 Infuse、Plex、VLC 看到中文字幕變成空白方格。本文解釋原因，並整理大部分人用過有效的解決方法。", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://zimufix.com/guides/apple-tv-iphone-mac-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Apple TV、iPhone、Mac 中文字幕變成方格的解決方法", "description": "iOS 18、tvOS 18 及 macOS 15 之後，不少人在 Infuse、Plex、VLC 看到中文字幕變成空白方格。本文解釋原因，並整理大部分人用過有效的解決方法。", "datePublished": "2026-11-24", "dateModified": "2026-11-27", "mainEntityOfPage": "https://zimufix.com/guides/apple-tv-iphone-mac-chinese-subtitles/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apple TV 內置的「TV」App 支援外掛 SRT 字幕嗎？", "acceptedAnswer": {"@type": "Answer", "text": "內置的 TV App 不會為你自己的影片載入獨立的 SRT 檔案。請改用 VLC、Infuse 等第三方播放器，或 Plex 之類的媒體伺服器。"}}, {"@type": "Question", "name": "為甚麼 Apple TV 上的中文字幕會變成方格？", "acceptedAnswer": {"@type": "Answer", "text": "播放器或字幕樣式可能指定了一個沒有中文字的字型。把 ASS 轉為 SRT，並把檔案轉為 UTF-8，通常就能解決。"}}, {"@type": "Question", "name": "在 Mac 上不安裝任何軟件可以看字幕嗎？", "acceptedAnswer": {"@type": "Answer", "text": "可以。用 Safari 或 Chrome 打開線上字幕播放器，選擇影片和字幕檔案即可。"}}, {"@type": "Question", "name": "iPad 也適用嗎？", "acceptedAnswer": {"@type": "Answer", "text": "適用。iPad 使用的 App 與 iPhone 相同，可參考手機播放外掛字幕教學。"}}]}
@@ -45,7 +45,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
-    <section class="hero"><h1>Apple TV、iPhone、Mac 中文字幕變成方格的解決方法</h1><p class="meta">更新日期：2026-11-24</p></section>
+    <section class="hero"><h1>Apple TV、iPhone、Mac 中文字幕變成方格的解決方法</h1><p class="meta">更新日期：2026-11-27</p></section>
     <p class="lead">更新 Apple TV、iPhone、iPad 或 Mac 之後，中文字幕突然變成一排排空白方格（□□□）？你並不孤單。Apple 2024 年的系統更新之後，Infuse、Plex 及 VLC 都有用戶回報同樣問題。這是字型問題，字幕檔案本身沒有損壞，有幾種方法可以解決。</p>
     <div class="cta"><div><strong>想直接解決？</strong> 中文 ASS 字幕在 Apple 裝置變成方格，最快的做法是轉為 SRT。</div><a class="btn btn-primary" href="/ass-to-srt/">使用 ASS 轉 SRT</a></div>
     <div class="ad-slot" id="ad-1"></div>
@@ -60,7 +60,7 @@
 <div class="g-body"><ul>
 <li><strong>空白方格 □□□</strong> → 字型問題，請使用下面的方法。</li>
 <li><strong>一堆怪符號</strong>，例如 <span class="mojibake">ÄãºÃ</span> → 編碼問題，請用<a href="/fix-garbled-subtitles/">字幕亂碼修復</a>轉換檔案。</li>
-</ul></div>
+</ul><figure class="g-fig"><img src="/assets/img/guides/symptoms-zh.webp" width="1400" height="537" alt="先分清楚：方格是字型問題，怪字是編碼問題。" loading="lazy" decoding="async"><figcaption>先分清楚：方格是字型問題，怪字是編碼問題。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s3">
 <div class="g-head"><span class="g-badge">C</span><h2>方法一：更新播放器 App</h2></div>
@@ -68,7 +68,7 @@
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>方法二：把 ASS 轉為 SRT</h2></div>
-<div class="g-body"><p>由於問題主要影響 ASS 字幕，轉為 SRT 是最快、最通用的做法。使用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a>，樣式和特效會被移除，但對白和時間軸保持不變，App 會改用自己的字型顯示文字。</p></div>
+<div class="g-body"><p>由於問題主要影響 ASS 字幕，轉為 SRT 是最快、最通用的做法。使用 <a href="/ass-to-srt/">ASS 轉 SRT 工具</a>，樣式和特效會被移除，但對白和時間軸保持不變，App 會改用自己的字型顯示文字。</p><figure class="g-fig"><img src="/assets/img/guides/tool-ass-zh.webp" width="1248" height="1221" alt="ASS 轉 SRT：移除樣式後，App 會改用自己的字型顯示中文。" loading="lazy" decoding="async"><figcaption>ASS 轉 SRT：移除樣式後，App 會改用自己的字型顯示中文。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s5">
 <div class="g-head"><span class="g-badge">E</span><h2>方法三：Apple TV 上的 Plex 改用舊版播放器</h2></div>

@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "VLC 字幕亂碼設定教學", "description": "VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB18030、Big5）及中文字型，或用線上工具一次修好字幕檔。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/vlc-subtitle-encoding/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "VLC 字幕亂碼設定教學", "description": "VLC 播放中文字幕出現亂碼或方格？教你在 VLC 設定字幕文字編碼（GB18030、Big5）及中文字型，或用線上工具一次修好字幕檔。", "datePublished": "2026-11-14", "dateModified": "2026-11-27", "mainEntityOfPage": "https://zimufix.com/guides/vlc-subtitle-encoding/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 </head>
@@ -42,7 +42,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
-    <section class="hero"><h1>VLC 字幕亂碼設定教學</h1><p class="meta">更新日期：2026-11-14</p></section>
+    <section class="hero"><h1>VLC 字幕亂碼設定教學</h1><p class="meta">更新日期：2026-11-27</p></section>
     <p class="lead">VLC 是最受歡迎的免費播放器之一，但播放中文字幕時，有時會出現亂碼或方格。這通常與字幕編碼或字型設定有關。以下教你三種解決方法：設定字幕文字編碼、更換支援中文的字型，或直接把字幕轉為 UTF-8（推薦）。</p>
 
     <div class="cta"><div><strong>想直接解決？</strong> 一次把字幕轉為 UTF-8，以後在任何播放器都不用再調設定。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
@@ -70,7 +70,7 @@
 <li>按「儲存」，然後<strong>關閉並重新開啟影片</strong>，設定才會生效。</li>
 </ol>
 <p>注意：這個設定會套用到所有字幕。如果你同時會播放簡體和繁體字幕，每次都要重新切換，相當麻煩。這時方法三會更方便。</p>
-<p>不同版本的 VLC 選單名稱可能略有不同，如果找不到，可以在進階設定頂部的搜尋框輸入「encoding」或「編碼」。</p></div>
+<p>不同版本的 VLC 選單名稱可能略有不同，如果找不到，可以在進階設定頂部的搜尋框輸入「encoding」或「編碼」。</p><figure class="g-fig"><img src="/assets/img/guides/vlc-1.webp" width="1280" height="800" alt="VLC 進階偏好設定：輸入／編解碼器 → 字幕編解碼器 → 字幕，右邊「字幕文字編碼」下拉選單可選 Big5、GBK 等編碼。" loading="lazy" decoding="async"><figcaption>VLC 進階偏好設定：輸入／編解碼器 → 字幕編解碼器 → 字幕，右邊「字幕文字編碼」下拉選單可選 Big5、GBK 等編碼。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s3">
 <div class="g-head"><span class="g-badge">C</span><h2>方法二：更換支援中文的字型</h2></div>
@@ -80,12 +80,12 @@
 <li>選擇頂部的「字幕／OSD」（Subtitles / OSD）分頁。</li>
 <li>在「字型」選擇支援中文的字型，例如 Windows 的「Microsoft JhengHei」（微軟正黑體）或「Microsoft YaHei」（微軟雅黑），Mac 的「PingFang TC」。</li>
 <li>按「儲存」，重新開啟影片。</li>
-</ol></div>
+</ol><figure class="g-fig"><img src="/assets/img/guides/vlc-2.webp" width="1280" height="800" alt="VLC 簡易偏好設定「字幕／OSD」：把字型改為支援中文的字型，圖中為 Noto Sans CJK TC。" loading="lazy" decoding="async"><figcaption>VLC 簡易偏好設定「字幕／OSD」：把字型改為支援中文的字型，圖中為 Noto Sans CJK TC。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>方法三：直接把字幕轉為 UTF-8（推薦）</h2></div>
 <div class="g-body"><p>與其每次調整 VLC 設定，不如把字幕檔本身轉為 UTF-8。UTF-8 是國際通用標準，VLC 及絕大部分播放器、電視、手機都能正確讀取，轉換一次就不用再煩惱。</p>
-<p>使用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a>，把字幕拖放進去，工具會自動判斷原本的編碼並轉為 UTF-8，檔名維持不變，下載後覆蓋舊檔即可。</p></div>
+<p>使用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a>，把字幕拖放進去，工具會自動判斷原本的編碼並轉為 UTF-8，檔名維持不變，下載後覆蓋舊檔即可。</p><figure class="g-fig"><img src="/assets/img/guides/vlc-3.webp" width="1600" height="500" alt="左：GBK 編碼字幕在 VLC 直接播放變成亂碼；右：轉為 UTF-8 後，同一句字幕正常顯示。" loading="lazy" decoding="async"><figcaption>左：GBK 編碼字幕在 VLC 直接播放變成亂碼；右：轉為 UTF-8 後，同一句字幕正常顯示。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s5">
 <div class="g-head"><span class="g-badge">E</span><h2>字幕時間不對？</h2></div>

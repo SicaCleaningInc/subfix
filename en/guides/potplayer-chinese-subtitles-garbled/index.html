@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to Fix Garbled Chinese Subtitles in PotPlayer", "description": "Chinese subtitles in PotPlayer showing gibberish, question marks or boxes? Check the subtitle encoding and font, or convert the file to UTF-8 once and for all.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/potplayer-chinese-subtitles-garbled/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to Fix Garbled Chinese Subtitles in PotPlayer", "description": "Chinese subtitles in PotPlayer showing gibberish, question marks or boxes? Check the subtitle encoding and font, or convert the file to UTF-8 once and for all.", "datePublished": "2026-11-18", "dateModified": "2026-11-27", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/potplayer-chinese-subtitles-garbled/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -45,7 +45,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
-    <section class="hero"><h1>How to Fix Garbled Chinese Subtitles in PotPlayer</h1><p class="meta">Updated: 2026-11-18</p></section>
+    <section class="hero"><h1>How to Fix Garbled Chinese Subtitles in PotPlayer</h1><p class="meta">Updated: 2026-11-27</p></section>
     <p class="lead">PotPlayer plays most subtitles out of the box, but older GBK or Big5 Chinese subtitles can still show up as gibberish, question marks or boxes. Start with the simplest fix.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
     <div class="ad-slot" id="ad-1"></div>
@@ -55,7 +55,7 @@
 <section class="g-card" id="s1">
 <div class="g-head"><span class="g-badge">A</span><h2>Fix 1: Convert the subtitle to UTF-8 (most reliable)</h2></div>
 <div class="g-body"><p>Garbled text almost always means the file is saved as GBK (Simplified Chinese) or Big5 (Traditional Chinese) and the player guessed the wrong encoding. Converting the file to UTF-8 fixes it for PotPlayer, VLC, TVs and phones alike.</p>
-<p>Drop the file into the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a>. It detects the original encoding and converts it to UTF-8; replace the old file with the new one.</p></div>
+<p>Drop the file into the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a>. It detects the original encoding and converts it to UTF-8; replace the old file with the new one.</p><figure class="g-fig"><img src="/assets/img/guides/tool-fix-en.webp" width="1248" height="1199" alt="The encoding fixer detects GBK and converts the file to UTF-8; the preview shows readable Chinese straight away." loading="lazy" decoding="async"><figcaption>The encoding fixer detects GBK and converts the file to UTF-8; the preview shows readable Chinese straight away.</figcaption></figure></div>
 </section>
 <section class="g-card" id="s2">
 <div class="g-head"><span class="g-badge">B</span><h2>Fix 2: Change the encoding in PotPlayer</h2></div>
@@ -65,12 +65,12 @@
 <li>Try Chinese Simplified (GB2312/GBK) for Simplified subtitles, or Chinese Traditional (Big5) for Traditional ones.</li>
 <li>Apply and reload the subtitle.</li>
 </ol>
-<p>This setting applies to every subtitle, so you may need to switch it again for the next file. Fix 1 avoids that.</p></div>
+<p>This setting applies to every subtitle, so you may need to switch it again for the next file. Fix 1 avoids that.</p><figure class="g-fig"><img src="/assets/img/guides/potplayer-1.webp" width="1280" height="800" alt="PotPlayer preferences → Subtitles → Language/Sync/Other: subtitle language priority and sync." loading="lazy" decoding="async"><figcaption>PotPlayer preferences → Subtitles → Language/Sync/Other: subtitle language priority and sync.</figcaption></figure></div>
 </section>
 <section class="g-card" id="s3">
 <div class="g-head"><span class="g-badge">C</span><h2>Fix 3: Boxes instead of characters? Check the font</h2></div>
 <div class="g-body"><p>If you see "□□□" rather than random symbols, the encoding is fine but the font has no Chinese characters. Pick a Chinese font such as Microsoft JhengHei or Microsoft YaHei in PotPlayer's subtitle font settings.</p>
-<p>ASS subtitles specify their own fonts. If those fonts are not installed, convert the file <a href="/en/ass-to-srt/">to SRT</a> so the player's default font is used.</p></div>
+<p>ASS subtitles specify their own fonts. If those fonts are not installed, convert the file <a href="/en/ass-to-srt/">to SRT</a> so the player's default font is used.</p><figure class="g-fig"><img src="/assets/img/guides/potplayer-2.webp" width="1280" height="800" alt="PotPlayer subtitle Font Style: change the font here. The &quot;Charset&quot; field is the subtitle encoding." loading="lazy" decoding="async"><figcaption>PotPlayer subtitle Font Style: change the font here. The "Charset" field is the subtitle encoding.</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>Subtitle not showing at all</h2></div>

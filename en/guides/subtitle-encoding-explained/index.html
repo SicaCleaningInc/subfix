@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI", "description": "Garbled subtitles come from encoding mix-ups. A plain-English explanation of UTF-8, UTF-8 BOM, GBK, Big5, Shift-JIS and ANSI, and how to convert subtitles to UTF-8.", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/subtitle-encoding-explained/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI", "description": "Garbled subtitles come from encoding mix-ups. A plain-English explanation of UTF-8, UTF-8 BOM, GBK, Big5, Shift-JIS and ANSI, and how to convert subtitles to UTF-8.", "datePublished": "2026-11-20", "dateModified": "2026-11-27", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/subtitle-encoding-explained/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -45,7 +45,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
-    <section class="hero"><h1>Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI</h1><p class="meta">Updated: 2026-11-20</p></section>
+    <section class="hero"><h1>Subtitle Encoding Explained: UTF-8, BOM, GBK, Big5 and ANSI</h1><p class="meta">Updated: 2026-11-27</p></section>
     <p class="lead">Computers store text as numbers, and the rule that maps characters to numbers is called an encoding. Read the same numbers with a different rule and you get different characters. That is where garbled subtitles come from.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
     <div class="ad-slot" id="ad-1"></div>
@@ -73,11 +73,11 @@
 <ul>
 <li>Most computer players don't need it.</li>
 <li>Some TVs and older players do, so subtitles with a BOM are generally more compatible.</li>
-</ul></div>
+</ul><figure class="g-fig"><img src="/assets/img/guides/encoding-1.webp" width="1280" height="800" alt="The encoding list at the bottom of Notepad's Save As dialog. Options vary by version; Windows 11 Notepad also offers &quot;UTF-8 with BOM&quot;." loading="lazy" decoding="async"><figcaption>The encoding list at the bottom of Notepad's Save As dialog. Options vary by version; Windows 11 Notepad also offers "UTF-8 with BOM".</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>Why garbled text happens</h2></div>
-<div class="g-body"><p>Save "你好" as GBK, open it as UTF-8, and you get symbols like <span class="mojibake">ÄãºÃ</span>. Read it again with the right encoding and save as UTF-8, and the text is fully restored.</p></div>
+<div class="g-body"><p>Save "你好" as GBK, open it as UTF-8, and you get symbols like <span class="mojibake">ÄãºÃ</span>. Read it again with the right encoding and save as UTF-8, and the text is fully restored.</p><figure class="g-fig"><img src="/assets/img/guides/encoding-bytes-en.webp" width="1350" height="647" alt="The bytes stored for 你好 in four encodings (computed, not illustrative)." loading="lazy" decoding="async"><figcaption>The bytes stored for 你好 in four encodings (computed, not illustrative).</figcaption></figure></div>
 </section>
 <section class="g-card" id="s5">
 <div class="g-head"><span class="g-badge">E</span><h2>How to convert to UTF-8</h2></div>

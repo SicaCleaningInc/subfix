@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "字幕不同步的原因及解決方法", "description": "字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影片版本不同，並教你如何測量差距及修正字幕時間軸。", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-out-of-sync/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "字幕不同步的原因及解決方法", "description": "字幕比對白快或慢、越來越不同步？本文解釋三種常見原因：片頭長度不同、幀率不同、影片版本不同，並教你如何測量差距及修正字幕時間軸。", "datePublished": "2026-11-14", "dateModified": "2026-11-27", "mainEntityOfPage": "https://zimufix.com/guides/subtitle-out-of-sync/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 </head>
@@ -42,7 +42,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
-    <section class="hero"><h1>字幕不同步的原因及解決方法</h1><p class="meta">更新日期：2026-11-14</p></section>
+    <section class="hero"><h1>字幕不同步的原因及解決方法</h1><p class="meta">更新日期：2026-11-27</p></section>
     <p class="lead">下載回來的字幕，有時會比對白早一兩秒出現，有時開頭正常但越看越不對。字幕不同步看似小事，卻很影響觀看體驗。只要找出原因，大部分情況都可以在幾分鐘內修正。</p>
 
     <div class="cta"><div><strong>想直接解決？</strong> 整體提前或延後，支援幀率轉換，檔案不會上傳。</div><a class="btn btn-primary" href="/subtitle-time-shift/">使用字幕時間軸調整</a></div>
@@ -60,13 +60,13 @@
 <tr><td>三個位置都相差同樣秒數</td><td>片頭長度不同</td><td>整體提前或延後</td></tr>
 <tr><td>開頭準確，越後差距越大</td><td>幀率不同</td><td>幀率轉換</td></tr>
 <tr><td>某一段之後突然相差很多</td><td>影片版本不同（剪輯不同）</td><td>需要分段調整或另找字幕</td></tr>
-</table></div>
+</table><figure class="g-fig"><img src="/assets/img/guides/sync-drift-zh.webp" width="1350" height="840" alt="固定差距（實線）用整體調整；差距越來越大（虛線）通常是幀率不同。" loading="lazy" decoding="async"><figcaption>固定差距（實線）用整體調整；差距越來越大（虛線）通常是幀率不同。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s2">
 <div class="g-head"><span class="g-badge">B</span><h2>原因一：片頭長度不同</h2></div>
 <div class="g-body"><p>同一部電影或劇集可能有多個版本，例如有沒有片商標誌、前情提要或廣告。如果字幕是按另一個版本製作，整套字幕就會固定地快或慢幾秒。</p>
 <p><strong>測量方法</strong>：找一句清楚的對白，記下人物開口的時間（例如 00:05:12.5），再記下字幕出現的時間（例如 00:05:10.5）。字幕早了 2 秒，就需要延後 2 秒。</p>
-<p><strong>修正</strong>：在 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a> 的「整體調整」填入 <code>2</code>，下載即可。字幕太慢則填負數。</p></div>
+<p><strong>修正</strong>：在 <a href="/subtitle-time-shift/">字幕時間軸調整工具</a> 的「整體調整」填入 <code>2</code>，下載即可。字幕太慢則填負數。</p><figure class="g-fig tall"><img src="/assets/img/guides/tool-shift-zh.webp" width="1248" height="1359" alt="字幕時間軸調整：整體延後 1.1 秒，下方可對比調整前後的時間。" loading="lazy" decoding="async"><figcaption>字幕時間軸調整：整體延後 1.1 秒，下方可對比調整前後的時間。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s3">
 <div class="g-head"><span class="g-badge">C</span><h2>原因二：幀率不同</h2></div>
@@ -87,7 +87,7 @@
 </section>
 <section class="g-card" id="s5">
 <div class="g-head"><span class="g-badge">E</span><h2>只看一次？可以在播放器臨時調整</h2></div>
-<div class="g-body"><p>大部分電腦播放器都可以臨時調整字幕延遲。以 VLC 為例，播放時按 <code>G</code> 或 <code>H</code> 鍵，每按一次調整 50 毫秒。不過這種調整通常不會保存，下次播放又要重來。如果會重看或分享給別人，修改字幕檔會更方便。</p></div>
+<div class="g-body"><p>大部分電腦播放器都可以臨時調整字幕延遲。以 VLC 為例，播放時按 <code>G</code> 或 <code>H</code> 鍵，每按一次調整 50 毫秒。不過這種調整通常不會保存，下次播放又要重來。如果會重看或分享給別人，修改字幕檔會更方便。</p><figure class="g-fig"><img src="/assets/img/guides/sync-1.webp" width="1280" height="800" alt="VLC「同步」分頁：字幕軌同步設為 0.5 秒（延後），只對這次播放有效。" loading="lazy" decoding="async"><figcaption>VLC「同步」分頁：字幕軌同步設為 0.5 秒（延後），只對這次播放有效。</figcaption></figure></div>
 </section>
 
 

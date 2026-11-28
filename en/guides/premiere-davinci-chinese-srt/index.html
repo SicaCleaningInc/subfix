@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Fix Garbled Chinese SRT Subtitles in Premiere Pro & DaVinci Resolve", "description": "Imported an SRT into Premiere Pro or DaVinci Resolve and the Chinese text is garbled or shows boxes? Convert the file to UTF-8 and set a Chinese font.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/premiere-davinci-chinese-srt/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Fix Garbled Chinese SRT Subtitles in Premiere Pro & DaVinci Resolve", "description": "Imported an SRT into Premiere Pro or DaVinci Resolve and the Chinese text is garbled or shows boxes? Convert the file to UTF-8 and set a Chinese font.", "datePublished": "2026-11-18", "dateModified": "2026-11-27", "inLanguage": "en", "mainEntityOfPage": "https://zimufix.com/en/guides/premiere-davinci-chinese-srt/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -45,17 +45,17 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/en/">Home</a> › <a href="/en/guides/">Guides</a></p>
-    <section class="hero"><h1>Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</h1><p class="meta">Updated: 2026-11-18</p></section>
+    <section class="hero"><h1>Fix Garbled Chinese SRT Subtitles in Premiere Pro &amp; DaVinci Resolve</h1><p class="meta">Updated: 2026-11-27</p></section>
     <p class="lead">Importing a ready-made SRT saves a lot of editing time. But in Premiere Pro or DaVinci Resolve, Chinese text sometimes comes in garbled or as boxes. There are two causes: encoding and font.</p>
     <div class="cta"><div><strong>Quick fix:</strong> Auto-detects GBK, Big5, Shift-JIS and EUC-KR and converts to UTF-8. Files never leave your device.</div><a class="btn btn-primary" href="/en/fix-garbled-chinese-subtitles/">Open Garbled Subtitle Fixer</a></div>
     <div class="ad-slot" id="ad-1"></div>
 
 
-<nav class="g-jump vis" aria-label="What do you see?"><p class="g-jump-label">What do you see?</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>Cause 1: The subtitle is not UTF-8</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">B</span>Cause 2: The font has no Chinese characters</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>ASS subtitles won't import</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Lines too long for vertical video</span></a></div></nav>
+<nav class="g-jump vis" aria-label="What do you see?"><p class="g-jump-label">What do you see?</p><div class="g-jump-grid"><a class="g-jump-card" href="#s1"><span class="g-vis" aria-hidden="true">ÄãºÃ£¬ÊÀ½ç</span><span class="g-jump-title"><span class="g-badge sm">A</span>Cause 1: The subtitle is not UTF-8</span></a><a class="g-jump-card" href="#s2"><span class="g-vis" aria-hidden="true">□□□□</span><span class="g-jump-title"><span class="g-badge sm">B</span>Cause 2: The font has no Chinese characters</span></a><a class="g-jump-card" href="#s3"><span class="g-jump-title"><span class="g-badge sm">C</span>ASS subtitles won't import</span></a><a class="g-jump-card" href="#s4"><span class="g-jump-title"><span class="g-badge sm">D</span>Lines too long for vertical video</span></a><a class="g-jump-card" href="#s5"><span class="g-jump-title"><span class="g-badge sm">E</span>Troubleshooting table</span></a></div></nav>
 <section class="g-card" id="s1">
 <div class="g-head"><span class="g-badge">A</span><h2>Cause 1: The subtitle is not UTF-8</h2></div>
 <div class="g-body"><p>Editing software generally expects SRT files in UTF-8. GBK or Big5 subtitles come in garbled, usually with no option to change the encoding.</p>
-<p><strong>Fix:</strong> convert the file with the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a> and import it again.</p></div>
+<p><strong>Fix:</strong> convert the file with the <a href="/en/fix-garbled-chinese-subtitles/">Garbled Subtitle Fixer</a> and import it again.</p><figure class="g-fig"><img src="/assets/img/guides/tool-fix-en.webp" width="1248" height="1199" alt="Convert the SRT to UTF-8 before importing it into your editor." loading="lazy" decoding="async"><figcaption>Convert the SRT to UTF-8 before importing it into your editor.</figcaption></figure></div>
 </section>
 <section class="g-card" id="s2">
 <div class="g-head"><span class="g-badge">B</span><h2>Cause 2: The font has no Chinese characters</h2></div>
@@ -68,11 +68,15 @@
 </section>
 <section class="g-card" id="s3">
 <div class="g-head"><span class="g-badge">C</span><h2>ASS subtitles won't import</h2></div>
-<div class="g-body"><p>Most editors do not support ASS directly. Convert it with the <a href="/en/ass-to-srt/">ASS to SRT converter</a> first.</p></div>
+<div class="g-body"><p>Most editors do not support ASS directly. Convert it with the <a href="/en/ass-to-srt/">ASS to SRT converter</a> first.</p><figure class="g-fig"><img src="/assets/img/guides/tool-ass-en.webp" width="1248" height="1221" alt="ASS to SRT: styles and effect tags are removed, dialogue and timing are kept." loading="lazy" decoding="async"><figcaption>ASS to SRT: styles and effect tags are removed, dialogue and timing are kept.</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>Lines too long for vertical video</h2></div>
-<div class="g-body"><p>For TikTok, Reels or Shorts, long lines run off the screen. The <a href="/subtitle-line-break/">subtitle line-break tool</a> (Chinese interface) wraps each line to a set width before you import.</p></div>
+<div class="g-body"><p>For TikTok, Reels or Shorts, long lines run off the screen. The <a href="/subtitle-line-break/">subtitle line-break tool</a> (Chinese interface) wraps each line to a set width before you import.</p><figure class="g-fig tall"><img src="/assets/img/guides/tool-break-en.webp" width="1248" height="1457" alt="Line breaker: set a maximum line length; long lines are split into several cues with time shared by length." loading="lazy" decoding="async"><figcaption>Line breaker: set a maximum line length; long lines are split into several cues with time shared by length.</figcaption></figure></div>
+</section>
+<section class="g-card" id="s5">
+<div class="g-head"><span class="g-badge">E</span><h2>Troubleshooting table</h2></div>
+<div class="g-body"><table><tr><th>What you see</th><th>Likely cause</th><th>What to do</th></tr><tr><td>Chinese turns into gibberish after import</td><td>The SRT is not UTF-8</td><td>Convert it to UTF-8 with the <a href="/en/fix-garbled-chinese-subtitles/">encoding fixer</a> and import again</td></tr><tr><td>Boxes after import</td><td>The caption track font has no Chinese</td><td>Change the caption style to a Chinese font such as Noto Sans CJK or Microsoft JhengHei</td></tr><tr><td>ASS files will not import</td><td>Premiere Pro and DaVinci Resolve work with SRT</td><td>Convert with <a href="/en/ass-to-srt/">ASS to SRT</a>, then import</td></tr><tr><td>Lines too long on vertical video, covering faces</td><td>The subtitle was made for landscape video</td><td>Re-wrap it with the <a href="/en/subtitle-line-break/">line breaker</a></td></tr><tr><td>All subtitles are early or late</td><td>A different timeline start, or the video was re-edited</td><td>Shift the file with the <a href="/en/subtitle-time-shift/">timing adjuster</a>, or drag the whole caption track on the timeline</td></tr></table><p><strong>Tip:</strong> check that the Chinese looks right before you import. It saves fixing lines one by one inside the editor.</p></div>
 </section>
 <section class="g-card" id="faq">
 <div class="g-head"><span class="g-badge">?</span><h2>FAQ</h2></div>

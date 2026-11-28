@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "PotPlayer 字幕亂碼解決方法", "description": "PotPlayer 播放中文字幕出現亂碼、問號或方格？教你檢查字幕編碼、字型設定，以及最穩陣的做法：把字幕轉為 UTF-8。", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": "https://zimufix.com/guides/potplayer-subtitle-garbled/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
+{"@context": "https://schema.org", "@type": "Article", "headline": "PotPlayer 字幕亂碼解決方法", "description": "PotPlayer 播放中文字幕出現亂碼、問號或方格？教你檢查字幕編碼、字型設定，以及最穩陣的做法：把字幕轉為 UTF-8。", "datePublished": "2026-11-17", "dateModified": "2026-11-27", "mainEntityOfPage": "https://zimufix.com/guides/potplayer-subtitle-garbled/", "author": {"@type": "Organization", "name": "ZimuFix"}, "publisher": {"@type": "Organization", "name": "ZimuFix"}}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 </head>
@@ -42,7 +42,7 @@
 <main class="wrap">
   <article class="content guide g2">
     <p class="crumbs"><a href="/">首頁</a> › <a href="/guides/">教學</a></p>
-    <section class="hero"><h1>PotPlayer 字幕亂碼解決方法</h1><p class="meta">更新日期：2026-11-17</p></section>
+    <section class="hero"><h1>PotPlayer 字幕亂碼解決方法</h1><p class="meta">更新日期：2026-11-27</p></section>
     <p class="lead">PotPlayer 是 Windows 上很受歡迎的播放器，大部分字幕都能直接播放。但遇到舊的 GBK 或 Big5 字幕，偶爾仍會出現亂碼、問號或方格。以下由最簡單的方法開始排查。</p>
 
     <div class="cta"><div><strong>想直接解決？</strong> 自動偵測 GBK、Big5 等編碼，一鍵轉為 UTF-8，檔案不會上傳。</div><a class="btn btn-primary" href="/fix-garbled-subtitles/">使用字幕亂碼修復</a></div>
@@ -55,7 +55,7 @@
 <section class="g-card" id="s1">
 <div class="g-head"><span class="g-badge">A</span><h2>方法一：把字幕轉為 UTF-8（最穩陣）</h2></div>
 <div class="g-body"><p>亂碼的根本原因，通常是字幕用了 GBK（簡體）或 Big5（繁體）編碼，而播放器猜錯了。與其逐個播放器調設定，不如直接把字幕檔轉為 UTF-8，之後無論用 PotPlayer、VLC、電視或手機播放都不會再出問題。</p>
-<p>用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 拖入字幕，工具會自動偵測原本的編碼並轉為 UTF-8，再用新檔取代舊檔即可。</p></div>
+<p>用 <a href="/fix-garbled-subtitles/">字幕亂碼修復工具</a> 拖入字幕，工具會自動偵測原本的編碼並轉為 UTF-8，再用新檔取代舊檔即可。</p><figure class="g-fig"><img src="/assets/img/guides/tool-fix-zh.webp" width="1248" height="1085" alt="字幕亂碼修復自動偵測出 GBK 編碼，轉為 UTF-8 後預覽即時回復正常中文。" loading="lazy" decoding="async"><figcaption>字幕亂碼修復自動偵測出 GBK 編碼，轉為 UTF-8 後預覽即時回復正常中文。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s2">
 <div class="g-head"><span class="g-badge">B</span><h2>方法二：在 PotPlayer 調整字幕編碼</h2></div>
@@ -66,12 +66,12 @@
 <li>簡體字幕試選「簡體中文（GB2312／GBK）」，繁體字幕試選「繁體中文（Big5）」。</li>
 <li>套用後重新載入字幕。</li>
 </ol>
-<p>缺點是設定會影響所有字幕，換另一個編碼的字幕又要再改，所以長遠還是建議用方法一。</p></div>
+<p>缺點是設定會影響所有字幕，換另一個編碼的字幕又要再改，所以長遠還是建議用方法一。</p><figure class="g-fig"><img src="/assets/img/guides/potplayer-1.webp" width="1280" height="800" alt="PotPlayer 偏好設定 → 字幕 → 語言／同步／其他：設定字幕語言優先次序及同步。" loading="lazy" decoding="async"><figcaption>PotPlayer 偏好設定 → 字幕 → 語言／同步／其他：設定字幕語言優先次序及同步。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s3">
 <div class="g-head"><span class="g-badge">C</span><h2>方法三：字幕變成方格？檢查字型</h2></div>
 <div class="g-body"><p>如果字幕顯示為「□□□」方格，而不是亂七八糟的怪字，問題多數在<strong>字型</strong>而不是編碼：目前選用的字型沒有中文字。在 PotPlayer 的字幕字型設定中，改用「Microsoft JhengHei（微軟正黑體）」或「Microsoft YaHei（微軟雅黑）」等中文字型即可。</p>
-<p>ASS 特效字幕會自帶指定字型，如果你的電腦沒有安裝該字型，也可能顯示異常。可以把字幕 <a href="/ass-to-srt/">轉為 SRT</a>，改由播放器的預設字型顯示。</p></div>
+<p>ASS 特效字幕會自帶指定字型，如果你的電腦沒有安裝該字型，也可能顯示異常。可以把字幕 <a href="/ass-to-srt/">轉為 SRT</a>，改由播放器的預設字型顯示。</p><figure class="g-fig"><img src="/assets/img/guides/potplayer-2.webp" width="1280" height="800" alt="PotPlayer 字幕「字型樣式」：可更換字型；「Charset」一欄就是字幕編碼設定。" loading="lazy" decoding="async"><figcaption>PotPlayer 字幕「字型樣式」：可更換字型；「Charset」一欄就是字幕編碼設定。</figcaption></figure></div>
 </section>
 <section class="g-card" id="s4">
 <div class="g-head"><span class="g-badge">D</span><h2>方法四：字幕不出現</h2></div>
