@@ -210,3 +210,10 @@
 - 教學目錄分類數目改由實際連結計算（中英文：全部 23；播放器 6、裝置 6、剪片 6、基礎 5）。
 - 時間軸：位移量以整數毫秒儲存（offMs），輸入欄改為 text + inputmode=decimal（避免 Chrome 無障礙樹以 float32 顯示 1.100000023841858），保留 ↑↓ 鍵 ±0.1 秒。
 - 資源版本 v=28。
+
+## 25. AdSense「低價值內容」跟進（2026-11-27，v29）
+- 教學加 104 張圖（中英文各 52）：Simon 提供 22 張真實截圖（VLC、PotPlayer、KMPlayer、Kodi、MKVToolNix、ffmpeg、HandBrake、Subtitle Edit、YouTube Studio、記事本、檔案總管）；整唔到嘅用 ZimuFix 工具實際操作截圖及原創圖解（三種格式、三種症狀、症狀流程、電視五步檢查、編碼位元組、不同步示意）取代。
+- 圖片放 `assets/img/guides/*.webp`，`<figure class="g-fig">` 連說明；YouTube 截圖頭像已打格。
+- 最短 6 篇教學（KMPlayer、MKV、Premiere/DaVinci、SUP、Windows 媒體播放器、MX Player）中英文加「疑難排解對照表」。
+- 首頁加「先看症狀」段落及 3 條常見問題；About 頁加「工具怎樣運作」「教學怎樣寫成」「更新紀錄」。
+- 有圖嘅教學更新日期改為 2026-11-27。腳本：`build/figures_v29.py`、`build/expand_v29.py`、`build/home_about_v29.py`。資源版本 v=29。

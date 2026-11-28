@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=28">
+<link rel="stylesheet" href="/assets/style.css?v=29">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731061578516772" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -39,6 +39,16 @@
   <section class="hero"><h1>About ZimuFix</h1></section>
   <p>ZimuFix is a free toolbox built for Chinese subtitles. The most common problems — garbled text, Simplified versus Traditional characters, subtitles out of sync — usually mean jumping between several websites, and many tools make you upload your files.</p>
   <p>So every ZimuFix tool runs inside your browser. Your subtitle files are never sent to a server, which is faster and keeps them private.</p>
+  <h2>How the tools work</h2>
+  <p>Every tool is JavaScript that runs in your browser. When you pick a subtitle file, the browser reads it locally, detects the encoding or converts the format, and offers the result as a download. Nothing goes through a server, so a tool page that is already open keeps working offline.</p>
+  <p>The encoding fixer looks at the byte patterns in the file to tell UTF-8, GBK, Big5, Shift-JIS, EUC-KR and other encodings apart, and shows a preview before you download so you can confirm the text is right. If the guess is wrong, you can pick another encoding by hand.</p>
+  <h2>How the guides are written</h2>
+  <p>The guides cover the most common Chinese subtitle problems: gibberish, boxes, missing subtitles and timing. They are based on each player's official documentation, menu paths and user reports, with screenshots and diagrams. Menu names can change after software updates; if you spot something out of date, please email us.</p>
+  <h2>Updates</h2>
+  <ul>
+    <li>November 2026: real screenshots and diagrams added to the guides; new Japanese/Korean encoding fixer, English line breaker and Apple TV guide.</li>
+    <li>November 2026: every tool gained a "Try a sample" button, and several accept pasted subtitle text.</li>
+  </ul>
   <h2>Open source</h2>
   <p>The CJK subtitle encoding detector used on this site is open source: <a href="https://github.com/SicaCleaningInc/cjk-subtitle-encoding">cjk-subtitle-encoding on GitHub</a>.</p>
   <h2>Contact</h2>

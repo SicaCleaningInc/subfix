@@ -387,3 +387,11 @@ html { scroll-padding-top: 84px; }
 .notfound .code { font-size: 64px; font-weight: 700; color: var(--brand); line-height: 1; margin: 0 0 8px; }
 .notfound .tool-grid { text-align: left; margin-top: 24px; }
 .try-row .muted { margin: 0; font-size: 14px; }
+/* v29 教學截圖 */
+.g-fig{margin:16px 0 4px}
+.g-fig img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.g-fig.tall img{max-width:520px}
+.g-fig figcaption{margin-top:8px;font-size:14px;line-height:1.6;color:var(--muted,#6b7280)}
+.home-guide { padding-top: 40px; padding-bottom: 24px; }
+.home-guide h2 { margin: 0 0 6px; font-size: 22px; }
+.home-guide h3 { font-size: 17px; margin: 22px 0 4px; }
